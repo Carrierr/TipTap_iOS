@@ -26,6 +26,7 @@
 		A13FF22D2123FBEB00FB5642 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = A13FF22C2123FBEB00FB5642 /* mask.png */; };
 		A13FF22F2123FF0500FB5642 /* UIPageViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF22E2123FF0500FB5642 /* UIPageViewControllerExtension.swift */; };
 		A13FF2372124047100FB5642 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2362124047100FB5642 /* NotificationExtension.swift */; };
+		A13FF239212409B300FB5642 /* TTSharedVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		A13FF22C2123FBEB00FB5642 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
 		A13FF22E2123FF0500FB5642 /* UIPageViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerExtension.swift; sourceTree = "<group>"; };
 		A13FF2362124047100FB5642 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedVCExtension.swift; sourceTree = "<group>"; };
 		E6376FA0B5704EE127D34759 /* Pods_TipTap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipTap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57B43A8AED4149F9706270F /* Pods-TipTapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipTapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipTapUITests/Pods-TipTapUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +210,7 @@
 		A13FF2202123F7F200FB5642 /* SharedDiary */ = {
 			isa = PBXGroup;
 			children = (
+				A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */,
 				A13FF2212123F85100FB5642 /* TTSharedViewController.swift */,
 				A13FF2232123F86000FB5642 /* SharedDiary.storyboard */,
 			);
@@ -539,6 +542,7 @@
 				A11F61B72123E6A90029E80A /* ViewController.swift in Sources */,
 				A13FF22F2123FF0500FB5642 /* UIPageViewControllerExtension.swift in Sources */,
 				A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */,
+				A13FF239212409B300FB5642 /* TTSharedVCExtension.swift in Sources */,
 				A13FF2222123F85100FB5642 /* TTSharedViewController.swift in Sources */,
 				A11F61B52123E6A90029E80A /* AppDelegate.swift in Sources */,
 			);
