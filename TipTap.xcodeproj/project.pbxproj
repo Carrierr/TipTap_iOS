@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07BD1428244B322D6BEBCACB /* Pods_TipTapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94155FE91CA75E45A37911BD /* Pods_TipTapTests.framework */; };
+		34F647004371BECCAD0A25F5 /* Pods_TipTap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6376FA0B5704EE127D34759 /* Pods_TipTap.framework */; };
+		3F041A962C6129A655139026 /* Pods_TipTapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACC9DFC0C426B15FA874266 /* Pods_TipTapUITests.framework */; };
 		A11F61B52123E6A90029E80A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61B42123E6A90029E80A /* AppDelegate.swift */; };
 		A11F61B72123E6A90029E80A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61B62123E6A90029E80A /* ViewController.swift */; };
 		A11F61BA2123E6A90029E80A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A11F61B82123E6A90029E80A /* Main.storyboard */; };
@@ -14,6 +17,15 @@
 		A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A11F61BD2123E6AA0029E80A /* LaunchScreen.storyboard */; };
 		A11F61CA2123E6AA0029E80A /* TipTapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61C92123E6AA0029E80A /* TipTapTests.swift */; };
 		A11F61D52123E6AB0029E80A /* TipTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61D42123E6AB0029E80A /* TipTapUITests.swift */; };
+		A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13FF2182123EBB600FB5642 /* TTLogin.storyboard */; };
+		A13FF21B2123EC4600FB5642 /* TTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */; };
+		A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */; };
+		A13FF2222123F85100FB5642 /* TTSharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2212123F85100FB5642 /* TTSharedViewController.swift */; };
+		A13FF2242123F86000FB5642 /* SharedDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13FF2232123F86000FB5642 /* SharedDiary.storyboard */; };
+		A13FF2272123FB8600FB5642 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2262123FB8600FB5642 /* UIViewExtension.swift */; };
+		A13FF22D2123FBEB00FB5642 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = A13FF22C2123FBEB00FB5642 /* mask.png */; };
+		A13FF22F2123FF0500FB5642 /* UIPageViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF22E2123FF0500FB5642 /* UIPageViewControllerExtension.swift */; };
+		A13FF2372124047100FB5642 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2362124047100FB5642 /* NotificationExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		161AD5D6554CB9C06A9BC1FE /* Pods-TipTapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipTapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipTapTests/Pods-TipTapTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3ACC9DFC0C426B15FA874266 /* Pods_TipTapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipTapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45FECE14D4A33994E9A93E25 /* Pods-TipTapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipTapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipTapUITests/Pods-TipTapUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7294FE1D1B42843F732E2B6F /* Pods-TipTap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipTap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipTap/Pods-TipTap.debug.xcconfig"; sourceTree = "<group>"; };
+		8A6C5BA4B6A3D70CF9F7B527 /* Pods-TipTapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipTapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipTapTests/Pods-TipTapTests.release.xcconfig"; sourceTree = "<group>"; };
+		94155FE91CA75E45A37911BD /* Pods_TipTapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipTapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D9BA63B41D47F3B40D2519F /* Pods-TipTap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipTap.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipTap/Pods-TipTap.release.xcconfig"; sourceTree = "<group>"; };
 		A11F61B12123E6A90029E80A /* TipTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11F61B42123E6A90029E80A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A11F61B62123E6A90029E80A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +66,17 @@
 		A11F61D02123E6AB0029E80A /* TipTapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipTapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11F61D42123E6AB0029E80A /* TipTapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTapUITests.swift; sourceTree = "<group>"; };
 		A11F61D62123E6AB0029E80A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A13FF2182123EBB600FB5642 /* TTLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TTLogin.storyboard; sourceTree = "<group>"; };
+		A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLoginViewController.swift; sourceTree = "<group>"; };
+		A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMainPageViewController.swift; sourceTree = "<group>"; };
+		A13FF2212123F85100FB5642 /* TTSharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedViewController.swift; sourceTree = "<group>"; };
+		A13FF2232123F86000FB5642 /* SharedDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SharedDiary.storyboard; sourceTree = "<group>"; };
+		A13FF2262123FB8600FB5642 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		A13FF22C2123FBEB00FB5642 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
+		A13FF22E2123FF0500FB5642 /* UIPageViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerExtension.swift; sourceTree = "<group>"; };
+		A13FF2362124047100FB5642 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		E6376FA0B5704EE127D34759 /* Pods_TipTap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipTap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F57B43A8AED4149F9706270F /* Pods-TipTapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipTapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipTapUITests/Pods-TipTapUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F647004371BECCAD0A25F5 /* Pods_TipTap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07BD1428244B322D6BEBCACB /* Pods_TipTapTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +100,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F041A962C6129A655139026 /* Pods_TipTapUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55BB96A52F8D756EFE61D575 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6376FA0B5704EE127D34759 /* Pods_TipTap.framework */,
+				94155FE91CA75E45A37911BD /* Pods_TipTapTests.framework */,
+				3ACC9DFC0C426B15FA874266 /* Pods_TipTapUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D6AFB65F6A7E5AA3634A91C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7294FE1D1B42843F732E2B6F /* Pods-TipTap.debug.xcconfig */,
+				9D9BA63B41D47F3B40D2519F /* Pods-TipTap.release.xcconfig */,
+				161AD5D6554CB9C06A9BC1FE /* Pods-TipTapTests.debug.xcconfig */,
+				8A6C5BA4B6A3D70CF9F7B527 /* Pods-TipTapTests.release.xcconfig */,
+				45FECE14D4A33994E9A93E25 /* Pods-TipTapUITests.debug.xcconfig */,
+				F57B43A8AED4149F9706270F /* Pods-TipTapUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A11F61A82123E6A90029E80A = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +137,8 @@
 				A11F61C82123E6AA0029E80A /* TipTapTests */,
 				A11F61D32123E6AB0029E80A /* TipTapUITests */,
 				A11F61B22123E6A90029E80A /* Products */,
+				9D6AFB65F6A7E5AA3634A91C /* Pods */,
+				55BB96A52F8D756EFE61D575 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,7 +157,11 @@
 			children = (
 				A11F61B42123E6A90029E80A /* AppDelegate.swift */,
 				A11F61B62123E6A90029E80A /* ViewController.swift */,
-				A11F61B82123E6A90029E80A /* Main.storyboard */,
+				A13FF2322124040200FB5642 /* Common */,
+				A13FF2202123F7F200FB5642 /* SharedDiary */,
+				A13FF21D2123ED3400FB5642 /* Home */,
+				A13FF21C2123EC4C00FB5642 /* Login */,
+				A13FF2282123FB9F00FB5642 /* Supporting Files */,
 				A11F61BB2123E6AA0029E80A /* Assets.xcassets */,
 				A11F61BD2123E6AA0029E80A /* LaunchScreen.storyboard */,
 				A11F61C02123E6AA0029E80A /* Info.plist */,
@@ -125,6 +187,59 @@
 			path = TipTapUITests;
 			sourceTree = "<group>";
 		};
+		A13FF21C2123EC4C00FB5642 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A13FF2182123EBB600FB5642 /* TTLogin.storyboard */,
+				A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A13FF21D2123ED3400FB5642 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A11F61B82123E6A90029E80A /* Main.storyboard */,
+				A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A13FF2202123F7F200FB5642 /* SharedDiary */ = {
+			isa = PBXGroup;
+			children = (
+				A13FF2212123F85100FB5642 /* TTSharedViewController.swift */,
+				A13FF2232123F86000FB5642 /* SharedDiary.storyboard */,
+			);
+			path = SharedDiary;
+			sourceTree = "<group>";
+		};
+		A13FF2252123FB7100FB5642 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				A13FF2262123FB8600FB5642 /* UIViewExtension.swift */,
+				A13FF22E2123FF0500FB5642 /* UIPageViewControllerExtension.swift */,
+				A13FF2362124047100FB5642 /* NotificationExtension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		A13FF2282123FB9F00FB5642 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A13FF22C2123FBEB00FB5642 /* mask.png */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A13FF2322124040200FB5642 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A13FF2252123FB7100FB5642 /* extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A11F61D92123E6AB0029E80A /* Build configuration list for PBXNativeTarget "TipTap" */;
 			buildPhases = (
+				3C97D859570538D83912981A /* [CP] Check Pods Manifest.lock */,
 				A11F61AD2123E6A90029E80A /* Sources */,
 				A11F61AE2123E6A90029E80A /* Frameworks */,
 				A11F61AF2123E6A90029E80A /* Resources */,
+				CACB07DD329A7825F6068150 /* [CP] Embed Pods Frameworks */,
+				E1F5140CA9E8350D61FBB662 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +267,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A11F61DC2123E6AB0029E80A /* Build configuration list for PBXNativeTarget "TipTapTests" */;
 			buildPhases = (
+				33D641E829E69682F9ECEDCF /* [CP] Check Pods Manifest.lock */,
 				A11F61C12123E6AA0029E80A /* Sources */,
 				A11F61C22123E6AA0029E80A /* Frameworks */,
 				A11F61C32123E6AA0029E80A /* Resources */,
+				710B426DD955EDF10550EF4C /* [CP] Embed Pods Frameworks */,
+				FC2E1DC798F590EEBA25AE87 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +288,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A11F61DF2123E6AB0029E80A /* Build configuration list for PBXNativeTarget "TipTapUITests" */;
 			buildPhases = (
+				0C746612755CED19F3C54F0A /* [CP] Check Pods Manifest.lock */,
 				A11F61CC2123E6AB0029E80A /* Sources */,
 				A11F61CD2123E6AB0029E80A /* Frameworks */,
 				A11F61CE2123E6AB0029E80A /* Resources */,
+				9555083EB91CF37D80921F00 /* [CP] Embed Pods Frameworks */,
+				9CF2246CD7DE5A8F20C36E76 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,9 +353,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A13FF22D2123FBEB00FB5642 /* mask.png in Resources */,
 				A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */,
 				A11F61BC2123E6AA0029E80A /* Assets.xcassets in Resources */,
+				A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */,
 				A11F61BA2123E6A90029E80A /* Main.storyboard in Resources */,
+				A13FF2242123F86000FB5642 /* SharedDiary.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,12 +378,168 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C746612755CED19F3C54F0A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TipTapUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33D641E829E69682F9ECEDCF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TipTapTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C97D859570538D83912981A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TipTap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		710B426DD955EDF10550EF4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipTapTests/Pods-TipTapTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9555083EB91CF37D80921F00 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipTapUITests/Pods-TipTapUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CF2246CD7DE5A8F20C36E76 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipTapUITests/Pods-TipTapUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CACB07DD329A7825F6068150 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TipTap/Pods-TipTap-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ScratchCard/ScratchCard.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScratchCard.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipTap/Pods-TipTap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1F5140CA9E8350D61FBB662 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipTap/Pods-TipTap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC2E1DC798F590EEBA25AE87 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipTapTests/Pods-TipTapTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A11F61AD2123E6A90029E80A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A13FF2272123FB8600FB5642 /* UIViewExtension.swift in Sources */,
+				A13FF21B2123EC4600FB5642 /* TTLoginViewController.swift in Sources */,
+				A13FF2372124047100FB5642 /* NotificationExtension.swift in Sources */,
 				A11F61B72123E6A90029E80A /* ViewController.swift in Sources */,
+				A13FF22F2123FF0500FB5642 /* UIPageViewControllerExtension.swift in Sources */,
+				A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */,
+				A13FF2222123F85100FB5642 /* TTSharedViewController.swift in Sources */,
 				A11F61B52123E6A90029E80A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,9 +711,11 @@
 		};
 		A11F61DA2123E6AB0029E80A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7294FE1D1B42843F732E2B6F /* Pods-TipTap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 594TR8CRP9;
 				INFOPLIST_FILE = TipTap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -445,9 +730,11 @@
 		};
 		A11F61DB2123E6AB0029E80A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D9BA63B41D47F3B40D2519F /* Pods-TipTap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 594TR8CRP9;
 				INFOPLIST_FILE = TipTap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -462,6 +749,7 @@
 		};
 		A11F61DD2123E6AB0029E80A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 161AD5D6554CB9C06A9BC1FE /* Pods-TipTapTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -482,6 +770,7 @@
 		};
 		A11F61DE2123E6AB0029E80A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A6C5BA4B6A3D70CF9F7B527 /* Pods-TipTapTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -502,6 +791,7 @@
 		};
 		A11F61E02123E6AB0029E80A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45FECE14D4A33994E9A93E25 /* Pods-TipTapUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -521,6 +811,7 @@
 		};
 		A11F61E12123E6AB0029E80A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F57B43A8AED4149F9706270F /* Pods-TipTapUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
