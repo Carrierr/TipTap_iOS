@@ -1,0 +1,6 @@
+framework module Pods_TipTapUITests {
+  umbrella header "Pods-TipTapUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
