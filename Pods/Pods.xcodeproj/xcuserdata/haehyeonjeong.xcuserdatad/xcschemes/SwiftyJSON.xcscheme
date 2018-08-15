@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "05A5CD0AE8C30C4F0BAA442633352F9F"
-               BlueprintName = "ScratchCard"
+               BlueprintIdentifier = "835FC8DFB9EBBD6E3938A20AC12675C3"
+               BlueprintName = "SwiftyJSON"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "ScratchCard.framework">
+               BuildableName = "SwiftyJSON.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
