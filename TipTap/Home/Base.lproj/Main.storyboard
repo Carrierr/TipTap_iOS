@@ -18,10 +18,10 @@
             </objects>
             <point key="canvasLocation" x="852" y="167"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--TTMyDiaryViewController-->
         <scene sceneID="enj-fR-KjR">
             <objects>
-                <viewControllerPlaceholder id="xNo-LR-I7a" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="TTMyDiaryViewController" storyboardName="MyDiary" referencedIdentifier="TTMyDiaryViewController" id="xNo-LR-I7a" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJz-wG-dyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="302" y="533"/>

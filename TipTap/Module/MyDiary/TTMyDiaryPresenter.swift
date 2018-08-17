@@ -13,14 +13,11 @@ protocol TTMyDiaryPresenterProtocol: TTBasePresenterProtocol {
     //View->Presenter
     func reloadData()
     
-    //CollectionView
-    func didSelectCollectionViewRowAt(indexPath: IndexPath)
+    //UITableView
+    func didSelectTableViewRowAt(indexPath: IndexPath)
     func numberOfRows(in section:Int)->Int
     func numberOfSection()->Int
-    func sizeForItemAt(viewSize : CGSize, indexPath: IndexPath)->CGSize
-    func sizeHeaderForItemAt(viewSize : CGSize, section: Int)->CGSize
-    func configureCell(_ collectionView:UICollectionView, forRowAt indexPath : IndexPath)->UICollectionViewCell
-    func configureHeaderCell(headerView:UICollectionReusableView, indexPath : IndexPath)->UICollectionReusableView
+    func configureCell(_ tableView:UITableView, forRowAt indexPath : IndexPath)->UITableViewCell
 }
 
 
@@ -49,6 +46,31 @@ final class TTMyDiaryPresenter {
 }
 
 extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol {
+    func numberOfRows(in section: Int) -> Int {
+        if let count = moduleDatas?.count {
+            return count
+        }
+        return 0
+    }
+    
+    func numberOfSection() -> Int {
+        return 1
+    }
+    
+    func didSelectTableViewRowAt(indexPath: IndexPath) {
+        print("select \(indexPath.row)")
+    }
+    
+    func configureCell(_ tableView: UITableView, forRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyDiaryCell") as? MyDiaryCell
+        if let title = moduleDatas?[indexPath.row] {
+            cell?.titleLabel.text = title
+        }
+        cell?.monthLabel.text = "July"
+        cell?.dayLabel.text   = "22"
+        return cell!
+    }
+    
     func moreLoad() {
         
     }
@@ -63,33 +85,7 @@ extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol {
     }
     
     
-    func didSelectCollectionViewRowAt(indexPath: IndexPath) {
-        print("select index : \(indexPath.row)")
-    }
     
-    func numberOfRows(in section: Int) -> Int {
-        <#code#>
-    }
-    
-    func numberOfSection() -> Int {
-        <#code#>
-    }
-    
-    func sizeForItemAt(viewSize: CGSize, indexPath: IndexPath) -> CGSize {
-        <#code#>
-    }
-    
-    func sizeHeaderForItemAt(viewSize: CGSize, section: Int) -> CGSize {
-        <#code#>
-    }
-    
-    func configureCell(_ collectionView: UICollectionView, forRowAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
-    }
-    
-    func configureHeaderCell(headerView: UICollectionReusableView, indexPath: IndexPath) -> UICollectionReusableView {
-        <#code#>
-    }
 }
 
 

@@ -14,9 +14,11 @@ protocol TTMyDiaryViewProtocol:class{
 }
 
 class TTMyDiaryViewController: TTBaseViewController {
-
-    var presenter:TTMyDiaryPresenterProtocol?
     
+    @IBOutlet weak var tableView: UITableView!
+    var presenter:TTMyDiaryPresenterProtocol?
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +26,53 @@ class TTMyDiaryViewController: TTBaseViewController {
     }
 
     override func setupUI() {
-        
+        self.tableView.allowsSelection = false
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        registerCell()
     }
     
     override func setupBinding() {
         
     }
     
+    func registerCell(){
+        self.tableView.register(UINib.init(nibName:"MyDiaryCell",bundle:nil), forCellReuseIdentifier: "MyDiaryCell")
+    }
+}
+
+extension TTMyDiaryViewController: TTMyDiaryViewProtocol {
+    func startNetworking() {
+        
+    }
+    
+    func stopNetworking() {
+        self.tableView.reloadData()
+    }
+    
+}
+
+extension TTMyDiaryViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectTableViewRowAt(indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+}
+
+
+
+extension TTMyDiaryViewController: UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (presenter?.numberOfRows(in: section))!
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return (presenter?.configureCell(tableView, forRowAt: indexPath))!
+    }
 }
