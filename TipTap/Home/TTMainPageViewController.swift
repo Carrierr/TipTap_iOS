@@ -22,8 +22,9 @@ class TTMainPageViewController: UIPageViewController {
     private func newTipTapViewController(index: Int) -> UIViewController {
         switch index {
         case 0:
-            return UIStoryboard(name: "Main", bundle: nil) .
-                instantiateViewController(withIdentifier: "first")
+            return TTMyDiaryWireFrame.createModule()
+//            return UIStoryboard(name: "MyDiary", bundle: nil) .
+//                instantiateViewController(withIdentifier: "TTMyDiaryViewController")
         case 1:
             return UIStoryboard(name: "Main", bundle: nil) .
                 instantiateViewController(withIdentifier:"second")

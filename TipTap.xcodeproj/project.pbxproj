@@ -27,6 +27,18 @@
 		A13FF22F2123FF0500FB5642 /* UIPageViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF22E2123FF0500FB5642 /* UIPageViewControllerExtension.swift */; };
 		A13FF2372124047100FB5642 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2362124047100FB5642 /* NotificationExtension.swift */; };
 		A13FF239212409B300FB5642 /* TTSharedVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */; };
+		BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */; };
+		BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */; };
+		BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */; };
+		BAD3AB3021266A9B008F417C /* TTBaseWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2F21266A9A008F417C /* TTBaseWireFrame.swift */; };
+		BAD3AB3221266C4E008F417C /* TTMyDiaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB3121266C4E008F417C /* TTMyDiaryPresenter.swift */; };
+		BAD3AB3421266F80008F417C /* TTMyDiaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB3321266F80008F417C /* TTMyDiaryInteractor.swift */; };
+		BAD3AB3721267165008F417C /* TTMyDiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB3621267165008F417C /* TTMyDiaryService.swift */; };
+		BAD3AB3B212672F3008F417C /* TTServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB3A212672F3008F417C /* TTServiceResult.swift */; };
+		BAD3AB3D21268957008F417C /* TTMyDiaryWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB3C21268957008F417C /* TTMyDiaryWireFrame.swift */; };
+		BAD3AB792126F09F008F417C /* MyDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD3AB782126F09F008F417C /* MyDiary.storyboard */; };
+		BAD3AB812126F83F008F417C /* MyDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB7F2126F83F008F417C /* MyDiaryCell.swift */; };
+		BAD3AB822126F83F008F417C /* MyDiaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAD3AB802126F83F008F417C /* MyDiaryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +89,18 @@
 		A13FF22E2123FF0500FB5642 /* UIPageViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerExtension.swift; sourceTree = "<group>"; };
 		A13FF2362124047100FB5642 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedVCExtension.swift; sourceTree = "<group>"; };
+		BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryViewController.swift; sourceTree = "<group>"; };
+		BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBaseViewController.swift; sourceTree = "<group>"; };
+		BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBasePresenter.swift; sourceTree = "<group>"; };
+		BAD3AB2F21266A9A008F417C /* TTBaseWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBaseWireFrame.swift; sourceTree = "<group>"; };
+		BAD3AB3121266C4E008F417C /* TTMyDiaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryPresenter.swift; sourceTree = "<group>"; };
+		BAD3AB3321266F80008F417C /* TTMyDiaryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryInteractor.swift; sourceTree = "<group>"; };
+		BAD3AB3621267165008F417C /* TTMyDiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryService.swift; sourceTree = "<group>"; };
+		BAD3AB3A212672F3008F417C /* TTServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTServiceResult.swift; sourceTree = "<group>"; };
+		BAD3AB3C21268957008F417C /* TTMyDiaryWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryWireFrame.swift; sourceTree = "<group>"; };
+		BAD3AB782126F09F008F417C /* MyDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyDiary.storyboard; sourceTree = "<group>"; };
+		BAD3AB7F2126F83F008F417C /* MyDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryCell.swift; sourceTree = "<group>"; };
+		BAD3AB802126F83F008F417C /* MyDiaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDiaryCell.xib; sourceTree = "<group>"; };
 		E6376FA0B5704EE127D34759 /* Pods_TipTap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipTap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57B43A8AED4149F9706270F /* Pods-TipTapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipTapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipTapUITests/Pods-TipTapUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,7 +184,7 @@
 				A11F61B42123E6A90029E80A /* AppDelegate.swift */,
 				A11F61B62123E6A90029E80A /* ViewController.swift */,
 				A13FF2322124040200FB5642 /* Common */,
-				A13FF2202123F7F200FB5642 /* SharedDiary */,
+				BAD3AB24212663BC008F417C /* Module */,
 				A13FF21D2123ED3400FB5642 /* Home */,
 				A13FF21C2123EC4C00FB5642 /* Login */,
 				A13FF2282123FB9F00FB5642 /* Supporting Files */,
@@ -207,16 +231,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		A13FF2202123F7F200FB5642 /* SharedDiary */ = {
-			isa = PBXGroup;
-			children = (
-				A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */,
-				A13FF2212123F85100FB5642 /* TTSharedViewController.swift */,
-				A13FF2232123F86000FB5642 /* SharedDiary.storyboard */,
-			);
-			path = SharedDiary;
-			sourceTree = "<group>";
-		};
 		A13FF2252123FB7100FB5642 /* extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,9 +252,79 @@
 		A13FF2322124040200FB5642 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BAD3AB352126712C008F417C /* Service */,
 				A13FF2252123FB7100FB5642 /* extension */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		BAD3AB24212663BC008F417C /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				BAD3AB7A2126F3B8008F417C /* Cell */,
+				BAD3AB2A21266859008F417C /* Base */,
+				BAD3AB27212663F5008F417C /* MyDiary */,
+				BAD3AB26212663EC008F417C /* TodayDiary */,
+				BAD3AB25212663DB008F417C /* SharedDiary */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		BAD3AB25212663DB008F417C /* SharedDiary */ = {
+			isa = PBXGroup;
+			children = (
+				A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */,
+				A13FF2212123F85100FB5642 /* TTSharedViewController.swift */,
+				A13FF2232123F86000FB5642 /* SharedDiary.storyboard */,
+			);
+			path = SharedDiary;
+			sourceTree = "<group>";
+		};
+		BAD3AB26212663EC008F417C /* TodayDiary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TodayDiary;
+			sourceTree = "<group>";
+		};
+		BAD3AB27212663F5008F417C /* MyDiary */ = {
+			isa = PBXGroup;
+			children = (
+				BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */,
+				BAD3AB3121266C4E008F417C /* TTMyDiaryPresenter.swift */,
+				BAD3AB3321266F80008F417C /* TTMyDiaryInteractor.swift */,
+				BAD3AB3C21268957008F417C /* TTMyDiaryWireFrame.swift */,
+				BAD3AB782126F09F008F417C /* MyDiary.storyboard */,
+			);
+			path = MyDiary;
+			sourceTree = "<group>";
+		};
+		BAD3AB2A21266859008F417C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */,
+				BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */,
+				BAD3AB2F21266A9A008F417C /* TTBaseWireFrame.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BAD3AB352126712C008F417C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BAD3AB3A212672F3008F417C /* TTServiceResult.swift */,
+				BAD3AB3621267165008F417C /* TTMyDiaryService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BAD3AB7A2126F3B8008F417C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BAD3AB7F2126F83F008F417C /* MyDiaryCell.swift */,
+				BAD3AB802126F83F008F417C /* MyDiaryCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,8 +444,10 @@
 				A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */,
 				A11F61BC2123E6AA0029E80A /* Assets.xcassets in Resources */,
 				A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */,
+				BAD3AB792126F09F008F417C /* MyDiary.storyboard in Resources */,
 				A11F61BA2123E6A90029E80A /* Main.storyboard in Resources */,
 				A13FF2242123F86000FB5642 /* SharedDiary.storyboard in Resources */,
+				BAD3AB822126F83F008F417C /* MyDiaryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,9 +626,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD3AB3221266C4E008F417C /* TTMyDiaryPresenter.swift in Sources */,
 				A13FF2272123FB8600FB5642 /* UIViewExtension.swift in Sources */,
+				BAD3AB3021266A9B008F417C /* TTBaseWireFrame.swift in Sources */,
 				A13FF21B2123EC4600FB5642 /* TTLoginViewController.swift in Sources */,
+				BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */,
+				BAD3AB3B212672F3008F417C /* TTServiceResult.swift in Sources */,
+				BAD3AB812126F83F008F417C /* MyDiaryCell.swift in Sources */,
+				BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */,
+				BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */,
+				BAD3AB3D21268957008F417C /* TTMyDiaryWireFrame.swift in Sources */,
 				A13FF2372124047100FB5642 /* NotificationExtension.swift in Sources */,
+				BAD3AB3421266F80008F417C /* TTMyDiaryInteractor.swift in Sources */,
+				BAD3AB3721267165008F417C /* TTMyDiaryService.swift in Sources */,
 				A11F61B72123E6A90029E80A /* ViewController.swift in Sources */,
 				A13FF22F2123FF0500FB5642 /* UIPageViewControllerExtension.swift in Sources */,
 				A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */,
@@ -725,7 +821,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 594TR8CRP9;
 				INFOPLIST_FILE = TipTap/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -741,7 +840,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 594TR8CRP9;
 				INFOPLIST_FILE = TipTap/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -757,7 +859,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TipTapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -774,7 +880,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TipTapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -790,7 +900,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TipTapUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -806,7 +920,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TipTapUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
