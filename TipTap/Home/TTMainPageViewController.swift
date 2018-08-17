@@ -23,8 +23,6 @@ class TTMainPageViewController: UIPageViewController {
         switch index {
         case 0:
             return TTMyDiaryWireFrame.createModule()
-//            return UIStoryboard(name: "MyDiary", bundle: nil) .
-//                instantiateViewController(withIdentifier: "TTMyDiaryViewController")
         case 1:
             return UIStoryboard(name: "Main", bundle: nil) .
                 instantiateViewController(withIdentifier:"second")

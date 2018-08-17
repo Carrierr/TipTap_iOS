@@ -10,10 +10,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="tfd-4Q-tY8">
+            <objects>
+                <navigationController storyboardIdentifier="navigator" id="Ki1-RC-4fZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kmP-LJ-ajg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cMS-I7-9QV" kind="show" identifier="login" id="xv2-FT-7S6"/>
+                        <segue destination="j4A-DK-hOU" kind="show" identifier="main" id="fFR-tb-AtU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cH1-SE-IqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-858" y="27"/>
+        </scene>
+        <!--TTMainPageViewController-->
+        <scene sceneID="ZCa-Dy-Yyi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="TTMainPageViewController" id="j4A-DK-hOU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qQV-fj-jVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-108" y="-516"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="2vm-D3-MUV">
             <objects>
-                <viewController id="cMS-I7-9QV" customClass="TTLoginViewController" customModule="TipTap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TTLoginViewController" id="cMS-I7-9QV" customClass="TTLoginViewController" customModule="TipTap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wKc-bO-DI7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,9 +49,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwE-8n-DJO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwE-8n-DJO" customClass="KOLoginButton">
                                 <rect key="frame" x="145" y="408.5" width="84" height="30"/>
                                 <state key="normal" title="LoginButton"/>
+                                <connections>
+                                    <action selector="pressedLoginButton:" destination="cMS-I7-9QV" eventType="touchUpInside" id="ijv-ug-P6m"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vg-DH-ztT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-66" y="18"/>
+            <point key="canvasLocation" x="-10" y="27"/>
         </scene>
     </scenes>
 </document>
