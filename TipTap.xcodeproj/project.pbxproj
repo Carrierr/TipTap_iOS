@@ -258,13 +258,20 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		A13FF23A21271A0C00FB5642 /* TodayDiary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TodayDiary;
+			sourceTree = "<group>";
+		};
 		BAD3AB24212663BC008F417C /* Module */ = {
 			isa = PBXGroup;
 			children = (
 				BAD3AB7A2126F3B8008F417C /* Cell */,
 				BAD3AB2A21266859008F417C /* Base */,
 				BAD3AB27212663F5008F417C /* MyDiary */,
-				BAD3AB26212663EC008F417C /* TodayDiary */,
+				A13FF23A21271A0C00FB5642 /* TodayDiary */,
 				BAD3AB25212663DB008F417C /* SharedDiary */,
 			);
 			path = Module;
@@ -278,13 +285,6 @@
 				A13FF2232123F86000FB5642 /* SharedDiary.storyboard */,
 			);
 			path = SharedDiary;
-			sourceTree = "<group>";
-		};
-		BAD3AB26212663EC008F417C /* TodayDiary */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TodayDiary;
 			sourceTree = "<group>";
 		};
 		BAD3AB27212663F5008F417C /* MyDiary */ = {
