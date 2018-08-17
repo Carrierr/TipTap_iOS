@@ -47,6 +47,7 @@ class TTEditDiaryViewController: UIViewController, TTCurrentTimeGettable,TTCurre
 
 extension TTEditDiaryViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         location = locations.last
         currentLocation { (address) in
             if address != "" {
