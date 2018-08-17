@@ -18,6 +18,14 @@
             </objects>
             <point key="canvasLocation" x="852" y="167"/>
         </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="enj-fR-KjR">
+            <objects>
+                <viewControllerPlaceholder id="xNo-LR-I7a" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJz-wG-dyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="533"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="9Ts-lp-yGY">
             <objects>
@@ -43,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LiT-cA-ySE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="892"/>
+            <point key="canvasLocation" x="151" y="985"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5OD-QZ-cc2">
@@ -70,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCC-Vi-9E1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146" y="892"/>
+            <point key="canvasLocation" x="852" y="856"/>
         </scene>
         <!--TTSharedViewController-->
         <scene sceneID="Xtu-VP-YtH">
@@ -78,7 +86,7 @@
                 <viewControllerPlaceholder storyboardName="SharedDiary" referencedIdentifier="TTSharedViewController" id="qiO-lE-Zd1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auI-uT-zoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="569"/>
+            <point key="canvasLocation" x="1377" y="533"/>
         </scene>
     </scenes>
 </document>
