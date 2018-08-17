@@ -38,8 +38,15 @@ class TTLoginViewController: ViewController {
                     default:
                         UIAlertController.showMessage(error.description)
                     }
+                    return
                 }
+
             }
+            KOSessionTask.userMeTask(completion: { (error, me) in
+                print("id : \(me?.id ?? "")")
+                print("id : \(me?.nickname ?? "")")
+                print("id : \(me?.account?.email ?? "")")
+            })
         })
     }
 }

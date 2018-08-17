@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Diary View Controller-->
+        <scene sceneID="cmJ-rq-A68">
+            <objects>
+                <viewController storyboardIdentifier="TTEditDiaryViewController" id="UQu-jj-iLM" customClass="TTEditDiaryViewController" customModule="TipTap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="50A-cX-2w7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuz-z2-Jpu">
+                                <rect key="frame" x="170" y="50" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbk-yG-Ere">
+                                <rect key="frame" x="166" y="81" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ha-Hl-udO">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="2vd-yl-ZzU"/>
+                                    <constraint firstAttribute="height" constant="128" id="5K4-4w-UXm"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3n-4e-X0d">
+                                <rect key="frame" x="151" y="417" width="73" height="30"/>
+                                <state key="normal" title="pick photo"/>
+                                <connections>
+                                    <action selector="pressedPickPhoto:" destination="UQu-jj-iLM" eventType="touchUpInside" id="33I-MW-zHG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1Ha-Hl-udO" firstAttribute="centerX" secondItem="50A-cX-2w7" secondAttribute="centerX" id="0OZ-Vq-0nC"/>
+                            <constraint firstItem="Y3n-4e-X0d" firstAttribute="centerX" secondItem="50A-cX-2w7" secondAttribute="centerX" id="2Zy-tv-lVM"/>
+                            <constraint firstItem="dbk-yG-Ere" firstAttribute="centerX" secondItem="50A-cX-2w7" secondAttribute="centerX" id="3vE-NX-Xjq"/>
+                            <constraint firstItem="Zuz-z2-Jpu" firstAttribute="top" secondItem="dhI-j2-qDw" secondAttribute="top" constant="30" id="Zqw-pC-kH1"/>
+                            <constraint firstItem="1Ha-Hl-udO" firstAttribute="centerY" secondItem="50A-cX-2w7" secondAttribute="centerY" id="fFu-qf-2bI"/>
+                            <constraint firstItem="dbk-yG-Ere" firstAttribute="top" secondItem="Zuz-z2-Jpu" secondAttribute="bottom" constant="10" id="gSE-TN-Ygg"/>
+                            <constraint firstItem="Zuz-z2-Jpu" firstAttribute="centerX" secondItem="50A-cX-2w7" secondAttribute="centerX" id="hkr-V5-yQi"/>
+                            <constraint firstItem="Y3n-4e-X0d" firstAttribute="top" secondItem="1Ha-Hl-udO" secondAttribute="bottom" constant="20" id="nsg-6K-sTp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dhI-j2-qDw"/>
+                    </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="Zuz-z2-Jpu" id="sbb-WJ-o1h"/>
+                        <outlet property="locationLabel" destination="dbk-yG-Ere" id="h7L-tN-d9e"/>
+                        <outlet property="travelPicture" destination="1Ha-Hl-udO" id="PIT-DO-FMA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LHL-Xt-5Go" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="562" y="-174"/>
+        </scene>
+    </scenes>
+</document>

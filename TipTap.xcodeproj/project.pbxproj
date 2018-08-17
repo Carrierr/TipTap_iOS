@@ -29,6 +29,10 @@
 		A13FF239212409B300FB5642 /* TTSharedVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */; };
 		A13FF23C21271ED400FB5642 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13FF23B21271ED400FB5642 /* KakaoOpenSDK.framework */; };
 		A13FF23E2127316B00FB5642 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF23D2127316B00FB5642 /* UIAlertControllerExtension.swift */; };
+		A13FF2412127370C00FB5642 /* EditDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13FF2402127370C00FB5642 /* EditDiary.storyboard */; };
+		A13FF2432127371D00FB5642 /* TTEditDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2422127371D00FB5642 /* TTEditDiaryViewController.swift */; };
+		A13FF246212738C900FB5642 /* TTCurrentTimeGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF245212738C900FB5642 /* TTCurrentTimeGettable.swift */; };
+		A13FF24821273C0100FB5642 /* TTCurrentLocationGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF24721273C0100FB5642 /* TTCurrentLocationGettable.swift */; };
 		BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */; };
 		BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */; };
 		BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */; };
@@ -93,6 +97,10 @@
 		A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedVCExtension.swift; sourceTree = "<group>"; };
 		A13FF23B21271ED400FB5642 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		A13FF23D2127316B00FB5642 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
+		A13FF2402127370C00FB5642 /* EditDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditDiary.storyboard; sourceTree = "<group>"; };
+		A13FF2422127371D00FB5642 /* TTEditDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTEditDiaryViewController.swift; sourceTree = "<group>"; };
+		A13FF245212738C900FB5642 /* TTCurrentTimeGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCurrentTimeGettable.swift; sourceTree = "<group>"; };
+		A13FF24721273C0100FB5642 /* TTCurrentLocationGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCurrentLocationGettable.swift; sourceTree = "<group>"; };
 		BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBaseViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBasePresenter.swift; sourceTree = "<group>"; };
@@ -259,6 +267,7 @@
 		A13FF2322124040200FB5642 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A13FF2442127389800FB5642 /* protocol */,
 				BAD3AB352126712C008F417C /* Service */,
 				A13FF2252123FB7100FB5642 /* extension */,
 			);
@@ -272,11 +281,30 @@
 			path = TodayDiary;
 			sourceTree = "<group>";
 		};
+		A13FF23F212736ED00FB5642 /* EditDiary */ = {
+			isa = PBXGroup;
+			children = (
+				A13FF2422127371D00FB5642 /* TTEditDiaryViewController.swift */,
+				A13FF2402127370C00FB5642 /* EditDiary.storyboard */,
+			);
+			path = EditDiary;
+			sourceTree = "<group>";
+		};
+		A13FF2442127389800FB5642 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A13FF245212738C900FB5642 /* TTCurrentTimeGettable.swift */,
+				A13FF24721273C0100FB5642 /* TTCurrentLocationGettable.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
 		BAD3AB24212663BC008F417C /* Module */ = {
 			isa = PBXGroup;
 			children = (
 				BAD3AB7A2126F3B8008F417C /* Cell */,
 				BAD3AB2A21266859008F417C /* Base */,
+				A13FF23F212736ED00FB5642 /* EditDiary */,
 				BAD3AB27212663F5008F417C /* MyDiary */,
 				A13FF23A21271A0C00FB5642 /* TodayDiary */,
 				BAD3AB25212663DB008F417C /* SharedDiary */,
@@ -454,6 +482,7 @@
 				BAD3AB792126F09F008F417C /* MyDiary.storyboard in Resources */,
 				A11F61BA2123E6A90029E80A /* Main.storyboard in Resources */,
 				A13FF2242123F86000FB5642 /* SharedDiary.storyboard in Resources */,
+				A13FF2412127370C00FB5642 /* EditDiary.storyboard in Resources */,
 				BAD3AB822126F83F008F417C /* MyDiaryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,8 +663,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAD3AB3221266C4E008F417C /* TTMyDiaryPresenter.swift in Sources */,
+				A13FF24821273C0100FB5642 /* TTCurrentLocationGettable.swift in Sources */,
 				A13FF2272123FB8600FB5642 /* UIViewExtension.swift in Sources */,
 				BAD3AB3021266A9B008F417C /* TTBaseWireFrame.swift in Sources */,
+				A13FF2432127371D00FB5642 /* TTEditDiaryViewController.swift in Sources */,
 				A13FF21B2123EC4600FB5642 /* TTLoginViewController.swift in Sources */,
 				A13FF23E2127316B00FB5642 /* UIAlertControllerExtension.swift in Sources */,
 				BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */,
@@ -644,6 +675,7 @@
 				BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */,
 				BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */,
 				BAD3AB3D21268957008F417C /* TTMyDiaryWireFrame.swift in Sources */,
+				A13FF246212738C900FB5642 /* TTCurrentTimeGettable.swift in Sources */,
 				A13FF2372124047100FB5642 /* NotificationExtension.swift in Sources */,
 				BAD3AB3421266F80008F417C /* TTMyDiaryInteractor.swift in Sources */,
 				BAD3AB3721267165008F417C /* TTMyDiaryService.swift in Sources */,
