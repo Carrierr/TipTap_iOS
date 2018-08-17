@@ -20,7 +20,7 @@ class TTMyDiaryViewController: TTBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.onViewDidLoad()
+        presenter?.onViewDidLoad()
     }
 
     override func setupUI() {
