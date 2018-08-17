@@ -27,6 +27,8 @@
 		A13FF22F2123FF0500FB5642 /* UIPageViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF22E2123FF0500FB5642 /* UIPageViewControllerExtension.swift */; };
 		A13FF2372124047100FB5642 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2362124047100FB5642 /* NotificationExtension.swift */; };
 		A13FF239212409B300FB5642 /* TTSharedVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */; };
+		A13FF23C21271ED400FB5642 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13FF23B21271ED400FB5642 /* KakaoOpenSDK.framework */; };
+		A13FF23E2127316B00FB5642 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF23D2127316B00FB5642 /* UIAlertControllerExtension.swift */; };
 		BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */; };
 		BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */; };
 		BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */; };
@@ -89,6 +91,8 @@
 		A13FF22E2123FF0500FB5642 /* UIPageViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerExtension.swift; sourceTree = "<group>"; };
 		A13FF2362124047100FB5642 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedVCExtension.swift; sourceTree = "<group>"; };
+		A13FF23B21271ED400FB5642 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		A13FF23D2127316B00FB5642 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBaseViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBasePresenter.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34F647004371BECCAD0A25F5 /* Pods_TipTap.framework in Frameworks */,
+				A13FF23C21271ED400FB5642 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +141,7 @@
 		55BB96A52F8D756EFE61D575 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A13FF23B21271ED400FB5642 /* KakaoOpenSDK.framework */,
 				E6376FA0B5704EE127D34759 /* Pods_TipTap.framework */,
 				94155FE91CA75E45A37911BD /* Pods_TipTapTests.framework */,
 				3ACC9DFC0C426B15FA874266 /* Pods_TipTapUITests.framework */,
@@ -237,6 +243,7 @@
 				A13FF2262123FB8600FB5642 /* UIViewExtension.swift */,
 				A13FF22E2123FF0500FB5642 /* UIPageViewControllerExtension.swift */,
 				A13FF2362124047100FB5642 /* NotificationExtension.swift */,
+				A13FF23D2127316B00FB5642 /* UIAlertControllerExtension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -630,6 +637,7 @@
 				A13FF2272123FB8600FB5642 /* UIViewExtension.swift in Sources */,
 				BAD3AB3021266A9B008F417C /* TTBaseWireFrame.swift in Sources */,
 				A13FF21B2123EC4600FB5642 /* TTLoginViewController.swift in Sources */,
+				A13FF23E2127316B00FB5642 /* UIAlertControllerExtension.swift in Sources */,
 				BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */,
 				BAD3AB3B212672F3008F417C /* TTServiceResult.swift in Sources */,
 				BAD3AB812126F83F008F417C /* MyDiaryCell.swift in Sources */,
@@ -820,10 +828,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 594TR8CRP9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TipTap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"ScratchCard\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -839,10 +861,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 594TR8CRP9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TipTap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"ScratchCard\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTap;
 				PRODUCT_NAME = "$(TARGET_NAME)";

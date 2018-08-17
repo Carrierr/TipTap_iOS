@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KakaoOpenSDK
 
 class TTLoginViewController: ViewController {
 
@@ -19,5 +20,26 @@ class TTLoginViewController: ViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func pressedLoginButton(_ sender: Any) {
+        let session: KOSession = KOSession.shared();
+        
+        if session.isOpen() {
+            session.close()
+        }
+        
+        session.open(completionHandler: { (error) -> Void in
+            
+            if !session.isOpen() {
+                if let error = error as NSError? {
+                    switch error.code {
+                    case Int(KOErrorCancelled.rawValue):
+                        break
+                    default:
+                        UIAlertController.showMessage(error.description)
+                    }
+                }
+            }
+        })
     }
 }

@@ -13,7 +13,7 @@
         <!--Main Page View Controller-->
         <scene sceneID="U0s-wQ-jn5">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="H92-zS-I3V" customClass="TTMainPageViewController" customModule="TipTap" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="TTMainPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="H92-zS-I3V" customClass="TTMainPageViewController" customModule="TipTap" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zGb-lG-rSY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="852" y="167"/>
