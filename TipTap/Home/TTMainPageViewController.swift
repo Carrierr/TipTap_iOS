@@ -57,10 +57,14 @@ class TTMainPageViewController: UIPageViewController {
     
     private func setTipTapPageViewController(){
         let mainViewController = orderedViewControllers[1]
-        setViewControllers([mainViewController],
-                           direction: .forward,
-                           animated: true,
-                           completion: nil)
+        DispatchQueue.main.async {
+
+            
+            self.setViewControllers([mainViewController],
+                               direction: .forward,
+                               animated: true,
+                               completion: nil)
+        }
     }
     
     private func addObserver(){

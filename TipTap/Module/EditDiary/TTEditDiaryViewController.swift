@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class TTEditDiaryViewController: UIViewController, TTCurrentTimeGettable,TTCurrentLocationGettable {
+class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTCurrentLocationGettable {
     var locationManager : CLLocationManager?
     var location        : CLLocation?
     lazy var imagePicker = UIImagePickerController()
