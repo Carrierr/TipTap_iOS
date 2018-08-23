@@ -21,8 +21,8 @@ extension TTCurrentTimeGettable {
         let now = Date()
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current
-        formatter.dateFormat = "yyyy MMM dd E HH:mm"
-        
+        //        formatter.dateFormat = "yyyy MMM dd E HH:mm" //2018 Aug 24 Fri 00:26
+        formatter.dateFormat = "yyyy MMM dd - HH:mm"
         return formatter.string(from: now)
     }
 }
