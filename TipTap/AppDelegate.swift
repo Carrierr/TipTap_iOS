@@ -53,10 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate func reloadRootViewController() {
         let isOpened = KOSession.shared().isOpen()
-        if !isOpened {
-            let mainViewController = self.mainViewController as! UINavigationController
-            mainViewController.popToRootViewController(animated: true)
-        }
+//        if !isOpened {
+//            let mainViewController = self.mainViewController as! UINavigationController
+//            mainViewController.popToRootViewController(animated: true)
+//        }
         
         self.window?.rootViewController = isOpened ? UINavigationController(rootViewController: self.mainViewController!)  : UINavigationController(rootViewController: self.loginViewController!)
         self.window?.makeKeyAndVisible()

@@ -18,11 +18,11 @@ protocol TTDiaryOutlineContainer where Self : UIView {
     var firstDescLabel : UILabel? { get set }
     var titleLabel     : UILabel? { get set }
     
-    func contentChanged()
+    func contentChangedOutline()
 }
 
 extension TTDiaryOutlineContainer{
-    func contentChanged(){
+    func contentChangedOutline(){
         guard
             let yearLabel = yearLabel,
             let monthLabel = monthLabel,
