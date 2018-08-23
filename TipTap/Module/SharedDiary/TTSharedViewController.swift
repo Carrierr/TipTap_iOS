@@ -7,7 +7,10 @@
 //
 
 import UIKit
+import Darwin
+
 import ScratchCard
+
 
 class TTSharedViewController: UIViewController {
     
@@ -20,9 +23,12 @@ class TTSharedViewController: UIViewController {
     func attachScratchView(){
         //Coupon : 지우고 나서의 원본 이미지
         //MaskImage : 지울 이미지
+        
+        let randomNumber = arc4random_uniform(3) + 1
+        
         scratchView  = ScratchUIView(frame: CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height),
                                      Coupon: self.view.asImage(),
-                                     MaskImage: "mask.png",
+                                     MaskImage: "scratch0\(randomNumber).png",
                                      ScratchWidth: CGFloat(40))
         scratchView.delegate = self
         self.view.addSubview(scratchView)

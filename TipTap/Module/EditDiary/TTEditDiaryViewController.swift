@@ -22,6 +22,7 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
         super.viewDidLoad()
         setupImagePicker()
         setUpLocationManager()
+        
         dateLabel.text = currentTime()
     }
 
@@ -62,6 +63,8 @@ extension TTEditDiaryViewController: CLLocationManagerDelegate{
 extension TTEditDiaryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            
+
             travelPicture.image = image
         }
         
