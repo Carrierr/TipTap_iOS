@@ -176,10 +176,10 @@ open class ScratchView: UIView {
         let linePath = UIBezierPath()
         linePath.move(to: start)
         linePath.addLine(to: end)
-        linePath.lineCapStyle = .round
+        linePath.lineCapStyle = .butt
         line.lineWidth = scratchWidth
         line.path = linePath.cgPath
-        line.opacity = 1
+        line.opacity = 0.8
         line.strokeColor = UIColor.white.cgColor
         line.lineCap = "round"
         layer.addSublayer(line)

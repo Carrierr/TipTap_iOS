@@ -12,8 +12,15 @@ class TTBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        initNavigationBar()
         setupBinding()
         setupUI()
+    }
+    
+    func initNavigationBar(){
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
     }
     
     func setupUI(){
