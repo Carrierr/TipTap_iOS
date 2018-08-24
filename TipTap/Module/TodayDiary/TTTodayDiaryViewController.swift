@@ -13,12 +13,8 @@ class TTTodayDiaryViewController: TTBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        if let postView = Bundle.main.loadNibNamed("TTPostView", owner: self, options: nil)?[0] as? UIView {
-//            self.postView.addSubview(postView)
-//        }
-        let tempView = TTPostTempView(frame: self.view.frame)
-        self.postView.addSubview(tempView)
+        let mainView = TTPostMainView(frame: self.view.frame)
+        self.postView.addSubview(mainView)
     }
 
     override func didReceiveMemoryWarning() {
