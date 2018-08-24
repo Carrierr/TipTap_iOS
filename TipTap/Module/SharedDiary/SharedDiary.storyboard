@@ -180,6 +180,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="EqW-ro-Ufx" firstAttribute="top" secondItem="EK5-2O-ak1" secondAttribute="top" id="K71-so-Iaz"/>
                             <constraint firstItem="EK5-2O-ak1" firstAttribute="trailing" secondItem="EqW-ro-Ufx" secondAttribute="trailing" id="M5c-Ln-Q7T"/>

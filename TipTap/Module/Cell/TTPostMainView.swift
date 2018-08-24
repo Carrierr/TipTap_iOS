@@ -83,14 +83,46 @@ class TTPostMainView: UIView, TTDiaryOutlineContainer, TTPostContainer {
     
     var titleLabel: UILabel? = UILabel()
     
+    var pressedPost : ((_ postIndex : Int)->())?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentChangedOutline()
         contentChangedPost()
+        bindingButtonAction()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func bindingButtonAction(){
+        postButton1?.tag = 1
+        postButton1?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
+        postButton2?.tag = 2
+        postButton2?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
+        postButton3?.tag = 3
+        postButton3?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
+        postButton4?.tag = 4
+        postButton4?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
+        postButton5?.tag = 5
+        postButton5?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
+        postButton6?.tag = 6
+        postButton6?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
+        postButton7?.tag = 7
+        postButton7?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
+        postButton8?.tag = 8
+        postButton8?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
+        postButton9?.tag = 9
+        postButton9?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
+        postButton10?.tag = 10
+        postButton10?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
+
+    }
+    
+    @objc private func pressedPostButton(sender : UIButton){
+        print("tag : \(sender.tag)")
+        pressedPost!(sender.tag)
     }
     
 }

@@ -12,7 +12,7 @@ import Darwin
 import ScratchCard
 
 
-class TTSharedViewController: UIViewController {
+class TTSharedViewController: TTBaseViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     

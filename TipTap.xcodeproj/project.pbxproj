@@ -37,8 +37,6 @@
 		A13FF2432127371D00FB5642 /* TTEditDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2422127371D00FB5642 /* TTEditDiaryViewController.swift */; };
 		A13FF246212738C900FB5642 /* TTCurrentTimeGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF245212738C900FB5642 /* TTCurrentTimeGettable.swift */; };
 		A13FF24821273C0100FB5642 /* TTCurrentLocationGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF24721273C0100FB5642 /* TTCurrentLocationGettable.swift */; };
-		A13FF24A2127E3BC00FB5642 /* TTPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2492127E3BC00FB5642 /* TTPostView.swift */; };
-		A13FF24C2127E3C600FB5642 /* TTPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13FF24B2127E3C600FB5642 /* TTPostView.xib */; };
 		A13FF2502127E73D00FB5642 /* TTTodayDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF24F2127E73D00FB5642 /* TTTodayDiaryViewController.swift */; };
 		A13FF2522128255100FB5642 /* TTDiaryOutlineContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2512128255100FB5642 /* TTDiaryOutlineContainer.swift */; };
 		A13FF2542128350400FB5642 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2532128350400FB5642 /* UIColorExtension.swift */; };
@@ -50,6 +48,12 @@
 		A1466795213068F300A15CF3 /* TTDetailDiaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146678F2130664800A15CF3 /* TTDetailDiaryPresenter.swift */; };
 		A1466796213068F700A15CF3 /* TTDetailDiaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146678E2130664800A15CF3 /* TTDetailDiaryInteractor.swift */; };
 		A1466797213068FA00A15CF3 /* TTDetailDiaryWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146678D2130664800A15CF3 /* TTDetailDiaryWireFrame.swift */; };
+		A146679B21307A6900A15CF3 /* TTDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146679921307A6900A15CF3 /* TTDetailImageCell.swift */; };
+		A146679C21307A6900A15CF3 /* TTDetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A146679A21307A6900A15CF3 /* TTDetailImageCell.xib */; };
+		A146679E21307B0700A15CF3 /* sampleImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A146679D21307B0700A15CF3 /* sampleImage.jpeg */; };
+		A14667A121307B3300A15CF3 /* TTDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146679F21307B3300A15CF3 /* TTDetailTextCell.swift */; };
+		A14667A221307B3300A15CF3 /* TTDetailTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14667A021307B3300A15CF3 /* TTDetailTextCell.xib */; };
+		A14667A421307C6E00A15CF3 /* TTDetailDiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14667A321307C6E00A15CF3 /* TTDetailDiaryService.swift */; };
 		BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */; };
 		BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */; };
 		BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */; };
@@ -122,8 +126,6 @@
 		A13FF2422127371D00FB5642 /* TTEditDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTEditDiaryViewController.swift; sourceTree = "<group>"; };
 		A13FF245212738C900FB5642 /* TTCurrentTimeGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCurrentTimeGettable.swift; sourceTree = "<group>"; };
 		A13FF24721273C0100FB5642 /* TTCurrentLocationGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCurrentLocationGettable.swift; sourceTree = "<group>"; };
-		A13FF2492127E3BC00FB5642 /* TTPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPostView.swift; sourceTree = "<group>"; };
-		A13FF24B2127E3C600FB5642 /* TTPostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTPostView.xib; sourceTree = "<group>"; };
 		A13FF24F2127E73D00FB5642 /* TTTodayDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTodayDiaryViewController.swift; sourceTree = "<group>"; };
 		A13FF2512128255100FB5642 /* TTDiaryOutlineContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDiaryOutlineContainer.swift; sourceTree = "<group>"; };
 		A13FF2532128350400FB5642 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -135,6 +137,12 @@
 		A146678F2130664800A15CF3 /* TTDetailDiaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailDiaryPresenter.swift; sourceTree = "<group>"; };
 		A1466790213066AF00A15CF3 /* DetailDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailDiary.storyboard; sourceTree = "<group>"; };
 		A14667922130677100A15CF3 /* TTDetailDiaryOutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailDiaryOutlineView.swift; sourceTree = "<group>"; };
+		A146679921307A6900A15CF3 /* TTDetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailImageCell.swift; sourceTree = "<group>"; };
+		A146679A21307A6900A15CF3 /* TTDetailImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTDetailImageCell.xib; sourceTree = "<group>"; };
+		A146679D21307B0700A15CF3 /* sampleImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleImage.jpeg; sourceTree = "<group>"; };
+		A146679F21307B3300A15CF3 /* TTDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailTextCell.swift; sourceTree = "<group>"; };
+		A14667A021307B3300A15CF3 /* TTDetailTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTDetailTextCell.xib; sourceTree = "<group>"; };
+		A14667A321307C6E00A15CF3 /* TTDetailDiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailDiaryService.swift; sourceTree = "<group>"; };
 		BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBaseViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBasePresenter.swift; sourceTree = "<group>"; };
@@ -294,6 +302,7 @@
 		A13FF2282123FB9F00FB5642 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A146679D21307B0700A15CF3 /* sampleImage.jpeg */,
 				A13FF22C2123FBEB00FB5642 /* mask.png */,
 			);
 			path = "Supporting Files";
@@ -340,6 +349,7 @@
 		A146678B2130662A00A15CF3 /* DetailDiary */ = {
 			isa = PBXGroup;
 			children = (
+				A146679821307A4500A15CF3 /* Cell */,
 				A146678C2130664800A15CF3 /* TTDetailDiaryViewController.swift */,
 				A146678F2130664800A15CF3 /* TTDetailDiaryPresenter.swift */,
 				A146678E2130664800A15CF3 /* TTDetailDiaryInteractor.swift */,
@@ -348,6 +358,17 @@
 				A1466790213066AF00A15CF3 /* DetailDiary.storyboard */,
 			);
 			path = DetailDiary;
+			sourceTree = "<group>";
+		};
+		A146679821307A4500A15CF3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A146679921307A6900A15CF3 /* TTDetailImageCell.swift */,
+				A146679A21307A6900A15CF3 /* TTDetailImageCell.xib */,
+				A146679F21307B3300A15CF3 /* TTDetailTextCell.swift */,
+				A14667A021307B3300A15CF3 /* TTDetailTextCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		BAD3AB24212663BC008F417C /* Module */ = {
@@ -404,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				BAD3AB3A212672F3008F417C /* TTServiceResult.swift */,
+				A14667A321307C6E00A15CF3 /* TTDetailDiaryService.swift */,
 				BAD3AB3621267165008F417C /* TTMyDiaryService.swift */,
 			);
 			path = Service;
@@ -414,8 +436,6 @@
 			children = (
 				BAD3AB7F2126F83F008F417C /* MyDiaryCell.swift */,
 				BAD3AB802126F83F008F417C /* MyDiaryCell.xib */,
-				A13FF2492127E3BC00FB5642 /* TTPostView.swift */,
-				A13FF24B2127E3C600FB5642 /* TTPostView.xib */,
 				A13FF2552128464800FB5642 /* TTPostMainView.swift */,
 			);
 			path = Cell;
@@ -534,15 +554,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A146679C21307A6900A15CF3 /* TTDetailImageCell.xib in Resources */,
 				A13FF22D2123FBEB00FB5642 /* mask.png in Resources */,
 				A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */,
-				A13FF24C2127E3C600FB5642 /* TTPostView.xib in Resources */,
+				A14667A221307B3300A15CF3 /* TTDetailTextCell.xib in Resources */,
 				A1466791213066AF00A15CF3 /* DetailDiary.storyboard in Resources */,
 				A11F61BC2123E6AA0029E80A /* Assets.xcassets in Resources */,
 				A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */,
 				BAD3AB792126F09F008F417C /* MyDiary.storyboard in Resources */,
 				A11F61BA2123E6A90029E80A /* Main.storyboard in Resources */,
 				A13FF2242123F86000FB5642 /* SharedDiary.storyboard in Resources */,
+				A146679E21307B0700A15CF3 /* sampleImage.jpeg in Resources */,
 				A13FF2412127370C00FB5642 /* EditDiary.storyboard in Resources */,
 				BAD3AB822126F83F008F417C /* MyDiaryCell.xib in Resources */,
 			);
@@ -734,6 +756,7 @@
 				BAD3AB3021266A9B008F417C /* TTBaseWireFrame.swift in Sources */,
 				A13FF2432127371D00FB5642 /* TTEditDiaryViewController.swift in Sources */,
 				A13FF21B2123EC4600FB5642 /* TTLoginViewController.swift in Sources */,
+				A14667A421307C6E00A15CF3 /* TTDetailDiaryService.swift in Sources */,
 				A13FF23E2127316B00FB5642 /* UIAlertControllerExtension.swift in Sources */,
 				BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */,
 				A1466795213068F300A15CF3 /* TTDetailDiaryPresenter.swift in Sources */,
@@ -743,6 +766,7 @@
 				BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */,
 				BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */,
 				BAD3AB3D21268957008F417C /* TTMyDiaryWireFrame.swift in Sources */,
+				A14667A121307B3300A15CF3 /* TTDetailTextCell.swift in Sources */,
 				A0AD5DD2212CFAB200D76543 /* TestDiary.swift in Sources */,
 				A13FF2542128350400FB5642 /* UIColorExtension.swift in Sources */,
 				A13FF246212738C900FB5642 /* TTCurrentTimeGettable.swift in Sources */,
@@ -758,10 +782,10 @@
 				A13FF22F2123FF0500FB5642 /* UIPageViewControllerExtension.swift in Sources */,
 				A13FF2562128464800FB5642 /* TTPostMainView.swift in Sources */,
 				A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */,
-				A13FF24A2127E3BC00FB5642 /* TTPostView.swift in Sources */,
 				A13FF239212409B300FB5642 /* TTSharedVCExtension.swift in Sources */,
 				A13FF2222123F85100FB5642 /* TTSharedViewController.swift in Sources */,
 				A11F61B52123E6A90029E80A /* AppDelegate.swift in Sources */,
+				A146679B21307A6900A15CF3 /* TTDetailImageCell.swift in Sources */,
 				A0AD5DD4212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

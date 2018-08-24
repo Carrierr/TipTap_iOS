@@ -13,16 +13,17 @@ import Foundation
  */
 protocol TTDetailDiaryInteractorInputProtocol: class {
     //request list
-    func requestMyDiaryList()
+    func requestDetailDiaryList()
 }
 
 final class TTDetailDiaryInteractor: TTDetailDiaryInteractorInputProtocol{
-    private lazy var service = TTMyDiaryService()
+    
+    private lazy var service = TTDetailDiaryService()
     weak var presenter : TTDetailDiaryInteractorOutputProtocol?
     
     
-    func requestMyDiaryList() {
-        service.fetchMyDiaryList { (result) in
+    func requestDetailDiaryList() {
+        service.fetchDetailDiaryList { (result) in
             switch result{
             case .success(let result):
                 self.presenter?.setModuleDatas(result)

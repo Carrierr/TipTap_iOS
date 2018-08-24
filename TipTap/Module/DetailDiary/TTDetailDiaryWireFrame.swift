@@ -30,7 +30,7 @@ final class TTDetailDiaryWireFrame: TTBaseWireFrame, TTDetailDiaryWireFrameProto
     }
     
     static func createModule()->TTDetailDiaryViewController{
-        let view       = UIStoryboard(name: "MyDiary", bundle: nil) .
+        let view       = UIStoryboard(name: "DetailDiary", bundle: nil) .
                             instantiateViewController(withIdentifier: "TTDetailDiaryViewController") as! TTDetailDiaryViewController
         let wireframe  = TTDetailDiaryWireFrame()
         let interactor = TTDetailDiaryInteractor()

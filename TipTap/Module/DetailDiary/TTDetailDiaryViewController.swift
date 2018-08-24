@@ -15,21 +15,32 @@ protocol TTDetailDiaryViewProtocol:class{
 
 class TTDetailDiaryViewController: TTBaseViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     var presenter:TTDetailDiaryPresenterProtocol?
     @IBOutlet weak var outlineView: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let mainView = TTDetailDiaryOutlineView(frame: self.view.frame)
-        outlineView.addSubview(mainView)
-//        presenter?.onViewDidLoad()
+        presenter?.onViewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
+    private func setupNavigaion(){
+        let rightBarButtonItem = UIBarButtonItem(title: "삭제", style: .plain, target: self, action: #selector(pressedDeleteButton))
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        self.navigationController?.navigationBar.tintColor = UIColor.white;
+    }
+    
     override func setupUI() {
-        self.tableView.allowsSelection = false
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        setupNavigaion()
+        let mainView = TTDetailDiaryOutlineView(frame: self.outlineView.bounds)
+        outlineView.addSubview(mainView)
         registerCell()
     }
     
@@ -38,43 +49,60 @@ class TTDetailDiaryViewController: TTBaseViewController {
     }
     
     func registerCell(){
-        self.tableView.register(UINib.init(nibName:"MyDiaryCell",bundle:nil), forCellReuseIdentifier: "MyDiaryCell")
+        self.collectionView?.register(UINib(nibName: "TTDetailImageCell", bundle: nil), forCellWithReuseIdentifier: "TTDetailImageCell")
+        self.collectionView?.register(UINib(nibName: "TTDetailTextCell", bundle: nil), forCellWithReuseIdentifier: "TTDetailTextCell")
+    }
+    
+    @objc private func pressedDeleteButton(){
+        
     }
 }
 
 extension TTDetailDiaryViewController: TTDetailDiaryViewProtocol {
     func startNetworking() {
-        
+        self.collectionView.reloadData()
     }
     
     func stopNetworking() {
-        self.tableView.reloadData()
+        self.collectionView.reloadData()
     }
     
 }
 
-extension TTDetailDiaryViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.didSelectTableViewRowAt(indexPath: indexPath)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+
+
+extension TTDetailDiaryViewController : UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.didSelectCollectionViewRowAt(indexPath: indexPath)
     }
 }
 
 
 
-extension TTDetailDiaryViewController: UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+extension TTDetailDiaryViewController : UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return (presenter?.sizeForItem(collectionView, indexPath: indexPath))!
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+}
+
+
+
+extension TTDetailDiaryViewController : UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (presenter?.numberOfRows(in: section))!
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return (presenter?.configureCell(tableView, forRowAt: indexPath))!
+    
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return (presenter?.configureCell(collectionView, forRowAt: indexPath))!
     }
 }
+
+
