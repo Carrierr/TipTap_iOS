@@ -14,6 +14,9 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
     var location        : CLLocation?
     lazy var imagePicker = UIImagePickerController()
     
+    @IBOutlet weak var imageViewTopConst: NSLayoutConstraint!
+    @IBOutlet weak var imageViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var textCountLabel: UILabel!
     @IBOutlet weak var placeHolderLabel: UILabel!
     @IBOutlet weak var boardTextView: UITextView!
     @IBOutlet weak var accessoryBottomConst: NSLayoutConstraint!
@@ -23,12 +26,16 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "TIPTAP #01"
+        
         setupImagePicker()
         setUpLocationManager()
-        title = "TIPTAP #01"
-        dateLabel.text = currentTime()
         setupTextView()
         registerNotification()
+        navigationController?.navigationBar.tintColor = UIColor.gray;
+        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        setImageView(isHidden: true)
+        dateLabel.text = currentTime()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +73,7 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
         NotificationCenter.default.addObserver(self, selector: #selector(onUIKeyboardWillHideNotification(noti:)), name: .UIKeyboardWillHide, object: nil)
     }
     
+    
     @objc func onUIKeyboardWillShowNotification(noti : Notification){
         
         if let keyboardFrame: NSValue = noti.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
@@ -84,7 +92,25 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
     @IBAction func pressedPickPhoto(_ sender: Any) {
         self.present(imagePicker, animated: true, completion: nil)
     }
+    
+    @IBAction func pressedCloseButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func setImageView(isHidden : Bool){
+        if isHidden {
+            imageViewHeight.constant = 0
+            imageViewTopConst.constant = 0
+            travelPicture.isHidden = isHidden
+        }else{
+            imageViewHeight.constant = 67
+            imageViewTopConst.constant = 27
+            travelPicture.isHidden = isHidden
+        }
+    }
 }
+
+
 
 extension TTEditDiaryViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -100,12 +126,13 @@ extension TTEditDiaryViewController: CLLocationManagerDelegate{
     }
 }
 
+
+
 extension TTEditDiaryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            
-
             travelPicture.image = image
+            setImageView(isHidden: false)
         }
         
         dismiss(animated: true, completion: nil)
@@ -113,10 +140,10 @@ extension TTEditDiaryViewController: UIImagePickerControllerDelegate, UINavigati
 }
 
 
+
+
 extension TTEditDiaryViewController : UITextViewDelegate{
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        
-        
         return true
     }
     
@@ -126,6 +153,8 @@ extension TTEditDiaryViewController : UITextViewDelegate{
         }else{
             placeHolderLabel.isHidden = true
         }
+        
+        textCountLabel.text = "\(textView.text.count)/800"
     }
     
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
