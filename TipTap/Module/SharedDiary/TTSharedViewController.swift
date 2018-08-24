@@ -68,6 +68,7 @@ extension TTSharedViewController: UICollectionViewDataSource {
         if (indexPath.row == 0) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryCell", for: indexPath) as! TTSharedCollectionViewDiaryCell
             cell.titleLabel.text = "10\nTIPTAP"
+            cell.locationLabel.text = "from. 서울시 마포구 망원동"
             
             return cell
             
