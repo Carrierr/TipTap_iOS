@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TTSharedDiaryView : UIView, TTPostContainer {
+class TTSharedDiaryView : UIView, TTPostContainer{
     
     var postContainerView1: UIView? = UIView()
     
