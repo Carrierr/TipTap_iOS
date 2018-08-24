@@ -19,18 +19,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="302" height="296"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmx-z7-cZd">
-                        <rect key="frame" x="0.0" y="0.0" width="302" height="296"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmx-z7-cZd">
+                        <rect key="frame" x="55" y="0.0" width="192" height="296"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <font key="NSFont" metaFont="cellTitle"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="bmx-z7-cZd" secondAttribute="trailing" id="bwz-iz-N6P"/>
+                <constraint firstAttribute="trailing" secondItem="bmx-z7-cZd" secondAttribute="trailing" constant="55" id="bwz-iz-N6P"/>
                 <constraint firstItem="bmx-z7-cZd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="neQ-0D-HHm"/>
-                <constraint firstItem="bmx-z7-cZd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uZ7-bh-b3r"/>
+                <constraint firstItem="bmx-z7-cZd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="55" id="uZ7-bh-b3r"/>
                 <constraint firstAttribute="bottom" secondItem="bmx-z7-cZd" secondAttribute="bottom" id="ukz-lq-gpF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

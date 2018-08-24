@@ -18,17 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TipTap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etk-EV-vi4">
-                                <rect key="frame" x="162.5" y="323" width="50" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="cco-22-XxL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="etk-EV-vi4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="8pV-zc-Abi"/>
-                            <constraint firstItem="etk-EV-vi4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vlG-h1-UQJ"/>
+                            <constraint firstItem="cco-22-XxL" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="17d-cH-6da"/>
+                            <constraint firstItem="cco-22-XxL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="az1-f9-VhI"/>
+                            <constraint firstAttribute="trailing" secondItem="cco-22-XxL" secondAttribute="trailing" id="bGA-eW-eMO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cco-22-XxL" secondAttribute="bottom" id="gs8-RI-Gt4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,4 +37,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splash" width="375" height="667"/>
+    </resources>
 </document>
