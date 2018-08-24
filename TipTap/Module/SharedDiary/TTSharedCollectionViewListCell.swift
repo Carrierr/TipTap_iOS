@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TTSharedCollectionViewCell: UICollectionViewCell {
+class TTSharedCollectionViewListCell: UICollectionViewCell {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var diaryNumberLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!

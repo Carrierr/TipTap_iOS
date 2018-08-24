@@ -60,19 +60,39 @@ class TTSharedViewController: UIViewController {
 
 extension TTSharedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return diarys.count
+        return diarys.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryCell", for: indexPath) as! TTSharedCollectionViewCell
         
-        let diary = diarys[indexPath.row]
-        cell.timeLabel.text = "11:30"
-        cell.diaryNumberLabel.text = diary.number
-        cell.locationLabel.text = diary.location
-        cell.bodyLabel.text = diary.body
-        
-        return cell
+        if (indexPath.row == 0) {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryCell", for: indexPath) as! TTSharedCollectionViewDiaryCell
+            cell.titleLabel.text = "10\nTIPTAP"
+            
+            return cell
+            
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryListCell", for: indexPath) as! TTSharedCollectionViewListCell
+            
+            let diary = diarys[indexPath.row - 1]
+            cell.timeLabel.text = "11:30"
+            cell.diaryNumberLabel.text = diary.number
+            cell.locationLabel.text = diary.location
+            cell.bodyLabel.text = diary.body
+            
+            return cell
+        }
     }
 }
+
+extension TTSharedViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if (indexPath.row == 0 ) {
+            return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        } else {
+            return CGSize(width: 1, height: 1)
+        }
+    }
+}
+
 
