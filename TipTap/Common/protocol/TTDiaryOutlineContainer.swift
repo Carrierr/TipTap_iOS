@@ -77,9 +77,9 @@ extension TTDiaryOutlineContainer{
         horLineView.backgroundColor = UIColor(hexString: "8B8B8B", alpha: 0.5)
         horLineView.snp.makeConstraints { (make) in
             make.width.equalTo(1)
-            make.top.equalTo(dateLabel.snp.bottom)
+            make.top.equalTo(dateLabel.snp.bottom).offset(20)
             make.left.equalToSuperview().offset(21)
-            make.bottom.equalTo(brandLabel.snp.top).offset(-20)
+            make.bottom.equalTo(brandLabel.snp.top).offset(-30)
         }
         
         brandLabel.text = "TIPTAP"
@@ -87,7 +87,7 @@ extension TTDiaryOutlineContainer{
         brandLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
         brandLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
-            make.bottom.equalTo(firstDescLabel.snp.top).offset(-33.5)
+            make.bottom.equalTo(firstDescLabel.snp.top).offset(-35)
         }
 
         firstDescLabel.text = "당신의\n첫번째 TIPTAP을\n작성해주세요."
@@ -99,6 +99,8 @@ extension TTDiaryOutlineContainer{
             make.left.equalToSuperview().offset(21)
             make.bottom.equalToSuperview().offset(-106)
         }
+        
+        firstDescLabel.isHidden = true 
         
     }
 }

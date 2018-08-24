@@ -14,21 +14,49 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
     var location        : CLLocation?
     lazy var imagePicker = UIImagePickerController()
     
+    @IBOutlet weak var imageViewTopConst: NSLayoutConstraint!
+    @IBOutlet weak var imageViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var textCountLabel: UILabel!
+    @IBOutlet weak var placeHolderLabel: UILabel!
+    @IBOutlet weak var boardTextView: UITextView!
+    @IBOutlet weak var accessoryBottomConst: NSLayoutConstraint!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var travelPicture: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "TIPTAP #01"
+        
         setupImagePicker()
         setUpLocationManager()
-        title = "TIPTAP #01"
+        setupTextView()
+        registerNotification()
+        navigationController?.navigationBar.tintColor = UIColor.gray;
+        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        setImageView(isHidden: true)
         dateLabel.text = currentTime()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if boardTextView.text?.count == 0 {
+            placeHolderLabel.isHidden = false
+        }else{
+            placeHolderLabel.isHidden = true
+        }
+        
+    }
+    
     private func setupImagePicker(){
         imagePicker.delegate   = self
         imagePicker.sourceType = .savedPhotosAlbum
+    }
+    
+    private func setupTextView(){
+        boardTextView.becomeFirstResponder()
+        boardTextView.delegate = self
+        
     }
     
     func setUpLocationManager(){
@@ -40,11 +68,49 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
         locationManager?.startUpdatingLocation()
     }
     
+    func registerNotification(){
+        NotificationCenter.default.addObserver(self, selector:  #selector(onUIKeyboardWillShowNotification(noti:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onUIKeyboardWillHideNotification(noti:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    
+    @objc func onUIKeyboardWillShowNotification(noti : Notification){
+        
+        if let keyboardFrame: NSValue = noti.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.accessoryBottomConst.constant = -keyboardHeight
+        }
+    }
+    
+    
+    @objc func onUIKeyboardWillHideNotification(noti : Notification){
+        self.accessoryBottomConst.constant = 0
+    }
+    
     
     @IBAction func pressedPickPhoto(_ sender: Any) {
         self.present(imagePicker, animated: true, completion: nil)
     }
+    
+    @IBAction func pressedCloseButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func setImageView(isHidden : Bool){
+        if isHidden {
+            imageViewHeight.constant = 0
+            imageViewTopConst.constant = 0
+            travelPicture.isHidden = isHidden
+        }else{
+            imageViewHeight.constant = 67
+            imageViewTopConst.constant = 27
+            travelPicture.isHidden = isHidden
+        }
+    }
 }
+
+
 
 extension TTEditDiaryViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -60,14 +126,41 @@ extension TTEditDiaryViewController: CLLocationManagerDelegate{
     }
 }
 
+
+
 extension TTEditDiaryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            
-
             travelPicture.image = image
+            setImageView(isHidden: false)
         }
         
         dismiss(animated: true, completion: nil)
+    }
+}
+
+
+
+
+extension TTEditDiaryViewController : UITextViewDelegate{
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        return true
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text?.count == 0 {
+            placeHolderLabel.isHidden = false
+        }else{
+            placeHolderLabel.isHidden = true
+        }
+        
+        textCountLabel.text = "\(textView.text.count)/800"
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        if(textView.text.count == 0){
+            placeHolderLabel.isHidden = true
+        }
+        return true;
     }
 }
