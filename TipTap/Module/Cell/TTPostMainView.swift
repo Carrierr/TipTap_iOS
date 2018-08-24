@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TTPostTempView: UIView, TTDiaryOutlineContainer, TTPostContainer {
+class TTPostMainView: UIView, TTDiaryOutlineContainer, TTPostContainer {
     var postContainerView1: UIView? = UIView()
     
     var postContainerView2: UIView? = UIView()

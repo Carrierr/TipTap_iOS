@@ -22,7 +22,7 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
         super.viewDidLoad()
         setupImagePicker()
         setUpLocationManager()
-        
+        title = "TIPTAP #01"
         dateLabel.text = currentTime()
     }
 

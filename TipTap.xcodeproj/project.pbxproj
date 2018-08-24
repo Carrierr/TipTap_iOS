@@ -42,7 +42,7 @@
 		A13FF2502127E73D00FB5642 /* TTTodayDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF24F2127E73D00FB5642 /* TTTodayDiaryViewController.swift */; };
 		A13FF2522128255100FB5642 /* TTDiaryOutlineContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2512128255100FB5642 /* TTDiaryOutlineContainer.swift */; };
 		A13FF2542128350400FB5642 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2532128350400FB5642 /* UIColorExtension.swift */; };
-		A13FF2562128464800FB5642 /* TTPostTempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2552128464800FB5642 /* TTPostTempView.swift */; };
+		A13FF2562128464800FB5642 /* TTPostMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2552128464800FB5642 /* TTPostMainView.swift */; };
 		A13FF25821284C3C00FB5642 /* TTPostContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF25721284C3C00FB5642 /* TTPostContainer.swift */; };
 		BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */; };
 		BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */; };
@@ -121,7 +121,7 @@
 		A13FF24F2127E73D00FB5642 /* TTTodayDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTodayDiaryViewController.swift; sourceTree = "<group>"; };
 		A13FF2512128255100FB5642 /* TTDiaryOutlineContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDiaryOutlineContainer.swift; sourceTree = "<group>"; };
 		A13FF2532128350400FB5642 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		A13FF2552128464800FB5642 /* TTPostTempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPostTempView.swift; sourceTree = "<group>"; };
+		A13FF2552128464800FB5642 /* TTPostMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPostMainView.swift; sourceTree = "<group>"; };
 		A13FF25721284C3C00FB5642 /* TTPostContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPostContainer.swift; sourceTree = "<group>"; };
 		BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBaseViewController.swift; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 				BAD3AB802126F83F008F417C /* MyDiaryCell.xib */,
 				A13FF2492127E3BC00FB5642 /* TTPostView.swift */,
 				A13FF24B2127E3C600FB5642 /* TTPostView.xib */,
-				A13FF2552128464800FB5642 /* TTPostTempView.swift */,
+				A13FF2552128464800FB5642 /* TTPostMainView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -724,7 +724,7 @@
 				A13FF2502127E73D00FB5642 /* TTTodayDiaryViewController.swift in Sources */,
 				A11F61B72123E6A90029E80A /* ViewController.swift in Sources */,
 				A13FF22F2123FF0500FB5642 /* UIPageViewControllerExtension.swift in Sources */,
-				A13FF2562128464800FB5642 /* TTPostTempView.swift in Sources */,
+				A13FF2562128464800FB5642 /* TTPostMainView.swift in Sources */,
 				A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */,
 				A13FF24A2127E3BC00FB5642 /* TTPostView.swift in Sources */,
 				A13FF239212409B300FB5642 /* TTSharedVCExtension.swift in Sources */,
