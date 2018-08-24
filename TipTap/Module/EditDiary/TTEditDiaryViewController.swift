@@ -14,6 +14,9 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
     var location        : CLLocation?
     lazy var imagePicker = UIImagePickerController()
     
+    @IBOutlet weak var placeHolderLabel: UILabel!
+    @IBOutlet weak var boardTextView: UITextView!
+    @IBOutlet weak var accessoryBottomConst: NSLayoutConstraint!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var travelPicture: UIImageView!
@@ -24,11 +27,29 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
         setUpLocationManager()
         title = "TIPTAP #01"
         dateLabel.text = currentTime()
+        setupTextView()
+        registerNotification()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if boardTextView.text?.count == 0 {
+            placeHolderLabel.isHidden = false
+        }else{
+            placeHolderLabel.isHidden = true
+        }
+        
+    }
+    
     private func setupImagePicker(){
         imagePicker.delegate   = self
         imagePicker.sourceType = .savedPhotosAlbum
+    }
+    
+    private func setupTextView(){
+        boardTextView.becomeFirstResponder()
+        boardTextView.delegate = self
+        
     }
     
     func setUpLocationManager(){
@@ -38,6 +59,25 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
         locationManager?.requestWhenInUseAuthorization()
         locationManager?.requestAlwaysAuthorization()
         locationManager?.startUpdatingLocation()
+    }
+    
+    func registerNotification(){
+        NotificationCenter.default.addObserver(self, selector:  #selector(onUIKeyboardWillShowNotification(noti:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onUIKeyboardWillHideNotification(noti:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func onUIKeyboardWillShowNotification(noti : Notification){
+        
+        if let keyboardFrame: NSValue = noti.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.accessoryBottomConst.constant = -keyboardHeight
+        }
+    }
+    
+    
+    @objc func onUIKeyboardWillHideNotification(noti : Notification){
+        self.accessoryBottomConst.constant = 0
     }
     
     
@@ -69,5 +109,29 @@ extension TTEditDiaryViewController: UIImagePickerControllerDelegate, UINavigati
         }
         
         dismiss(animated: true, completion: nil)
+    }
+}
+
+
+extension TTEditDiaryViewController : UITextViewDelegate{
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        
+        
+        return true
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text?.count == 0 {
+            placeHolderLabel.isHidden = false
+        }else{
+            placeHolderLabel.isHidden = true
+        }
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        if(textView.text.count == 0){
+            placeHolderLabel.isHidden = true
+        }
+        return true;
     }
 }
