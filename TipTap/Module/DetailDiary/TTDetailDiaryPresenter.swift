@@ -13,11 +13,12 @@ protocol TTDetailDiaryPresenterProtocol: TTBasePresenterProtocol {
     //View->Presenter
     func reloadData()
     
-    //UITableView
-    func didSelectTableViewRowAt(indexPath: IndexPath)
+    //UICollectionView
+    func didSelectCollectionViewRowAt(indexPath: IndexPath)
     func numberOfRows(in section:Int)->Int
     func numberOfSection()->Int
-    func configureCell(_ tableView:UITableView, forRowAt indexPath : IndexPath)->UITableViewCell
+    func sizeForItem(_ collectionView : UICollectionView, indexPath : IndexPath)->CGSize
+    func configureCell(_ collectionView:UICollectionView, forRowAt indexPath : IndexPath)->UICollectionViewCell
 }
 
 
@@ -46,6 +47,32 @@ final class TTDetailDiaryPresenter {
 }
 
 extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
+    
+    func sizeForItem(_ collectionView: UICollectionView, indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    
+    
+    func configureCell(_ collectionView: UICollectionView, forRowAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == 0 {
+            let cell : TTDetailImageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TTDetailImageCell", for: indexPath) as! TTDetailImageCell
+            cell.diaryImageView.image = UIImage(named: "sampleImage.jpeg")
+            return cell
+        }else{
+            let cell : TTDetailTextCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TTDetailTextCell", for: indexPath) as! TTDetailTextCell
+            if let content = moduleDatas?[indexPath.row-1] {
+                cell.diaryContentLabel.text = content
+            }
+            return cell
+        }
+    }
+    
+    func didSelectCollectionViewRowAt(indexPath: IndexPath) {
+        print("select \(indexPath.row)")
+    }
+    
+    
+    
     func numberOfRows(in section: Int) -> Int {
         if let count = moduleDatas?.count {
             return count
@@ -56,21 +83,7 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
     func numberOfSection() -> Int {
         return 1
     }
-    
-    func didSelectTableViewRowAt(indexPath: IndexPath) {
-        print("select \(indexPath.row)")
-    }
-    
-    func configureCell(_ tableView: UITableView, forRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyDiaryCell") as? MyDiaryCell
-        if let title = moduleDatas?[indexPath.row] {
-            cell?.titleLabel.text = title
-        }
-        cell?.monthLabel.text = "July"
-        cell?.dayLabel.text   = "22"
-        return cell!
-    }
-    
+
     func moreLoad() {
         
     }
@@ -81,7 +94,7 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
     
     func reloadData(){
         view?.startNetworking()
-        interactor.requestMyDiaryList()
+        interactor.requestDetailDiaryList()
     }
     
     

@@ -111,6 +111,7 @@ extension TTPostContainer {
     }
     
     
+    
     func setImage(){
         postImageView1?.image = UIImage(named: "post1")
         postImageView2?.image = UIImage(named: "post2")

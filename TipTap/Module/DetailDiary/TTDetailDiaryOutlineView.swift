@@ -10,19 +10,19 @@ import Foundation
 import UIKit
 
 class TTDetailDiaryOutlineView: UIView, TTDiaryOutlineContainer {
-    var yearLabel: UILabel?
+    var yearLabel: UILabel? = UILabel()
     
-    var monthLabel: UILabel?
+    var monthLabel: UILabel? = UILabel()
     
-    var dateLabel: UILabel?
+    var dateLabel: UILabel? = UILabel()
     
-    var horLineView: UIView?
+    var horLineView: UIView? = UIView()
     
-    var brandLabel: UILabel?
+    var brandLabel: UILabel? = UILabel()
     
-    var firstDescLabel: UILabel?
+    var firstDescLabel: UILabel?  = UILabel()
     
-    var titleLabel: UILabel?
+    var titleLabel: UILabel? = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
