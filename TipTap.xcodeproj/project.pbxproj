@@ -10,6 +10,8 @@
 		07BD1428244B322D6BEBCACB /* Pods_TipTapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94155FE91CA75E45A37911BD /* Pods_TipTapTests.framework */; };
 		34F647004371BECCAD0A25F5 /* Pods_TipTap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6376FA0B5704EE127D34759 /* Pods_TipTap.framework */; };
 		3F041A962C6129A655139026 /* Pods_TipTapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACC9DFC0C426B15FA874266 /* Pods_TipTapUITests.framework */; };
+		A0AD5DD0212CF91C00D76543 /* TTSharedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DCF212CF91C00D76543 /* TTSharedCollectionViewCell.swift */; };
+		A0AD5DD2212CFAB200D76543 /* TestDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DD1212CFAB200D76543 /* TestDiary.swift */; };
 		A11F61B52123E6A90029E80A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61B42123E6A90029E80A /* AppDelegate.swift */; };
 		A11F61B72123E6A90029E80A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61B62123E6A90029E80A /* ViewController.swift */; };
 		A11F61BA2123E6A90029E80A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A11F61B82123E6A90029E80A /* Main.storyboard */; };
@@ -72,6 +74,8 @@
 		8A6C5BA4B6A3D70CF9F7B527 /* Pods-TipTapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipTapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipTapTests/Pods-TipTapTests.release.xcconfig"; sourceTree = "<group>"; };
 		94155FE91CA75E45A37911BD /* Pods_TipTapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipTapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9BA63B41D47F3B40D2519F /* Pods-TipTap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipTap.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipTap/Pods-TipTap.release.xcconfig"; sourceTree = "<group>"; };
+		A0AD5DCF212CF91C00D76543 /* TTSharedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedCollectionViewCell.swift; sourceTree = "<group>"; };
+		A0AD5DD1212CFAB200D76543 /* TestDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDiary.swift; sourceTree = "<group>"; };
 		A11F61B12123E6A90029E80A /* TipTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11F61B42123E6A90029E80A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A11F61B62123E6A90029E80A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +321,8 @@
 			children = (
 				A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */,
 				A13FF2212123F85100FB5642 /* TTSharedViewController.swift */,
+				A0AD5DCF212CF91C00D76543 /* TTSharedCollectionViewCell.swift */,
+				A0AD5DD1212CFAB200D76543 /* TestDiary.swift */,
 				A13FF2232123F86000FB5642 /* SharedDiary.storyboard */,
 			);
 			path = SharedDiary;
@@ -675,8 +681,10 @@
 				BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */,
 				BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */,
 				BAD3AB3D21268957008F417C /* TTMyDiaryWireFrame.swift in Sources */,
+				A0AD5DD2212CFAB200D76543 /* TestDiary.swift in Sources */,
 				A13FF246212738C900FB5642 /* TTCurrentTimeGettable.swift in Sources */,
 				A13FF2372124047100FB5642 /* NotificationExtension.swift in Sources */,
+				A0AD5DD0212CF91C00D76543 /* TTSharedCollectionViewCell.swift in Sources */,
 				BAD3AB3421266F80008F417C /* TTMyDiaryInteractor.swift in Sources */,
 				BAD3AB3721267165008F417C /* TTMyDiaryService.swift in Sources */,
 				A11F61B72123E6A90029E80A /* ViewController.swift in Sources */,
@@ -859,7 +867,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 594TR8CRP9;
+				DEVELOPMENT_TEAM = YU29Y98Z9J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -892,7 +900,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 594TR8CRP9;
+				DEVELOPMENT_TEAM = YU29Y98Z9J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
