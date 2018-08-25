@@ -23,7 +23,7 @@ protocol TTMyDiaryPresenterProtocol: TTBasePresenterProtocol {
 
 protocol TTMyDiaryInteractorOutputProtocol: class {
     //Interactor->Presenter
-    func setModuleDatas(_ moduleDatas: [String])
+    func setModuleDatas(_ moduleDatas: [[String:String]])
     func didReceivedError(_ error: Error)
     func showMessage(message : String)
 }
@@ -31,7 +31,7 @@ protocol TTMyDiaryInteractorOutputProtocol: class {
 
 final class TTMyDiaryPresenter {
     weak var view : TTMyDiaryViewProtocol?
-    fileprivate var moduleDatas  : [String]?
+    fileprivate var moduleDatas  : [[String:String]]?
     fileprivate let wireframe    : TTMyDiaryWireFrameProtocol
     fileprivate let interactor   : TTMyDiaryInteractorInputProtocol
     
@@ -59,16 +59,36 @@ extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol {
     
     func didSelectTableViewRowAt(indexPath: IndexPath) {
         print("select \(indexPath.row)")
+        wireframe.navigate(to: .show(item: ["tempString"]))
     }
     
     func configureCell(_ tableView: UITableView, forRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyDiaryCell") as? MyDiaryCell
-        if let title = moduleDatas?[indexPath.row] {
-            cell?.titleLabel.text = title
+        var day = ""
+        var start = ""
+        var destination = ""
+        
+        if let data = moduleDatas?[indexPath.row] {
+            day = data["day"]!
+            start = data["start"]!
+            destination = data["destination"]!
         }
-        cell?.monthLabel.text = "July"
-        cell?.dayLabel.text   = "22"
+        
+        
+        if indexPath.row == 0 {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TTMyDiaryFirstCell") as? TTMyDiaryFirstCell
+            cell?.dayLabel.text = day
+            cell?.startLocation.text = start
+            cell?.destinationLabel.text = destination
+            cell?.selectionStyle = .none
         return cell!
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TTMyDiaryNormalCell") as? TTMyDiaryNormalCell
+            cell?.dayLabel.text = day
+            cell?.startLocation.text = start
+            cell?.destinationLabel.text = destination
+            cell?.selectionStyle = .none
+            return cell!
+        }
     }
     
     func moreLoad() {
@@ -90,7 +110,7 @@ extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol {
 
 
 extension TTMyDiaryPresenter : TTMyDiaryInteractorOutputProtocol{
-    func setModuleDatas(_ moduleDatas: [String]) {
+    func setModuleDatas(_ moduleDatas: [[String:String]]) {
         self.moduleDatas = moduleDatas
         view?.startNetworking()
     }

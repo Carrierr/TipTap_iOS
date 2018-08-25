@@ -45,7 +45,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uki-0I-6JX">
-                                <rect key="frame" x="253" y="622" width="96" height="32"/>
+                                <rect key="frame" x="226" y="622" width="123" height="32"/>
                                 <state key="normal" image="writeButton"/>
                                 <connections>
                                     <segue destination="nR4-w6-Z14" kind="presentation" id="oeq-Y7-mmq"/>
@@ -133,6 +133,6 @@
     </scenes>
     <resources>
         <image name="setting" width="24" height="24"/>
-        <image name="writeButton" width="96" height="32"/>
+        <image name="writeButton" width="123" height="32"/>
     </resources>
 </document>

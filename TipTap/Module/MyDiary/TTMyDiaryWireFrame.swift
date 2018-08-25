@@ -24,6 +24,7 @@ final class TTMyDiaryWireFrame: TTBaseWireFrame, TTMyDiaryWireFrameProtocol{
         case .alert(let title, let message):
             break
         case .show(let item):
+            self.view.show(TTDetailDiaryWireFrame.createModule(), sender: nil)
             break
             
         }
