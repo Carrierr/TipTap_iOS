@@ -109,31 +109,175 @@
                                                                 <constraint firstAttribute="width" constant="17" id="wRG-Kc-eXp"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIP-qd-Pe4" userLabel="Time Label">
-                                                            <rect key="frame" x="25" y="0.0" width="42" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIP-qd-Pe4" userLabel="Time Label">
+                                                            <rect key="frame" x="25" y="0.0" width="36" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="36" id="9UI-hy-jTf"/>
+                                                                <constraint firstAttribute="height" constant="20" id="pHc-e3-twu"/>
+                                                            </constraints>
+                                                            <attributedString key="attributedText">
+                                                                <fragment content="Label">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="22" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="we2-aQ-2fJ" userLabel="Diary Number Label">
-                                                            <rect key="frame" x="86" y="0.0" width="222" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="84" y="0.0" width="224" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="Gmo-N2-MaI"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2i-JS-5V4" userLabel="Diary Location Label">
-                                                            <rect key="frame" x="86" y="28" width="222" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2i-JS-5V4" userLabel="Diary Location Label">
+                                                            <rect key="frame" x="86" y="27" width="222" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="MUu-vM-cOc"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="nQM-UW-PLv"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <attributedString key="attributedText">
+                                                                <fragment content="Label">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="16" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yir-jg-ddC" userLabel="Diary Body Label">
-                                                            <rect key="frame" x="86" y="57" width="222" height="91"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yir-jg-ddC" userLabel="Diary Body Label">
+                                                            <rect key="frame" x="86" y="56" width="222" height="92"/>
+                                                            <attributedString key="attributedText">
+                                                                <fragment content="오늘">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <font key="NSOriginalFont" size="12" name=".AppleSystemUIFont"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="날씨는">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <font key="NSOriginalFont" size="12" name=".AppleSystemUIFont"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="하루종일">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <font key="NSOriginalFont" size="12" name=".AppleSystemUIFont"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="맑음">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <font key="NSOriginalFont" size="12" name=".AppleSystemUIFont"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=". ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="너무">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <font key="NSOriginalFont" size="12" name=".AppleSystemUIFont"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="더워서">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <font key="NSOriginalFont" size="12" name=".AppleSystemUIFont"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="아무">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <font key="NSOriginalFont" size="12" name=".AppleSystemUIFont"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="생각도">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <font key="NSOriginalFont" size="12" name=".AppleSystemUIFont"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="들지">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <font key="NSOriginalFont" size="12" name=".AppleSystemUIFont"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="않는다">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name=".AppleSDGothicNeoI-Regular"/>
+                                                                        <font key="NSOriginalFont" size="12" name=".AppleSystemUIFont"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -142,9 +286,9 @@
                                                         <constraint firstAttribute="trailing" secondItem="yir-jg-ddC" secondAttribute="trailing" constant="67" id="ASI-im-QVo"/>
                                                         <constraint firstItem="sIP-qd-Pe4" firstAttribute="top" secondItem="8XU-aO-ENz" secondAttribute="top" id="DW2-gQ-xCZ"/>
                                                         <constraint firstItem="sIP-qd-Pe4" firstAttribute="leading" secondItem="l0S-px-aEh" secondAttribute="trailing" constant="8" id="FBJ-EB-a5P"/>
+                                                        <constraint firstItem="we2-aQ-2fJ" firstAttribute="leading" secondItem="8XU-aO-ENz" secondAttribute="leading" constant="84" id="FjG-aH-19q"/>
                                                         <constraint firstItem="l0S-px-aEh" firstAttribute="top" secondItem="8XU-aO-ENz" secondAttribute="top" constant="9" id="LS8-TW-UXw"/>
                                                         <constraint firstAttribute="trailing" secondItem="n2i-JS-5V4" secondAttribute="trailing" constant="67" id="Lnt-Xs-L1t"/>
-                                                        <constraint firstItem="we2-aQ-2fJ" firstAttribute="leading" secondItem="sIP-qd-Pe4" secondAttribute="trailing" constant="19" id="RGM-tl-haG"/>
                                                         <constraint firstItem="yir-jg-ddC" firstAttribute="top" secondItem="n2i-JS-5V4" secondAttribute="bottom" constant="8" id="UE0-Om-Es3"/>
                                                         <constraint firstItem="yir-jg-ddC" firstAttribute="leading" secondItem="n2i-JS-5V4" secondAttribute="leading" id="UxH-P8-IdG"/>
                                                         <constraint firstItem="we2-aQ-2fJ" firstAttribute="top" secondItem="sIP-qd-Pe4" secondAttribute="top" id="X6j-Cz-Mn1"/>
