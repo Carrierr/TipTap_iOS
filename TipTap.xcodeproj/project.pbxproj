@@ -54,6 +54,10 @@
 		A14667A121307B3300A15CF3 /* TTDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146679F21307B3300A15CF3 /* TTDetailTextCell.swift */; };
 		A14667A221307B3300A15CF3 /* TTDetailTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14667A021307B3300A15CF3 /* TTDetailTextCell.xib */; };
 		A14667A421307C6E00A15CF3 /* TTDetailDiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14667A321307C6E00A15CF3 /* TTDetailDiaryService.swift */; };
+		A14667A82130D11D00A15CF3 /* TTMyDiaryFirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14667A62130D11D00A15CF3 /* TTMyDiaryFirstCell.swift */; };
+		A14667A92130D11D00A15CF3 /* TTMyDiaryFirstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14667A72130D11D00A15CF3 /* TTMyDiaryFirstCell.xib */; };
+		A14667AC2130D13300A15CF3 /* TTMyDiaryNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14667AA2130D13300A15CF3 /* TTMyDiaryNormalCell.swift */; };
+		A14667AD2130D13300A15CF3 /* TTMyDiaryNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14667AB2130D13300A15CF3 /* TTMyDiaryNormalCell.xib */; };
 		BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */; };
 		BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */; };
 		BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */; };
@@ -143,6 +147,10 @@
 		A146679F21307B3300A15CF3 /* TTDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailTextCell.swift; sourceTree = "<group>"; };
 		A14667A021307B3300A15CF3 /* TTDetailTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTDetailTextCell.xib; sourceTree = "<group>"; };
 		A14667A321307C6E00A15CF3 /* TTDetailDiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailDiaryService.swift; sourceTree = "<group>"; };
+		A14667A62130D11D00A15CF3 /* TTMyDiaryFirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryFirstCell.swift; sourceTree = "<group>"; };
+		A14667A72130D11D00A15CF3 /* TTMyDiaryFirstCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTMyDiaryFirstCell.xib; sourceTree = "<group>"; };
+		A14667AA2130D13300A15CF3 /* TTMyDiaryNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryNormalCell.swift; sourceTree = "<group>"; };
+		A14667AB2130D13300A15CF3 /* TTMyDiaryNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTMyDiaryNormalCell.xib; sourceTree = "<group>"; };
 		BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBaseViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBasePresenter.swift; sourceTree = "<group>"; };
@@ -371,6 +379,17 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		A14667A52130D0D400A15CF3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A14667A62130D11D00A15CF3 /* TTMyDiaryFirstCell.swift */,
+				A14667A72130D11D00A15CF3 /* TTMyDiaryFirstCell.xib */,
+				A14667AA2130D13300A15CF3 /* TTMyDiaryNormalCell.swift */,
+				A14667AB2130D13300A15CF3 /* TTMyDiaryNormalCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		BAD3AB24212663BC008F417C /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +421,7 @@
 		BAD3AB27212663F5008F417C /* MyDiary */ = {
 			isa = PBXGroup;
 			children = (
+				A14667A52130D0D400A15CF3 /* Cell */,
 				BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */,
 				BAD3AB3121266C4E008F417C /* TTMyDiaryPresenter.swift */,
 				BAD3AB3321266F80008F417C /* TTMyDiaryInteractor.swift */,
@@ -557,6 +577,7 @@
 				A146679C21307A6900A15CF3 /* TTDetailImageCell.xib in Resources */,
 				A13FF22D2123FBEB00FB5642 /* mask.png in Resources */,
 				A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */,
+				A14667AD2130D13300A15CF3 /* TTMyDiaryNormalCell.xib in Resources */,
 				A14667A221307B3300A15CF3 /* TTDetailTextCell.xib in Resources */,
 				A1466791213066AF00A15CF3 /* DetailDiary.storyboard in Resources */,
 				A11F61BC2123E6AA0029E80A /* Assets.xcassets in Resources */,
@@ -564,6 +585,7 @@
 				BAD3AB792126F09F008F417C /* MyDiary.storyboard in Resources */,
 				A11F61BA2123E6A90029E80A /* Main.storyboard in Resources */,
 				A13FF2242123F86000FB5642 /* SharedDiary.storyboard in Resources */,
+				A14667A92130D11D00A15CF3 /* TTMyDiaryFirstCell.xib in Resources */,
 				A146679E21307B0700A15CF3 /* sampleImage.jpeg in Resources */,
 				A13FF2412127370C00FB5642 /* EditDiary.storyboard in Resources */,
 				BAD3AB822126F83F008F417C /* MyDiaryCell.xib in Resources */,
@@ -766,6 +788,7 @@
 				BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */,
 				BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */,
 				BAD3AB3D21268957008F417C /* TTMyDiaryWireFrame.swift in Sources */,
+				A14667A82130D11D00A15CF3 /* TTMyDiaryFirstCell.swift in Sources */,
 				A14667A121307B3300A15CF3 /* TTDetailTextCell.swift in Sources */,
 				A0AD5DD2212CFAB200D76543 /* TestDiary.swift in Sources */,
 				A13FF2542128350400FB5642 /* UIColorExtension.swift in Sources */,
@@ -782,6 +805,7 @@
 				A13FF22F2123FF0500FB5642 /* UIPageViewControllerExtension.swift in Sources */,
 				A13FF2562128464800FB5642 /* TTPostMainView.swift in Sources */,
 				A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */,
+				A14667AC2130D13300A15CF3 /* TTMyDiaryNormalCell.swift in Sources */,
 				A13FF239212409B300FB5642 /* TTSharedVCExtension.swift in Sources */,
 				A13FF2222123F85100FB5642 /* TTSharedViewController.swift in Sources */,
 				A11F61B52123E6A90029E80A /* AppDelegate.swift in Sources */,

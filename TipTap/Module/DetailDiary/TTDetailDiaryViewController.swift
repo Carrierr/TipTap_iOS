@@ -15,9 +15,9 @@ protocol TTDetailDiaryViewProtocol:class{
 
 class TTDetailDiaryViewController: TTBaseViewController {
     
+    @IBOutlet weak var brandLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     var presenter:TTDetailDiaryPresenterProtocol?
-    @IBOutlet weak var outlineView: UIView!
     
     
     override func viewDidLoad() {
@@ -39,9 +39,8 @@ class TTDetailDiaryViewController: TTBaseViewController {
     
     override func setupUI() {
         setupNavigaion()
-        let mainView = TTDetailDiaryOutlineView(frame: self.outlineView.bounds)
-        outlineView.addSubview(mainView)
         registerCell()
+        brandLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
     }
     
     override func setupBinding() {

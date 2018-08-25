@@ -83,6 +83,7 @@ extension TTDiaryOutlineContainer{
         }
         
         brandLabel.text = "TIPTAP"
+        brandLabel.textColor = UIColor(hexString: "373737")
         brandLabel.font = UIFont.systemFont(ofSize: 14)
         brandLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
         brandLabel.snp.makeConstraints { (make) in

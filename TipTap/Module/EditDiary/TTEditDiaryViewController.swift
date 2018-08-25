@@ -32,12 +32,11 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
         setUpLocationManager()
         setupTextView()
         registerNotification()
-        navigationController?.navigationBar.tintColor = UIColor.gray;
-        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        setupNavigation()
         setImageView(isHidden: true)
         dateLabel.text = currentTime()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if boardTextView.text?.count == 0 {
@@ -47,6 +46,13 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
         }
         
     }
+    
+    private func setupNavigation(){
+        navigationController?.navigationBar.tintColor = UIColor.gray;
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+    }
+    
     
     private func setupImagePicker(){
         imagePicker.delegate   = self
@@ -86,6 +92,12 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
     
     @objc func onUIKeyboardWillHideNotification(noti : Notification){
         self.accessoryBottomConst.constant = 0
+    }
+    
+
+    
+    @IBAction func submitDiary(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
