@@ -16,7 +16,7 @@ class TTSharedCollectionViewDiaryCell: UICollectionViewCell {
     @IBOutlet var verLineView: UIView!
     
     override func awakeFromNib() {
-        let tempView = TTSharedDiaryView(frame: self.view.frame)
+        let tempView = TTSharedDiaryView(frame: self.view.bounds)
         self.view.addSubview(tempView)
         
         locationLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))

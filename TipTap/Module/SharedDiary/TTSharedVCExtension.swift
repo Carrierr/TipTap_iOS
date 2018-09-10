@@ -28,7 +28,7 @@ extension TTSharedViewController : ScratchUIViewDelegate {
         let position = Int(view.scratchPosition.x).description + "," + Int(view.scratchPosition.y).description
         print(position)
         
-        if scratchPercent > 0.2 {
+        if scratchPercent > 0.4 {
             UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
                 self.scratchView.alpha = 0
             }) { (result) in
