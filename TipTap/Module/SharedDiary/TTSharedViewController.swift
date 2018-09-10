@@ -36,6 +36,8 @@ class TTSharedViewController: TTBaseViewController {
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
         }
+        collectionView.contentInset = UIEdgeInsetsMake(-70, 0, 0, 0)
+
     }
 
     func attachScratchView(){
@@ -43,7 +45,6 @@ class TTSharedViewController: TTBaseViewController {
         //MaskImage : 지울 이미지
         
         let randomNumber = arc4random_uniform(3) + 1
-        
         scratchView  = ScratchUIView(frame: CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height),
                                      Coupon: self.view.asImage(),
                                      MaskImage: "scratch0\(randomNumber).png",
@@ -69,7 +70,6 @@ extension TTSharedViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryCell", for: indexPath) as! TTSharedCollectionViewDiaryCell
             cell.titleLabel.text = "10\nTIPTAP"
             cell.locationLabel.text = "from. 서울시 마포구 망원동"
-            
             return cell
             
         } else {
@@ -89,7 +89,7 @@ extension TTSharedViewController: UICollectionViewDataSource {
 extension TTSharedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if (indexPath.row == 0 ) {
-            return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         } else {
             return CGSize(width: 1, height: 1)
         }
