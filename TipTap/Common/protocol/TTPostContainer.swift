@@ -51,44 +51,44 @@ protocol TTPostContainer where Self : UIView {
 extension TTPostContainer {
     func contentChangedPost(){
         guard
-            let postContainerView1 = postContainerView1,
-            let postContainerView2 = postContainerView2,
-            let postContainerView3 = postContainerView3,
-            let postContainerView4 = postContainerView4,
-            let postContainerView5 = postContainerView5,
-            let postContainerView6 = postContainerView6,
-            let postContainerView7 = postContainerView7,
-            let postContainerView8 = postContainerView8,
-            let postContainerView9 = postContainerView9,
-            let postContainerView10 = postContainerView10 else {
+            let _ = postContainerView1,
+            let _ = postContainerView2,
+            let _ = postContainerView3,
+            let _ = postContainerView4,
+            let _ = postContainerView5,
+            let _ = postContainerView6,
+            let _ = postContainerView7,
+            let _ = postContainerView8,
+            let _ = postContainerView9,
+            let _ = postContainerView10 else {
                 return
         }
         
         guard
-            let postButton1 = postButton1,
-            let postButton2 = postButton2,
-            let postButton3 = postButton3,
-            let postButton4 = postButton4,
-            let postButton5 = postButton5,
-            let postButton6 = postButton6,
-            let postButton7 = postButton7,
-            let postButton8 = postButton8,
-            let postButton9 = postButton9,
-            let postButton10 = postButton10 else {
+            let _ = postButton1,
+            let _ = postButton2,
+            let _ = postButton3,
+            let _ = postButton4,
+            let _ = postButton5,
+            let _ = postButton6,
+            let _ = postButton7,
+            let _ = postButton8,
+            let _ = postButton9,
+            let _ = postButton10 else {
                 return
         }
         
         guard
-            let postImageView1 = postImageView1,
-            let postImageView2 = postImageView2,
-            let postImageView3 = postImageView3,
-            let postImageView4 = postImageView4,
-            let postImageView5 = postImageView5,
-            let postImageView6 = postImageView6,
-            let postImageView7 = postImageView7,
-            let postImageView8 = postImageView8,
-            let postImageView9 = postImageView9,
-            let postImageView10 = postImageView10 else {
+            let _ = postImageView1,
+            let _ = postImageView2,
+            let _ = postImageView3,
+            let _ = postImageView4,
+            let _ = postImageView5,
+            let _ = postImageView6,
+            let _ = postImageView7,
+            let _ = postImageView8,
+            let _ = postImageView9,
+            let _ = postImageView10 else {
                 return
         }
         

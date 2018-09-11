@@ -46,6 +46,17 @@ class TTLoginViewController: ViewController {
                 print("id : \(me?.id ?? "")")
                 print("id : \(me?.nickname ?? "")")
                 print("id : \(me?.account?.email ?? "")")
+                
+                TTAuthAPIManager.sharedManager.login(loginFlatform: .kakao, account: me?.account?.email ?? "", name: me?.nickname ?? "", completion: { (result) in
+                    switch result {
+                    case .success( _):
+                        break
+                    case .error( _):
+                        break
+                    case .errorMessage(_):
+                        break
+                    }
+                })
             })
         })
     }

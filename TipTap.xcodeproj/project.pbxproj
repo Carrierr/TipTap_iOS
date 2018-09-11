@@ -58,6 +58,8 @@
 		A14667A92130D11D00A15CF3 /* TTMyDiaryFirstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14667A72130D11D00A15CF3 /* TTMyDiaryFirstCell.xib */; };
 		A14667AC2130D13300A15CF3 /* TTMyDiaryNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14667AA2130D13300A15CF3 /* TTMyDiaryNormalCell.swift */; };
 		A14667AD2130D13300A15CF3 /* TTMyDiaryNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14667AB2130D13300A15CF3 /* TTMyDiaryNormalCell.xib */; };
+		A17ED5FB2148085F00E28462 /* TTAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ED5FA2148085F00E28462 /* TTAPIManager.swift */; };
+		A17ED5FD214809C400E28462 /* TTAuthAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ED5FC214809C400E28462 /* TTAuthAPIManager.swift */; };
 		BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */; };
 		BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */; };
 		BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */; };
@@ -151,6 +153,8 @@
 		A14667A72130D11D00A15CF3 /* TTMyDiaryFirstCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTMyDiaryFirstCell.xib; sourceTree = "<group>"; };
 		A14667AA2130D13300A15CF3 /* TTMyDiaryNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryNormalCell.swift; sourceTree = "<group>"; };
 		A14667AB2130D13300A15CF3 /* TTMyDiaryNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTMyDiaryNormalCell.xib; sourceTree = "<group>"; };
+		A17ED5FA2148085F00E28462 /* TTAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAPIManager.swift; sourceTree = "<group>"; };
+		A17ED5FC214809C400E28462 /* TTAuthAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAuthAPIManager.swift; sourceTree = "<group>"; };
 		BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBaseViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBasePresenter.swift; sourceTree = "<group>"; };
@@ -319,6 +323,7 @@
 		A13FF2322124040200FB5642 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A17ED5F92148081C00E28462 /* API */,
 				A13FF2442127389800FB5642 /* protocol */,
 				BAD3AB352126712C008F417C /* Service */,
 				A13FF2252123FB7100FB5642 /* extension */,
@@ -388,6 +393,15 @@
 				A14667AB2130D13300A15CF3 /* TTMyDiaryNormalCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		A17ED5F92148081C00E28462 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A17ED5FA2148085F00E28462 /* TTAPIManager.swift */,
+				A17ED5FC214809C400E28462 /* TTAuthAPIManager.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		BAD3AB24212663BC008F417C /* Module */ = {
@@ -787,6 +801,7 @@
 				BAD3AB812126F83F008F417C /* MyDiaryCell.swift in Sources */,
 				BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */,
 				BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */,
+				A17ED5FB2148085F00E28462 /* TTAPIManager.swift in Sources */,
 				BAD3AB3D21268957008F417C /* TTMyDiaryWireFrame.swift in Sources */,
 				A14667A82130D11D00A15CF3 /* TTMyDiaryFirstCell.swift in Sources */,
 				A14667A121307B3300A15CF3 /* TTDetailTextCell.swift in Sources */,
@@ -808,6 +823,7 @@
 				A14667AC2130D13300A15CF3 /* TTMyDiaryNormalCell.swift in Sources */,
 				A13FF239212409B300FB5642 /* TTSharedVCExtension.swift in Sources */,
 				A13FF2222123F85100FB5642 /* TTSharedViewController.swift in Sources */,
+				A17ED5FD214809C400E28462 /* TTAuthAPIManager.swift in Sources */,
 				A11F61B52123E6A90029E80A /* AppDelegate.swift in Sources */,
 				A146679B21307A6900A15CF3 /* TTDetailImageCell.swift in Sources */,
 				A0AD5DD4212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift in Sources */,
