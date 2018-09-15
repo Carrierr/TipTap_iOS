@@ -47,9 +47,10 @@ class TTLoginViewController: ViewController {
                 print("id : \(me?.nickname ?? "")")
                 print("id : \(me?.account?.email ?? "")")
                 
-                TTAuthAPIManager.sharedManager.login(loginFlatform: .kakao, account: me?.account?.email ?? "", name: me?.nickname ?? "", completion: { (result) in
+                TTAuthAPIManager.sharedManager.login(loginFlatform: .kakao, account: me?.id ?? "", name: me?.nickname ?? "", completion: { (result) in
                     switch result {
                     case .success( _):
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "sessionDidChange"), object: nil)
                         break
                     case .error( _):
                         break
