@@ -23,9 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 로그인,로그아웃 상태 변경 받기
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(AppDelegate.kakaoSessionDidChangeWithNotification),
-                                               name: NSNotification.Name.KOSessionDidChange,
+                                               selector: #selector(AppDelegate.sessionDidChangeWithNotification),
+                                               name: NSNotification.Name(rawValue: "sessionDidChange"),
                                                object: nil)
+        
+        
         
         reloadRootViewController()
         return true
@@ -64,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
-    @objc func kakaoSessionDidChangeWithNotification() {
+    @objc func sessionDidChangeWithNotification() {
         reloadRootViewController()
     }
     

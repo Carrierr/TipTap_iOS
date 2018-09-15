@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 enum TTAuthLoginPlatformType : String {
     case kakao = "kakao"
@@ -16,10 +17,6 @@ enum TTAuthLoginPlatformType : String {
 class TTAuthAPIManager: TTAPIManager {
     let auth_url = "\(API_URL)/auth"
     static let sharedManager = TTAuthAPIManager()
-    let headers = [
-        "charset":"utf-8",
-        "Content-Type": "application/json"
-    ]
     
     func login(loginFlatform : TTAuthLoginPlatformType ,
                account : String,
@@ -28,17 +25,24 @@ class TTAuthAPIManager: TTAPIManager {
         
         let param : Parameters = [
             "type":loginFlatform.rawValue,
-            "account":"wjdgo813@naver.com",
+            "account":account,
             "name":name
         ]
+        print("my url = \("\(auth_url)/login")")
         
-        Alamofire.request("\(auth_url)/login",
-            method:.post,
-            parameters:param,
-            headers : headers).validate(statusCode : 200..<300).responseJSON { (response) in
-                
-            switch response.result {
+        Alamofire.request("\(auth_url)/login", method: .post, parameters: param).responseJSON { (result) in
+            guard let resultValue = result.result.value else {
+                completion(.errorMessage("알 수 없는 오류가 발생하였습니다. 잠시 후에 다시 시도해주세요. "))
+                return
+            }
+            
+            let jsonResult = JSON(resultValue)
+            
+            switch result.result {
             case .success:
+                TTDeviceInfo.UserInfo.token    = jsonResult["data"]["token"].stringValue
+                TTDeviceInfo.UserInfo.nickName = name
+                TTDeviceInfo.UserInfo.userID   = account
                 completion(.success(true))
             case .failure(let error):
                 completion(.error(error))

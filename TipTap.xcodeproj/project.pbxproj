@@ -60,6 +60,7 @@
 		A14667AD2130D13300A15CF3 /* TTMyDiaryNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14667AB2130D13300A15CF3 /* TTMyDiaryNormalCell.xib */; };
 		A17ED5FB2148085F00E28462 /* TTAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ED5FA2148085F00E28462 /* TTAPIManager.swift */; };
 		A17ED5FD214809C400E28462 /* TTAuthAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ED5FC214809C400E28462 /* TTAuthAPIManager.swift */; };
+		A17ED5FF214AB76B00E28462 /* TTDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ED5FE214AB76B00E28462 /* TTDeviceInfo.swift */; };
 		BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */; };
 		BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */; };
 		BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */; };
@@ -155,6 +156,7 @@
 		A14667AB2130D13300A15CF3 /* TTMyDiaryNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTMyDiaryNormalCell.xib; sourceTree = "<group>"; };
 		A17ED5FA2148085F00E28462 /* TTAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAPIManager.swift; sourceTree = "<group>"; };
 		A17ED5FC214809C400E28462 /* TTAuthAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAuthAPIManager.swift; sourceTree = "<group>"; };
+		A17ED5FE214AB76B00E28462 /* TTDeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDeviceInfo.swift; sourceTree = "<group>"; };
 		BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBaseViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBasePresenter.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 			children = (
 				A17ED5FA2148085F00E28462 /* TTAPIManager.swift */,
 				A17ED5FC214809C400E28462 /* TTAuthAPIManager.swift */,
+				A17ED5FE214AB76B00E28462 /* TTDeviceInfo.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 				A14667A121307B3300A15CF3 /* TTDetailTextCell.swift in Sources */,
 				A0AD5DD2212CFAB200D76543 /* TestDiary.swift in Sources */,
 				A13FF2542128350400FB5642 /* UIColorExtension.swift in Sources */,
+				A17ED5FF214AB76B00E28462 /* TTDeviceInfo.swift in Sources */,
 				A13FF246212738C900FB5642 /* TTCurrentTimeGettable.swift in Sources */,
 				A13FF25821284C3C00FB5642 /* TTPostContainer.swift in Sources */,
 				A13FF2372124047100FB5642 /* NotificationExtension.swift in Sources */,
