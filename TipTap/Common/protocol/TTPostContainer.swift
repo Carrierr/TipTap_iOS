@@ -21,16 +21,16 @@ protocol TTPostContainer where Self : UIView {
     var postContainerView9      : UIView? { get set }
     var postContainerView10     : UIView? { get set }
     
-    var postImageView1      : UIImageView? { get set }
-    var postImageView2      : UIImageView? { get set }
-    var postImageView3      : UIImageView? { get set }
-    var postImageView4      : UIImageView? { get set }
-    var postImageView5      : UIImageView? { get set }
-    var postImageView6      : UIImageView? { get set }
-    var postImageView7      : UIImageView? { get set }
-    var postImageView8      : UIImageView? { get set }
-    var postImageView9      : UIImageView? { get set }
-    var postImageView10     : UIImageView? { get set }
+    var postLabel1           : UILabel? { get set }
+    var postLabel2           : UILabel? { get set }
+    var postLabel3           : UILabel? { get set }
+    var postLabel4           : UILabel? { get set }
+    var postLabel5           : UILabel? { get set }
+    var postLabel6           : UILabel? { get set }
+    var postLabel7           : UILabel? { get set }
+    var postLabel8           : UILabel? { get set }
+    var postLabel9           : UILabel? { get set }
+    var postLabel10          : UILabel? { get set }
     
     var postButton1      : UIButton? { get set }
     var postButton2      : UIButton? { get set }
@@ -79,23 +79,23 @@ extension TTPostContainer {
         }
         
         guard
-            let _ = postImageView1,
-            let _ = postImageView2,
-            let _ = postImageView3,
-            let _ = postImageView4,
-            let _ = postImageView5,
-            let _ = postImageView6,
-            let _ = postImageView7,
-            let _ = postImageView8,
-            let _ = postImageView9,
-            let _ = postImageView10 else {
+            let _ = postLabel1,
+            let _ = postLabel2,
+            let _ = postLabel3,
+            let _ = postLabel4,
+            let _ = postLabel5,
+            let _ = postLabel6,
+            let _ = postLabel7,
+            let _ = postLabel8,
+            let _ = postLabel9,
+            let _ = postLabel10 else {
                 return
         }
         
         //addSubView
         addSubViews()
 
-        setImage()
+        setButtonImage()
         setLabel()
         
         setPost1Constraint()
@@ -112,75 +112,86 @@ extension TTPostContainer {
     
     
     
-    func setImage(){
-        postImageView1?.image = UIImage(named: "post1")
-        postImageView2?.image = UIImage(named: "post2")
-        postImageView3?.image = UIImage(named: "post3")
-        postImageView4?.image = UIImage(named: "post4")
-        postImageView5?.image = UIImage(named: "post5")
-        postImageView6?.image = UIImage(named: "post6")
-        postImageView7?.image = UIImage(named: "post7")
-        postImageView8?.image = UIImage(named: "post8")
-        postImageView9?.image = UIImage(named: "post9")
-        postImageView10?.image = UIImage(named: "post10")
+    private func setButtonImage(){
+        postButton1?.setImage(UIImage(named: "post1"), for: .normal)
+        postButton2?.setImage(UIImage(named: "post2"), for: .normal)
+        postButton3?.setImage(UIImage(named: "post3"), for: .normal)
+        postButton4?.setImage(UIImage(named: "post4"), for: .normal)
+        postButton5?.setImage(UIImage(named: "post5"), for: .normal)
+        postButton6?.setImage(UIImage(named: "post6"), for: .normal)
+        postButton7?.setImage(UIImage(named: "post7"), for: .normal)
+        postButton8?.setImage(UIImage(named: "post8"), for: .normal)
+        postButton9?.setImage(UIImage(named: "post9"), for: .normal)
+        postButton10?.setImage(UIImage(named: "post10"), for: .normal)
     }
     
     
     func setLabel(){
-        postButton1?.setTitle("1", for: .normal)
-        postButton2?.setTitle("2", for: .normal)
-        postButton3?.setTitle("3", for: .normal)
-        postButton4?.setTitle("4", for: .normal)
-        postButton5?.setTitle("5", for: .normal)
-        postButton6?.setTitle("6", for: .normal)
-        postButton7?.setTitle("7", for: .normal)
-        postButton8?.setTitle("8", for: .normal)
-        postButton9?.setTitle("9", for: .normal)
-        postButton10?.setTitle("10", for: .normal)
+        postLabel1?.text  = "01"
+        postLabel2?.text  = "02"
+        postLabel3?.text  = "03"
+        postLabel4?.text  = "04"
+        postLabel5?.text  = "05"
+        postLabel6?.text  = "06"
+        postLabel7?.text  = "07"
+        postLabel8?.text  = "08"
+        postLabel9?.text  = "09"
+        postLabel10?.text = "10"
         
-        postButton1?.setTitleColor(UIColor(hexString: "808080"), for: .normal)
-        postButton2?.setTitleColor(UIColor(hexString: "808080"), for: .normal)
-        postButton3?.setTitleColor(UIColor(hexString: "808080"), for: .normal)
-        postButton4?.setTitleColor(UIColor(hexString: "808080"), for: .normal)
-        postButton5?.setTitleColor(UIColor(hexString: "808080"), for: .normal)
-        postButton6?.setTitleColor(UIColor(hexString: "808080"), for: .normal)
-        postButton7?.setTitleColor(UIColor(hexString: "808080"), for: .normal)
-        postButton8?.setTitleColor(UIColor(hexString: "808080"), for: .normal)
-        postButton9?.setTitleColor(UIColor(hexString: "808080"), for: .normal)
-        postButton10?.setTitleColor(UIColor(hexString: "808080"), for: .normal)
+        postLabel1?.textColor  = UIColor(hexString: "808080")
+        postLabel2?.textColor  = UIColor(hexString: "808080")
+        postLabel3?.textColor  = UIColor(hexString: "808080")
+        postLabel4?.textColor  = UIColor(hexString: "808080")
+        postLabel5?.textColor  = UIColor(hexString: "808080")
+        postLabel6?.textColor  = UIColor(hexString: "808080")
+        postLabel7?.textColor  = UIColor(hexString: "808080")
+        postLabel8?.textColor  = UIColor(hexString: "808080")
+        postLabel9?.textColor  = UIColor(hexString: "808080")
+        postLabel10?.textColor = UIColor(hexString: "808080")
         
-        postButton1?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        postButton2?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        postButton3?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        postButton4?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        postButton5?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        postButton6?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        postButton7?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        postButton8?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        postButton9?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        postButton10?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        postLabel1?.font  = UIFont.boldSystemFont(ofSize: 10)
+        postLabel2?.font  = UIFont.boldSystemFont(ofSize: 10)
+        postLabel3?.font  = UIFont.boldSystemFont(ofSize: 10)
+        postLabel4?.font  = UIFont.boldSystemFont(ofSize: 10)
+        postLabel5?.font  = UIFont.boldSystemFont(ofSize: 10)
+        postLabel6?.font  = UIFont.boldSystemFont(ofSize: 10)
+        postLabel7?.font  = UIFont.boldSystemFont(ofSize: 10)
+        postLabel8?.font  = UIFont.boldSystemFont(ofSize: 10)
+        postLabel9?.font  = UIFont.boldSystemFont(ofSize: 10)
+        postLabel10?.font = UIFont.boldSystemFont(ofSize: 10)
+        
+        postLabel1?.sizeToFit()
+        postLabel2?.sizeToFit()
+        postLabel3?.sizeToFit()
+        postLabel4?.sizeToFit()
+        postLabel5?.sizeToFit()
+        postLabel6?.sizeToFit()
+        postLabel7?.sizeToFit()
+        postLabel8?.sizeToFit()
+        postLabel9?.sizeToFit()
+        postLabel10?.sizeToFit()
     }
     
     func addSubViews(){
-        postContainerView1?.addSubview(postImageView1!)
+        postContainerView1?.addSubview(postLabel1!)
         postContainerView1?.addSubview(postButton1!)
-        postContainerView2?.addSubview(postImageView2!)
+        postContainerView2?.addSubview(postLabel2!)
         postContainerView2?.addSubview(postButton2!)
-        postContainerView3?.addSubview(postImageView3!)
+        postContainerView3?.addSubview(postLabel3!)
         postContainerView3?.addSubview(postButton3!)
-        postContainerView4?.addSubview(postImageView4!)
+        postContainerView4?.addSubview(postLabel4!)
         postContainerView4?.addSubview(postButton4!)
-        postContainerView5?.addSubview(postImageView5!)
+        postContainerView5?.addSubview(postLabel5!)
         postContainerView5?.addSubview(postButton5!)
-        postContainerView6?.addSubview(postImageView6!)
+        postContainerView6?.addSubview(postLabel6!)
         postContainerView6?.addSubview(postButton6!)
-        postContainerView7?.addSubview(postImageView7!)
+        postContainerView7?.addSubview(postLabel7!)
         postContainerView7?.addSubview(postButton7!)
-        postContainerView8?.addSubview(postImageView8!)
+        postContainerView8?.addSubview(postLabel8!)
         postContainerView8?.addSubview(postButton8!)
-        postContainerView9?.addSubview(postImageView9!)
+        postContainerView9?.addSubview(postLabel9!)
         postContainerView9?.addSubview(postButton9!)
-        postContainerView10?.addSubview(postImageView10!)
+        postContainerView10?.addSubview(postLabel10!)
         postContainerView10?.addSubview(postButton10!)
         
         
@@ -198,214 +209,227 @@ extension TTPostContainer {
     
     func setPost1Constraint(){
         postContainerView1?.snp.makeConstraints { (make) in
-            make.width.equalTo(120)
-            make.height.equalTo(120)
-            make.left.equalToSuperview().offset(96)
-            make.top.equalToSuperview().offset(103)
+            make.width.equalTo(87)
+            make.height.equalTo(98)
+            make.right.equalTo(self.snp.centerX).offset(10)
+            make.bottom.equalTo(self.snp.centerY).offset(-130)
         }
         
-        postImageView1?.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
-        }
-        
-        postButton1?.snp.makeConstraints { (make) in
-            make.width.equalTo(35)
-            make.height.equalTo(35)
+        postLabel1?.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
             make.top.equalToSuperview()
         }
+        
+        postButton1?.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.left.equalTo((postLabel1?.snp.right)!).offset(0.5)
+        }
+        
+        postLabel1?.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
     }
     
     func setPost2Constraint(){
         postContainerView2?.snp.makeConstraints { (make) in
-            make.width.equalTo(120)
-            make.height.equalTo(120)
-            make.left.equalTo((self.postContainerView1?.snp.left)!).offset(90)
-            make.top.equalTo((self.postContainerView1?.snp.top)!).offset(37)
+            make.width.equalTo(74)
+            make.height.equalTo(111)
+            make.left.equalTo((self.postContainerView1?.snp.right)!).offset(4)
+            make.top.equalTo((self.postContainerView1?.snp.top)!).offset(57)
         }
         
-        postImageView2?.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+        postLabel2?.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
         }
         
         postButton2?.snp.makeConstraints { (make) in
-            make.width.equalTo(35)
-            make.height.equalTo(35)
-            make.left.equalToSuperview().offset(9)
-            make.top.equalToSuperview().offset(4)
+            make.top.equalTo((postLabel2?.snp.bottom)!)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
     }
     
     func setPost3Constraint(){
         postContainerView3?.snp.makeConstraints { (make) in
-            make.width.equalTo(120)
-            make.height.equalTo(120)
-            make.left.equalToSuperview().offset(71)
+            make.width.equalTo(98)
+            make.height.equalTo(82)
             make.top.equalTo((self.postContainerView1?.snp.bottom)!).offset(1)
+            make.right.equalTo((self.postContainerView2?.snp.left)!).offset(-16)
         }
         
-        postImageView3?.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+        postLabel3?.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(12)
         }
         
         postButton3?.snp.makeConstraints { (make) in
-            make.width.equalTo(35)
-            make.height.equalTo(35)
-            make.left.equalToSuperview().offset(4)
-            make.centerY.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalToSuperview().offset(-15)
+            
+            make.width.equalTo(73)
+            make.height.equalTo(98)
         }
+        
+        postButton3?.transform = CGAffineTransform(rotationAngle: -CGFloat(Double.pi/2));
     }
     
     func setPost4Constraint(){
         postContainerView4?.snp.makeConstraints { (make) in
-            make.width.equalTo(120)
-            make.height.equalTo(120)
-            make.left.equalTo((self.postContainerView1?.snp.left)!).offset(36)
-            make.top.equalTo((self.postContainerView1?.snp.top)!).offset(91)
+            make.width.equalTo(91)
+            make.height.equalTo(98)
+            make.top.equalTo((self.postContainerView2?.snp.bottom)!).offset(7)
+            make.left.equalTo((self.postContainerView2?.snp.left)!).offset(-28)
         }
         
-        postImageView4?.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+        postLabel4?.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.right.equalToSuperview()
         }
         
         postButton4?.snp.makeConstraints { (make) in
-            make.width.equalTo(35)
-            make.height.equalTo(35)
-            make.left.equalToSuperview().offset(4)
-            make.top.equalToSuperview().offset(20)
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.right.equalTo((postLabel4?.snp.left)!).offset(3)
         }
     }
     
     func setPost5Constraint(){
         postContainerView5?.snp.makeConstraints { (make) in
-            make.width.equalTo(120)
-            make.height.equalTo(120)
-            make.left.equalTo((self.postContainerView4?.snp.left)!).offset(87)
-            make.top.equalTo((self.postContainerView4?.snp.top)!).offset(53)
+            make.width.equalTo(93)
+            make.height.equalTo(98)
+            make.right.equalTo((self.postContainerView4?.snp.left)!).offset(1)
+            make.top.equalTo((self.postContainerView4?.snp.top)!).offset(44)
         }
         
-        postImageView5?.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+        postLabel5?.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
         }
         
         postButton5?.snp.makeConstraints { (make) in
-            make.width.equalTo(35)
-            make.height.equalTo(35)
-            make.right.equalToSuperview().offset(-18)
             make.top.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.left.equalTo((postLabel5?.snp.right)!)
         }
+        
+        postLabel5?.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
     }
     
     
     func setPost6Constraint(){
         postContainerView6?.snp.makeConstraints { (make) in
-            make.width.equalTo(120)
-            make.height.equalTo(120)
-            make.left.equalToSuperview().offset(63)
-            make.top.equalTo((self.postContainerView3?.snp.top)!).offset(97)
+            make.width.equalTo(88)
+            make.height.equalTo(98)
+            make.left.equalTo((self.postButton4?.snp.right)!).offset(-3)
+            make.top.equalTo((self.postContainerView4?.snp.top)!).offset(43)
         }
         
-        postImageView6?.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+        postLabel6?.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.right.equalToSuperview()
         }
         
         postButton6?.snp.makeConstraints { (make) in
-            make.width.equalTo(35)
-            make.height.equalTo(35)
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(8)
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.right.equalTo((postLabel6?.snp.left)!)
         }
     }
     
     
     func setPost7Constraint(){
         postContainerView7?.snp.makeConstraints { (make) in
-            make.width.equalTo(120)
-            make.height.equalTo(120)
-            make.left.equalTo((self.postContainerView4?.snp.left)!).offset(39)
-            make.top.equalTo((self.postContainerView4?.snp.top)!).offset(98)
+            make.width.equalTo(74)
+            make.height.equalTo(111)
+            make.left.equalTo((self.postContainerView4?.snp.left)!)
+            make.top.equalTo((self.postContainerView4?.snp.bottom)!).offset(8)
         }
         
-        postImageView7?.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+        postLabel7?.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
         }
         
         postButton7?.snp.makeConstraints { (make) in
-            make.width.equalTo(35)
-            make.height.equalTo(35)
-            make.left.equalToSuperview().offset(2)
-            make.top.equalToSuperview().offset(10)
+            make.top.equalTo((postLabel7?.snp.bottom)!)
+            make.left.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.right.equalToSuperview()
         }
     }
     
     
     func setPost8Constraint(){
         postContainerView8?.snp.makeConstraints { (make) in
-            make.width.equalTo(120)
-            make.height.equalTo(120)
-            make.left.equalToSuperview().offset(85)
-            make.top.equalTo((self.postContainerView6?.snp.top)!).offset(80)
+            make.width.equalTo(98)
+            make.height.equalTo(82)
+            make.top.equalTo((self.postContainerView5?.snp.bottom)!).offset(17)
+            make.right.equalTo((self.postContainerView7?.snp.left)!).offset(-16)
         }
         
-        postImageView8?.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+        postLabel8?.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(12)
         }
         
         postButton8?.snp.makeConstraints { (make) in
-            make.width.equalTo(35)
-            make.height.equalTo(35)
-            make.left.equalToSuperview()
-            make.top.equalToSuperview().offset(61)
+            make.right.equalToSuperview()
+            make.top.equalToSuperview().offset(-15)
+            
+            make.width.equalTo(73)
+            make.height.equalTo(98)
         }
+        
+        
+        postButton8?.transform = CGAffineTransform(rotationAngle: -CGFloat(Double.pi/2));
     }
     
     func setPost9Constraint(){
         postContainerView9?.snp.makeConstraints { (make) in
-            make.width.equalTo(120)
-            make.height.equalTo(120)
-            make.left.equalTo((self.postContainerView7?.snp.left)!).offset(11)
-            make.top.equalTo((self.postContainerView7?.snp.top)!).offset(81)
+            make.width.equalTo(74)
+            make.height.equalTo(111)
+            make.left.equalTo((self.postContainerView6?.snp.left)!)
+            make.top.equalTo((self.postContainerView6?.snp.bottom)!).offset(4)
         }
         
-        postImageView9?.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+        postLabel9?.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview()
         }
         
         postButton9?.snp.makeConstraints { (make) in
-            make.width.equalTo(35)
-            make.height.equalTo(35)
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.top.equalToSuperview().offset(20)
+            make.bottom.equalTo((postLabel9?.snp.top)!)
         }
     }
     
     func setPost10Constraint(){
         postContainerView10?.snp.makeConstraints { (make) in
-            make.width.equalTo(120)
-            make.height.equalTo(120)
-            make.left.equalTo((self.postContainerView8?.snp.left)!).offset(74)
-            make.top.equalTo((self.postContainerView8?.snp.top)!).offset(60)
+            make.width.equalTo(86)
+            make.height.equalTo(98)
+            make.right.equalTo((self.postContainerView7?.snp.right)!)
+            make.top.equalTo((self.postContainerView7?.snp.bottom)!).offset(3)
         }
         
-        postImageView10?.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+        postLabel10?.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
         
         postButton10?.snp.makeConstraints { (make) in
-            make.width.equalTo(35)
-            make.height.equalTo(35)
             make.right.equalToSuperview()
-            make.top.equalToSuperview().offset(67)
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.left.equalTo((postLabel10?.snp.right)!)
         }
+        
+        postLabel10?.transform = CGAffineTransform(rotationAngle: -CGFloat(Double.pi/2));
     }
 }
