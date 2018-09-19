@@ -9,6 +9,26 @@
 import UIKit
 
 class TTPostMainView: UIView, TTDiaryOutlineContainer, TTPostContainer {
+    var postLabel1: UILabel? = UILabel()
+    
+    var postLabel2: UILabel? = UILabel()
+    
+    var postLabel3: UILabel? = UILabel()
+    
+    var postLabel4: UILabel? = UILabel()
+    
+    var postLabel5: UILabel? = UILabel()
+    
+    var postLabel6: UILabel? = UILabel()
+    
+    var postLabel7: UILabel? = UILabel()
+    
+    var postLabel8: UILabel? = UILabel()
+    
+    var postLabel9: UILabel? = UILabel()
+    
+    var postLabel10: UILabel? = UILabel()
+    
     var postContainerView1: UIView? = UIView()
     
     var postContainerView2: UIView? = UIView()
@@ -28,26 +48,6 @@ class TTPostMainView: UIView, TTDiaryOutlineContainer, TTPostContainer {
     var postContainerView9: UIView? = UIView()
     
     var postContainerView10: UIView? = UIView()
-    
-    var postImageView1: UIImageView? = UIImageView()
-    
-    var postImageView2: UIImageView? = UIImageView()
-    
-    var postImageView3: UIImageView? = UIImageView()
-    
-    var postImageView4: UIImageView? = UIImageView()
-    
-    var postImageView5: UIImageView? = UIImageView()
-    
-    var postImageView6: UIImageView? = UIImageView()
-    
-    var postImageView7: UIImageView? = UIImageView()
-    
-    var postImageView8: UIImageView? = UIImageView()
-    
-    var postImageView9: UIImageView? = UIImageView()
-    
-    var postImageView10: UIImageView? = UIImageView()
     
     var postButton1: UIButton? = UIButton()
     

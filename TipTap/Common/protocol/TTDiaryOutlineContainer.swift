@@ -47,34 +47,37 @@ extension TTDiaryOutlineContainer{
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 14)
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(37)
+            make.top.equalToSuperview().offset(60)
             make.centerX.equalToSuperview()
         }
         
         
         
         yearLabel.text = "18`"
-        yearLabel.font = UIFont.systemFont(ofSize: 14)
+        yearLabel.textColor = UIColor(hexString: "6D6D6D")
+        yearLabel.font = UIFont.systemFont(ofSize: 13)
         yearLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(113)
             make.left.equalToSuperview().offset(21)
         }
         
         monthLabel.text = "Aug"
-        monthLabel.font = UIFont.systemFont(ofSize: 14)
+        monthLabel.textColor = UIColor(hexString: "6D6D6D")
+        monthLabel.font = UIFont.systemFont(ofSize: 13)
         monthLabel.snp.makeConstraints { (make) in
             make.top.equalTo(yearLabel.snp.bottom)
             make.left.equalToSuperview().offset(21)
         }
         
         dateLabel.text = "02"
-        dateLabel.font = UIFont.systemFont(ofSize: 14)
+        dateLabel.textColor = UIColor(hexString: "6D6D6D")
+        dateLabel.font = UIFont.systemFont(ofSize: 13)
         dateLabel.snp.makeConstraints { (make) in
             make.top.equalTo(monthLabel.snp.bottom)
             make.left.equalToSuperview().offset(21)
         }
         
-        horLineView.backgroundColor = UIColor(hexString: "8B8B8B", alpha: 0.5)
+        horLineView.backgroundColor = UIColor(hexString: "8B8B8B")
         horLineView.snp.makeConstraints { (make) in
             make.width.equalTo(1)
             make.top.equalTo(dateLabel.snp.bottom).offset(20)
@@ -83,8 +86,8 @@ extension TTDiaryOutlineContainer{
         }
         
         brandLabel.text = "TIPTAP"
-        brandLabel.textColor = UIColor(hexString: "373737")
-        brandLabel.font = UIFont.systemFont(ofSize: 14)
+        brandLabel.textColor = UIColor(hexString: "6D6D6D")
+        brandLabel.font = UIFont.systemFont(ofSize: 13)
         brandLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
         brandLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
