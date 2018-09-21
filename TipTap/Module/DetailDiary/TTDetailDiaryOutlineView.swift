@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class TTDetailDiaryOutlineView: UIView, TTDiaryOutlineContainer {
+    var diartData: TTDiaryData?
+    
     var yearLabel: UILabel? = UILabel()
     
     var monthLabel: UILabel? = UILabel()

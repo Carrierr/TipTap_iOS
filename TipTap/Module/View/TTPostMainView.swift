@@ -9,78 +9,47 @@
 import UIKit
 
 class TTPostMainView: UIView, TTDiaryOutlineContainer, TTPostContainer {
+    var diaryData: TTDiaryData?
+    
     var postLabel1: UILabel? = UILabel()
-    
     var postLabel2: UILabel? = UILabel()
-    
     var postLabel3: UILabel? = UILabel()
-    
     var postLabel4: UILabel? = UILabel()
-    
     var postLabel5: UILabel? = UILabel()
-    
     var postLabel6: UILabel? = UILabel()
-    
     var postLabel7: UILabel? = UILabel()
-    
     var postLabel8: UILabel? = UILabel()
-    
     var postLabel9: UILabel? = UILabel()
-    
     var postLabel10: UILabel? = UILabel()
     
     var postContainerView1: UIView? = UIView()
-    
     var postContainerView2: UIView? = UIView()
-    
     var postContainerView3: UIView? = UIView()
-    
     var postContainerView4: UIView? = UIView()
-    
     var postContainerView5: UIView? = UIView()
-    
     var postContainerView6: UIView? = UIView()
-    
     var postContainerView7: UIView? = UIView()
-    
     var postContainerView8: UIView? = UIView()
-    
     var postContainerView9: UIView? = UIView()
-    
     var postContainerView10: UIView? = UIView()
     
     var postButton1: UIButton? = UIButton()
-    
     var postButton2: UIButton? = UIButton()
-    
     var postButton3: UIButton? = UIButton()
-    
     var postButton4: UIButton? = UIButton()
-    
     var postButton5: UIButton? = UIButton()
-    
     var postButton6: UIButton? = UIButton()
-    
     var postButton7: UIButton? = UIButton()
-    
     var postButton8: UIButton? = UIButton()
-    
     var postButton9: UIButton? = UIButton()
-    
     var postButton10: UIButton? = UIButton()
     
     var yearLabel: UILabel? = UILabel()
-    
     var monthLabel: UILabel? = UILabel()
-    
     var dateLabel: UILabel? = UILabel()
-    
     var horLineView: UIView? = UIView()
-    
     var brandLabel: UILabel? = UILabel()
-    
     var firstDescLabel: UILabel? = UILabel()
-    
     var titleLabel: UILabel? = UILabel()
     
     var pressedPost : ((_ postIndex : Int)->())?
@@ -92,9 +61,11 @@ class TTPostMainView: UIView, TTDiaryOutlineContainer, TTPostContainer {
         bindingButtonAction()
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     private func bindingButtonAction(){
         postButton1?.tag = 1
@@ -119,6 +90,7 @@ class TTPostMainView: UIView, TTDiaryOutlineContainer, TTPostContainer {
         postButton10?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
 
     }
+    
     
     @objc private func pressedPostButton(sender : UIButton){
         print("tag : \(sender.tag)")

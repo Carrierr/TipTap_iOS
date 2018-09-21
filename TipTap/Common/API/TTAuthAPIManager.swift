@@ -14,11 +14,11 @@ enum TTAuthLoginPlatformType : String {
     case kakao = "kakao"
 }
 
-class TTAuthAPIManager: TTAPIManager {
-    let auth_url = "\(API_URL)/auth"
-    static let sharedManager = TTAuthAPIManager()
+class TTAuthAPIManager {
+    static var sharedManager = TTAuthAPIManager()
+    let auth_url = "\(TTAPIManager.API_URL)/auth"
     
-    func login(loginFlatform : TTAuthLoginPlatformType ,
+    func login(loginFlatform : TTAuthLoginPlatformType = .kakao,
                account : String,
                name : String,
                completion: @escaping (TTResult<Bool>) -> ())  {
@@ -28,7 +28,6 @@ class TTAuthAPIManager: TTAPIManager {
             "account":account,
             "name":name
         ]
-        print("my url = \("\(auth_url)/login")")
         
         Alamofire.request("\(auth_url)/login", method: .post, parameters: param).responseJSON { (result) in
             guard let resultValue = result.result.value else {

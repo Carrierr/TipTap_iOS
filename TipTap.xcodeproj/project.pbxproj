@@ -21,6 +21,7 @@
 		A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A11F61BD2123E6AA0029E80A /* LaunchScreen.storyboard */; };
 		A11F61CA2123E6AA0029E80A /* TipTapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61C92123E6AA0029E80A /* TipTapTests.swift */; };
 		A11F61D52123E6AB0029E80A /* TipTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61D42123E6AB0029E80A /* TipTapUITests.swift */; };
+		A12211D12154E258004F931D /* TTDiaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12211D02154E258004F931D /* TTDiaryData.swift */; };
 		A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13FF2182123EBB600FB5642 /* TTLogin.storyboard */; };
 		A13FF21B2123EC4600FB5642 /* TTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */; };
 		A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */; };
@@ -117,6 +118,7 @@
 		A11F61D02123E6AB0029E80A /* TipTapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipTapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11F61D42123E6AB0029E80A /* TipTapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTapUITests.swift; sourceTree = "<group>"; };
 		A11F61D62123E6AB0029E80A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A12211D02154E258004F931D /* TTDiaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDiaryData.swift; sourceTree = "<group>"; };
 		A13FF2182123EBB600FB5642 /* TTLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TTLogin.storyboard; sourceTree = "<group>"; };
 		A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLoginViewController.swift; sourceTree = "<group>"; };
 		A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMainPageViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +285,14 @@
 			path = TipTapUITests;
 			sourceTree = "<group>";
 		};
+		A12211CF2154E231004F931D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A12211D02154E258004F931D /* TTDiaryData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		A13FF21C2123EC4C00FB5642 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +335,7 @@
 		A13FF2322124040200FB5642 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A12211CF2154E231004F931D /* Data */,
 				A17ED5F92148081C00E28462 /* API */,
 				A13FF2442127389800FB5642 /* protocol */,
 				BAD3AB352126712C008F417C /* Service */,
@@ -410,7 +421,7 @@
 		BAD3AB24212663BC008F417C /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				BAD3AB7A2126F3B8008F417C /* Cell */,
+				BAD3AB7A2126F3B8008F417C /* View */,
 				BAD3AB2A21266859008F417C /* Base */,
 				A146678B2130662A00A15CF3 /* DetailDiary */,
 				A13FF23F212736ED00FB5642 /* EditDiary */,
@@ -468,14 +479,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		BAD3AB7A2126F3B8008F417C /* Cell */ = {
+		BAD3AB7A2126F3B8008F417C /* View */ = {
 			isa = PBXGroup;
 			children = (
 				BAD3AB7F2126F83F008F417C /* MyDiaryCell.swift */,
 				BAD3AB802126F83F008F417C /* MyDiaryCell.xib */,
 				A13FF2552128464800FB5642 /* TTPostMainView.swift */,
 			);
-			path = Cell;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -809,6 +820,7 @@
 				A14667A82130D11D00A15CF3 /* TTMyDiaryFirstCell.swift in Sources */,
 				A14667A121307B3300A15CF3 /* TTDetailTextCell.swift in Sources */,
 				A0AD5DD2212CFAB200D76543 /* TestDiary.swift in Sources */,
+				A12211D12154E258004F931D /* TTDiaryData.swift in Sources */,
 				A13FF2542128350400FB5642 /* UIColorExtension.swift in Sources */,
 				A17ED5FF214AB76B00E28462 /* TTDeviceInfo.swift in Sources */,
 				A13FF246212738C900FB5642 /* TTCurrentTimeGettable.swift in Sources */,
