@@ -38,14 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loginStoryboard = UIStoryboard(name: "TTLogin", bundle: nil)
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let navigationController = loginStoryboard.instantiateViewController(withIdentifier: "navigator") as! UINavigationController
-        let navigationController2 = loginStoryboard.instantiateViewController(withIdentifier: "navigator") as! UINavigationController
 
         
         let viewController = loginStoryboard.instantiateViewController(withIdentifier: "TTLoginViewController") as UIViewController
-//        navigationController.pushViewController(viewController, animated: true)
         let viewController2 = mainStoryboard.instantiateViewController(withIdentifier: "TTMainPageViewController") as UIViewController
-//        navigationController2.pushViewController(viewController2, animated: true)
         
         
         self.loginViewController = viewController
@@ -55,11 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate func reloadRootViewController() {
         let isOpened = KOSession.shared().isOpen()
-//        if !isOpened {
-//            let mainViewController = self.mainViewController as! UINavigationController
-//            mainViewController.popToRootViewController(animated: true)
-//        }
-        
+
         self.window?.rootViewController = isOpened ? UINavigationController(rootViewController: self.mainViewController!)  : UINavigationController(rootViewController: self.loginViewController!)
         self.window?.makeKeyAndVisible()
     }

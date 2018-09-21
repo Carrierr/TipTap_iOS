@@ -9,7 +9,7 @@
 import Foundation
 import SnapKit
 
-protocol TTPostContainer where Self : UIView {
+protocol TTPostContainer : TTCanHasDiaryData where Self : UIView {
     var postContainerView1      : UIView? { get set }
     var postContainerView2      : UIView? { get set }
     var postContainerView3      : UIView? { get set }
