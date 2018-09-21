@@ -10,6 +10,7 @@ import UIKit
 
 class TTTodayDiaryViewController: TTBaseViewController {
     @IBOutlet weak var postView: UIView!
+    private var mainView       : TTPostMainView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +31,20 @@ class TTTodayDiaryViewController: TTBaseViewController {
     
     //MARK: Draw UI
     override func setupUI() {
-        let mainView = TTPostMainView(frame: self.view.frame)
-        mainView.pressedPost = { (postIndex) in
+        mainView = TTPostMainView(frame: self.view.frame)
+        mainView?.pressedPost = { (postIndex) in
             self.show(TTDetailDiaryWireFrame.createModule(), sender: nil)
         }
         
-        self.postView.addSubview(mainView)
+        self.postView.addSubview(mainView!)
     }
     
     
     //MARK: Request today diary data
     func requestTodayDiaryData(){
-        
+        guard let mainView = mainView else { return }
+        TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/diary/today", method: .get) { (result) in
+            print("result : \(result)")
+        }
     }
 }
