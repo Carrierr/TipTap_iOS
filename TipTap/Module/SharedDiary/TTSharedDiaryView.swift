@@ -78,7 +78,7 @@ class TTSharedDiaryView : UIView, TTPostContainer{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        contentChangedPost()
     }
     
     required init?(coder aDecoder: NSCoder) {
