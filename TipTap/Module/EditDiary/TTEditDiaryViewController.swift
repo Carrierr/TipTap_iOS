@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreLocation
+import SwiftyJSON
 
-class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTCurrentLocationGettable {
+class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTCurrentLocationGettable,TTCanShowAlert {
     var locationManager : CLLocationManager?
     var location        : CLLocation?
     lazy var imagePicker = UIImagePickerController()
@@ -47,11 +48,14 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
         
     }
     
+    
+    
     private func setupNavigation(){
         navigationController?.navigationBar.tintColor = UIColor.gray;
-        
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
+    
+    
     
     
     private func setupImagePicker(){
@@ -59,11 +63,15 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
         imagePicker.sourceType = .savedPhotosAlbum
     }
     
+    
+    
     private func setupTextView(){
         boardTextView.becomeFirstResponder()
         boardTextView.delegate = self
         
     }
+    
+    
     
     func setUpLocationManager(){
         locationManager = CLLocationManager()
@@ -74,14 +82,17 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
         locationManager?.startUpdatingLocation()
     }
     
+    
+    
     func registerNotification(){
         NotificationCenter.default.addObserver(self, selector:  #selector(onUIKeyboardWillShowNotification(noti:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onUIKeyboardWillHideNotification(noti:)), name: .UIKeyboardWillHide, object: nil)
     }
     
     
+    
+    
     @objc func onUIKeyboardWillShowNotification(noti : Notification){
-        
         if let keyboardFrame: NSValue = noti.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
@@ -97,17 +108,44 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
 
     
     @IBAction func submitDiary(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        guard boardTextView.text.count > 0 else {
+            showAlert(title: "", message: "일기 내용을 입력해주세요.")
+            return
+        }
+        
+        guard let location = location,
+            let locationString = locationLabel.text else {
+            showAlert(title: "", message: "위치 정보를 받아오지 못하고 있습니다. 직접 위치를 입력해주세요.")
+            return
+        }
+        let param = ["content":boardTextView.text,
+                     "location":locationString,
+                     "latitude":"\(location.coordinate.latitude)",
+                     "longitude":"\(location.coordinate.longitude)"
+                     ] as [String : Any]
+        
+        TTAPIManager.sharedManager.requestAPIWithImage("\(TTAPIManager.API_URL)/diary/write", method: .post, parameters: param, uploadImage : travelPicture.image) { (result) in
+            print(result)
+            self.showAlert(title: "", message: "일기가 등록 되었습니다.") {
+                self.dismiss(animated: true, completion: nil)
+            }
+
+        }
     }
+    
     
     
     @IBAction func pressedPickPhoto(_ sender: Any) {
         self.present(imagePicker, animated: true, completion: nil)
     }
     
+    
+    
     @IBAction func pressedCloseButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
     
     func setImageView(isHidden : Bool){
         if isHidden {
@@ -134,9 +172,10 @@ extension TTEditDiaryViewController: CLLocationManagerDelegate{
             }
             self.locationLabel.text = address
         }
-        
     }
 }
+
+
 
 
 
@@ -159,6 +198,7 @@ extension TTEditDiaryViewController : UITextViewDelegate{
         return true
     }
     
+    
     func textViewDidChange(_ textView: UITextView) {
         if textView.text?.count == 0 {
             placeHolderLabel.isHidden = false
@@ -168,6 +208,7 @@ extension TTEditDiaryViewController : UITextViewDelegate{
         
         textCountLabel.text = "\(textView.text.count)/800"
     }
+    
     
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         if(textView.text.count == 0){
