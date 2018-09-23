@@ -9,7 +9,7 @@
 import UIKit
 
 class TTSharedDiaryView : UIView, TTPostContainer{
-    var diaryData: TTDiaryData?{
+    var dataSet: TTDiaryDataSet?{
         didSet{
             contentChangedPost()
         }

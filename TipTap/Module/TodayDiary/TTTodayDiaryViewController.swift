@@ -11,16 +11,17 @@ import UIKit
 class TTTodayDiaryViewController: TTBaseViewController {
     @IBOutlet weak var postView: UIView!
     private var mainView       : TTPostMainView?
+    private lazy var service = TTTodayDiaryService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestTodayDiaryData()
+        
     }
     
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UIApplication.shared.statusBarStyle = .default
+        requestTodayDiaryData()
     }
     
     
@@ -42,9 +43,14 @@ class TTTodayDiaryViewController: TTBaseViewController {
     
     //MARK: Request today diary data
     func requestTodayDiaryData(){
-        guard let mainView = mainView else { return }
-        TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/diary/today", method: .get) { (result) in
-            print("result : \(result)")
+        guard let _ = mainView else { return }
+        service.fetchTodayDiary { (result) in
+            switch result {
+            case .success(let result):
+                self.mainView?.dataSet = TTDiaryDataSet(diaryDataList: result.diaryDataList!, stampNameList: result.stampNameList!)
+                break
+            default : break
+            }
         }
     }
 }

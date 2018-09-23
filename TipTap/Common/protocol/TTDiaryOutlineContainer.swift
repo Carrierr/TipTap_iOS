@@ -9,7 +9,7 @@
 import Foundation
 import SnapKit
 
-protocol TTDiaryOutlineContainer where Self : UIView {
+protocol TTDiaryOutlineContainer : TTCanHasDiaryData where Self : UIView {
     var yearLabel      : UILabel? { get set }
     var monthLabel     : UILabel? { get set }
     var dateLabel      : UILabel? { get set }
@@ -104,7 +104,14 @@ extension TTDiaryOutlineContainer{
             make.bottom.equalToSuperview().offset(-106)
         }
         
-        firstDescLabel.isHidden = true 
+        
+        guard let count = dataSet?.diaryDataList?.count,
+            count > 0 else{
+            firstDescLabel.isHidden = false
+            return
+        }
+        
+        firstDescLabel.isHidden = true
         
     }
 }

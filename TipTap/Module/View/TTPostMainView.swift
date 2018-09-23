@@ -9,7 +9,14 @@
 import UIKit
 
 class TTPostMainView: UIView, TTDiaryOutlineContainer, TTPostContainer {
-    var diaryData: TTDiaryData?
+    var dataSet: TTDiaryDataSet?{
+        didSet{
+            contentChangedOutline()
+            contentChangedPost()
+            bindingButtonAction()
+        }
+    }
+    
     
     var postLabel1: UILabel? = UILabel()
     var postLabel2: UILabel? = UILabel()
@@ -56,9 +63,7 @@ class TTPostMainView: UIView, TTDiaryOutlineContainer, TTPostContainer {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentChangedOutline()
-        contentChangedPost()
-        bindingButtonAction()
+        
     }
     
     
