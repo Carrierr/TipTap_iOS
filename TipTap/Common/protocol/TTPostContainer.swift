@@ -44,7 +44,6 @@ protocol TTPostContainer : TTCanHasDiaryData where Self : UIView {
     var postButton10     : UIButton? { get set }
     
     
-    
     func contentChangedPost()
 }
 
@@ -94,10 +93,20 @@ extension TTPostContainer {
         
         //addSubView
         addSubViews()
-
-        setButtonImage()
-        setLabel()
         
+        postContainerView1?.isHidden  = true
+        postContainerView2?.isHidden  = true
+        postContainerView3?.isHidden  = true
+        postContainerView4?.isHidden  = true
+        postContainerView5?.isHidden  = true
+        postContainerView6?.isHidden  = true
+        postContainerView7?.isHidden  = true
+        postContainerView8?.isHidden  = true
+        postContainerView9?.isHidden  = true
+        postContainerView10?.isHidden = true
+        
+        setLabel()
+        showPostContainer()
         setPost1Constraint()
         setPost2Constraint()
         setPost3Constraint()
@@ -112,21 +121,22 @@ extension TTPostContainer {
     
     
     
-    private func setButtonImage(){
-        postButton1?.setImage(UIImage(named: "post1"), for: .normal)
-        postButton2?.setImage(UIImage(named: "post2"), for: .normal)
-        postButton3?.setImage(UIImage(named: "post3"), for: .normal)
-        postButton4?.setImage(UIImage(named: "post4"), for: .normal)
-        postButton5?.setImage(UIImage(named: "post5"), for: .normal)
-        postButton6?.setImage(UIImage(named: "post6"), for: .normal)
-        postButton7?.setImage(UIImage(named: "post7"), for: .normal)
-        postButton8?.setImage(UIImage(named: "post8"), for: .normal)
-        postButton9?.setImage(UIImage(named: "post9"), for: .normal)
-        postButton10?.setImage(UIImage(named: "post10"), for: .normal)
+    private func setButtonImage(postButton button: UIButton, imageNamed: String){
+        button.setImage(UIImage(named: imageNamed), for: .normal)
+//        postButton1?.setImage(UIImage(named: "post1"), for: .normal)
+//        postButton2?.setImage(UIImage(named: "post2"), for: .normal)
+//        postButton3?.setImage(UIImage(named: "post3"), for: .normal)
+//        postButton4?.setImage(UIImage(named: "post4"), for: .normal)
+//        postButton5?.setImage(UIImage(named: "post5"), for: .normal)
+//        postButton6?.setImage(UIImage(named: "post6"), for: .normal)
+//        postButton7?.setImage(UIImage(named: "post7"), for: .normal)
+//        postButton8?.setImage(UIImage(named: "post8"), for: .normal)
+//        postButton9?.setImage(UIImage(named: "post9"), for: .normal)
+//        postButton10?.setImage(UIImage(named: "post10"), for: .normal)
     }
     
     
-    func setLabel(){
+    private func setLabel(){
         postLabel1?.text  = "01"
         postLabel2?.text  = "02"
         postLabel3?.text  = "03"
@@ -172,7 +182,9 @@ extension TTPostContainer {
         postLabel10?.sizeToFit()
     }
     
-    func addSubViews(){
+    
+    
+    private func addSubViews(){
         postContainerView1?.addSubview(postLabel1!)
         postContainerView1?.addSubview(postButton1!)
         postContainerView2?.addSubview(postLabel2!)
@@ -207,7 +219,59 @@ extension TTPostContainer {
         self.addSubview(postContainerView10!)
     }
     
-    func setPost1Constraint(){
+    
+    private func showPostContainer(){
+        guard let stampNameList = dataSet?.stampNameList else { return }
+        for (index,stampData) in stampNameList.enumerated() {
+            switch index {
+            case 0:
+                postContainerView1?.isHidden = false
+                setButtonImage(postButton: postButton1!, imageNamed: stampData)
+                break
+            case 1:
+                postContainerView2?.isHidden = false
+                setButtonImage(postButton: postButton2!, imageNamed: stampData)
+                break
+            case 2:
+                postContainerView3?.isHidden = false
+                setButtonImage(postButton: postButton3!, imageNamed: stampData)
+                break
+            case 3:
+                postContainerView4?.isHidden = false
+                setButtonImage(postButton: postButton4!, imageNamed: stampData)
+                break
+            case 4:
+                postContainerView5?.isHidden = false
+                setButtonImage(postButton: postButton5!, imageNamed: stampData)
+                break
+            case 5:
+                postContainerView6?.isHidden = false
+                setButtonImage(postButton: postButton6!, imageNamed: stampData)
+                break
+            case 6:
+                postContainerView7?.isHidden = false
+                setButtonImage(postButton: postButton7!, imageNamed: stampData)
+                break
+            case 7:
+                postContainerView8?.isHidden = false
+                setButtonImage(postButton: postButton8!, imageNamed: stampData)
+                break
+            case 8:
+                postContainerView9?.isHidden = false
+                setButtonImage(postButton: postButton9!, imageNamed: stampData)
+                break
+            case 9:
+                postContainerView10?.isHidden = false
+                setButtonImage(postButton: postButton10!, imageNamed: stampData)
+                break
+            default:
+                break
+            }
+        }
+    }
+    
+    
+    private func setPost1Constraint(){
         postContainerView1?.snp.makeConstraints { (make) in
             make.width.equalTo(87)
             make.height.equalTo(98)
@@ -230,7 +294,9 @@ extension TTPostContainer {
         postLabel1?.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
     }
     
-    func setPost2Constraint(){
+    
+    
+    private func setPost2Constraint(){
         postContainerView2?.snp.makeConstraints { (make) in
             make.width.equalTo(74)
             make.height.equalTo(111)
@@ -251,7 +317,9 @@ extension TTPostContainer {
         }
     }
     
-    func setPost3Constraint(){
+    
+    
+    private func setPost3Constraint(){
         postContainerView3?.snp.makeConstraints { (make) in
             make.width.equalTo(98)
             make.height.equalTo(82)
@@ -275,7 +343,9 @@ extension TTPostContainer {
         postButton3?.transform = CGAffineTransform(rotationAngle: -CGFloat(Double.pi/2));
     }
     
-    func setPost4Constraint(){
+    
+    
+    private func setPost4Constraint(){
         postContainerView4?.snp.makeConstraints { (make) in
             make.width.equalTo(91)
             make.height.equalTo(98)
@@ -296,7 +366,9 @@ extension TTPostContainer {
         }
     }
     
-    func setPost5Constraint(){
+    
+    
+    private func setPost5Constraint(){
         postContainerView5?.snp.makeConstraints { (make) in
             make.width.equalTo(93)
             make.height.equalTo(98)
@@ -320,7 +392,9 @@ extension TTPostContainer {
     }
     
     
-    func setPost6Constraint(){
+    
+    
+    private func setPost6Constraint(){
         postContainerView6?.snp.makeConstraints { (make) in
             make.width.equalTo(88)
             make.height.equalTo(98)
@@ -342,7 +416,8 @@ extension TTPostContainer {
     }
     
     
-    func setPost7Constraint(){
+    
+    private func setPost7Constraint(){
         postContainerView7?.snp.makeConstraints { (make) in
             make.width.equalTo(74)
             make.height.equalTo(111)
@@ -364,7 +439,8 @@ extension TTPostContainer {
     }
     
     
-    func setPost8Constraint(){
+    
+    private func setPost8Constraint(){
         postContainerView8?.snp.makeConstraints { (make) in
             make.width.equalTo(98)
             make.height.equalTo(82)
@@ -389,7 +465,9 @@ extension TTPostContainer {
         postButton8?.transform = CGAffineTransform(rotationAngle: -CGFloat(Double.pi/2));
     }
     
-    func setPost9Constraint(){
+    
+    
+    private func setPost9Constraint(){
         postContainerView9?.snp.makeConstraints { (make) in
             make.width.equalTo(74)
             make.height.equalTo(111)
@@ -410,7 +488,9 @@ extension TTPostContainer {
         }
     }
     
-    func setPost10Constraint(){
+    
+    
+    private func setPost10Constraint(){
         postContainerView10?.snp.makeConstraints { (make) in
             make.width.equalTo(86)
             make.height.equalTo(98)

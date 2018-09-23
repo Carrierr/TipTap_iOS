@@ -23,6 +23,7 @@
 		A11F61D52123E6AB0029E80A /* TipTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61D42123E6AB0029E80A /* TipTapUITests.swift */; };
 		A12211D12154E258004F931D /* TTDiaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12211D02154E258004F931D /* TTDiaryData.swift */; };
 		A12211D521564B59004F931D /* TTCanShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12211D421564B59004F931D /* TTCanShowAlert.swift */; };
+		A12211DB21579060004F931D /* TTTodayDiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12211DA21579060004F931D /* TTTodayDiaryService.swift */; };
 		A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13FF2182123EBB600FB5642 /* TTLogin.storyboard */; };
 		A13FF21B2123EC4600FB5642 /* TTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */; };
 		A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */; };
@@ -121,6 +122,7 @@
 		A11F61D62123E6AB0029E80A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A12211D02154E258004F931D /* TTDiaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDiaryData.swift; sourceTree = "<group>"; };
 		A12211D421564B59004F931D /* TTCanShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCanShowAlert.swift; sourceTree = "<group>"; };
+		A12211DA21579060004F931D /* TTTodayDiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTodayDiaryService.swift; sourceTree = "<group>"; };
 		A13FF2182123EBB600FB5642 /* TTLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TTLogin.storyboard; sourceTree = "<group>"; };
 		A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLoginViewController.swift; sourceTree = "<group>"; };
 		A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMainPageViewController.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				A13FF24F2127E73D00FB5642 /* TTTodayDiaryViewController.swift */,
+				A12211DA21579060004F931D /* TTTodayDiaryService.swift */,
 			);
 			path = TodayDiary;
 			sourceTree = "<group>";
@@ -839,6 +842,7 @@
 				A13FF22F2123FF0500FB5642 /* UIPageViewControllerExtension.swift in Sources */,
 				A13FF2562128464800FB5642 /* TTPostMainView.swift in Sources */,
 				A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */,
+				A12211DB21579060004F931D /* TTTodayDiaryService.swift in Sources */,
 				A14667AC2130D13300A15CF3 /* TTMyDiaryNormalCell.swift in Sources */,
 				A13FF239212409B300FB5642 /* TTSharedVCExtension.swift in Sources */,
 				A13FF2222123F85100FB5642 /* TTSharedViewController.swift in Sources */,
