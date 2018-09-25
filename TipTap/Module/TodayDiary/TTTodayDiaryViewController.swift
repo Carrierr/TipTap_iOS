@@ -33,8 +33,8 @@ class TTTodayDiaryViewController: TTBaseViewController {
     //MARK: Draw UI
     override func setupUI() {
         mainView = TTPostMainView(frame: self.view.frame)
-        mainView?.pressedPost = { (postIndex) in
-            self.show(TTDetailDiaryWireFrame.createModule(), sender: nil)
+        mainView?.pressedPost = { (diaryDatas) in
+            self.show(TTDetailDiaryWireFrame.createModule(diaryDatas: diaryDatas), sender: nil)
         }
         
         self.postView.addSubview(mainView!)

@@ -118,7 +118,7 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
             showAlert(title: "", message: "위치 정보를 받아오지 못하고 있습니다. 직접 위치를 입력해주세요.")
             return
         }
-        let param = ["content":boardTextView.text,
+        let param = ["content":boardTextView.text!,
                      "location":locationString,
                      "latitude":"\(location.coordinate.latitude)",
                      "longitude":"\(location.coordinate.longitude)"

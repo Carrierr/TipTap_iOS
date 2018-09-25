@@ -27,7 +27,7 @@ extension TTCurrentLocationGettable{
         let geoCorder = CLGeocoder()
         geoCorder.reverseGeocodeLocation(location) { (placeMarks, error) in
             if error != nil {
-                print("Geocode failed with error : \(error)")
+                print("Geocode failed with error : \(error.debugDescription)")
                 completion("")
                 return
             }
