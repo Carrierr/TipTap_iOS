@@ -73,23 +73,23 @@ extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol {
             destination = data["destination"]!
         }
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TTMyDiaryCell") as? TTMyDiaryCell
+        cell?.dayLabel.text = day
+        cell?.startLocation.text = start
+        cell?.destinationLabel.text = destination
+        cell?.selectionStyle = .none
         
         if indexPath.row == 0 {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TTMyDiaryFirstCell") as? TTMyDiaryFirstCell
-            cell?.dayLabel.text = day
-            cell?.startLocation.text = start
-            cell?.destinationLabel.text = destination
-            cell?.selectionStyle = .none
-        return cell!
+            cell?.monthLabel.isHidden = false
+            cell?.lineView.isHidden = false
         }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TTMyDiaryNormalCell") as? TTMyDiaryNormalCell
-            cell?.dayLabel.text = day
-            cell?.startLocation.text = start
-            cell?.destinationLabel.text = destination
-            cell?.selectionStyle = .none
-            return cell!
+            cell?.monthLabel.isHidden = true
+            cell?.lineView.isHidden = true
         }
+        
+        return cell!
     }
+    
     
     func moreLoad() {
         

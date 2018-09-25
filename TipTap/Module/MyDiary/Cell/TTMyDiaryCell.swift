@@ -8,15 +8,16 @@
 
 import UIKit
 
-class TTMyDiaryFirstCell: UITableViewCell {
+class TTMyDiaryCell: UITableViewCell {
 
+    @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var startLocation: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        dayLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
+        monthLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
