@@ -59,7 +59,7 @@ class TTPostMainView: UIView, TTDiaryOutlineContainer, TTPostContainer {
     var firstDescLabel: UILabel? = UILabel()
     var titleLabel: UILabel? = UILabel()
     
-    var pressedPost : ((_ postIndex : Int)->())?
+    var pressedPost : ((_ diaryDatas : [TTDiaryData])->())?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -73,33 +73,40 @@ class TTPostMainView: UIView, TTDiaryOutlineContainer, TTPostContainer {
     
     
     private func bindingButtonAction(){
-        postButton1?.tag = 1
+        postButton1?.tag = 0
         postButton1?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
-        postButton2?.tag = 2
+        postButton2?.tag = 1
         postButton2?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
-        postButton3?.tag = 3
+        postButton3?.tag = 2
         postButton3?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
-        postButton4?.tag = 4
+        postButton4?.tag = 3
         postButton4?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
-        postButton5?.tag = 5
+        postButton5?.tag = 4
         postButton5?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
-        postButton6?.tag = 6
+        postButton6?.tag = 5
         postButton6?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
-        postButton7?.tag = 7
+        postButton7?.tag = 6
         postButton7?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
-        postButton8?.tag = 8
+        postButton8?.tag = 7
         postButton8?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
-        postButton9?.tag = 9
+        postButton9?.tag = 8
         postButton9?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
-        postButton10?.tag = 10
+        postButton10?.tag = 9
         postButton10?.addTarget(self, action: #selector(pressedPostButton(sender:)), for: .touchUpInside)
 
     }
     
     
     @objc private func pressedPostButton(sender : UIButton){
-        print("tag : \(sender.tag)")
-        pressedPost!(sender.tag)
+        guard let pressedPost = pressedPost else { return }
+        guard let todayDiaryDatas = dataSet?.diaryDataList else { return }
+//        let detailContents = makeDetailContent(diaryData: todayDiaryDatas[sender.tag])
+        let detailContent = todayDiaryDatas[sender.tag]
+        var datas = [TTDiaryData]()
+        datas.append(detailContent)
+        
+        print("tag : \(datas)")
+        pressedPost(datas)
     }
     
 }

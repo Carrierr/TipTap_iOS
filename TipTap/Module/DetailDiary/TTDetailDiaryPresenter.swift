@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Kingfisher
+
 
 protocol TTDetailDiaryPresenterProtocol: TTBasePresenterProtocol {
     //View->Presenter
@@ -24,7 +26,7 @@ protocol TTDetailDiaryPresenterProtocol: TTBasePresenterProtocol {
 
 protocol TTDetailDiaryInteractorOutputProtocol: class {
     //Interactor->Presenter
-    func setModuleDatas(_ moduleDatas: [String])
+    func setModuleDatas(_ moduleDatas: [TTDiaryData])
     func didReceivedError(_ error: Error)
     func showMessage(message : String)
 }
@@ -32,7 +34,7 @@ protocol TTDetailDiaryInteractorOutputProtocol: class {
 
 final class TTDetailDiaryPresenter {
     weak var view : TTDetailDiaryViewProtocol?
-    fileprivate var moduleDatas  : [String]?
+    fileprivate var moduleDatas  : [TTDiaryData]?
     fileprivate let wireframe    : TTDetailDiaryWireFrameProtocol
     fileprivate let interactor   : TTDetailDiaryInteractorInputProtocol
     
@@ -54,17 +56,29 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
     
     
     func configureCell(_ collectionView: UICollectionView, forRowAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
-            let cell : TTDetailImageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TTDetailImageCell", for: indexPath) as! TTDetailImageCell
-            cell.diaryImageView.image = UIImage(named: "sampleImage.jpeg")
-            return cell
-        }else{
-            let cell : TTDetailTextCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TTDetailTextCell", for: indexPath) as! TTDetailTextCell
-            if let content = moduleDatas?[indexPath.row-1] {
-                cell.diaryContentLabel.text = content
-            }
-            return cell
+        
+        guard let contentData = moduleDatas?[indexPath.section] else {
+            return UICollectionViewCell()
         }
+        
+        let cell : TTDetailDiaryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TTDetailDiaryCell", for: indexPath) as! TTDetailDiaryCell
+        
+        if indexPath.row == 0 {
+            if let imageURL = contentData.imageUrl{
+                cell.diaryImageView.kf.setImage(with: imageURL)
+                cell.diaryImageView.isHidden    = false
+                cell.diaryContentLabel.isHidden = true
+            }else{
+                cell.diaryContentLabel.text = contentData.content!
+                cell.diaryContentLabel.isHidden = false
+                cell.diaryImageView.isHidden 	= true
+            }
+        }else{
+            cell.diaryContentLabel.text      = contentData.content!
+            cell.diaryContentLabel.isHidden  = false
+            cell.diaryImageView.isHidden     = true
+        }
+        return cell
     }
     
     func didSelectCollectionViewRowAt(indexPath: IndexPath) {
@@ -74,14 +88,20 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
     
     
     func numberOfRows(in section: Int) -> Int {
-        if let count = moduleDatas?.count {
-            return count
+        guard let datas = moduleDatas?[section] else { return 0 }
+        if ((datas.imageUrl) != nil) {
+            return 2
         }
-        return 0
+        return 1
     }
     
+    
+    
     func numberOfSection() -> Int {
-        return 1
+        guard let count = moduleDatas?.count else {
+            return 0
+        }
+        return count
     }
 
     func moreLoad() {
@@ -103,7 +123,7 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
 
 
 extension TTDetailDiaryPresenter : TTDetailDiaryInteractorOutputProtocol{
-    func setModuleDatas(_ moduleDatas: [String]) {
+    func setModuleDatas(_ moduleDatas: [TTDiaryData]) {
         self.moduleDatas = moduleDatas
         view?.startNetworking()
     }
@@ -115,6 +135,4 @@ extension TTDetailDiaryPresenter : TTDetailDiaryInteractorOutputProtocol{
     func showMessage(message: String) {
         
     }
-    
-    
 }

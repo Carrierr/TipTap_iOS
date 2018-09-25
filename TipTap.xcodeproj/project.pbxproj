@@ -24,6 +24,7 @@
 		A12211D12154E258004F931D /* TTDiaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12211D02154E258004F931D /* TTDiaryData.swift */; };
 		A12211D521564B59004F931D /* TTCanShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12211D421564B59004F931D /* TTCanShowAlert.swift */; };
 		A12211DB21579060004F931D /* TTTodayDiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12211DA21579060004F931D /* TTTodayDiaryService.swift */; };
+		A12211E6215A972F004F931D /* TTMyDiarySet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12211E5215A972F004F931D /* TTMyDiarySet.swift */; };
 		A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13FF2182123EBB600FB5642 /* TTLogin.storyboard */; };
 		A13FF21B2123EC4600FB5642 /* TTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */; };
 		A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */; };
@@ -51,11 +52,9 @@
 		A1466795213068F300A15CF3 /* TTDetailDiaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146678F2130664800A15CF3 /* TTDetailDiaryPresenter.swift */; };
 		A1466796213068F700A15CF3 /* TTDetailDiaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146678E2130664800A15CF3 /* TTDetailDiaryInteractor.swift */; };
 		A1466797213068FA00A15CF3 /* TTDetailDiaryWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146678D2130664800A15CF3 /* TTDetailDiaryWireFrame.swift */; };
-		A146679B21307A6900A15CF3 /* TTDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146679921307A6900A15CF3 /* TTDetailImageCell.swift */; };
-		A146679C21307A6900A15CF3 /* TTDetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A146679A21307A6900A15CF3 /* TTDetailImageCell.xib */; };
+		A146679B21307A6900A15CF3 /* TTDetailDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146679921307A6900A15CF3 /* TTDetailDiaryCell.swift */; };
+		A146679C21307A6900A15CF3 /* TTDetailDiaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A146679A21307A6900A15CF3 /* TTDetailDiaryCell.xib */; };
 		A146679E21307B0700A15CF3 /* sampleImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A146679D21307B0700A15CF3 /* sampleImage.jpeg */; };
-		A14667A121307B3300A15CF3 /* TTDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146679F21307B3300A15CF3 /* TTDetailTextCell.swift */; };
-		A14667A221307B3300A15CF3 /* TTDetailTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14667A021307B3300A15CF3 /* TTDetailTextCell.xib */; };
 		A14667A421307C6E00A15CF3 /* TTDetailDiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14667A321307C6E00A15CF3 /* TTDetailDiaryService.swift */; };
 		A14667A82130D11D00A15CF3 /* TTMyDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14667A62130D11D00A15CF3 /* TTMyDiaryCell.swift */; };
 		A14667A92130D11D00A15CF3 /* TTMyDiaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14667A72130D11D00A15CF3 /* TTMyDiaryCell.xib */; };
@@ -121,6 +120,7 @@
 		A12211D02154E258004F931D /* TTDiaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDiaryData.swift; sourceTree = "<group>"; };
 		A12211D421564B59004F931D /* TTCanShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCanShowAlert.swift; sourceTree = "<group>"; };
 		A12211DA21579060004F931D /* TTTodayDiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTodayDiaryService.swift; sourceTree = "<group>"; };
+		A12211E5215A972F004F931D /* TTMyDiarySet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiarySet.swift; sourceTree = "<group>"; };
 		A13FF2182123EBB600FB5642 /* TTLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TTLogin.storyboard; sourceTree = "<group>"; };
 		A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLoginViewController.swift; sourceTree = "<group>"; };
 		A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMainPageViewController.swift; sourceTree = "<group>"; };
@@ -148,11 +148,9 @@
 		A146678F2130664800A15CF3 /* TTDetailDiaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailDiaryPresenter.swift; sourceTree = "<group>"; };
 		A1466790213066AF00A15CF3 /* DetailDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailDiary.storyboard; sourceTree = "<group>"; };
 		A14667922130677100A15CF3 /* TTDetailDiaryOutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailDiaryOutlineView.swift; sourceTree = "<group>"; };
-		A146679921307A6900A15CF3 /* TTDetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailImageCell.swift; sourceTree = "<group>"; };
-		A146679A21307A6900A15CF3 /* TTDetailImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTDetailImageCell.xib; sourceTree = "<group>"; };
+		A146679921307A6900A15CF3 /* TTDetailDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailDiaryCell.swift; sourceTree = "<group>"; };
+		A146679A21307A6900A15CF3 /* TTDetailDiaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTDetailDiaryCell.xib; sourceTree = "<group>"; };
 		A146679D21307B0700A15CF3 /* sampleImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleImage.jpeg; sourceTree = "<group>"; };
-		A146679F21307B3300A15CF3 /* TTDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailTextCell.swift; sourceTree = "<group>"; };
-		A14667A021307B3300A15CF3 /* TTDetailTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTDetailTextCell.xib; sourceTree = "<group>"; };
 		A14667A321307C6E00A15CF3 /* TTDetailDiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailDiaryService.swift; sourceTree = "<group>"; };
 		A14667A62130D11D00A15CF3 /* TTMyDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryCell.swift; sourceTree = "<group>"; };
 		A14667A72130D11D00A15CF3 /* TTMyDiaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTMyDiaryCell.xib; sourceTree = "<group>"; };
@@ -289,8 +287,19 @@
 			isa = PBXGroup;
 			children = (
 				A12211D02154E258004F931D /* TTDiaryData.swift */,
+				A12211E5215A972F004F931D /* TTMyDiarySet.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		A12211E4215A8D68004F931D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A146679921307A6900A15CF3 /* TTDetailDiaryCell.swift */,
+				A146679A21307A6900A15CF3 /* TTDetailDiaryCell.xib */,
+				A14667922130677100A15CF3 /* TTDetailDiaryOutlineView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A13FF21C2123EC4C00FB5642 /* Login */ = {
@@ -348,7 +357,6 @@
 			isa = PBXGroup;
 			children = (
 				A13FF24F2127E73D00FB5642 /* TTTodayDiaryViewController.swift */,
-				A12211DA21579060004F931D /* TTTodayDiaryService.swift */,
 			);
 			path = TodayDiary;
 			sourceTree = "<group>";
@@ -377,26 +385,14 @@
 		A146678B2130662A00A15CF3 /* DetailDiary */ = {
 			isa = PBXGroup;
 			children = (
-				A146679821307A4500A15CF3 /* Cell */,
+				A12211E4215A8D68004F931D /* View */,
 				A146678C2130664800A15CF3 /* TTDetailDiaryViewController.swift */,
 				A146678F2130664800A15CF3 /* TTDetailDiaryPresenter.swift */,
 				A146678E2130664800A15CF3 /* TTDetailDiaryInteractor.swift */,
 				A146678D2130664800A15CF3 /* TTDetailDiaryWireFrame.swift */,
-				A14667922130677100A15CF3 /* TTDetailDiaryOutlineView.swift */,
 				A1466790213066AF00A15CF3 /* DetailDiary.storyboard */,
 			);
 			path = DetailDiary;
-			sourceTree = "<group>";
-		};
-		A146679821307A4500A15CF3 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				A146679921307A6900A15CF3 /* TTDetailImageCell.swift */,
-				A146679A21307A6900A15CF3 /* TTDetailImageCell.xib */,
-				A146679F21307B3300A15CF3 /* TTDetailTextCell.swift */,
-				A14667A021307B3300A15CF3 /* TTDetailTextCell.xib */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		A14667A52130D0D400A15CF3 /* Cell */ = {
@@ -474,6 +470,7 @@
 			children = (
 				BAD3AB3A212672F3008F417C /* TTServiceResult.swift */,
 				A14667A321307C6E00A15CF3 /* TTDetailDiaryService.swift */,
+				A12211DA21579060004F931D /* TTTodayDiaryService.swift */,
 				BAD3AB3621267165008F417C /* TTMyDiaryService.swift */,
 			);
 			path = Service;
@@ -602,10 +599,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A146679C21307A6900A15CF3 /* TTDetailImageCell.xib in Resources */,
+				A146679C21307A6900A15CF3 /* TTDetailDiaryCell.xib in Resources */,
 				A13FF22D2123FBEB00FB5642 /* mask.png in Resources */,
 				A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */,
-				A14667A221307B3300A15CF3 /* TTDetailTextCell.xib in Resources */,
 				A1466791213066AF00A15CF3 /* DetailDiary.storyboard in Resources */,
 				A11F61BC2123E6AA0029E80A /* Assets.xcassets in Resources */,
 				A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */,
@@ -743,6 +739,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TipTap/Pods-TipTap-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ScratchCard/ScratchCard.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -750,6 +747,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScratchCard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -817,7 +815,6 @@
 				A17ED5FB2148085F00E28462 /* TTAPIManager.swift in Sources */,
 				BAD3AB3D21268957008F417C /* TTMyDiaryWireFrame.swift in Sources */,
 				A14667A82130D11D00A15CF3 /* TTMyDiaryCell.swift in Sources */,
-				A14667A121307B3300A15CF3 /* TTDetailTextCell.swift in Sources */,
 				A0AD5DD2212CFAB200D76543 /* TestDiary.swift in Sources */,
 				A12211D12154E258004F931D /* TTDiaryData.swift in Sources */,
 				A13FF2542128350400FB5642 /* UIColorExtension.swift in Sources */,
@@ -838,9 +835,10 @@
 				A12211DB21579060004F931D /* TTTodayDiaryService.swift in Sources */,
 				A13FF239212409B300FB5642 /* TTSharedVCExtension.swift in Sources */,
 				A13FF2222123F85100FB5642 /* TTSharedViewController.swift in Sources */,
+				A12211E6215A972F004F931D /* TTMyDiarySet.swift in Sources */,
 				A17ED5FD214809C400E28462 /* TTAuthAPIManager.swift in Sources */,
 				A11F61B52123E6A90029E80A /* AppDelegate.swift in Sources */,
-				A146679B21307A6900A15CF3 /* TTDetailImageCell.swift in Sources */,
+				A146679B21307A6900A15CF3 /* TTDetailDiaryCell.swift in Sources */,
 				A12211D521564B59004F931D /* TTCanShowAlert.swift in Sources */,
 				A0AD5DD4212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift in Sources */,
 			);

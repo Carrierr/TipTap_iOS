@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TTTodayDiaryViewController: TTBaseViewController {
+class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert {
     @IBOutlet weak var postView: UIView!
     private var mainView       : TTPostMainView?
     private lazy var service = TTTodayDiaryService()
@@ -33,8 +33,8 @@ class TTTodayDiaryViewController: TTBaseViewController {
     //MARK: Draw UI
     override func setupUI() {
         mainView = TTPostMainView(frame: self.view.frame)
-        mainView?.pressedPost = { (postIndex) in
-            self.show(TTDetailDiaryWireFrame.createModule(), sender: nil)
+        mainView?.pressedPost = { (diaryDatas) in
+            self.show(TTDetailDiaryWireFrame.createModule(diaryDatas: diaryDatas), sender: nil)
         }
         
         self.postView.addSubview(mainView!)
@@ -49,6 +49,10 @@ class TTTodayDiaryViewController: TTBaseViewController {
             case .success(let result):
                 self.mainView?.dataSet = TTDiaryDataSet(diaryDataList: result.diaryDataList!, stampNameList: result.stampNameList!)
                 break
+            case .errorMessage(let errorMsg):
+                self.showAlert(title: "", message: errorMsg)
+                break
+                
             default : break
             }
         }

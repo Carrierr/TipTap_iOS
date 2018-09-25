@@ -23,7 +23,7 @@ protocol TTMyDiaryPresenterProtocol: TTBasePresenterProtocol {
 
 protocol TTMyDiaryInteractorOutputProtocol: class {
     //Interactor->Presenter
-    func setModuleDatas(_ moduleDatas: [[String:String]])
+    func setModuleDatas(_ moduleDatas: TTMyDiarySet)
     func didReceivedError(_ error: Error)
     func showMessage(message : String)
 }
@@ -31,7 +31,7 @@ protocol TTMyDiaryInteractorOutputProtocol: class {
 
 final class TTMyDiaryPresenter {
     weak var view : TTMyDiaryViewProtocol?
-    fileprivate var moduleDatas  : [[String:String]]?
+    fileprivate var moduleDatas  : TTMyDiarySet?
     fileprivate let wireframe    : TTMyDiaryWireFrameProtocol
     fileprivate let interactor   : TTMyDiaryInteractorInputProtocol
     
@@ -45,46 +45,76 @@ final class TTMyDiaryPresenter {
     }
 }
 
-extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol {
+extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol,TTCurrentTimeGettable {
     func numberOfRows(in section: Int) -> Int {
-        if let count = moduleDatas?.count {
+        if let count = moduleDatas?.myDiaryDatas?[section].myDateDatas?.count {
             return count
         }
         return 0
     }
     
+    
+    
     func numberOfSection() -> Int {
-        return 1
+        if let count = moduleDatas?.myDiaryDatas?.count {
+            return count
+        }
+        return 0
     }
+    
+    
     
     func didSelectTableViewRowAt(indexPath: IndexPath) {
         print("select \(indexPath.row)")
-        wireframe.navigate(to: .show(item: ["tempString"]))
+        guard let diaryData = moduleDatas?.myDiaryDatas?[indexPath.section],
+            let day = diaryData.myDateDatas?[indexPath.row].day else { return }
+        
+        let dateStr = "\(diaryData.year ?? "")-\(diaryData.month ?? "")-\(day)"
+        wireframe.navigate(to: .show(dateString: dateStr))
     }
     
+    
+    
     func configureCell(_ tableView: UITableView, forRowAt indexPath: IndexPath) -> UITableViewCell {
-        var day = ""
+        var month = ""
+        var day   = ""
         var start = ""
         var destination = ""
         
-        if let data = moduleDatas?[indexPath.row] {
-            day = data["day"]!
-            start = data["start"]!
-            destination = data["destination"]!
+        if let monthStr = moduleDatas?.myDiaryDatas?[indexPath.section].month {
+            month = convertMonthString(month: Int(monthStr)!)
         }
         
+        if let data = moduleDatas?.myDiaryDatas?[indexPath.section].myDateDatas?[indexPath.row] {
+            day = data.day ?? ""
+            if let firstData = data.firstDiary {
+                start = firstData.location ?? ""
+            }else{
+                if let lastData = data.lastDiary {
+                    start       = lastData.location ?? ""
+                    destination = lastData.location ?? ""
+                }
+            }
+            
+            if let lastData = data.lastDiary {
+                destination = lastData.location ?? ""
+            }
+        }
+        
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "TTMyDiaryCell") as? TTMyDiaryCell
-        cell?.dayLabel.text = day
-        cell?.startLocation.text = start
+        cell?.monthLabel.text       = month
+        cell?.dayLabel.text         = day
+        cell?.startLocation.text    = start
         cell?.destinationLabel.text = destination
-        cell?.selectionStyle = .none
+        cell?.selectionStyle        = .none
         
         if indexPath.row == 0 {
             cell?.monthLabel.isHidden = false
-            cell?.lineView.isHidden = false
+            cell?.lineView.isHidden   = false
         }else{
             cell?.monthLabel.isHidden = true
-            cell?.lineView.isHidden = true
+            cell?.lineView.isHidden   = true
         }
         
         return cell!
@@ -110,7 +140,7 @@ extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol {
 
 
 extension TTMyDiaryPresenter : TTMyDiaryInteractorOutputProtocol{
-    func setModuleDatas(_ moduleDatas: [[String:String]]) {
+    func setModuleDatas(_ moduleDatas: TTMyDiarySet) {
         self.moduleDatas = moduleDatas
         view?.startNetworking()
     }

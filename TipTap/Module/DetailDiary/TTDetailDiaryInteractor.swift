@@ -20,10 +20,16 @@ final class TTDetailDiaryInteractor: TTDetailDiaryInteractorInputProtocol{
     
     private lazy var service = TTDetailDiaryService()
     weak var presenter : TTDetailDiaryInteractorOutputProtocol?
-    
+    var diaryDatas     : [TTDiaryData]?
+    var dateString     : String?
     
     func requestDetailDiaryList() {
-        service.fetchDetailDiaryList { (result) in
+        if let diaryDatas = diaryDatas {
+            self.presenter?.setModuleDatas(diaryDatas)
+        }
+        
+        guard let dateString = dateString else { return }
+        service.fetchDetailDiaryList(dateString: dateString) { (result) in
             switch result{
             case .success(let result):
                 self.presenter?.setModuleDatas(result)

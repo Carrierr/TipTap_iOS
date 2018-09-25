@@ -8,8 +8,9 @@
 
 import UIKit
 
-class TTDetailImageCell: UICollectionViewCell {
+class TTDetailDiaryCell: UICollectionViewCell {
 
+    @IBOutlet weak var diaryContentLabel: UILabel!
     @IBOutlet weak var diaryImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7E6270250F00488229D9C846C3409290"
+               BlueprintIdentifier = "C9FDFF729244FE9EE2F7388F4E9E4337"
                BlueprintName = "ScratchCard"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "ScratchCard.framework">

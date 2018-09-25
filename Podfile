@@ -8,6 +8,7 @@ target 'TipTap' do
   pod 'Alamofire', '~> 4.6'
   pod 'SwiftyJSON'
   pod 'SnapKit', '~> 4.0'
+  pod 'Kingfisher', '~> 4.0'
   # Pods for TipTap
 
   target 'TipTapTests' do

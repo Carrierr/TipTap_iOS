@@ -48,8 +48,7 @@ class TTDetailDiaryViewController: TTBaseViewController {
     }
     
     func registerCell(){
-        self.collectionView?.register(UINib(nibName: "TTDetailImageCell", bundle: nil), forCellWithReuseIdentifier: "TTDetailImageCell")
-        self.collectionView?.register(UINib(nibName: "TTDetailTextCell", bundle: nil), forCellWithReuseIdentifier: "TTDetailTextCell")
+        self.collectionView?.register(UINib(nibName: "TTDetailDiaryCell", bundle: nil), forCellWithReuseIdentifier: "TTDetailDiaryCell")
     }
     
     @objc private func pressedDeleteButton(){
@@ -94,7 +93,7 @@ extension TTDetailDiaryViewController : UICollectionViewDataSource{
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return (presenter?.numberOfSection())!
     }
     
     
