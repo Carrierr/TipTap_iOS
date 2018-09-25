@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TTTodayDiaryViewController: TTBaseViewController {
+class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert {
     @IBOutlet weak var postView: UIView!
     private var mainView       : TTPostMainView?
     private lazy var service = TTTodayDiaryService()
@@ -49,6 +49,10 @@ class TTTodayDiaryViewController: TTBaseViewController {
             case .success(let result):
                 self.mainView?.dataSet = TTDiaryDataSet(diaryDataList: result.diaryDataList!, stampNameList: result.stampNameList!)
                 break
+            case .errorMessage(let errorMsg):
+                self.showAlert(title: "", message: errorMsg)
+                break
+                
             default : break
             }
         }

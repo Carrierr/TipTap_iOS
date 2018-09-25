@@ -10,31 +10,13 @@ import Foundation
 
 class TTMyDiaryService{
     private let URL = ""
-    private var myDiaryData : [[String:String]]?
-    
-    func fetchMyDiaryList(completion: @escaping (TTResult<[[String:String]]>) -> ()){
-        let resultDict : [String:String] = ["day":"22",
-                                          "start":"낙성대역",
-                                          "destination":"서울 특별시 망원동 키오스크"
-        ]
-        
-        let resultDict2 : [String:String] = ["day":"24",
-                                            "start":"서울 특별시 이태원역",
-                                            "destination":"인천 동구 송현동 솔빛마을"
-        ]
-        
-        let resultDict3 : [String:String] = ["day":"21",
-                                            "start":"부산광역시 해운대",
-                                            "destination":"대구 망원동 스타벅스"
-        ]
-        
-        let resultDict4 : [String:String] = ["day":"17",
-                                            "start":"낙성대역",
-                                            "destination":"조선민주주의인민공화국"
-        ]
-        
-        myDiaryData = [resultDict,resultDict2,resultDict3,resultDict4]
-        completion(.success(myDiaryData!))
-
+    private var myDiaryData : TTMyDiarySet?
+    //,headers:["tiptap-token":"5ddfcb4c-aff0-441b-9a88-e7dbecb43170"]
+    func fetchMyDiaryList(completion: @escaping (TTResult<TTMyDiarySet>) -> ()){
+        TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/diary/list?page=1&limit=20", method: .get) { (result) in
+            let myDiaryDatas : TTMyDiarySet = TTMyDiarySet(rawJson: result)
+            
+            completion(.success(myDiaryDatas))
+        }
     }
 }

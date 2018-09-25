@@ -17,7 +17,7 @@ protocol TTCanHasDiaryData {
 struct TTDiaryDataSet {
     var diaryDataList : [TTDiaryData]?
     var stampNameList : [String]?
-    
+    var result        : Bool = false
     
     init(diaryDataList : [TTDiaryData], stampNameList:[String]) {
         self.diaryDataList = diaryDataList
@@ -30,14 +30,18 @@ struct TTDiaryDataSet {
         guard json["code"].intValue == 1000 else { return }
         let dataDict = json["data"].dictionaryValue
         let dataJson = JSON(dataDict)
-        diaryDataList = Array<TTDiaryData>()
-        stampNameList = Array<String>()
         
-        for diaryData in dataJson["list"].arrayValue {
+        guard let listDatas = dataJson["list"].array else { return }
+        result = true
+        diaryDataList = Array<TTDiaryData>()
+        
+        for diaryData in listDatas {
             diaryDataList?.append(TTDiaryData(rawJson:diaryData))
         }
         
-        for stampStr in dataJson["stamp"].arrayValue {
+        guard let stampDatas = dataJson["stamp"].array else { return }
+        stampNameList = Array<String>()
+        for stampStr in stampDatas {
             stampNameList?.append(stampStr.stringValue)
         }
     }

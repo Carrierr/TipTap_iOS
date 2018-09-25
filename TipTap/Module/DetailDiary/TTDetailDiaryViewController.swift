@@ -93,7 +93,7 @@ extension TTDetailDiaryViewController : UICollectionViewDataSource{
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return (presenter?.numberOfSection())!
     }
     
     

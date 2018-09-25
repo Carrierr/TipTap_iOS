@@ -44,7 +44,7 @@ class TTMyDiaryViewController: TTBaseViewController {
 
 extension TTMyDiaryViewController: TTMyDiaryViewProtocol {
     func startNetworking() {
-        
+        self.tableView.reloadData()
     }
     
     func stopNetworking() {
@@ -59,7 +59,7 @@ extension TTMyDiaryViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 139
     }
 }
 
@@ -67,7 +67,7 @@ extension TTMyDiaryViewController: UITableViewDelegate {
 
 extension TTMyDiaryViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return (presenter?.numberOfSection())!
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

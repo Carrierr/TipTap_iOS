@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TTPostMainView: UIView, TTDiaryOutlineContainer, TTPostContainer, TTCanMakeDetailContent {
+class TTPostMainView: UIView, TTDiaryOutlineContainer, TTPostContainer {
     var dataSet: TTDiaryDataSet?{
         didSet{
             contentChangedOutline()

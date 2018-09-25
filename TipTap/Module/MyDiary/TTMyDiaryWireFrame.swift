@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum TTMyDiaryRouterType{
-    case show(item: [String])
+    case show(dateString: String)
     case alert(title: String, message: String)
 }
 
@@ -23,8 +23,8 @@ final class TTMyDiaryWireFrame: TTBaseWireFrame, TTMyDiaryWireFrameProtocol{
         switch route {
         case .alert(let title, let message):
             break
-        case .show(let item):
-            self.view.show(TTDetailDiaryWireFrame.createModule(), sender: nil)
+        case .show(let dateString):
+            self.view.show(TTDetailDiaryWireFrame.createModule(dateString: dateString), sender: nil)
             break
             
         }

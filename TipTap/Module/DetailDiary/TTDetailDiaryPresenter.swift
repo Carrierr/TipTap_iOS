@@ -135,6 +135,4 @@ extension TTDetailDiaryPresenter : TTDetailDiaryInteractorOutputProtocol{
     func showMessage(message: String) {
         
     }
-    
-    
 }

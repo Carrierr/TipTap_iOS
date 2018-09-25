@@ -29,7 +29,9 @@ final class TTDetailDiaryWireFrame: TTBaseWireFrame, TTDetailDiaryWireFrameProto
         }
     }
     
-    static func createModule(diaryDatas:[TTDiaryData]? = nil)->TTDetailDiaryViewController{
+    static func createModule(dateString : String? = nil,
+                             diaryDatas:[TTDiaryData]? = nil)
+        ->TTDetailDiaryViewController{
         let view       = UIStoryboard(name: "DetailDiary", bundle: nil) .
                             instantiateViewController(withIdentifier: "TTDetailDiaryViewController") as! TTDetailDiaryViewController
         let wireframe  = TTDetailDiaryWireFrame()
@@ -40,6 +42,7 @@ final class TTDetailDiaryWireFrame: TTBaseWireFrame, TTDetailDiaryWireFrameProto
         wireframe.view        = view
         interactor.presenter  = presenter
         interactor.diaryDatas = diaryDatas
+        interactor.dateString = dateString
         
         return view
     }
