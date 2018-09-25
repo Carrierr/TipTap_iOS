@@ -28,6 +28,8 @@ class TTMyDiaryViewController: TTBaseViewController {
     override func setupUI() {
 //        self.tableView.allowsSelection = false
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.tableView.contentInset   = UIEdgeInsetsMake(7, 0, 7, 0)
+        self.tableView.separatorInset = UIEdgeInsetsMake(7, 0, 7, 0)
         registerCell()
     }
     
@@ -36,8 +38,7 @@ class TTMyDiaryViewController: TTBaseViewController {
     }
     
     func registerCell(){
-        self.tableView.register(UINib.init(nibName:"TTMyDiaryFirstCell",bundle:nil), forCellReuseIdentifier: "TTMyDiaryFirstCell")
-        self.tableView.register(UINib.init(nibName:"TTMyDiaryNormalCell",bundle:nil), forCellReuseIdentifier: "TTMyDiaryNormalCell")
+        self.tableView.register(UINib.init(nibName:"TTMyDiaryCell",bundle:nil), forCellReuseIdentifier: "TTMyDiaryCell")
     }
 }
 
@@ -76,4 +77,5 @@ extension TTMyDiaryViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return (presenter?.configureCell(tableView, forRowAt: indexPath))!
     }
+    
 }

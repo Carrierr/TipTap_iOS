@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="158" id="KGk-i7-Jjw" customClass="TTMyDiaryCell" customModule="TipTap" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="157.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diaryCard" translatesAutoresizingMaskIntoConstraints="NO" id="Gka-i8-Y5C">
+                        <rect key="frame" x="104" y="0.0" width="271" height="157.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aug" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvX-gx-k8L">
+                        <rect key="frame" x="60" y="12" width="31" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faf-T8-aAw">
+                        <rect key="frame" x="137" y="31" width="35" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="textColor" red="0.47843137254901957" green="0.78431372549019607" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 TIPTAP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdY-yu-iYn">
+                        <rect key="frame" x="219" y="31" width="57.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울특별시 망원동 키오스크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdu-n6-Ehy">
+                        <rect key="frame" x="219" y="50.5" width="131.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울대입구역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uk5-5f-XJ9">
+                        <rect key="frame" x="219" y="88" width="63" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWa-Iu-fil">
+                        <rect key="frame" x="0.0" y="22" width="32" height="1"/>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="qah-kb-iAo"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots" translatesAutoresizingMaskIntoConstraints="NO" id="4bn-Db-Qgf">
+                        <rect key="frame" x="219" y="73" width="1" height="7"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="VsC-1d-tie"/>
+                            <constraint firstAttribute="height" constant="7" id="waf-cu-Dc7"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uk5-5f-XJ9" firstAttribute="leading" secondItem="fdu-n6-Ehy" secondAttribute="leading" id="8L3-IX-e3s"/>
+                    <constraint firstItem="dvX-gx-k8L" firstAttribute="leading" secondItem="uWa-Iu-fil" secondAttribute="trailing" constant="28" id="EM7-PZ-uUW"/>
+                    <constraint firstItem="wdY-yu-iYn" firstAttribute="top" secondItem="faf-T8-aAw" secondAttribute="top" id="GER-tp-Fh8"/>
+                    <constraint firstItem="4bn-Db-Qgf" firstAttribute="top" secondItem="fdu-n6-Ehy" secondAttribute="bottom" constant="8" id="Ifx-pE-DLy"/>
+                    <constraint firstItem="faf-T8-aAw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="31" id="M4c-Vq-NQl"/>
+                    <constraint firstAttribute="trailing" secondItem="Gka-i8-Y5C" secondAttribute="trailing" id="NoI-M2-Cel"/>
+                    <constraint firstItem="uk5-5f-XJ9" firstAttribute="top" secondItem="4bn-Db-Qgf" secondAttribute="bottom" constant="8" id="RV0-lI-9zZ"/>
+                    <constraint firstItem="Gka-i8-Y5C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="104" id="S97-x6-zCI"/>
+                    <constraint firstItem="uWa-Iu-fil" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="TTT-65-cP4"/>
+                    <constraint firstItem="fdu-n6-Ehy" firstAttribute="top" secondItem="wdY-yu-iYn" secondAttribute="bottom" constant="5" id="Ucl-c0-NAh"/>
+                    <constraint firstItem="wdY-yu-iYn" firstAttribute="leading" secondItem="faf-T8-aAw" secondAttribute="trailing" constant="47" id="cpW-vi-Gvn"/>
+                    <constraint firstItem="faf-T8-aAw" firstAttribute="leading" secondItem="Gka-i8-Y5C" secondAttribute="leading" constant="33" id="d3l-Gj-DZL"/>
+                    <constraint firstItem="dvX-gx-k8L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="d59-bL-qcK"/>
+                    <constraint firstItem="Gka-i8-Y5C" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" id="fGO-X2-Hnb"/>
+                    <constraint firstItem="dvX-gx-k8L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="p5a-Bv-Hff"/>
+                    <constraint firstItem="fdu-n6-Ehy" firstAttribute="leading" secondItem="wdY-yu-iYn" secondAttribute="leading" id="pNE-g6-7Fb"/>
+                    <constraint firstItem="4bn-Db-Qgf" firstAttribute="leading" secondItem="fdu-n6-Ehy" secondAttribute="leading" id="u40-eN-u6c"/>
+                    <constraint firstItem="Gka-i8-Y5C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wwm-dD-Ttz"/>
+                    <constraint firstItem="uWa-Iu-fil" firstAttribute="centerY" secondItem="dvX-gx-k8L" secondAttribute="centerY" id="xzS-Le-AaQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dayLabel" destination="faf-T8-aAw" id="soY-vA-F6F"/>
+                <outlet property="destinationLabel" destination="uk5-5f-XJ9" id="MQz-AJ-6qP"/>
+                <outlet property="lineView" destination="uWa-Iu-fil" id="exD-Ig-Zkq"/>
+                <outlet property="monthLabel" destination="dvX-gx-k8L" id="BCi-Pj-66k"/>
+                <outlet property="startLocation" destination="fdu-n6-Ehy" id="2M5-jn-SDQ"/>
+            </connections>
+            <point key="canvasLocation" x="60" y="108.84557721139431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="diaryCard" width="271" height="134"/>
+        <image name="dots" width="1" height="7"/>
+    </resources>
+</document>
