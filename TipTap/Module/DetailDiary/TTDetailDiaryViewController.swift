@@ -15,6 +15,8 @@ protocol TTDetailDiaryViewProtocol:class{
 
 class TTDetailDiaryViewController: TTBaseViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var brandLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     var presenter:TTDetailDiaryPresenterProtocol?
@@ -40,6 +42,7 @@ class TTDetailDiaryViewController: TTBaseViewController {
     override func setupUI() {
         setupNavigaion()
         registerCell()
+        titleLabel.text = "MY DIARY\n#1"
         brandLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
     }
     
@@ -54,11 +57,20 @@ class TTDetailDiaryViewController: TTBaseViewController {
     @objc private func pressedDeleteButton(){
         
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        for cell in self.collectionView.visibleCells {
+            let indexPath = self.collectionView.indexPath(for: cell)
+            locationLabel.text = presenter!.locationString(section:indexPath?.section ?? 0)
+            titleLabel.text = "MY DIARY\n#\((indexPath?.section ?? 1) + 1)"
+        }
+    }
 }
 
 extension TTDetailDiaryViewController: TTDetailDiaryViewProtocol {
     func startNetworking() {
         self.collectionView.reloadData()
+        locationLabel.text = presenter!.locationString(section:0)
     }
     
     func stopNetworking() {
@@ -101,6 +113,7 @@ extension TTDetailDiaryViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return (presenter?.configureCell(collectionView, forRowAt: indexPath))!
     }
+    
 }
 
 

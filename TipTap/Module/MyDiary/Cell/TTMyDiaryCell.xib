@@ -28,7 +28,7 @@
                         <color key="textColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faf-T8-aAw">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faf-T8-aAw">
                         <rect key="frame" x="137" y="38" width="35" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" red="0.47843137254901957" green="0.78431372549019607" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,13 +41,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울특별시 망원동 키오스크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdu-n6-Ehy">
-                        <rect key="frame" x="219" y="57.5" width="131.5" height="14.5"/>
+                        <rect key="frame" x="219" y="57.5" width="135" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울대입구역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uk5-5f-XJ9">
-                        <rect key="frame" x="219" y="95" width="63" height="15"/>
+                        <rect key="frame" x="219" y="95" width="135" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -74,6 +74,7 @@
                     <constraint firstItem="4bn-Db-Qgf" firstAttribute="top" secondItem="fdu-n6-Ehy" secondAttribute="bottom" constant="8" id="Ifx-pE-DLy"/>
                     <constraint firstItem="faf-T8-aAw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="38" id="M4c-Vq-NQl"/>
                     <constraint firstAttribute="trailing" secondItem="Gka-i8-Y5C" secondAttribute="trailing" id="NoI-M2-Cel"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fdu-n6-Ehy" secondAttribute="trailing" constant="5" id="OVt-Wm-24P"/>
                     <constraint firstItem="uk5-5f-XJ9" firstAttribute="top" secondItem="4bn-Db-Qgf" secondAttribute="bottom" constant="8" id="RV0-lI-9zZ"/>
                     <constraint firstItem="Gka-i8-Y5C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="104" id="S97-x6-zCI"/>
                     <constraint firstItem="uWa-Iu-fil" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="TTT-65-cP4"/>
@@ -84,6 +85,7 @@
                     <constraint firstItem="Gka-i8-Y5C" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" id="fGO-X2-Hnb"/>
                     <constraint firstItem="dvX-gx-k8L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="p5a-Bv-Hff"/>
                     <constraint firstItem="fdu-n6-Ehy" firstAttribute="leading" secondItem="wdY-yu-iYn" secondAttribute="leading" id="pNE-g6-7Fb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="uk5-5f-XJ9" secondAttribute="trailing" constant="5" id="toN-XT-c3w"/>
                     <constraint firstItem="4bn-Db-Qgf" firstAttribute="leading" secondItem="fdu-n6-Ehy" secondAttribute="leading" id="u40-eN-u6c"/>
                     <constraint firstItem="Gka-i8-Y5C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="wwm-dD-Ttz"/>
                     <constraint firstItem="uWa-Iu-fil" firstAttribute="centerY" secondItem="dvX-gx-k8L" secondAttribute="centerY" id="xzS-Le-AaQ"/>
