@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sYv-wH-J13">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Descript Main View Controller-->
+        <scene sceneID="dFu-Wh-0a1">
+            <objects>
+                <viewController storyboardIdentifier="TTDescriptMainViewController" id="S8z-ub-iLR" customClass="TTDescriptMainViewController" customModule="TipTap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fDQ-y2-EK6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="PNN-PG-Qig">
+                                <rect key="frame" x="168" y="630" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.20743130339999999" green="0.32815341809999998" blue="0.9844183326" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.044980095079999997" blue="0.1399733074" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tvX-Rt-aYD" firstAttribute="bottom" secondItem="PNN-PG-Qig" secondAttribute="bottom" id="3Zf-hC-OOq"/>
+                            <constraint firstItem="PNN-PG-Qig" firstAttribute="centerX" secondItem="fDQ-y2-EK6" secondAttribute="centerX" id="6N5-yv-3xs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tvX-Rt-aYD"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="PNN-PG-Qig" id="PBf-bz-6pf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xb4-Jf-ZiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-508" y="-88"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="KW6-Kr-CeG">
+            <objects>
+                <pageViewController storyboardIdentifier="TTFirstDescriptViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="sYv-wH-J13" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOx-ea-vLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="321" y="-87"/>
+        </scene>
+        <!--Descript Content View Controller-->
+        <scene sceneID="D5n-Su-WwJ">
+            <objects>
+                <viewController storyboardIdentifier="TTDescriptContentViewController" id="oss-sg-6e4" customClass="TTDescriptContentViewController" customModule="TipTap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jk9-dN-Bsl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wQ8-a1-ocQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="370"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="370" id="I2Y-ZA-bXN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 하루 여행일기를 써보세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTx-MT-b5R">
+                                <rect key="frame" x="85" y="430" width="205" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SG-nQ-eTg">
+                                <rect key="frame" x="166.5" y="471" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFP-MC-ahu">
+                                <rect key="frame" x="310" y="617" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="다음으로">
+                                    <color key="titleColor" red="0.47843137254901957" green="0.78431372549019607" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedNextButton:" destination="oss-sg-6e4" eventType="touchUpInside" id="C0s-eg-U9Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Git-if-fFM">
+                                <rect key="frame" x="13" y="617" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="스킵하기">
+                                    <color key="titleColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedSkipButton:" destination="oss-sg-6e4" eventType="touchUpInside" id="d5q-Ze-eF5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="OTx-MT-b5R" firstAttribute="centerX" secondItem="Jk9-dN-Bsl" secondAttribute="centerX" id="6FU-7K-qPs"/>
+                            <constraint firstItem="OTx-MT-b5R" firstAttribute="top" secondItem="wQ8-a1-ocQ" secondAttribute="bottom" constant="60" id="Blf-35-n0m"/>
+                            <constraint firstItem="wQ8-a1-ocQ" firstAttribute="top" secondItem="Jk9-dN-Bsl" secondAttribute="top" id="HBQ-g3-adO"/>
+                            <constraint firstItem="5SG-nQ-eTg" firstAttribute="top" secondItem="OTx-MT-b5R" secondAttribute="bottom" constant="20" id="J35-4a-fwu"/>
+                            <constraint firstItem="5SG-nQ-eTg" firstAttribute="centerX" secondItem="Jk9-dN-Bsl" secondAttribute="centerX" id="XWf-fQ-M8r"/>
+                            <constraint firstItem="mfl-QE-xzl" firstAttribute="trailing" secondItem="wQ8-a1-ocQ" secondAttribute="trailing" id="ceC-dm-OE5"/>
+                            <constraint firstItem="wQ8-a1-ocQ" firstAttribute="leading" secondItem="Jk9-dN-Bsl" secondAttribute="leading" id="khe-j4-qfS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mfl-QE-xzl"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptContentLabel" destination="5SG-nQ-eTg" id="cY1-N7-Zkf"/>
+                        <outlet property="descriptImageView" destination="wQ8-a1-ocQ" id="zyy-to-9bf"/>
+                        <outlet property="descriptTitleLabel" destination="OTx-MT-b5R" id="iW6-kQ-fOH"/>
+                        <outlet property="nextButton" destination="fFP-MC-ahu" id="GEe-zn-0bO"/>
+                        <outlet property="skipButton" destination="Git-if-fFM" id="4Tw-Te-4eI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Jl-Hl-lJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="321" y="597"/>
+        </scene>
+    </scenes>
+</document>

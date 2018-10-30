@@ -14,11 +14,11 @@ let appDelegate = UIApplication.shared.delegate as? AppDelegate
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var loginViewController: UIViewController?
-    var mainViewController: UIViewController?
+    var loginViewController         : UIViewController?
+    var mainViewController          : UIViewController?
+    var firstDescriptViewController : UIViewController?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {        
         KOSession.shared().isAutomaticPeriodicRefresh = true
         setupEntryController()
         
@@ -38,22 +38,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func setupEntryController() {
         let loginStoryboard = UIStoryboard(name: "TTLogin", bundle: nil)
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
+        let descriptStoryboard = UIStoryboard(name: "TTFirstDescriptViewController", bundle: nil)
 
         
         let viewController = loginStoryboard.instantiateViewController(withIdentifier: "TTLoginViewController") as UIViewController
         let viewController2 = mainStoryboard.instantiateViewController(withIdentifier: "TTMainPageViewController") as UIViewController
+        let viewController3 = descriptStoryboard.instantiateViewController(withIdentifier: "TTDescriptMainViewController") as UIViewController
         
         
-        self.loginViewController = viewController
-        self.mainViewController = viewController2
+        
+        self.loginViewController         = viewController
+        self.mainViewController          = viewController2
+        self.firstDescriptViewController = viewController3
     }
     
     
     fileprivate func reloadRootViewController() {
         let isOpened = KOSession.shared().isOpen()
-
-        self.window?.rootViewController = isOpened ? UINavigationController(rootViewController: self.mainViewController!)  : UINavigationController(rootViewController: self.loginViewController!)
+        var launchVC : UIViewController?
+        if TTDeviceInfo.SettingInfo.isFirstLaunch {
+            launchVC = firstDescriptViewController
+        }else{
+            launchVC = mainViewController
+        }
+        
+        self.window?.rootViewController = isOpened ? UINavigationController(rootViewController: launchVC!)  : UINavigationController(rootViewController: self.loginViewController!)
         self.window?.makeKeyAndVisible()
     }
     
