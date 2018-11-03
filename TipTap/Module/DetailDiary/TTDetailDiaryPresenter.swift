@@ -21,6 +21,9 @@ protocol TTDetailDiaryPresenterProtocol: TTBasePresenterProtocol {
     func numberOfSection()->Int
     func sizeForItem(_ collectionView : UICollectionView, indexPath : IndexPath)->CGSize
     func configureCell(_ collectionView:UICollectionView, forRowAt indexPath : IndexPath)->UICollectionViewCell
+    
+    //UIView
+    func locationString(section:Int)->String
 }
 
 
@@ -96,6 +99,10 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
     }
     
     
+    func locationString(section:Int)->String{
+        return moduleDatas?[section].location ?? ""
+    }
+    
     
     func numberOfSection() -> Int {
         guard let count = moduleDatas?.count else {
@@ -116,9 +123,6 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
         view?.startNetworking()
         interactor.requestDetailDiaryList()
     }
-    
-    
-    
 }
 
 

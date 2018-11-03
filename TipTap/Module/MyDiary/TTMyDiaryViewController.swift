@@ -26,7 +26,6 @@ class TTMyDiaryViewController: TTBaseViewController {
     }
 
     override func setupUI() {
-//        self.tableView.allowsSelection = false
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.tableView.contentInset   = UIEdgeInsetsMake(7, 0, 7, 0)
         self.tableView.separatorInset = UIEdgeInsetsMake(7, 0, 7, 0)
@@ -37,9 +36,14 @@ class TTMyDiaryViewController: TTBaseViewController {
         
     }
     
-    func registerCell(){
-        self.tableView.register(UINib.init(nibName:"TTMyDiaryCell",bundle:nil), forCellReuseIdentifier: "TTMyDiaryCell")
+    private func registerCell(){ self.tableView.register(UINib.init(nibName:"TTMyDiaryCell",bundle:nil), forCellReuseIdentifier: "TTMyDiaryCell")
     }
+    
+    
+    @IBAction func pressedCalendar(_ sender: Any) {
+        
+    }
+    
 }
 
 extension TTMyDiaryViewController: TTMyDiaryViewProtocol {

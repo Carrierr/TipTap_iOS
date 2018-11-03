@@ -33,7 +33,6 @@ class TTMainPageViewController: UIPageViewController {
             return UIStoryboard(name: "Main", bundle: nil) .
                 instantiateViewController(withIdentifier: "first")
         }
-        
     }
     
     override func viewDidLoad() {

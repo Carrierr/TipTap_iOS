@@ -67,4 +67,19 @@ struct TTDeviceInfo {
             }
         }
     }
+    
+    struct SettingInfo{
+        static var isFirstLaunch : Bool{
+            set(newVal){
+                UserDefaults.standard.setValue(newVal, forKey: "isFirstLaunch")
+            }
+            
+            get{
+                if let isFirst = UserDefaults.standard.object(forKey: "isFirstLaunch") as? Bool {
+                    return isFirst
+                }
+                return true
+            }
+        }
+    }
 }
