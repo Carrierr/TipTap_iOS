@@ -13,7 +13,7 @@ let appDelegate = UIApplication.shared.delegate as? AppDelegate
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    var window                      : UIWindow?
     var loginViewController         : UIViewController?
     var mainViewController          : UIViewController?
     var firstDescriptViewController : UIViewController?

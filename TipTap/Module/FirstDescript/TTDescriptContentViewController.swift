@@ -9,34 +9,20 @@
 import UIKit
 
 class TTDescriptContentViewController: UIViewController {
-
-    @IBOutlet weak var descriptImageView: UIImageView!
-    @IBOutlet weak var descriptTitleLabel: UILabel!
-    @IBOutlet weak var descriptContentLabel: UILabel!
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var skipButton: UIButton!
+    var descriptionContent  : String?
+    var descriptionTitle    : String?
+    var descriptionImage: UIImage?
+    
+    @IBOutlet private weak var imageHeightConst: NSLayoutConstraint!
+    @IBOutlet private weak var splashImageView: UIImageView!
+    @IBOutlet private weak var descriptTitleLabel: UILabel!
+    @IBOutlet private weak var descriptContentLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        descriptTitleLabel.text = descriptionTitle
+        descriptContentLabel.text = descriptionContent
+        splashImageView.image     = descriptionImage
+        imageHeightConst.constant = UIScreen.main.bounds.height * 0.6
     }
-    
-
-    @IBAction func pressedNextButton(_ sender: Any) {
-        
-    }
-    @IBAction func pressedSkipButton(_ sender: Any) {
-        
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
