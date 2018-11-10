@@ -52,7 +52,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkh-yW-DkD">
-                                <rect key="frame" x="316" y="-10" width="35" height="35"/>
+                                <rect key="frame" x="316" y="0.0" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="iAU-Yu-XF6"/>
                                     <constraint firstAttribute="width" constant="35" id="qQJ-Gz-By0"/>
@@ -69,7 +69,7 @@
                             <constraint firstItem="g5j-a0-ZeO" firstAttribute="bottom" secondItem="mhh-At-LYw" secondAttribute="bottom" id="6fa-JU-PG0"/>
                             <constraint firstItem="g5j-a0-ZeO" firstAttribute="trailing" secondItem="vkh-yW-DkD" secondAttribute="trailing" constant="24" id="K3q-61-Zcg"/>
                             <constraint firstItem="g5j-a0-ZeO" firstAttribute="bottom" secondItem="uki-0I-6JX" secondAttribute="bottom" constant="13" id="M6h-yq-99a"/>
-                            <constraint firstItem="vkh-yW-DkD" firstAttribute="top" secondItem="g5j-a0-ZeO" secondAttribute="top" constant="-30" id="N65-tq-M8D"/>
+                            <constraint firstItem="vkh-yW-DkD" firstAttribute="top" secondItem="g5j-a0-ZeO" secondAttribute="top" constant="-20" id="N65-tq-M8D"/>
                             <constraint firstItem="g5j-a0-ZeO" firstAttribute="trailing" secondItem="mhh-At-LYw" secondAttribute="trailing" id="b6d-vy-cFZ"/>
                             <constraint firstItem="mhh-At-LYw" firstAttribute="top" secondItem="Icp-0g-mDd" secondAttribute="top" id="bB8-0z-HNX"/>
                             <constraint firstItem="g5j-a0-ZeO" firstAttribute="trailing" secondItem="uki-0I-6JX" secondAttribute="trailing" constant="26" id="q6E-Ec-90y"/>

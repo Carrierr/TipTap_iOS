@@ -12,12 +12,16 @@ import UIKit
 protocol TTMyDiaryPresenterProtocol: TTBasePresenterProtocol {
     //View->Presenter
     func reloadData()
+    func sumbitDelteItems()
     
     //UITableView
     func didSelectTableViewRowAt(indexPath: IndexPath)
     func numberOfRows(in section:Int)->Int
     func numberOfSection()->Int
-    func configureCell(_ tableView:UITableView, forRowAt indexPath : IndexPath)->UITableViewCell
+    func configureCell(_ tableView:UITableView,
+                       forRowAt indexPath : IndexPath,
+                       isDeletable : Bool,
+                       isInitDelete : Bool)->UITableViewCell
 }
 
 
@@ -34,6 +38,7 @@ final class TTMyDiaryPresenter {
     fileprivate var moduleDatas  : TTMyDiarySet?
     fileprivate let wireframe    : TTMyDiaryWireFrameProtocol
     fileprivate let interactor   : TTMyDiaryInteractorInputProtocol
+    fileprivate lazy var deleteItems : [String] = [String]()
     
     init(
         view        : TTMyDiaryViewProtocol,
@@ -76,39 +81,18 @@ extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol, TTCurrentTimeGettable 
     
     
     
-    func configureCell(_ tableView: UITableView, forRowAt indexPath: IndexPath) -> UITableViewCell {
-        var month = ""
-        var day   = ""
-        var start = ""
-        var destination = ""
-        
-        if let monthStr = moduleDatas?.myDiaryDatas?[indexPath.section].month {
-            month = convertMonthString(month: Int(monthStr)!)
-        }
-        
-        if let data = moduleDatas?.myDiaryDatas?[indexPath.section].myDateDatas?[indexPath.row] {
-            day = data.day ?? ""
-            if let firstData = data.firstDiary {
-                start = firstData.location ?? ""
-            }else{
-                if let lastData = data.lastDiary {
-                    start       = lastData.location ?? ""
-                    destination = lastData.location ?? ""
-                }
-            }
-            
-            if let lastData = data.lastDiary {
-                destination = lastData.location ?? ""
-            }
-        }
-        
-        
+    func configureCell(_ tableView:UITableView,
+                       forRowAt indexPath : IndexPath,
+                       isDeletable : Bool,
+                       isInitDelete : Bool)->UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "TTMyDiaryCell") as? TTMyDiaryCell
-        cell?.monthLabel.text       = month
-        cell?.dayLabel.text         = day
-        cell?.startLocation.text    = start
-        cell?.destinationLabel.text = destination
-        cell?.selectionStyle        = .none
+        if let data = moduleDatas?.myDiaryDatas?[indexPath.section].myDateDatas?[indexPath.row] {
+            cell?.diaryData = data
+        }
+
+        if let monthStr = moduleDatas?.myDiaryDatas?[indexPath.section].month {
+            cell?.monthLabel.text  = convertMonthString(month: Int(monthStr)!)
+        }
         
         if indexPath.row == 0 {
             cell?.monthLabel.isHidden = false
@@ -117,6 +101,18 @@ extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol, TTCurrentTimeGettable 
             cell?.monthLabel.isHidden = true
             cell?.lineView.isHidden   = true
         }
+        
+        if isDeletable {
+            cell?.checkBox.isHidden = false
+        }else{
+            cell?.checkBox.isHidden = true
+        }
+        
+        if isInitDelete{
+            cell?.checkBox.isSelected = false
+        }
+        
+        cell?.delegate = self
         
         return cell!
     }
@@ -133,6 +129,11 @@ extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol, TTCurrentTimeGettable 
     func reloadData(){
         view?.startNetworking()
         interactor.requestMyDiaryList()
+    }
+    
+    func sumbitDelteItems(){
+        guard deleteItems.count > 0 else { return }
+        interactor.requestDeleteDiary(deleteDiaryItems: deleteItems)
     }
     
     
@@ -157,6 +158,20 @@ extension TTMyDiaryPresenter : TTMyDiaryInteractorOutputProtocol{
     func showMessage(message: String) {
         
     }
-    
-    
+}
+
+
+extension TTMyDiaryPresenter : TTMyDiaryCellDelegate{
+    func checkDeleteBox(cell : TTMyDiaryCell, isSelected:Bool, diaryData : TTMyDiaryDayData){
+        guard isSelected else {
+            if deleteItems.contains(diaryData.lastDiary?.createdAt ?? "") {
+                deleteItems = deleteItems.filter{
+                    $0 != diaryData.lastDiary?.createdAt
+                }
+            }
+            
+            return
+        }
+        deleteItems.append(diaryData.lastDiary?.createdAt ?? "")
+    }
 }

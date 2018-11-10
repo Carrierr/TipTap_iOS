@@ -14,6 +14,8 @@ import Foundation
 protocol TTMyDiaryInteractorInputProtocol: class {
     //request list
     func requestMyDiaryList()
+    //DELETE ITEM
+    func requestDeleteDiary(deleteDiaryItems : [String])
 }
 
 final class TTMyDiaryInteractor: TTMyDiaryInteractorInputProtocol{
@@ -54,5 +56,23 @@ final class TTMyDiaryInteractor: TTMyDiaryInteractorInputProtocol{
                 }
             }
         }
+    }
+    
+    
+    func requestDeleteDiary(deleteDiaryItems : [String]){
+        service.fetchDeleteMyDiaryList(diaryItems: deleteDiaryItems) { (result) in
+            switch result {
+            case .success(_):
+                self.requestMyDiaryList()
+                break
+            case .error(let error):
+                self.presenter?.didReceivedError(error)
+                break
+            case .errorMessage(let errorMsg):
+                self.presenter?.showMessage(message: errorMsg)
+                break
+            }
+        }
+        
     }
 }

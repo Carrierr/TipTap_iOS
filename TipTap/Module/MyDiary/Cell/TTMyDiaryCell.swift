@@ -8,22 +8,70 @@
 
 import UIKit
 
+protocol TTMyDiaryCellDelegate {
+    func checkDeleteBox(cell : TTMyDiaryCell, isSelected:Bool, diaryData : TTMyDiaryDayData)
+}
+
 class TTMyDiaryCell: UITableViewCell {
 
+    @IBOutlet weak var checkBox: UIButton!
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var startLocation: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
+    
+    
+    var diaryData : TTMyDiaryDayData?{
+        didSet{
+            setData()
+        }
+    }
+    var delegate : TTMyDiaryCellDelegate!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        monthLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
+        monthLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 3 / 2));
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    private func setData(){
+        guard  let diaryData = diaryData else { return }
+        var day   = ""
+        var start = ""
+        var destination = ""
+        
+        day = diaryData.day ?? ""
+        if let firstData = diaryData.firstDiary {
+            start = firstData.location ?? ""
+        }else{
+            if let lastData = diaryData.lastDiary {
+                start       = lastData.location ?? ""
+                destination = lastData.location ?? ""
+            }
+        }
+        
+        if let lastData = diaryData.lastDiary {
+            destination = lastData.location ?? ""
+        }
+        
+        dayLabel.text         = day
+        startLocation.text    = start
+        destinationLabel.text = destination
+        self.selectionStyle        = .none
+    }
+    
+    
+    @IBAction func pressedButton(_ sender: Any) {
+        checkBox.isSelected = !checkBox.isSelected
+        guard let delegate = delegate else { return }
+        delegate.checkDeleteBox(cell: self, isSelected: checkBox.isSelected, diaryData: diaryData!)
     }
     
 }

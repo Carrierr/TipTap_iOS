@@ -120,7 +120,8 @@ class SelectCalendarViewController: UIViewController, TTCanShowAlert {
         }
         
         self.dismiss(animated: true) {
-            appDelegate?.searchFrontViewController().present(TTMyDiaryWireFrame.createModule(startDate : startDate, endDate : endDate), animated: true, completion: nil)
+            let mdVC = UINavigationController(rootViewController: TTMyDiaryWireFrame.createModule(startDate : startDate, endDate : endDate))
+            appDelegate?.searchFrontViewController().present( mdVC, animated: true, completion: nil)
         }
     }
     
