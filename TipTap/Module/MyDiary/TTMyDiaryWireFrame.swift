@@ -30,16 +30,20 @@ final class TTMyDiaryWireFrame: TTBaseWireFrame, TTMyDiaryWireFrameProtocol{
         }
     }
     
-    static func createModule()->TTMyDiaryViewController{
+    static func createModule(startDate : String? = nil, endDate : String? = nil)->TTMyDiaryViewController{
         let view       = UIStoryboard(name: "MyDiary", bundle: nil) .
                             instantiateViewController(withIdentifier: "TTMyDiaryViewController") as! TTMyDiaryViewController
         let wireframe  = TTMyDiaryWireFrame()
         let interactor = TTMyDiaryInteractor()
         let presenter  = TTMyDiaryPresenter(view: view, wireframe: wireframe, interactor: interactor)
         
+        view.startDate = startDate
+        view.endDate  = endDate
+        
         view.presenter = presenter
         wireframe.view = view
         interactor.presenter = presenter
+
         
         return view
     }
