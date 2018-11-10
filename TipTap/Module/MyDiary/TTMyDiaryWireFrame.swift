@@ -39,6 +39,9 @@ final class TTMyDiaryWireFrame: TTBaseWireFrame, TTMyDiaryWireFrameProtocol{
         
         view.startDate = startDate
         view.endDate  = endDate
+        interactor.startDate = startDate
+        interactor.endDate   = endDate
+        
         
         view.presenter = presenter
         wireframe.view = view

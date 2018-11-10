@@ -26,6 +26,12 @@
                                     <outlet property="delegate" destination="FL4-rM-RN3" id="A8O-b3-IxJ"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZG-jT-L68">
+                                <rect key="frame" x="186" y="437.66666666666669" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7JM-IY-gWg">
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <subviews>
@@ -107,6 +113,7 @@
                             <constraint firstAttribute="trailing" secondItem="MIv-re-83b" secondAttribute="trailing" id="AgI-Ii-AkD"/>
                             <constraint firstItem="7JM-IY-gWg" firstAttribute="leading" secondItem="lIy-HB-YTX" secondAttribute="leading" id="DjW-op-OmS"/>
                             <constraint firstItem="lIy-HB-YTX" firstAttribute="trailing" secondItem="3Nt-Zd-vKV" secondAttribute="trailing" id="PWK-5l-5M9"/>
+                            <constraint firstItem="xZG-jT-L68" firstAttribute="centerY" secondItem="Pcd-0a-XUT" secondAttribute="centerY" id="Sk3-iQ-2jU"/>
                             <constraint firstItem="3Nt-Zd-vKV" firstAttribute="top" secondItem="7AZ-E3-QWO" secondAttribute="bottom" id="VoV-Ss-Ovc"/>
                             <constraint firstItem="3Nt-Zd-vKV" firstAttribute="leading" secondItem="lIy-HB-YTX" secondAttribute="leading" id="XPb-36-uwN"/>
                             <constraint firstItem="MIv-re-83b" firstAttribute="leading" secondItem="Pcd-0a-XUT" secondAttribute="leading" id="XRj-cU-KYB"/>
@@ -114,6 +121,7 @@
                             <constraint firstItem="7AZ-E3-QWO" firstAttribute="top" secondItem="lIy-HB-YTX" secondAttribute="top" constant="-20" id="eJJ-ag-nyj"/>
                             <constraint firstItem="MIv-re-83b" firstAttribute="top" secondItem="3Nt-Zd-vKV" secondAttribute="bottom" id="g73-V5-XRR"/>
                             <constraint firstItem="lIy-HB-YTX" firstAttribute="bottom" secondItem="7JM-IY-gWg" secondAttribute="bottom" id="nnm-uh-wiN"/>
+                            <constraint firstItem="xZG-jT-L68" firstAttribute="centerX" secondItem="Pcd-0a-XUT" secondAttribute="centerX" id="rnC-Ch-RWH"/>
                             <constraint firstAttribute="bottom" secondItem="MIv-re-83b" secondAttribute="bottom" id="uUk-S0-pXj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lIy-HB-YTX"/>
@@ -121,6 +129,7 @@
                     <connections>
                         <outlet property="calendarButton" destination="Szz-nc-w0P" id="zvD-1J-rmO"/>
                         <outlet property="cancelButton" destination="kHY-sR-OYn" id="v55-Co-UMO"/>
+                        <outlet property="descriptLabel" destination="xZG-jT-L68" id="QTu-Li-f9t"/>
                         <outlet property="intervalDateLabel" destination="Lvu-Wz-B6Q" id="xZM-OI-uRm"/>
                         <outlet property="intervalDateView" destination="7JM-IY-gWg" id="Im5-lL-QOI"/>
                         <outlet property="intervalSafeView" destination="MIv-re-83b" id="f5C-4W-Bp2"/>

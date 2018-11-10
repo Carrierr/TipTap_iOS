@@ -19,4 +19,12 @@ class TTMyDiaryService{
             completion(.success(myDiaryDatas))
         }
     }
+    
+    func fetchMyDiaryList(startDate : String, endDate: String, completion: @escaping (TTResult<TTMyDiarySet>) -> ()){
+        TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/diary/list?page=1&limit=20&startDate=\(startDate)&endDate=\(endDate)", method: .get) { (result) in
+            let myDiaryDatas : TTMyDiarySet = TTMyDiarySet(rawJson: result)
+            print("myDiary interval result : \(result)")
+            completion(.success(myDiaryDatas))
+        }
+    }
 }

@@ -20,19 +20,38 @@ final class TTMyDiaryInteractor: TTMyDiaryInteractorInputProtocol{
     private lazy var service = TTMyDiaryService()
     weak var presenter : TTMyDiaryInteractorOutputProtocol?
     
+    var startDate : String?
+    var endDate  : String?
     
     func requestMyDiaryList() {
-        service.fetchMyDiaryList { (result) in
-            switch result{
-            case .success(let result):
-                self.presenter?.setModuleDatas(result)
-                break
-            case .error(let error):
-                self.presenter?.didReceivedError(error)
-                break
-            case .errorMessage(let errorMsg):
-                self.presenter?.showMessage(message: errorMsg)
-                break
+        if let startDate = startDate,
+            let endDate = endDate {
+            service.fetchMyDiaryList(startDate: startDate, endDate: endDate) { (result) in
+                switch result{
+                case .success(let result):
+                    self.presenter?.setModuleDatas(result)
+                    break
+                case .error(let error):
+                    self.presenter?.didReceivedError(error)
+                    break
+                case .errorMessage(let errorMsg):
+                    self.presenter?.showMessage(message: errorMsg)
+                    break
+                }
+            }
+        }else{
+            service.fetchMyDiaryList { (result) in
+                switch result{
+                case .success(let result):
+                    self.presenter?.setModuleDatas(result)
+                    break
+                case .error(let error):
+                    self.presenter?.didReceivedError(error)
+                    break
+                case .errorMessage(let errorMsg):
+                    self.presenter?.showMessage(message: errorMsg)
+                    break
+                }
             }
         }
     }

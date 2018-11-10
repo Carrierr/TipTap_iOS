@@ -25,23 +25,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="취소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Reg-ia-w5N">
-                    <rect key="frame" x="21" y="30" width="30" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4i-GE-48K">
-                    <rect key="frame" x="157.5" y="30" width="60" height="19.5"/>
+                    <rect key="frame" x="157.5" y="47" width="60" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkc-Wa-gEA">
-                    <rect key="frame" x="170" y="83" width="205" height="50"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkc-Wa-gEA">
+                    <rect key="frame" x="170" y="97" width="205" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="205" id="MRi-df-a6p"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="Button" backgroundImage="dateEnd_off">
                         <color key="titleColor" red="0.77254901960784317" green="0.77254901960784317" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
@@ -56,7 +51,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21y-gz-GJu">
-                    <rect key="frame" x="0.0" y="83" width="189" height="50"/>
+                    <rect key="frame" x="0.0" y="97" width="189" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="189" id="6Za-8c-zTk"/>
                     </constraints>
@@ -72,14 +67,14 @@
                     </connections>
                 </button>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yyn-fG-lrK">
-                    <rect key="frame" x="0.0" y="133" width="375" height="534"/>
+                    <rect key="frame" x="0.0" y="147" width="375" height="520"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <date key="date" timeIntervalSinceReferenceDate="562924265.89957595">
                         <!--2018-11-03 07:51:05 +0000-->
                     </date>
                 </datePicker>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CX-eZ-d1I">
-                    <rect key="frame" x="324" y="30" width="30" height="18"/>
+                    <rect key="frame" x="324" y="47" width="30" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="udt-h0-CPf"/>
                     </constraints>
@@ -91,21 +86,33 @@
                         <action selector="pressedConfirmButton:" destination="-1" eventType="touchUpInside" id="Rw8-aR-pm0"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3S-ss-7d0">
+                    <rect key="frame" x="21" y="47" width="30" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="hJ4-Y7-dat"/>
+                    </constraints>
+                    <state key="normal" title="취소">
+                        <color key="titleColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="pressedCancel:" destination="-1" eventType="touchUpInside" id="fId-ky-DvY"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Reg-ia-w5N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="21" id="26B-LU-4Qf"/>
+                <constraint firstItem="S3S-ss-7d0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="27" id="4w4-7g-Egx"/>
                 <constraint firstItem="i4i-GE-48K" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5PZ-Os-v7d"/>
                 <constraint firstItem="21y-gz-GJu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="A74-OO-hFB"/>
-                <constraint firstItem="21y-gz-GJu" firstAttribute="top" secondItem="Reg-ia-w5N" secondAttribute="bottom" constant="32" id="F6A-sk-lJf"/>
                 <constraint firstItem="Yyn-fG-lrK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="GOB-wS-LjX"/>
-                <constraint firstItem="5CX-eZ-d1I" firstAttribute="top" secondItem="Reg-ia-w5N" secondAttribute="top" id="IQF-DC-GTG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5CX-eZ-d1I" secondAttribute="trailing" constant="21" id="M0p-2a-DKV"/>
+                <constraint firstItem="S3S-ss-7d0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="21" id="VLP-WJ-Fl6"/>
                 <constraint firstItem="Yyn-fG-lrK" firstAttribute="top" secondItem="21y-gz-GJu" secondAttribute="bottom" id="Vuc-by-YE6"/>
-                <constraint firstItem="Reg-ia-w5N" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="YQ8-vI-0dJ"/>
+                <constraint firstItem="21y-gz-GJu" firstAttribute="top" secondItem="S3S-ss-7d0" secondAttribute="bottom" constant="32" id="YHu-IL-c8t"/>
+                <constraint firstItem="i4i-GE-48K" firstAttribute="top" secondItem="S3S-ss-7d0" secondAttribute="top" id="aJ3-PO-xMB"/>
                 <constraint firstItem="Zkc-Wa-gEA" firstAttribute="top" secondItem="21y-gz-GJu" secondAttribute="top" id="afw-3g-sxw"/>
-                <constraint firstItem="i4i-GE-48K" firstAttribute="top" secondItem="Reg-ia-w5N" secondAttribute="top" id="kGH-Iz-cWS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zkc-Wa-gEA" secondAttribute="trailing" id="nxE-Zm-SOw"/>
+                <constraint firstItem="5CX-eZ-d1I" firstAttribute="top" secondItem="S3S-ss-7d0" secondAttribute="top" id="qgc-yj-XnD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Yyn-fG-lrK" secondAttribute="bottom" id="yNe-9x-FUz"/>
                 <constraint firstItem="Yyn-fG-lrK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zcm-TI-brT"/>
             </constraints>

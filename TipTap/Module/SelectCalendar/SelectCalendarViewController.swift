@@ -31,7 +31,7 @@ class SelectCalendarViewController: UIViewController, TTCanShowAlert {
     
     private var pickerDate : String {
         let dateformatter = DateFormatter()
-        dateformatter.dateStyle = .medium
+        dateformatter.dateFormat = "yyyy-MM-dd"
         let date = dateformatter.string(from: datePicker.date)
         return date
     }
@@ -51,6 +51,7 @@ class SelectCalendarViewController: UIViewController, TTCanShowAlert {
         startDate = pickerDate
         endDate = pickerDate
         
+        datePicker.locale = Locale(identifier: "ko")
         datePicker.setValue(UIColor(hexString: "7AC8BC"), forKey: "textColor")
     }
     
@@ -109,7 +110,7 @@ class SelectCalendarViewController: UIViewController, TTCanShowAlert {
         }
         
         let dateformatter = DateFormatter()
-        dateformatter.dateStyle = .medium
+        dateformatter.dateFormat = "yyyy-MM-dd"
         let start = dateformatter.date(from: startDate)
         let end = dateformatter.date(from: endDate)
         
@@ -121,6 +122,10 @@ class SelectCalendarViewController: UIViewController, TTCanShowAlert {
         self.dismiss(animated: true) {
             appDelegate?.searchFrontViewController().present(TTMyDiaryWireFrame.createModule(startDate : startDate, endDate : endDate), animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func pressedCancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

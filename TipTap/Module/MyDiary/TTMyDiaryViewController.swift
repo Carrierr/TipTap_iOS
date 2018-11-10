@@ -10,18 +10,21 @@ import UIKit
 
 protocol TTMyDiaryViewProtocol:class{
     func startNetworking()
-    func stopNetworking()
+    func stopNetworking(hasData : Bool)
 }
 
-class TTMyDiaryViewController: TTBaseViewController {
+class TTMyDiaryViewController: TTBaseViewController, TTCanShowAlert {
     
     
+    @IBOutlet private weak var descriptLabel: UILabel!
     @IBOutlet private weak var calendarButton: UIButton!
     @IBOutlet private weak var cancelButton: UIButton!
     @IBOutlet private weak var intervalSafeView: UIView!
     @IBOutlet private weak var intervalDateLabel: UILabel!
     @IBOutlet private weak var intervalDateView: UIView!
     @IBOutlet private weak var tableView: UITableView!
+    
+    
     var presenter:TTMyDiaryPresenterProtocol?
     var startDate : String?
     var endDate  : String?
@@ -37,6 +40,7 @@ class TTMyDiaryViewController: TTBaseViewController {
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.tableView.contentInset   = UIEdgeInsetsMake(7, 0, 7, 0)
         self.tableView.separatorInset = UIEdgeInsetsMake(7, 0, 7, 0)
+        self.descriptLabel.isHidden = true
         
         guard let startDate = startDate,
             let endDate = endDate else {
@@ -76,15 +80,28 @@ class TTMyDiaryViewController: TTBaseViewController {
     }
 }
 
+
 extension TTMyDiaryViewController: TTMyDiaryViewProtocol {
     func startNetworking() {
         self.tableView.reloadData()
     }
     
-    func stopNetworking() {
+    
+    func stopNetworking(hasData : Bool) {
+        guard hasData else {
+            descriptLabel.isHidden = false
+            if startDate != nil {
+                descriptLabel.text  = "선택하신 날짜의 일기가 없습니다."
+            }else{
+                descriptLabel.text = "작성하신 일기가 없습니다."
+            }
+            return
+        }
+        
         self.tableView.reloadData()
     }
 }
+
 
 extension TTMyDiaryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
