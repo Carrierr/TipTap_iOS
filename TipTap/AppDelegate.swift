@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             launchVC = mainViewController
         }
         
-        self.window?.rootViewController = isOpened ? UINavigationController(rootViewController: launchVC!)  : UINavigationController(rootViewController: self.loginViewController!)
+        self.window?.rootViewController = isOpened ?  launchVC!  : UINavigationController(rootViewController: self.loginViewController!)
         self.window?.makeKeyAndVisible()
     }
     

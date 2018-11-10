@@ -1,13 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectCalendarViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectCalendarViewController" customModule="TipTap" customModuleProvider="target">
             <connections>
+                <outlet property="datePicker" destination="Yyn-fG-lrK" id="7Rr-8s-JxF"/>
+                <outlet property="endDateButton" destination="Zkc-Wa-gEA" id="fa8-Yl-cbJ"/>
+                <outlet property="endDateWidth" destination="MRi-df-a6p" id="2Z5-sf-wMU"/>
+                <outlet property="startDateButton" destination="21y-gz-GJu" id="UYJ-gA-6Bn"/>
+                <outlet property="startDateWidth" destination="6Za-8c-zTk" id="ObX-YX-rs4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +24,106 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4i-GE-48K">
+                    <rect key="frame" x="157.5" y="47" width="60" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkc-Wa-gEA">
+                    <rect key="frame" x="170" y="97" width="205" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="205" id="MRi-df-a6p"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Button" backgroundImage="dateEnd_off">
+                        <color key="titleColor" red="0.77254901960784317" green="0.77254901960784317" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <state key="selected" backgroundImage="dateEnd_on">
+                        <color key="titleColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="pressedEndDate:" destination="-1" eventType="touchUpInside" id="t1T-9j-hcJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21y-gz-GJu">
+                    <rect key="frame" x="0.0" y="97" width="189" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="189" id="6Za-8c-zTk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="asd" backgroundImage="dateStart_off">
+                        <color key="titleColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <state key="selected" backgroundImage="dateStart_on">
+                        <color key="titleColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <connections>
+                        <action selector="pressedStartDate:" destination="-1" eventType="touchUpInside" id="a0Q-Bd-rHK"/>
+                    </connections>
+                </button>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yyn-fG-lrK">
+                    <rect key="frame" x="0.0" y="147" width="375" height="520"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <date key="date" timeIntervalSinceReferenceDate="562924265.89957595">
+                        <!--2018-11-03 07:51:05 +0000-->
+                    </date>
+                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CX-eZ-d1I">
+                    <rect key="frame" x="324" y="47" width="30" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="udt-h0-CPf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="확인">
+                        <color key="titleColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="pressedConfirmButton:" destination="-1" eventType="touchUpInside" id="Rw8-aR-pm0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3S-ss-7d0">
+                    <rect key="frame" x="21" y="47" width="30" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="hJ4-Y7-dat"/>
+                    </constraints>
+                    <state key="normal" title="취소">
+                        <color key="titleColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="pressedCancel:" destination="-1" eventType="touchUpInside" id="fId-ky-DvY"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="S3S-ss-7d0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="27" id="4w4-7g-Egx"/>
+                <constraint firstItem="i4i-GE-48K" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5PZ-Os-v7d"/>
+                <constraint firstItem="21y-gz-GJu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="A74-OO-hFB"/>
+                <constraint firstItem="Yyn-fG-lrK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="GOB-wS-LjX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5CX-eZ-d1I" secondAttribute="trailing" constant="21" id="M0p-2a-DKV"/>
+                <constraint firstItem="S3S-ss-7d0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="21" id="VLP-WJ-Fl6"/>
+                <constraint firstItem="Yyn-fG-lrK" firstAttribute="top" secondItem="21y-gz-GJu" secondAttribute="bottom" id="Vuc-by-YE6"/>
+                <constraint firstItem="21y-gz-GJu" firstAttribute="top" secondItem="S3S-ss-7d0" secondAttribute="bottom" constant="32" id="YHu-IL-c8t"/>
+                <constraint firstItem="i4i-GE-48K" firstAttribute="top" secondItem="S3S-ss-7d0" secondAttribute="top" id="aJ3-PO-xMB"/>
+                <constraint firstItem="Zkc-Wa-gEA" firstAttribute="top" secondItem="21y-gz-GJu" secondAttribute="top" id="afw-3g-sxw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zkc-Wa-gEA" secondAttribute="trailing" id="nxE-Zm-SOw"/>
+                <constraint firstItem="5CX-eZ-d1I" firstAttribute="top" secondItem="S3S-ss-7d0" secondAttribute="top" id="qgc-yj-XnD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Yyn-fG-lrK" secondAttribute="bottom" id="yNe-9x-FUz"/>
+                <constraint firstItem="Yyn-fG-lrK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zcm-TI-brT"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
     </objects>
+    <resources>
+        <image name="dateEnd_off" width="204" height="50"/>
+        <image name="dateEnd_on" width="204" height="50"/>
+        <image name="dateStart_off" width="189" height="50"/>
+        <image name="dateStart_on" width="189" height="50"/>
+    </resources>
 </document>

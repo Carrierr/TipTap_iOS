@@ -129,7 +129,7 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
 extension TTDetailDiaryPresenter : TTDetailDiaryInteractorOutputProtocol{
     func setModuleDatas(_ moduleDatas: [TTDiaryData]) {
         self.moduleDatas = moduleDatas
-        view?.startNetworking()
+        view?.stopNetworking()
     }
     
     func didReceivedError(_ error: Error) {

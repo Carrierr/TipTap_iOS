@@ -45,7 +45,8 @@ final class TTMyDiaryPresenter {
     }
 }
 
-extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol,TTCurrentTimeGettable {
+
+extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol, TTCurrentTimeGettable {
     func numberOfRows(in section: Int) -> Int {
         if let count = moduleDatas?.myDiaryDatas?[section].myDateDatas?.count {
             return count
@@ -142,7 +143,11 @@ extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol,TTCurrentTimeGettable {
 extension TTMyDiaryPresenter : TTMyDiaryInteractorOutputProtocol{
     func setModuleDatas(_ moduleDatas: TTMyDiarySet) {
         self.moduleDatas = moduleDatas
-        view?.startNetworking()
+        guard let count = self.moduleDatas?.myDiaryDatas?.count else {
+            view?.stopNetworking(hasData : false)
+            return
+        }
+        view?.stopNetworking(hasData: count > 0)
     }
     
     func didReceivedError(_ error: Error) {
