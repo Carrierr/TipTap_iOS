@@ -24,9 +24,9 @@ final class TTMyDiaryWireFrame: TTBaseWireFrame, TTMyDiaryWireFrameProtocol{
         case .alert(let title, let message):
             break
         case .show(let dateString):
-            self.view.show(TTDetailDiaryWireFrame.createModule(dateString: dateString), sender: nil)
+            self.view.navigationController?.isNavigationBarHidden = false
+            self.view.navigationController?.pushViewController(TTDetailDiaryWireFrame.createModule(dateString: dateString), animated: true)
             break
-            
         }
     }
     

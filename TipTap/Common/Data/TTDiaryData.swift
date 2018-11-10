@@ -73,7 +73,11 @@ struct TTDiaryData {
         longitude = json["longitude"].floatValue
         like      = json["like"].intValue
         shared    = json["shared"].boolValue
-        createdAt = json["createdAt"].stringValue
-        updatedAt = json["updatedAt"].stringValue
+        let nsStr = json["createdAt"].stringValue as NSString
+        let range = nsStr.range(of: "T")
+        createdAt = nsStr.substring(to: range.location)
+        let nsStr2 = json["updatedAt"].stringValue as NSString
+        let range2 = nsStr2.range(of: "T")
+        updatedAt = nsStr.substring(to: range2.location)
     }
 }

@@ -55,6 +55,7 @@ struct TTMyDiaryDayData {
     var day : String?
     var lastDiary  : TTDiaryData?
     var firstDiary : TTDiaryData?
+    var id : Int?
     
     init(rawJson : Any) {
         let json = JSON(rawJson)

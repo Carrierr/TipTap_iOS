@@ -47,7 +47,11 @@ extension TTDiaryOutlineContainer{
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 14)
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(60)
+            if #available(iOS 11, *) {
+                make.top.equalTo(safeAreaLayoutGuide.snp.topMargin).offset(-20)
+            } else {
+                make.top.equalToSuperview().offset(-20)
+            }
             make.centerX.equalToSuperview()
         }
         
