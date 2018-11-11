@@ -135,9 +135,6 @@ extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol, TTCurrentTimeGettable 
         guard deleteItems.count > 0 else { return }
         interactor.requestDeleteDiary(deleteDiaryItems: deleteItems)
     }
-    
-    
-    
 }
 
 
@@ -156,7 +153,7 @@ extension TTMyDiaryPresenter : TTMyDiaryInteractorOutputProtocol{
     }
     
     func showMessage(message: String) {
-        
+        wireframe.navigate(to: .alert(title: "", message: message))
     }
 }
 

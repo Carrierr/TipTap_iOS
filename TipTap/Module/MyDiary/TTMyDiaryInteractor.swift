@@ -64,6 +64,7 @@ final class TTMyDiaryInteractor: TTMyDiaryInteractorInputProtocol{
             switch result {
             case .success(_):
                 self.requestMyDiaryList()
+                self.presenter?.showMessage(message: "삭제가 완료되었습니다.")
                 break
             case .error(let error):
                 self.presenter?.didReceivedError(error)
@@ -73,6 +74,5 @@ final class TTMyDiaryInteractor: TTMyDiaryInteractorInputProtocol{
                 break
             }
         }
-        
     }
 }
