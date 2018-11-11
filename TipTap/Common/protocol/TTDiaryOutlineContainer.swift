@@ -9,7 +9,7 @@
 import Foundation
 import SnapKit
 
-protocol TTDiaryOutlineContainer : TTCanHasDiaryData where Self : UIView {
+protocol TTDiaryOutlineContainer : TTCanHasDiaryData, TTCurrentTimeGettable where Self : UIView {
     var yearLabel      : UILabel? { get set }
     var monthLabel     : UILabel? { get set }
     var dateLabel      : UILabel? { get set }
@@ -42,7 +42,7 @@ extension TTDiaryOutlineContainer{
         self.addSubview(monthLabel)
         self.addSubview(yearLabel)
         
-        titleLabel.text = "Today\n#10"
+        titleLabel.text = "Today\n#\(dataSet?.diaryDataList?.count ?? 0)"
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 14)
@@ -57,7 +57,7 @@ extension TTDiaryOutlineContainer{
         
         
         
-        yearLabel.text = "18`"
+        yearLabel.text = "\(currentYear())`"
         yearLabel.textColor = UIColor(hexString: "6D6D6D")
         yearLabel.font = UIFont.systemFont(ofSize: 13)
         yearLabel.snp.makeConstraints { (make) in
@@ -65,7 +65,7 @@ extension TTDiaryOutlineContainer{
             make.left.equalToSuperview().offset(21)
         }
         
-        monthLabel.text = "Aug"
+        monthLabel.text = "\(convertMonthString(month: Int(currentMonth()) ?? 0 ))"
         monthLabel.textColor = UIColor(hexString: "6D6D6D")
         monthLabel.font = UIFont.systemFont(ofSize: 13)
         monthLabel.snp.makeConstraints { (make) in
@@ -73,7 +73,7 @@ extension TTDiaryOutlineContainer{
             make.left.equalToSuperview().offset(21)
         }
         
-        dateLabel.text = "02"
+        dateLabel.text = "\(currentDay())"
         dateLabel.textColor = UIColor(hexString: "6D6D6D")
         dateLabel.font = UIFont.systemFont(ofSize: 13)
         dateLabel.snp.makeConstraints { (make) in

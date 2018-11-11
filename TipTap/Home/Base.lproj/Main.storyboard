@@ -45,10 +45,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uki-0I-6JX">
-                                <rect key="frame" x="226" y="622" width="123" height="32"/>
+                                <rect key="frame" x="299" y="604" width="50" height="50"/>
                                 <state key="normal" image="writeButton"/>
                                 <connections>
-                                    <segue destination="nR4-w6-Z14" kind="presentation" id="oeq-Y7-mmq"/>
+                                    <action selector="pressedWriteButton:" destination="t3w-KY-UBE" eventType="touchUpInside" id="Ryg-wu-W45"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkh-yW-DkD">
@@ -93,7 +93,7 @@
                 <viewControllerPlaceholder storyboardName="EditDiary" referencedIdentifier="TTEditDiaryViewController" id="nR4-w6-Z14" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="58o-Eo-ufn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="1452"/>
+            <point key="canvasLocation" x="851" y="1464"/>
         </scene>
         <!--TTSharedViewController-->
         <scene sceneID="Xtu-VP-YtH">
@@ -133,6 +133,6 @@
     </scenes>
     <resources>
         <image name="setting" width="24" height="24"/>
-        <image name="writeButton" width="123" height="32"/>
+        <image name="writeButton" width="50" height="50"/>
     </resources>
 </document>
