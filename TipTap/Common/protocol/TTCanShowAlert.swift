@@ -26,4 +26,27 @@ extension TTCanShowAlert{
         
         appDelegate?.searchFrontViewController().present(alertController, animated: true, completion: nil)
     }
+    
+    
+    func showAlert(title : String?,
+                   message : String?,
+                   completion:@escaping (()->()),
+                   cancelAction: @escaping (()->())) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let confirmAlert = UIAlertAction(title: "확인", style: .default, handler: { (result) in
+                completion()
+        })
+        
+        let cancelAlert = UIAlertAction(title: "취소", style: .cancel, handler: { (result) in
+            cancelAction()
+        })
+
+        
+        
+        
+        alertController.addAction(confirmAlert)
+        alertController.addAction(cancelAlert)
+        
+        appDelegate?.searchFrontViewController().present(alertController, animated: true, completion: nil)
+    }
 }

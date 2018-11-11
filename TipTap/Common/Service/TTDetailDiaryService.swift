@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class TTDetailDiaryService{
     private let URL = ""
@@ -23,7 +24,32 @@ class TTDetailDiaryService{
                 
             completion(.success(dataList))
         }
-        
-        
+    }
+    
+    
+    func fetchDeleteDiary(deleteDate : String,
+                          completion: @escaping (TTResult<Int>) -> ()){
+        let param = ["date":deleteDate]
+        TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/diary/delete/day", method: .post,parameters: param) { (result) in
+            let json = JSON(result)
+            if json["code"].intValue == 1000 {
+                completion(.success(1))
+            }
+            print("myDiary interval result : \(result)")
+        }
+    }
+    
+    func fetchDeleteDiary(deleteID : String,
+                          completion: @escaping (TTResult<Int>) -> ()){
+        let param = ["id":[deleteID]]
+        TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/diary/delete", method: .post,parameters: param) { (result) in
+            let json = JSON(result)
+            if json["code"].intValue == 1000 {
+                completion(.success(1))
+            }else{
+                completion(.errorMessage("알 수 없는 오류가 발생했습니다. 잠시후에 다시 시도해주세요."))
+            }
+            print("myDiary interval result : \(result)")
+        }
     }
 }

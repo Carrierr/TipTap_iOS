@@ -37,13 +37,13 @@ class TTMyDiaryViewController: TTBaseViewController, TTCanShowAlert {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.onViewDidLoad()
     }
     
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .default
+        presenter?.onViewDidLoad()
     }
     
     
@@ -101,6 +101,17 @@ class TTMyDiaryViewController: TTBaseViewController, TTCanShowAlert {
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
         }
+        
+        let intervalLineView = UIView()
+        self.intervalDateView.addSubview(intervalLineView)
+        intervalLineView.backgroundColor = UIColor(hexString: "E0E0E0")
+        intervalLineView.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalToSuperview()
+            make.height.equalTo(1)
+        }
+        
     }
     
     

@@ -18,10 +18,11 @@ protocol TTMyDiaryWireFrameProtocol: class {
     func navigate(to route:TTMyDiaryRouterType)
 }
 
-final class TTMyDiaryWireFrame: TTBaseWireFrame, TTMyDiaryWireFrameProtocol{
+final class TTMyDiaryWireFrame: TTBaseWireFrame, TTMyDiaryWireFrameProtocol, TTCanShowAlert{
     func navigate(to route: TTMyDiaryRouterType) {
         switch route {
         case .alert(let title, let message):
+            showAlert(title: title, message: message)
             break
         case .show(let dateString):
             self.view.navigationController?.isNavigationBarHidden = false

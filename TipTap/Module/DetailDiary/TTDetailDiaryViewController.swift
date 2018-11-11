@@ -11,9 +11,10 @@ import UIKit
 protocol TTDetailDiaryViewProtocol:class{
     func startNetworking()
     func stopNetworking()
+    func dismissView()
 }
 
-class TTDetailDiaryViewController: TTBaseViewController {
+class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert{
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -35,8 +36,11 @@ class TTDetailDiaryViewController: TTBaseViewController {
     private func setupNavigaion(){
         let rightBarButtonItem = UIBarButtonItem(title: "삭제", style: .plain, target: self, action: #selector(pressedDeleteButton))
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         self.navigationController?.navigationBar.tintColor = UIColor.white;
+        
+        let leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "backwhite"), style: .plain, target: self, action: #selector(dismissView))
+        self.navigationItem.leftBarButtonItem = leftBarButtonItem
+        
     }
     
     override func setupUI() {
@@ -46,17 +50,35 @@ class TTDetailDiaryViewController: TTBaseViewController {
         brandLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
     }
     
+    
+    
+    
     override func setupBinding() {
         
     }
+    
+    
     
     func registerCell(){
         self.collectionView?.register(UINib(nibName: "TTDetailDiaryCell", bundle: nil), forCellWithReuseIdentifier: "TTDetailDiaryCell")
     }
     
+    
+    
     @objc private func pressedDeleteButton(){
-        
+        showAlert(title: "", message: "일기를 삭제하시겠습니까?", completion: {
+            self.presenter?.deleteDiary()
+        }, cancelAction: {
+            
+        })
     }
+    
+    
+    @objc internal func dismissView(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         for cell in self.collectionView.visibleCells {
@@ -67,16 +89,18 @@ class TTDetailDiaryViewController: TTBaseViewController {
     }
 }
 
+
+
 extension TTDetailDiaryViewController: TTDetailDiaryViewProtocol {
     func startNetworking() {
         self.collectionView.reloadData()
         locationLabel.text = presenter!.locationString(section:0)
     }
     
+    
     func stopNetworking() {
         self.collectionView.reloadData()
     }
-    
 }
 
 

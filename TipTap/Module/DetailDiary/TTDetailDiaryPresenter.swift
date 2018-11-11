@@ -14,6 +14,7 @@ import Kingfisher
 protocol TTDetailDiaryPresenterProtocol: TTBasePresenterProtocol {
     //View->Presenter
     func reloadData()
+    func deleteDiary()
     
     //UICollectionView
     func didSelectCollectionViewRowAt(indexPath: IndexPath)
@@ -32,6 +33,7 @@ protocol TTDetailDiaryInteractorOutputProtocol: class {
     func setModuleDatas(_ moduleDatas: [TTDiaryData])
     func didReceivedError(_ error: Error)
     func showMessage(message : String)
+    func completeDeleteDiary()
 }
 
 
@@ -104,6 +106,8 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
     }
     
     
+    
+    
     func numberOfSection() -> Int {
         guard let count = moduleDatas?.count else {
             return 0
@@ -111,17 +115,28 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
         return count
     }
 
+    
+    
     func moreLoad() {
         
     }
+    
+    
     
     func onViewDidLoad(){
         reloadData()
     }
     
+    
+    
     func reloadData(){
         view?.startNetworking()
         interactor.requestDetailDiaryList()
+    }
+    
+    
+    func deleteDiary(){
+        interactor.requetDeleteDiary()
     }
 }
 
@@ -138,5 +153,11 @@ extension TTDetailDiaryPresenter : TTDetailDiaryInteractorOutputProtocol{
     
     func showMessage(message: String) {
         
+    }
+    
+    func completeDeleteDiary(){
+        wireframe.navigate(to: .alertCompletion(title: "", message: "삭제가 완료되었습니다.", completion: {
+            self.view?.dismissView()
+        }))
     }
 }
