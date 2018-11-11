@@ -7,17 +7,24 @@
 //
 
 import UIKit
-import Darwin
 
+import Darwin
 import ScratchCard
+import SnapKit
 
 
 class TTSharedViewController: TTBaseViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     
-    var scratchView : ScratchUIView!
+    
+    private var scrachImage : UIImage?
+    private var scratchImageNamed : String = ""
+    private var scratchImageView : UIImageView?
+    private var isFirstShow : Bool = true
+    
     var diarys = [TestDiary]()
+    var scratchView : ScratchUIView!
     
     let location = ["키오스크 카페", "SEOUL COFFEE", "ZERO SPACE"]
     let body = ["오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!", "오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!","오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!"]
@@ -29,35 +36,55 @@ class TTSharedViewController: TTBaseViewController {
         }
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        attachScratchView()
+        let randomNumber = arc4random_uniform(3) + 1
+        self.scratchImageNamed = "scratch0\(randomNumber).png"
+        self.scrachImage = UIImage(named: scratchImageNamed)
         
+        scratchImageView = UIImageView(image: self.scrachImage)
+        scratchImageView?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(scratchImageView!)
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        attachScratchView()
+    }
+    
+    
+    
+    internal override func setupUI() {
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
         }
         collectionView.contentInset = UIEdgeInsetsMake(-70, 0, 0, 0)
 
     }
+    
+    
 
-    func attachScratchView(){
+    private func attachScratchView(){
         //Coupon : 지우고 나서의 원본 이미지
         //MaskImage : 지울 이미지
+        guard isFirstShow else { return }
+        self.scratchImageView?.removeFromSuperview()
         
-        let randomNumber = arc4random_uniform(3) + 1
-        scratchView  = ScratchUIView(frame: CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height),
-                                     Coupon: self.view.asImage(),
-                                     MaskImage: "scratch0\(randomNumber).png",
-                                     ScratchWidth: CGFloat(40))
+        scratchView  = ScratchUIView(frame: CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height+7),
+                                     Coupon: (appDelegate?.searchFrontViewController().view.asImage())!,
+                                     MaskImage: scratchImageNamed,
+            ScratchWidth: CGFloat(40))
+        
         scratchView.delegate = self
         self.view.addSubview(scratchView)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.isFirstShow = false
     }
 }
+
+
 
 extension TTSharedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

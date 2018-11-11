@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,15 +42,15 @@
                                                             <rect key="frame" x="109" y="586" width="141" height="32"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYP-Gp-6UG" userLabel="Title Label">
-                                                            <rect key="frame" x="161.5" y="30" width="35.5" height="17"/>
+                                                            <rect key="frame" x="162" y="30" width="35.5" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyK-2P-Rce">
-                                                            <rect key="frame" x="10" y="165" width="31" height="14.5"/>
+                                                            <rect key="frame" x="10" y="330" width="31" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNA-rd-Olh">
@@ -62,16 +61,26 @@
                                                                 <constraint firstAttribute="width" constant="1" id="jfm-O9-oIe"/>
                                                             </constraints>
                                                         </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tjk-G7-OwD">
+                                                            <rect key="frame" x="21" y="113" width="1" height="146"/>
+                                                            <color key="backgroundColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="146" id="nil-ZZ-i1U"/>
+                                                                <constraint firstAttribute="width" constant="1" id="w5l-H8-Y08"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <constraints>
+                                                        <constraint firstItem="Tjk-G7-OwD" firstAttribute="top" secondItem="NPJ-iD-caQ" secondAttribute="top" constant="113" id="1wv-lF-8z7"/>
                                                         <constraint firstItem="fNA-rd-Olh" firstAttribute="top" secondItem="NPJ-iD-caQ" secondAttribute="top" constant="8" id="3JE-PW-Jek"/>
-                                                        <constraint firstAttribute="bottom" secondItem="OYP-Gp-6UG" secondAttribute="bottom" constant="592" id="3xf-65-6bw"/>
                                                         <constraint firstAttribute="bottom" secondItem="bdE-Ag-BbT" secondAttribute="bottom" constant="21" id="4Vz-S2-qiR"/>
                                                         <constraint firstItem="tyK-2P-Rce" firstAttribute="leading" secondItem="NPJ-iD-caQ" secondAttribute="leading" constant="10" id="9Fs-sa-lyn"/>
-                                                        <constraint firstItem="tyK-2P-Rce" firstAttribute="top" secondItem="NPJ-iD-caQ" secondAttribute="top" constant="165" id="CMy-ke-ptH"/>
+                                                        <constraint firstItem="tyK-2P-Rce" firstAttribute="top" secondItem="NPJ-iD-caQ" secondAttribute="top" constant="330" id="CMy-ke-ptH"/>
+                                                        <constraint firstItem="Tjk-G7-OwD" firstAttribute="leading" secondItem="NPJ-iD-caQ" secondAttribute="leading" constant="21" id="GlG-J1-95D"/>
                                                         <constraint firstItem="bdE-Ag-BbT" firstAttribute="centerX" secondItem="NPJ-iD-caQ" secondAttribute="centerX" id="I8e-NT-KeB"/>
+                                                        <constraint firstItem="OYP-Gp-6UG" firstAttribute="top" secondItem="NPJ-iD-caQ" secondAttribute="top" constant="30" id="MRm-de-H4O"/>
                                                         <constraint firstItem="fNA-rd-Olh" firstAttribute="leading" secondItem="NPJ-iD-caQ" secondAttribute="leading" constant="24" id="QgN-SG-K3J"/>
                                                         <constraint firstItem="OYP-Gp-6UG" firstAttribute="centerX" secondItem="NPJ-iD-caQ" secondAttribute="centerX" id="fjz-W7-ExW"/>
                                                     </constraints>
@@ -100,7 +109,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8XU-aO-ENz" userLabel="Container">
-                                                    <rect key="frame" x="16" y="8" width="359" height="192"/>
+                                                    <rect key="frame" x="16" y="28" width="359" height="172"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0S-px-aEh" userLabel="bar">
                                                             <rect key="frame" x="0.0" y="9" width="17" height="1"/>
@@ -132,7 +141,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yir-jg-ddC" userLabel="Diary Body Label">
-                                                            <rect key="frame" x="75" y="50.5" width="233" height="81.5"/>
+                                                            <rect key="frame" x="75" y="50.5" width="233" height="61.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

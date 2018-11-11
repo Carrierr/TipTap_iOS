@@ -21,8 +21,8 @@ class TTSharedCollectionViewDiaryCell: UICollectionViewCell {
         
         locationLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
         locationLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(93)
-            make.left.equalToSuperview().offset(-41)
+//            make.top.equalToSuperview().offset(200)
+            make.left.equalToSuperview().offset(-45)
         }
     }
 }

@@ -93,7 +93,7 @@ open class ScratchView: UIView {
         maskLayer.backgroundColor = UIColor.clear.cgColor
         
         contentLayer = CALayer()
-        contentLayer.frame =  CGRect(x:0, y:0, width:width, height:height)
+        contentLayer.frame =  CGRect(x:0, y:-20, width:width, height:height)
         contentLayer.contents = scratched
         contentLayer.mask = maskLayer
         self.layer.addSublayer(contentLayer)
