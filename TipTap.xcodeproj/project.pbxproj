@@ -64,9 +64,11 @@
 		A1526021218D69FE00962D44 /* UIPageControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1526020218D69FE00962D44 /* UIPageControlExtension.swift */; };
 		A1526025218D85E400962D44 /* SelectCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1526023218D85E400962D44 /* SelectCalendarViewController.swift */; };
 		A1526026218D85E400962D44 /* SelectCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1526024218D85E400962D44 /* SelectCalendarViewController.xib */; };
+		A179E25921A0793500354579 /* TTCanSetupNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179E25821A0793500354579 /* TTCanSetupNavigation.swift */; };
 		A17ED5FB2148085F00E28462 /* TTAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ED5FA2148085F00E28462 /* TTAPIManager.swift */; };
 		A17ED5FD214809C400E28462 /* TTAuthAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ED5FC214809C400E28462 /* TTAuthAPIManager.swift */; };
 		A17ED5FF214AB76B00E28462 /* TTDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ED5FE214AB76B00E28462 /* TTDeviceInfo.swift */; };
+		A1C7353821981D85006EC892 /* TTSharedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7353721981D85006EC892 /* TTSharedService.swift */; };
 		BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */; };
 		BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */; };
 		BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */; };
@@ -166,9 +168,11 @@
 		A1526020218D69FE00962D44 /* UIPageControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageControlExtension.swift; sourceTree = "<group>"; };
 		A1526023218D85E400962D44 /* SelectCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCalendarViewController.swift; sourceTree = "<group>"; };
 		A1526024218D85E400962D44 /* SelectCalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCalendarViewController.xib; sourceTree = "<group>"; };
+		A179E25821A0793500354579 /* TTCanSetupNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCanSetupNavigation.swift; sourceTree = "<group>"; };
 		A17ED5FA2148085F00E28462 /* TTAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAPIManager.swift; sourceTree = "<group>"; };
 		A17ED5FC214809C400E28462 /* TTAuthAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAuthAPIManager.swift; sourceTree = "<group>"; };
 		A17ED5FE214AB76B00E28462 /* TTDeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDeviceInfo.swift; sourceTree = "<group>"; };
+		A1C7353721981D85006EC892 /* TTSharedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedService.swift; sourceTree = "<group>"; };
 		BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2B212668BF008F417C /* TTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBaseViewController.swift; sourceTree = "<group>"; };
 		BAD3AB2D212669DE008F417C /* TTBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBasePresenter.swift; sourceTree = "<group>"; };
@@ -391,6 +395,7 @@
 				A13FF2512128255100FB5642 /* TTDiaryOutlineContainer.swift */,
 				A13FF25721284C3C00FB5642 /* TTPostContainer.swift */,
 				A12211D421564B59004F931D /* TTCanShowAlert.swift */,
+				A179E25821A0793500354579 /* TTCanSetupNavigation.swift */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
@@ -480,6 +485,7 @@
 				A0AD5DD5212FEA7A00D76543 /* TTSharedDiaryView.swift */,
 				A0AD5DD1212CFAB200D76543 /* TestDiary.swift */,
 				A13FF2232123F86000FB5642 /* SharedDiary.storyboard */,
+				A1C7353721981D85006EC892 /* TTSharedService.swift */,
 			);
 			path = SharedDiary;
 			sourceTree = "<group>";
@@ -840,6 +846,7 @@
 			files = (
 				A13FF2522128255100FB5642 /* TTDiaryOutlineContainer.swift in Sources */,
 				BAD3AB3221266C4E008F417C /* TTMyDiaryPresenter.swift in Sources */,
+				A179E25921A0793500354579 /* TTCanSetupNavigation.swift in Sources */,
 				A13FF24821273C0100FB5642 /* TTCurrentLocationGettable.swift in Sources */,
 				A13FF2272123FB8600FB5642 /* UIViewExtension.swift in Sources */,
 				A1466794213068F000A15CF3 /* TTDetailDiaryViewController.swift in Sources */,
@@ -862,6 +869,7 @@
 				A0AD5DD2212CFAB200D76543 /* TestDiary.swift in Sources */,
 				A152601C2188A72F00962D44 /* TTDescriptMainViewController.swift in Sources */,
 				A12211D12154E258004F931D /* TTDiaryData.swift in Sources */,
+				A1C7353821981D85006EC892 /* TTSharedService.swift in Sources */,
 				A13FF2542128350400FB5642 /* UIColorExtension.swift in Sources */,
 				A17ED5FF214AB76B00E28462 /* TTDeviceInfo.swift in Sources */,
 				A13FF246212738C900FB5642 /* TTCurrentTimeGettable.swift in Sources */,

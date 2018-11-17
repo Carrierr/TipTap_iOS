@@ -16,7 +16,7 @@ protocol TTDiaryOutlineContainer : TTCanHasDiaryData, TTCurrentTimeGettable wher
     var horLineView    : UIView?  { get set }
     var brandLabel     : UILabel? { get set }
     var firstDescLabel : UILabel? { get set }
-    var titleLabel     : UILabel? { get set }
+
     
     func contentChangedOutline()
 }
@@ -29,31 +29,17 @@ extension TTDiaryOutlineContainer{
             let dateLabel = dateLabel,
             let horLineView = horLineView,
             let brandLabel = brandLabel,
-            let firstDescLabel = firstDescLabel,
-            let titleLabel = titleLabel else {
+            let firstDescLabel = firstDescLabel else {
                 return
         }
         
-        self.addSubview(titleLabel)
+
         self.addSubview(firstDescLabel)
         self.addSubview(brandLabel)
         self.addSubview(horLineView)
         self.addSubview(dateLabel)
         self.addSubview(monthLabel)
         self.addSubview(yearLabel)
-        
-        titleLabel.text = "Today\n#\(dataSet?.diaryDataList?.count ?? 0)"
-        titleLabel.numberOfLines = 0
-        titleLabel.textAlignment = .center
-        titleLabel.font = UIFont.systemFont(ofSize: 14)
-        titleLabel.snp.makeConstraints { (make) in
-            if #available(iOS 11, *) {
-                make.top.equalTo(safeAreaLayoutGuide.snp.topMargin).offset(-20)
-            } else {
-                make.top.equalToSuperview().offset(-20)
-            }
-            make.centerX.equalToSuperview()
-        }
         
         
         

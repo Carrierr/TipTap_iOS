@@ -11,17 +11,18 @@ import SnapKit
 
 class TTSharedCollectionViewDiaryCell: UICollectionViewCell {
     @IBOutlet var view: UIView!
-    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
-    @IBOutlet var verLineView: UIView!
+    var dataSet : TTDiaryDataSet?{
+        didSet{
+            let tempView = TTSharedDiaryView(frame: self.view.bounds)
+            tempView.dataSet = dataSet
+            self.view.addSubview(tempView)
+        }
+    }
     
     override func awakeFromNib() {
-        let tempView = TTSharedDiaryView(frame: self.view.bounds)
-        self.view.addSubview(tempView)
-        
         locationLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
         locationLabel.snp.makeConstraints { (make) in
-//            make.top.equalToSuperview().offset(200)
             make.left.equalToSuperview().offset(-45)
         }
     }

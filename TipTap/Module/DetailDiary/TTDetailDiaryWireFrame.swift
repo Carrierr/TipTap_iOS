@@ -25,7 +25,7 @@ final class TTDetailDiaryWireFrame: TTBaseWireFrame, TTDetailDiaryWireFrameProto
         case .alert(let title, let message):
             showAlert(title: title, message: message)
             break
-        case .show(let item):
+        case .show(_):
             break
             
         case .alertCompletion(let title, let message, let completion):

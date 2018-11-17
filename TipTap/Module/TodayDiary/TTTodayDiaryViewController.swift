@@ -58,6 +58,7 @@ class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert {
         }
     }
     
+    
     @IBAction func pressedWriteButton(_ sender: Any) {
         guard  let count =  self.mainView?.dataSet?.diaryDataList?.count else { return }
         if count >= 10 {

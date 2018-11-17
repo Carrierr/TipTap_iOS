@@ -51,25 +51,12 @@
                                     <action selector="pressedWriteButton:" destination="t3w-KY-UBE" eventType="touchUpInside" id="Ryg-wu-W45"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkh-yW-DkD">
-                                <rect key="frame" x="316" y="0.0" width="35" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="iAU-Yu-XF6"/>
-                                    <constraint firstAttribute="width" constant="35" id="qQJ-Gz-By0"/>
-                                </constraints>
-                                <state key="normal" image="setting"/>
-                                <connections>
-                                    <segue destination="bqT-8u-YcE" kind="show" id="1JK-xI-fWI"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nhn-Sl-s0X" firstAttribute="centerX" secondItem="Icp-0g-mDd" secondAttribute="centerX" id="34M-Kv-eVs"/>
                             <constraint firstItem="g5j-a0-ZeO" firstAttribute="bottom" secondItem="mhh-At-LYw" secondAttribute="bottom" id="6fa-JU-PG0"/>
-                            <constraint firstItem="g5j-a0-ZeO" firstAttribute="trailing" secondItem="vkh-yW-DkD" secondAttribute="trailing" constant="24" id="K3q-61-Zcg"/>
                             <constraint firstItem="g5j-a0-ZeO" firstAttribute="bottom" secondItem="uki-0I-6JX" secondAttribute="bottom" constant="13" id="M6h-yq-99a"/>
-                            <constraint firstItem="vkh-yW-DkD" firstAttribute="top" secondItem="g5j-a0-ZeO" secondAttribute="top" constant="-20" id="N65-tq-M8D"/>
                             <constraint firstItem="g5j-a0-ZeO" firstAttribute="trailing" secondItem="mhh-At-LYw" secondAttribute="trailing" id="b6d-vy-cFZ"/>
                             <constraint firstItem="mhh-At-LYw" firstAttribute="top" secondItem="Icp-0g-mDd" secondAttribute="top" id="bB8-0z-HNX"/>
                             <constraint firstItem="g5j-a0-ZeO" firstAttribute="trailing" secondItem="uki-0I-6JX" secondAttribute="trailing" constant="26" id="q6E-Ec-90y"/>
@@ -101,7 +88,7 @@
                 <viewControllerPlaceholder storyboardName="SharedDiary" referencedIdentifier="TTSharedViewController" id="qiO-lE-Zd1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auI-uT-zoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1394" y="533"/>
+            <point key="canvasLocation" x="1343" y="533"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xWV-sN-b3A">
@@ -128,11 +115,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OrW-DJ-ETY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1945" y="1009"/>
+            <point key="canvasLocation" x="1836" y="856"/>
         </scene>
     </scenes>
     <resources>
-        <image name="setting" width="24" height="24"/>
         <image name="writeButton" width="50" height="50"/>
     </resources>
 </document>

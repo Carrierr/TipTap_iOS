@@ -55,7 +55,7 @@ final class TTDetailDiaryInteractor: TTDetailDiaryInteractorInputProtocol{
             //MY DIARY 리스트에서 삭제
             service.fetchDeleteDiary(deleteDate: dateString) { (result) in
                 switch result{
-                case .success(let result):
+                case .success(_):
                     self.presenter?.completeDeleteDiary()
                     break
                 case .error(let error):
@@ -71,7 +71,7 @@ final class TTDetailDiaryInteractor: TTDetailDiaryInteractorInputProtocol{
             //오늘의 일기에서 삭제
             service.fetchDeleteDiary(deleteID: "\(diaryDatas?.first?.id ?? 0)") { (result) in
                 switch result{
-                case .success(let result):
+                case .success(_):
                     self.presenter?.completeDeleteDiary()
                     break
                 case .error(let error):
