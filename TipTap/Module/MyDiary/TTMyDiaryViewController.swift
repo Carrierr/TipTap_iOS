@@ -15,11 +15,12 @@ protocol TTMyDiaryViewProtocol:class{
     func stopNetworking(hasData : Bool)
 }
 
-class TTMyDiaryViewController: TTBaseViewController, TTCanShowAlert {
+class TTMyDiaryViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNavigation {
+    var titleLabel: UILabel? = UILabel()
+    var rightBarButtonItem: UIBarButtonItem? = UIBarButtonItem()
+    
     
     @IBOutlet private weak var descriptLabel: UILabel!
-    @IBOutlet private weak var calendarButton: UIButton!
-    @IBOutlet private weak var cancelButton: UIButton!
     @IBOutlet private weak var intervalSafeView: UIView!
     @IBOutlet private weak var tableView: UITableView!
     private var intervalDateLabel: UILabel = UILabel()
@@ -60,15 +61,11 @@ class TTMyDiaryViewController: TTBaseViewController, TTCanShowAlert {
             let endDate = endDate else {
                 intervalDateView.isHidden = true
                 intervalSafeView.isHidden = true
-                cancelButton.isHidden = true
-                calendarButton.isHidden = false
                 return
         }
         
         intervalDateView.isHidden   = false
         intervalSafeView.isHidden   = false
-        cancelButton.isHidden        = false
-        calendarButton.isHidden     =  true
         
         intervalDateLabel.text = "\(startDate)  -  \(endDate)"
     }

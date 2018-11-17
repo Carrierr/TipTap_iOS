@@ -18,14 +18,34 @@ protocol TTCurrentTimeGettable {
 }
 
 extension TTCurrentTimeGettable {
+    
     func currentTime()->String {
         let now = Date()
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone.current
+        let formatter = getDateFormat(format: "yyyy MMM dd - HH:mm")
+        return formatter.string(from: now)
         //        formatter.dateFormat = "yyyy MMM dd E HH:mm" //2018 Aug 24 Fri 00:26
-        formatter.dateFormat = "yyyy MMM dd - HH:mm"
+    }
+    
+    
+    func currentYear()->String{
+        let now = Date()
+        let formatter = getDateFormat(format: "yy")
         return formatter.string(from: now)
     }
+    
+    
+    func currentMonth()->String{
+        let now = Date()
+        let formatter = getDateFormat(format: "MM")
+        return formatter.string(from: now)
+    }
+    
+    func currentDay()->String{
+        let now = Date()
+        let formatter = getDateFormat(format: "dd")
+        return formatter.string(from: now)
+    }
+    
     
     func convertMonthString(month:Int)->String{
         switch month {
@@ -56,5 +76,13 @@ extension TTCurrentTimeGettable {
         default:
             return ""
         }
+    }
+    
+    
+    private func getDateFormat(format:String)->DateFormatter{
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = format
+        return formatter
     }
 }

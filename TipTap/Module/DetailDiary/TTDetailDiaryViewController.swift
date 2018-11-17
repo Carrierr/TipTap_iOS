@@ -38,9 +38,9 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert{
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
         self.navigationController?.navigationBar.tintColor = UIColor.white;
         
-        let leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "backwhite"), style: .plain, target: self, action: #selector(dismissView))
-        self.navigationItem.leftBarButtonItem = leftBarButtonItem
-        
+        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "backwhite")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backwhite")
+        navigationController?.navigationBar.topItem?.title = "";
     }
     
     override func setupUI() {

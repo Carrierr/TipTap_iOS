@@ -120,7 +120,15 @@ class SelectCalendarViewController: UIViewController, TTCanShowAlert {
         }
         
         self.dismiss(animated: true) {
-            let mdVC = UINavigationController(rootViewController: TTMyDiaryWireFrame.createModule(startDate : startDate, endDate : endDate))
+            let myDiary = TTMyDiaryWireFrame.createModule(startDate : startDate, endDate : endDate)
+            let mdVC = UINavigationController(rootViewController: myDiary)
+            myDiary.setupNavigation()
+            myDiary.titleLabel?.text = "MY DIARY"
+            myDiary.rightBarButtonItem?.image = UIImage(named: "cancel")?.withRenderingMode(.alwaysOriginal)
+            myDiary.rightBarButtonItem?.target = myDiary
+            myDiary.rightBarButtonItem?.action = #selector(TTMyDiaryViewController.pressedCancelButton)
+            
+
             appDelegate?.searchFrontViewController().present( mdVC, animated: true, completion: nil)
         }
     }

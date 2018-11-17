@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct TTDeviceInfo {
     struct UserInfo{
@@ -79,6 +80,25 @@ struct TTDeviceInfo {
                     return isFirst
                 }
                 return true
+            }
+        }
+    }
+    
+    
+    struct DeviceInfo {
+        static var isIphoneX : Bool{
+            get{
+                if #available(iOS 11.0, *) {
+                    let window = UIApplication.shared.keyWindow
+                    let topPadding = window?.safeAreaInsets.top
+                    if topPadding! > CGFloat(0) {
+                        return true
+                    }else{
+                        return false
+                    }
+                }else{
+                    return false
+                }
             }
         }
     }

@@ -12,7 +12,7 @@ class TTBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initNavigationBar()
+//        initNavigationBar()
         setupBinding()
         setupUI()
     }

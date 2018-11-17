@@ -46,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewController3 = descriptStoryboard.instantiateViewController(withIdentifier: "TTDescriptMainViewController") as UIViewController
         
         
-        
         self.loginViewController         = viewController
         self.mainViewController          = viewController2
         self.firstDescriptViewController = viewController3
@@ -61,9 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }else{
             launchVC = mainViewController
         }
-        launchVC?.navigationController?.isNavigationBarHidden = true
 
-//        self.window?.rootViewController = isOpened ?  launchVC!  : UINavigationController(rootViewController: self.loginViewController!)
         self.window?.rootViewController = isOpened ?  UINavigationController(rootViewController: launchVC!)  : UINavigationController(rootViewController: self.loginViewController!)
         self.window?.makeKeyAndVisible()
     }

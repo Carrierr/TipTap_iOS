@@ -57,4 +57,14 @@ class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert {
             }
         }
     }
+    
+    
+    @IBAction func pressedWriteButton(_ sender: Any) {
+        guard  let count =  self.mainView?.dataSet?.diaryDataList?.count else { return }
+        if count >= 10 {
+            showAlert(title: "", message: "하루에 작성할 일기는 10개까지입니다.")
+        }else{
+            self.present(UIStoryboard(name: "EditDiary", bundle: nil) .instantiateViewController(withIdentifier:"TTEditDiaryViewController"), animated: true, completion: nil)
+        }
+    }
 }
