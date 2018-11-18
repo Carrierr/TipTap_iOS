@@ -8,20 +8,25 @@
 
 import UIKit
 
-class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert {
+class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert, TTCanSetupNavigation {
+    var titleLabel : UILabel? = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 100, height: 44.0))
+    var rightBarButtonItem : UIBarButtonItem?  = UIBarButtonItem()
+    
     @IBOutlet weak var postView: UIView!
     private var mainView       : TTPostMainView?
     private lazy var service = TTTodayDiaryService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupTodayDiaryNavigation(diaryCount: 3)
     }
     
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupNavigation()
         requestTodayDiaryData()
+        
     }
     
     
@@ -39,6 +44,19 @@ class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert {
         
         self.postView.addSubview(mainView!)
     }
+    
+    
+    private func setupTodayDiaryNavigation(diaryCount count: Int){
+        guard let titleLabel = titleLabel,
+            let rightBarButtonItem = rightBarButtonItem else {
+                return
+        }
+        titleLabel.text = "Today\n#\(count)"
+        rightBarButtonItem.image = UIImage(named: "setting")?.withRenderingMode(.alwaysOriginal)
+        rightBarButtonItem.target = self
+        rightBarButtonItem.action = #selector(goSetting)
+    }
+    
     
     
     //MARK: Request today diary data
@@ -66,5 +84,10 @@ class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert {
         }else{
             self.present(UIStoryboard(name: "EditDiary", bundle: nil) .instantiateViewController(withIdentifier:"TTEditDiaryViewController"), animated: true, completion: nil)
         }
+    }
+    
+    
+    @objc private func goSetting(){
+        
     }
 }

@@ -32,6 +32,7 @@ extension TTSharedViewController : ScratchUIViewDelegate {
             UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
                 self.scratchView.alpha = 0
             }) { (result) in
+                self.setupSharedDiaryNavigation(diaryCount : 2)
                 NotificationCenter.default.post(name: Notification.Name.IsAblePaging.changedAblePaging, object: nil)
             }
         }
