@@ -13,7 +13,7 @@ import ScratchCard
 import SnapKit
 
 
-class TTSharedViewController: TTBaseViewController, TTCanShowAlert {
+class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNavigation {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -22,15 +22,19 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert {
     private var scratchImageView : UIImageView?
     private var isFirstShow : Bool = true
     private let service = TTSharedService()
+    private var scratchOriginalView : UIView?
     
     fileprivate var moduleDatas  : TTDiaryDataSet? {
         didSet{
             collectionView.reloadData()
+            attachScratchView()
         }
     }
     
     var scratchView : ScratchUIView!
-    var scratchOriginalView : UIView?
+    
+    var titleLabel : UILabel? = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 100, height: 44.0))
+    var rightBarButtonItem: UIBarButtonItem? = UIBarButtonItem()
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -41,6 +45,8 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.requestSharedDiary()
+        
+        
         let randomNumber = arc4random_uniform(3) + 1
         self.scratchImageNamed = "scratch0\(randomNumber).png"
         self.scratchImageView = UIImageView(image: UIImage(named: scratchImageNamed))
@@ -60,6 +66,7 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
         }
         collectionView.contentInset = UIEdgeInsetsMake(-70, 0, 0, 0)
+        self.setupNavigation()
     }
     
     
@@ -70,8 +77,22 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert {
         imageView.image = self.view.asImage()
     }
     
+    
+    func setupSharedDiaryNavigation(diaryCount count: Int){
+        guard let titleLabel = titleLabel,
+            let rightBarButtonItem = rightBarButtonItem else {
+                return
+        }
+        titleLabel.text = "\(count)\nTIPTAP"
+        rightBarButtonItem.image = UIImage(named: "more")?.withRenderingMode(.alwaysOriginal)
+        rightBarButtonItem.target = self
+        rightBarButtonItem.action = #selector(showMoreOption)
+    }
+    
+    
+    
 
-    func attachScratchView(){
+    private func attachScratchView(){
         //Coupon : 지우고 나서의 원본 이미지
         //MaskImage : 지울 이미지
         guard isFirstShow else { return }
@@ -89,6 +110,8 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert {
         self.view.addSubview(scratchView)
         self.isFirstShow = false
     }
+    
+    
     
     private func requestSharedDiary(){
         service.fetchSharedDiaryList { (result) in
