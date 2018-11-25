@@ -11,23 +11,25 @@ import CoreLocation
 import SwiftyJSON
 
 class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTCurrentLocationGettable,TTCanShowAlert {
+    var todayDiaryCount = 1
+    
     var locationManager : CLLocationManager?
     var location        : CLLocation?
-    lazy var imagePicker = UIImagePickerController()
+    private lazy var imagePicker = UIImagePickerController()
     
-    @IBOutlet weak var imageViewTopConst: NSLayoutConstraint!
-    @IBOutlet weak var imageViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var textCountLabel: UILabel!
-    @IBOutlet weak var placeHolderLabel: UILabel!
-    @IBOutlet weak var boardTextView: UITextView!
-    @IBOutlet weak var accessoryBottomConst: NSLayoutConstraint!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var travelPicture: UIImageView!
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet private weak var imageViewTopConst: NSLayoutConstraint!
+    @IBOutlet private weak var imageViewHeight: NSLayoutConstraint!
+    @IBOutlet private weak var textCountLabel: UILabel!
+    @IBOutlet private weak var placeHolderLabel: UILabel!
+    @IBOutlet private weak var boardTextView: UITextView!
+    @IBOutlet private weak var accessoryBottomConst: NSLayoutConstraint!
+    @IBOutlet private weak var locationLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var travelPicture: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "TIPTAP #01"
         
         setupImagePicker()
         setUpLocationManager()
@@ -68,7 +70,7 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
     private func setupTextView(){
         boardTextView.becomeFirstResponder()
         boardTextView.delegate = self
-        
+        numberLabel.text = "#\(todayDiaryCount)"
     }
     
     

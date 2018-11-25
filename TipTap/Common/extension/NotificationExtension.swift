@@ -12,5 +12,9 @@ extension Notification.Name{
     struct IsAblePaging{
         static let changedAblePaging:Notification.Name = Notification.Name("isAblePaging")
     }
+    
+    struct disablePaging{
+        static let changedAblePaging:Notification.Name = Notification.Name("disablePaging")
+    }
 }
 

@@ -16,8 +16,7 @@ protocol TTMyDiaryViewProtocol:class{
 }
 
 class TTMyDiaryViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNavigation {
-    var titleLabel: UILabel? = UILabel()
-    var rightBarButtonItem: UIBarButtonItem? = UIBarButtonItem()
+    
     
     
     @IBOutlet private weak var descriptLabel: UILabel!
@@ -31,6 +30,8 @@ class TTMyDiaryViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupN
     fileprivate var isDeletable : Bool = false
     fileprivate var isDeleteInit : Bool = false
     
+    var titleLabel : UILabel? = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 100, height: 44.0))
+    var rightBarButtonItem: UIBarButtonItem? = UIBarButtonItem()
     var presenter:TTMyDiaryPresenterProtocol?
     var startDate : String?
     var endDate  : String?
@@ -38,6 +39,8 @@ class TTMyDiaryViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupN
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigation()
+        setupMyDiaryNavigation()
     }
     
 
@@ -67,6 +70,7 @@ class TTMyDiaryViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupN
         intervalDateView.isHidden   = false
         intervalSafeView.isHidden   = false
         
+        intervalDateLabel.font = UIFont.montserratLight(fontSize: 14)
         intervalDateLabel.text = "\(startDate)  -  \(endDate)"
     }
     
@@ -76,6 +80,28 @@ class TTMyDiaryViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupN
         self.registerNoti()
     }
     
+    
+    
+    private func setupMyDiaryNavigation(){
+        guard let titleLabel = titleLabel,
+            let rightBarButtonItem = rightBarButtonItem else {
+                return
+        }
+        
+        titleLabel.text = "MY DIARY"
+        rightBarButtonItem.image = UIImage(named: "calendar")?.withRenderingMode(.alwaysOriginal)
+        rightBarButtonItem.target = self
+        rightBarButtonItem.action = #selector(pressedCalendar(_:))
+        
+        
+        
+        if let _ = startDate,
+            let _ = endDate  {
+                rightBarButtonItem.image = UIImage(named: "cancel")?.withRenderingMode(.alwaysOriginal)
+                rightBarButtonItem.target = self
+                rightBarButtonItem.action = #selector(pressedCancelButton(_:))
+        }
+    }
     
     
     private func setupIntervalDateView(){

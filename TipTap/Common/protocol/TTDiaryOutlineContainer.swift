@@ -45,7 +45,8 @@ extension TTDiaryOutlineContainer{
         
         yearLabel.text = "\(currentYear())`"
         yearLabel.textColor = UIColor(hexString: "6D6D6D")
-        yearLabel.font = UIFont.systemFont(ofSize: 13)
+        yearLabel.font = UIFont.montserratLight(fontSize: 13)
+//        yearLabel.font = UIFont.systemFont(ofSize: 13)
         yearLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(113)
             make.left.equalToSuperview().offset(21)
@@ -53,7 +54,7 @@ extension TTDiaryOutlineContainer{
         
         monthLabel.text = "\(convertMonthString(month: Int(currentMonth()) ?? 0 ))"
         monthLabel.textColor = UIColor(hexString: "6D6D6D")
-        monthLabel.font = UIFont.systemFont(ofSize: 13)
+        monthLabel.font = UIFont.montserratLight(fontSize: 13)
         monthLabel.snp.makeConstraints { (make) in
             make.top.equalTo(yearLabel.snp.bottom)
             make.left.equalToSuperview().offset(21)
@@ -61,7 +62,7 @@ extension TTDiaryOutlineContainer{
         
         dateLabel.text = "\(currentDay())"
         dateLabel.textColor = UIColor(hexString: "6D6D6D")
-        dateLabel.font = UIFont.systemFont(ofSize: 13)
+        dateLabel.font = UIFont.montserratLight(fontSize: 13)
         dateLabel.snp.makeConstraints { (make) in
             make.top.equalTo(monthLabel.snp.bottom)
             make.left.equalToSuperview().offset(21)
@@ -77,8 +78,8 @@ extension TTDiaryOutlineContainer{
         
         brandLabel.text = "TIPTAP"
         brandLabel.textColor = UIColor(hexString: "6D6D6D")
-        brandLabel.font = UIFont.systemFont(ofSize: 13)
         brandLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
+        brandLabel.font = UIFont.montserratLight(fontSize: 13)
         brandLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
             make.bottom.equalTo(firstDescLabel.snp.top).offset(-35)
@@ -86,7 +87,7 @@ extension TTDiaryOutlineContainer{
 
         firstDescLabel.text = "당신의\n첫번째 TIPTAP을\n작성해주세요."
         firstDescLabel.numberOfLines = 0
-        firstDescLabel.font = UIFont.systemFont(ofSize: 28)
+        firstDescLabel.font = UIFont.KoPubDotumProLight(fontSize: 28)
         firstDescLabel.textColor = UIColor(hexString: "373737", alpha: 0.65)
         firstDescLabel.snp.makeConstraints { (make) in
             make.top.equalTo(brandLabel.snp.bottom)

@@ -15,8 +15,23 @@ class TTSharedCollectionViewDiaryCell: UICollectionViewCell {
     var dataSet : TTDiaryDataSet?{
         didSet{
             let tempView = TTSharedDiaryView(frame: self.view.bounds)
-            tempView.dataSet = dataSet
+            if var dataSet = dataSet{
+                /*
+                 API 이슈로 공유받은 일기 스탬프는 클라에서 직접 그리기
+                 */
+                dataSet.stampNameList = [String]()
+                for _ in dataSet.diaryDataList!{
+                    let randomNumber = arc4random_uniform(13) + 1
+                    dataSet.stampNameList?.append("stamp\(randomNumber)")
+                }
+                tempView.dataSet = dataSet
+            }
             self.view.addSubview(tempView)
+            
+            tempView.snp.makeConstraints { (make) in
+                make.centerX.equalToSuperview()
+                make.centerY.equalToSuperview().offset(-35)
+            }
         }
     }
     

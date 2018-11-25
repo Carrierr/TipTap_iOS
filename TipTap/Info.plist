@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Montserrat-Light</string>
+		<string>Montserrat-Regular</string>
+		<string>KoPub Dotum_Pro Light</string>
+		<string>KoPub Dotum_Pro Medium</string>
+		<string>KoPub Dotum_Pro Bold</string>
+		<string>Montserrat-Medium</string>
+		<string>Montserrat-Bold</string>
+	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

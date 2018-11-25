@@ -20,17 +20,25 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert{
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var brandLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     var presenter:TTDetailDiaryPresenterProtocol?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.onViewDidLoad()
+        NotificationCenter.default.post(name: Notification.Name.disablePaging.changedAblePaging, object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
+    deinit {
+        NotificationCenter.default.post(name: Notification.Name.IsAblePaging.changedAblePaging, object: nil)
+        UIApplication.shared.statusBarStyle = .default
     }
     
     private func setupNavigaion(){
