@@ -25,7 +25,7 @@ class TTAPIManager : TTCanShowAlert {
         Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).responseJSON { (result) in
             guard let resultValue = result.result.value else {
                 print("========통신 오류========")
-                self.showAlert(title: "", message: "알 수 없는 오류가 발생하였습니다. 잠시후에 다시 시도해주세요.")
+                self.showAlert(title: "", message:  String.errorString)
                 return
             }
             
@@ -72,14 +72,14 @@ class TTAPIManager : TTCanShowAlert {
                         
                         guard let resultValue = response.result.value else {
                             print("========통신 오류========")
-                            self.showAlert(title: "", message: "알 수 없는 오류가 발생하였습니다. 잠시후에 다시 시도해주세요.")
+                            self.showAlert(title: "", message: String.errorString)
                             return
                         }
                         
                         let jsonResult = JSON(resultValue)
                         guard let jsonDictionary = jsonResult.dictionary,
                         jsonResult["code"].intValue == 1000 else {
-                            self.showAlert(title: "", message: "알 수 없는 오류가 발생하였습니다. 잠시후에 다시 시도해주세요.")
+                            self.showAlert(title: "", message: String.errorString)
                             return
                         }
                         completion(jsonDictionary)
@@ -88,7 +88,7 @@ class TTAPIManager : TTCanShowAlert {
                         print("Upload Progress: \(progress.fractionCompleted)")
                     }
                 case .failure(let encodingError):
-                    self.showAlert(title: "", message: "알 수 없는 오류가 발생하였습니다. 잠시후에 다시 시도해주세요.")
+                    self.showAlert(title: "", message: String.errorString)
                     print(encodingError)
                 }
         }

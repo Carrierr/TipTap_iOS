@@ -33,7 +33,7 @@ extension TTSharedViewController : ScratchUIViewDelegate {
                 self.scratchView.alpha = 0
             }) { (result) in
                 self.setupSharedDiaryNavigation(diaryCount : 2)
-                NotificationCenter.default.post(name: Notification.Name.IsAblePaging.changedAblePaging, object: nil)
+                NotificationCenter.default.post(name: Notification.Name.ablePaging.changedAblePaging, object: nil)
             }
         }
     }

@@ -47,7 +47,7 @@ class TTDetailDiaryService{
             if json["code"].intValue == 1000 {
                 completion(.success(1))
             }else{
-                completion(.errorMessage("알 수 없는 오류가 발생했습니다. 잠시후에 다시 시도해주세요."))
+                completion(.errorMessage(String.errorString))
             }
             print("myDiary interval result : \(result)")
         }

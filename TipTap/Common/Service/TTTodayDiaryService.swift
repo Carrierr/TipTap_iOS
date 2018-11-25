@@ -16,7 +16,7 @@ struct TTTodayDiaryService {
             print("result : \(result)")
             let resultData = TTDiaryDataSet(rawJson: result)
             guard resultData.result else {
-                completion(.errorMessage("알 수 없는 오류가 발생하였습니다. 잠시후에 다시 시도해주세요."))
+                completion(.errorMessage(String.errorString))
                 return
             }
             completion(.success(resultData))
