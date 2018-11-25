@@ -81,7 +81,9 @@ class SelectCalendarViewController: UIViewController, TTCanShowAlert {
         datePicker.setDate(Date(), animated: true)
         
         startDateButton.isSelected = true
+        startDateButton.titleLabel?.font = UIFont.montserratMedium(fontSize:16)
         endDateButton.isSelected  = false
+        endDateButton.titleLabel?.font = UIFont.montserratLight(fontSize: 16)
         self.view.bringSubview(toFront: startDateButton)
     }
     
@@ -96,7 +98,9 @@ class SelectCalendarViewController: UIViewController, TTCanShowAlert {
         datePicker.setDate(Date(), animated: true)
         
         endDateButton.isSelected  = true
+        endDateButton.titleLabel?.font = UIFont.montserratMedium(fontSize: 16)
         startDateButton.isSelected = false
+        startDateButton.titleLabel?.font = UIFont.montserratLight(fontSize:16)
         self.view.bringSubview(toFront: endDateButton)
     }
     

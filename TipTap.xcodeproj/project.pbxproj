@@ -58,6 +58,10 @@
 		A14667A421307C6E00A15CF3 /* TTDetailDiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14667A321307C6E00A15CF3 /* TTDetailDiaryService.swift */; };
 		A14667A82130D11D00A15CF3 /* TTMyDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14667A62130D11D00A15CF3 /* TTMyDiaryCell.swift */; };
 		A14667A92130D11D00A15CF3 /* TTMyDiaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14667A72130D11D00A15CF3 /* TTMyDiaryCell.xib */; };
+		A14CAD4621AAB80500B6F018 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A179E26221AAAC0000354579 /* Montserrat-Medium.ttf */; };
+		A14CAD4A21AABE7C00B6F018 /* KoPub Dotum_Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A14CAD4721AABE7C00B6F018 /* KoPub Dotum_Pro Light.otf */; };
+		A14CAD4C21AABE7C00B6F018 /* KoPub Dotum_Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A14CAD4921AABE7C00B6F018 /* KoPub Dotum_Pro Medium.otf */; };
+		A14CAD5121AAC0A500B6F018 /* KoPub Dotum_Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A14CAD4F21AAC07C00B6F018 /* KoPub Dotum_Pro Bold.otf */; };
 		A152601A2188A54C00962D44 /* TTFirstDescriptViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15260192188A54C00962D44 /* TTFirstDescriptViewController.storyboard */; };
 		A152601C2188A72F00962D44 /* TTDescriptMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152601B2188A72F00962D44 /* TTDescriptMainViewController.swift */; };
 		A152601E2188ABAA00962D44 /* TTDescriptContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152601D2188ABAA00962D44 /* TTDescriptContentViewController.swift */; };
@@ -65,6 +69,13 @@
 		A1526025218D85E400962D44 /* SelectCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1526023218D85E400962D44 /* SelectCalendarViewController.swift */; };
 		A1526026218D85E400962D44 /* SelectCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1526024218D85E400962D44 /* SelectCalendarViewController.xib */; };
 		A179E25921A0793500354579 /* TTCanSetupNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179E25821A0793500354579 /* TTCanSetupNavigation.swift */; };
+		A179E26D21AAAC3A00354579 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A179E26921AAAC0100354579 /* Montserrat-Regular.ttf */; };
+		A179E26E21AAAC4A00354579 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A179E26A21AAAC0100354579 /* Montserrat-Black.ttf */; };
+		A179E26F21AAAC4C00354579 /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A179E25D21AAABFF00354579 /* Montserrat-BlackItalic.ttf */; };
+		A179E27021AAAC4F00354579 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A179E26721AAAC0100354579 /* Montserrat-Bold.ttf */; };
+		A179E27121AAAC5200354579 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A179E26821AAAC0100354579 /* Montserrat-BoldItalic.ttf */; };
+		A179E27221AAAEA300354579 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A179E26321AAAC0000354579 /* Montserrat-Light.ttf */; };
+		A179E27421AAAEC100354579 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179E27321AAAEC100354579 /* UIFont+.swift */; };
 		A17ED5FB2148085F00E28462 /* TTAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ED5FA2148085F00E28462 /* TTAPIManager.swift */; };
 		A17ED5FD214809C400E28462 /* TTAuthAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ED5FC214809C400E28462 /* TTAuthAPIManager.swift */; };
 		A17ED5FF214AB76B00E28462 /* TTDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ED5FE214AB76B00E28462 /* TTDeviceInfo.swift */; };
@@ -162,6 +173,9 @@
 		A14667A321307C6E00A15CF3 /* TTDetailDiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDetailDiaryService.swift; sourceTree = "<group>"; };
 		A14667A62130D11D00A15CF3 /* TTMyDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryCell.swift; sourceTree = "<group>"; };
 		A14667A72130D11D00A15CF3 /* TTMyDiaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTMyDiaryCell.xib; sourceTree = "<group>"; };
+		A14CAD4721AABE7C00B6F018 /* KoPub Dotum_Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPub Dotum_Pro Light.otf"; sourceTree = "<group>"; };
+		A14CAD4921AABE7C00B6F018 /* KoPub Dotum_Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPub Dotum_Pro Medium.otf"; sourceTree = "<group>"; };
+		A14CAD4F21AAC07C00B6F018 /* KoPub Dotum_Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPub Dotum_Pro Bold.otf"; sourceTree = "<group>"; };
 		A15260192188A54C00962D44 /* TTFirstDescriptViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TTFirstDescriptViewController.storyboard; sourceTree = "<group>"; };
 		A152601B2188A72F00962D44 /* TTDescriptMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDescriptMainViewController.swift; sourceTree = "<group>"; };
 		A152601D2188ABAA00962D44 /* TTDescriptContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDescriptContentViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +183,25 @@
 		A1526023218D85E400962D44 /* SelectCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCalendarViewController.swift; sourceTree = "<group>"; };
 		A1526024218D85E400962D44 /* SelectCalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCalendarViewController.xib; sourceTree = "<group>"; };
 		A179E25821A0793500354579 /* TTCanSetupNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCanSetupNavigation.swift; sourceTree = "<group>"; };
+		A179E25B21AAABFF00354579 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		A179E25C21AAABFF00354579 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		A179E25D21AAABFF00354579 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		A179E25E21AAABFF00354579 /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		A179E25F21AAAC0000354579 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		A179E26021AAAC0000354579 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		A179E26121AAAC0000354579 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		A179E26221AAAC0000354579 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		A179E26321AAAC0000354579 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		A179E26421AAAC0000354579 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		A179E26521AAAC0000354579 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		A179E26621AAAC0000354579 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		A179E26721AAAC0100354579 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		A179E26821AAAC0100354579 /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		A179E26921AAAC0100354579 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		A179E26A21AAAC0100354579 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		A179E26B21AAAC0100354579 /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		A179E26C21AAAC0100354579 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+		A179E27321AAAEC100354579 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		A17ED5FA2148085F00E28462 /* TTAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAPIManager.swift; sourceTree = "<group>"; };
 		A17ED5FC214809C400E28462 /* TTAuthAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAuthAPIManager.swift; sourceTree = "<group>"; };
 		A17ED5FE214AB76B00E28462 /* TTDeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDeviceInfo.swift; sourceTree = "<group>"; };
@@ -344,6 +377,7 @@
 				A13FF2362124047100FB5642 /* NotificationExtension.swift */,
 				A13FF23D2127316B00FB5642 /* UIAlertControllerExtension.swift */,
 				A13FF2532128350400FB5642 /* UIColorExtension.swift */,
+				A179E27321AAAEC100354579 /* UIFont+.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -351,6 +385,21 @@
 		A13FF2282123FB9F00FB5642 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A179E26A21AAAC0100354579 /* Montserrat-Black.ttf */,
+				A179E25D21AAABFF00354579 /* Montserrat-BlackItalic.ttf */,
+				A179E26821AAAC0100354579 /* Montserrat-BoldItalic.ttf */,
+				A179E25B21AAABFF00354579 /* Montserrat-ExtraBold.ttf */,
+				A179E25E21AAABFF00354579 /* Montserrat-ExtraBoldItalic.ttf */,
+				A179E25F21AAAC0000354579 /* Montserrat-ExtraLight.ttf */,
+				A179E26B21AAAC0100354579 /* Montserrat-ExtraLightItalic.ttf */,
+				A179E26121AAAC0000354579 /* Montserrat-Italic.ttf */,
+				A179E26021AAAC0000354579 /* Montserrat-LightItalic.ttf */,
+				A179E26521AAAC0000354579 /* Montserrat-MediumItalic.ttf */,
+				A179E26621AAAC0000354579 /* Montserrat-SemiBold.ttf */,
+				A179E26421AAAC0000354579 /* Montserrat-SemiBoldItalic.ttf */,
+				A179E25C21AAABFF00354579 /* Montserrat-Thin.ttf */,
+				A179E26C21AAAC0100354579 /* Montserrat-ThinItalic.ttf */,
+				A179E25A21AAABE200354579 /* Font */,
 				A146679D21307B0700A15CF3 /* sampleImage.jpeg */,
 				A13FF22C2123FBEB00FB5642 /* mask.png */,
 			);
@@ -447,6 +496,20 @@
 				A1526024218D85E400962D44 /* SelectCalendarViewController.xib */,
 			);
 			path = SelectCalendar;
+			sourceTree = "<group>";
+		};
+		A179E25A21AAABE200354579 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A14CAD4721AABE7C00B6F018 /* KoPub Dotum_Pro Light.otf */,
+				A14CAD4F21AAC07C00B6F018 /* KoPub Dotum_Pro Bold.otf */,
+				A14CAD4921AABE7C00B6F018 /* KoPub Dotum_Pro Medium.otf */,
+				A179E26221AAAC0000354579 /* Montserrat-Medium.ttf */,
+				A179E26321AAAC0000354579 /* Montserrat-Light.ttf */,
+				A179E26921AAAC0100354579 /* Montserrat-Regular.ttf */,
+				A179E26721AAAC0100354579 /* Montserrat-Bold.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		A17ED5F92148081C00E28462 /* API */ = {
@@ -647,19 +710,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A14CAD5121AAC0A500B6F018 /* KoPub Dotum_Pro Bold.otf in Resources */,
+				A179E27221AAAEA300354579 /* Montserrat-Light.ttf in Resources */,
+				A14CAD4621AAB80500B6F018 /* Montserrat-Medium.ttf in Resources */,
+				A179E26D21AAAC3A00354579 /* Montserrat-Regular.ttf in Resources */,
+				A179E26E21AAAC4A00354579 /* Montserrat-Black.ttf in Resources */,
 				A146679C21307A6900A15CF3 /* TTDetailDiaryCell.xib in Resources */,
 				A13FF22D2123FBEB00FB5642 /* mask.png in Resources */,
 				A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */,
 				A1466791213066AF00A15CF3 /* DetailDiary.storyboard in Resources */,
 				A11F61BC2123E6AA0029E80A /* Assets.xcassets in Resources */,
 				A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */,
+				A179E27121AAAC5200354579 /* Montserrat-BoldItalic.ttf in Resources */,
 				A1526026218D85E400962D44 /* SelectCalendarViewController.xib in Resources */,
+				A14CAD4C21AABE7C00B6F018 /* KoPub Dotum_Pro Medium.otf in Resources */,
+				A179E26F21AAAC4C00354579 /* Montserrat-BlackItalic.ttf in Resources */,
 				BAD3AB792126F09F008F417C /* MyDiary.storyboard in Resources */,
 				A11F61BA2123E6A90029E80A /* Main.storyboard in Resources */,
 				A13FF2242123F86000FB5642 /* SharedDiary.storyboard in Resources */,
+				A179E27021AAAC4F00354579 /* Montserrat-Bold.ttf in Resources */,
 				A14667A92130D11D00A15CF3 /* TTMyDiaryCell.xib in Resources */,
 				A152601A2188A54C00962D44 /* TTFirstDescriptViewController.storyboard in Resources */,
 				A146679E21307B0700A15CF3 /* sampleImage.jpeg in Resources */,
+				A14CAD4A21AABE7C00B6F018 /* KoPub Dotum_Pro Light.otf in Resources */,
 				A13FF2412127370C00FB5642 /* EditDiary.storyboard in Resources */,
 				BAD3AB822126F83F008F417C /* MyDiaryCell.xib in Resources */,
 			);
@@ -872,6 +945,7 @@
 				A1C7353821981D85006EC892 /* TTSharedService.swift in Sources */,
 				A13FF2542128350400FB5642 /* UIColorExtension.swift in Sources */,
 				A17ED5FF214AB76B00E28462 /* TTDeviceInfo.swift in Sources */,
+				A179E27421AAAEC100354579 /* UIFont+.swift in Sources */,
 				A13FF246212738C900FB5642 /* TTCurrentTimeGettable.swift in Sources */,
 				A13FF25821284C3C00FB5642 /* TTPostContainer.swift in Sources */,
 				A13FF2372124047100FB5642 /* NotificationExtension.swift in Sources */,

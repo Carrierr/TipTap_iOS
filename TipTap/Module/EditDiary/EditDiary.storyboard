@@ -9,6 +9,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="KoPub Dotum_Pro Light.otf">
+            <string>KoPubDotumPL</string>
+        </array>
+        <array key="KoPub Dotum_Pro Medium.otf">
+            <string>KoPubDotumPM</string>
+        </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Edit Diary View Controller-->
         <scene sceneID="cmJ-rq-A68">
@@ -19,49 +30,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzk-Ql-zw5">
-                                <rect key="frame" x="175.5" y="31.5" width="24" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="175.5" y="31.5" width="24.5" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                 <color key="textColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuz-z2-Jpu">
-                                <rect key="frame" x="175" y="76.5" width="25.5" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <rect key="frame" x="174" y="77" width="27.5" height="15"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ha-Hl-udO">
-                                <rect key="frame" x="30" y="186" width="89.5" height="67"/>
+                                <rect key="frame" x="30" y="187" width="89.5" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="89.299999999999997" id="2vd-yl-ZzU"/>
                                     <constraint firstAttribute="height" constant="67" id="5K4-4w-UXm"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZE-7e-2Sp">
-                                <rect key="frame" x="150" y="96" width="75" height="50"/>
+                                <rect key="frame" x="150" y="97" width="75" height="50"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="mMp-LY-86f">
                                         <rect key="frame" x="0.0" y="0.0" width="25" height="50"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbk-yG-Ere">
                                         <rect key="frame" x="25" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="KoPubDotumPL" family="KoPubDotum_Pro" pointSize="12"/>
                                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqS-3q-plH">
-                                <rect key="frame" x="20" y="158" width="335" height="1"/>
+                                <rect key="frame" x="20" y="159" width="335" height="1"/>
                                 <color key="backgroundColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="HPw-ku-M94"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AI1-w2-QJw">
-                                <rect key="frame" x="30" y="268" width="315" height="334"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AI1-w2-QJw">
+                                <rect key="frame" x="30" y="269" width="315" height="333"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="KoPubDotumPL" family="KoPubDotum_Pro" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERn-0g-UpP">
@@ -86,8 +97,8 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/800" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQO-wc-Go9">
-                                        <rect key="frame" x="320.5" y="15.5" width="34.5" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <rect key="frame" x="319.5" y="15" width="35.5" height="15"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -104,10 +115,17 @@
                                     <constraint firstItem="MYZ-JM-0CT" firstAttribute="leading" secondItem="ERn-0g-UpP" secondAttribute="leading" id="sby-4r-GLL"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신의 TIPTAP을 기록하세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv7-Oi-G3L">
-                                <rect key="frame" x="36" y="278" width="156" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv7-Oi-G3L">
+                                <rect key="frame" x="36" y="279" width="143.5" height="16"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="당신의 TIPTAP을 기록하세요.">
+                                        <attributes>
+                                            <color key="NSColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="12" name="KoPubDotumPL"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltm-d9-wvf">
@@ -123,6 +141,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kc9-2R-L8O">
                                 <rect key="frame" x="335" y="20" width="30" height="40"/>
+                                <fontDescription key="fontDescription" name="KoPubDotumPM" family="KoPubDotum_Pro" pointSize="14"/>
                                 <state key="normal" title="완료">
                                     <color key="titleColor" red="0.14499090803743775" green="0.14427666711114495" blue="0.14570514896373055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -168,6 +187,7 @@
                         <outlet property="imageViewHeight" destination="5K4-4w-UXm" id="W4b-g4-znD"/>
                         <outlet property="imageViewTopConst" destination="RhR-28-EeU" id="Y4D-bJ-fqm"/>
                         <outlet property="locationLabel" destination="dbk-yG-Ere" id="h7L-tN-d9e"/>
+                        <outlet property="numberLabel" destination="Lzk-Ql-zw5" id="wZu-6A-gEM"/>
                         <outlet property="placeHolderLabel" destination="fv7-Oi-G3L" id="isW-0Q-qM5"/>
                         <outlet property="textCountLabel" destination="gQO-wc-Go9" id="gUv-YP-H8R"/>
                         <outlet property="travelPicture" destination="1Ha-Hl-udO" id="PIT-DO-FMA"/>

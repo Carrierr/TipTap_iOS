@@ -15,10 +15,11 @@ class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert, TTCanSetu
     @IBOutlet weak var postView: UIView!
     private var mainView       : TTPostMainView?
     private lazy var service = TTTodayDiaryService()
+    private var todayDiaryCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTodayDiaryNavigation(diaryCount: 3)
+        setupTodayDiaryNavigation(diaryCount: 0)
     }
     
 
@@ -51,7 +52,8 @@ class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert, TTCanSetu
             let rightBarButtonItem = rightBarButtonItem else {
                 return
         }
-        titleLabel.text = "Today\n#\(count)"
+        todayDiaryCount = count
+        titleLabel.text = "Today\n#\(todayDiaryCount)"
         rightBarButtonItem.image = UIImage(named: "setting")?.withRenderingMode(.alwaysOriginal)
         rightBarButtonItem.target = self
         rightBarButtonItem.action = #selector(goSetting)
@@ -66,6 +68,7 @@ class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert, TTCanSetu
             switch result {
             case .success(let result):
                 self.mainView?.dataSet = TTDiaryDataSet(diaryDataList: result.diaryDataList!, stampNameList: result.stampNameList!)
+                self.setupTodayDiaryNavigation(diaryCount: result.diaryDataList?.count ?? 0)
                 break
             case .errorMessage(let errorMsg):
                 self.showAlert(title: "", message: errorMsg)
@@ -82,7 +85,9 @@ class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert, TTCanSetu
         if count >= 10 {
             showAlert(title: "", message: "하루에 작성할 일기는 10개까지입니다.")
         }else{
-            self.present(UIStoryboard(name: "EditDiary", bundle: nil) .instantiateViewController(withIdentifier:"TTEditDiaryViewController"), animated: true, completion: nil)
+            let vc = UIStoryboard(name: "EditDiary", bundle: nil) .instantiateViewController(withIdentifier:"TTEditDiaryViewController") as! TTEditDiaryViewController
+            vc.todayDiaryCount = todayDiaryCount + 1
+            self.present(vc, animated: true, completion: nil)
         }
     }
     

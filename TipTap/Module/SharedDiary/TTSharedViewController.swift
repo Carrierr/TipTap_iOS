@@ -65,7 +65,7 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
         }
-        collectionView.contentInset = UIEdgeInsetsMake(-70, 0, 0, 0)
+        collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         self.setupNavigation()
     }
     
@@ -156,6 +156,7 @@ extension TTSharedViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryCell", for: indexPath) as! TTSharedCollectionViewDiaryCell
             cell.dataSet = moduleDatas
             cell.locationLabel.text = "from. 서울시 마포구 망원동"
+    
             return cell
             
         } else {

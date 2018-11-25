@@ -38,6 +38,7 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert{
     
     deinit {
         NotificationCenter.default.post(name: Notification.Name.IsAblePaging.changedAblePaging, object: nil)
+        UIApplication.shared.statusBarStyle = .default
     }
     
     private func setupNavigaion(){

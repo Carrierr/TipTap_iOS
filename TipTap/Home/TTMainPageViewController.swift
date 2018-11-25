@@ -41,6 +41,15 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
         UIBinding()
         setTipTapPageViewController()
         addObserver()
+        
+        for family: String in UIFont.familyNames
+        {
+            print(family)
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
     }
     
     
@@ -58,13 +67,11 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
     
 
     
-    
-    
-    
     private func addObserver(){
         NotificationCenter.default.addObserver(self, selector: #selector(isAblePaging), name: Notification.Name.IsAblePaging.changedAblePaging, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(disablePaging), name: Notification.Name.disablePaging.changedAblePaging, object: nil)
     }
+    
     
     
     private func setTipTapPageViewController(){

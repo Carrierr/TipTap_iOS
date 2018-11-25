@@ -70,6 +70,7 @@ class TTMyDiaryViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupN
         intervalDateView.isHidden   = false
         intervalSafeView.isHidden   = false
         
+        intervalDateLabel.font = UIFont.montserratLight(fontSize: 14)
         intervalDateLabel.text = "\(startDate)  -  \(endDate)"
     }
     

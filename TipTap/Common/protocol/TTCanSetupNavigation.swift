@@ -24,7 +24,7 @@ extension TTCanSetupNavigation{
         titleLabel.backgroundColor = UIColor.clear
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = NSTextAlignment.center
-        titleLabel.font = UIFont.systemFont(ofSize: 16)
+        titleLabel.font = UIFont.montserratRegular(fontSize: 16)
         self.navigationItem.titleView = titleLabel
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
              

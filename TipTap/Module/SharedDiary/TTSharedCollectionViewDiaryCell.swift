@@ -26,8 +26,12 @@ class TTSharedCollectionViewDiaryCell: UICollectionViewCell {
                 }
                 tempView.dataSet = dataSet
             }
-            
             self.view.addSubview(tempView)
+            
+            tempView.snp.makeConstraints { (make) in
+                make.centerX.equalToSuperview()
+                make.centerY.equalToSuperview().offset(-35)
+            }
         }
     }
     
