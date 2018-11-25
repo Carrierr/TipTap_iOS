@@ -9,12 +9,13 @@
 import Foundation
 
 extension Notification.Name{
-    struct IsAblePaging{
+    struct ablePaging{
         static let changedAblePaging:Notification.Name = Notification.Name("isAblePaging")
+        static let changedDisablePaging:Notification.Name = Notification.Name("disablePaging")
     }
-    
-    struct disablePaging{
-        static let changedAblePaging:Notification.Name = Notification.Name("disablePaging")
+
+    struct refreshPage {
+        static let sharedDiary:Notification.Name = Notification.Name("refreshSharedDiary")
     }
 }
 

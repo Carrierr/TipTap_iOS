@@ -39,7 +39,7 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIBinding()
-        setTipTapPageViewController()
+        setPageViewController(index: 1,direct: .forward)
         addObserver()
         
         for family: String in UIFont.familyNames
@@ -68,24 +68,22 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
 
     
     private func addObserver(){
-        NotificationCenter.default.addObserver(self, selector: #selector(isAblePaging), name: Notification.Name.IsAblePaging.changedAblePaging, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(disablePaging), name: Notification.Name.disablePaging.changedAblePaging, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(isAblePaging), name: Notification.Name.ablePaging.changedAblePaging, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(disablePaging), name: Notification.Name.ablePaging.changedDisablePaging, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshSharedDiary), name: NSNotification.Name.refreshPage.sharedDiary, object: nil)
     }
-    
-    
-    
-    private func setTipTapPageViewController(){
-        let mainViewController = orderedViewControllers[1]
-        DispatchQueue.main.async {
 
-            
+    
+    private func setPageViewController(index : Int,direct : NavigationDirection){
+        guard index < orderedViewControllers.count else { return }
+        let mainViewController = orderedViewControllers[index]
+        DispatchQueue.main.async {
             self.setViewControllers([mainViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
+                                                       direction: direct,
+                                                       animated: true,
+                                                       completion: nil)
         }
     }
-
     
     
     @objc private func isAblePaging(){
@@ -97,6 +95,12 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
     @objc private func disablePaging(){
         self.isPagingEnabled  = false
         self.isAbleScrollPage = false
+    }
+    
+    @objc private func refreshSharedDiary(){
+        self.isAbleScrollPage = false
+        orderedViewControllers[2] = self.newTipTapViewController(index:2)
+        setPageViewController(index: 1,direct: .reverse)
     }
 }
 

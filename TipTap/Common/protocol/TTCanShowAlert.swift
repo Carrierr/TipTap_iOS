@@ -49,4 +49,22 @@ extension TTCanShowAlert{
         
         appDelegate?.searchFrontViewController().present(alertController, animated: true, completion: nil)
     }
+    
+    func showActionSheet(sheetActions:UIAlertAction...){
+        
+
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cancelButton = UIAlertAction(title: "취소", style: .cancel, handler: { (action) -> Void in
+            print("Cancel button tapped")
+        })
+        
+        for sheetAction in sheetActions{
+            alertController.addAction(sheetAction)
+        }
+        
+        
+        alertController.addAction(cancelButton)
+        
+        appDelegate?.searchFrontViewController().present(alertController, animated: true, completion: nil)
+    }
 }

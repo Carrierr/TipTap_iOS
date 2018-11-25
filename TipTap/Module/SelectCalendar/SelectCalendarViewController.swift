@@ -109,7 +109,7 @@ class SelectCalendarViewController: UIViewController, TTCanShowAlert {
     @IBAction func pressedConfirmButton(_ sender: Any) {
         guard let startDate = startDate,
                    let endDate = endDate else {
-                showAlert(title: "", message: "알 수 없는 오류로 인하여 잠시 후에 다시 시작해주세요.")
+                showAlert(title: "", message: String.errorString)
                 return
         }
         

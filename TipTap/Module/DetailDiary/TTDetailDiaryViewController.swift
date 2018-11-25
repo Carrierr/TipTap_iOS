@@ -28,7 +28,7 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert{
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.onViewDidLoad()
-        NotificationCenter.default.post(name: Notification.Name.disablePaging.changedAblePaging, object: nil)
+        NotificationCenter.default.post(name: Notification.Name.ablePaging.changedDisablePaging, object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +37,7 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert{
     }
     
     deinit {
-        NotificationCenter.default.post(name: Notification.Name.IsAblePaging.changedAblePaging, object: nil)
+        NotificationCenter.default.post(name: Notification.Name.ablePaging.changedAblePaging, object: nil)
         UIApplication.shared.statusBarStyle = .default
     }
     

@@ -31,7 +31,7 @@ class TTAuthAPIManager {
         
         Alamofire.request("\(auth_url)/login", method: .post, parameters: param).responseJSON { (result) in
             guard let resultValue = result.result.value else {
-                completion(.errorMessage("알 수 없는 오류가 발생하였습니다. 잠시 후에 다시 시도해주세요. "))
+                completion(.errorMessage(String.errorString))
                 return
             }
             

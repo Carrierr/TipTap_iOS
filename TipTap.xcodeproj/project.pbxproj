@@ -62,6 +62,7 @@
 		A14CAD4A21AABE7C00B6F018 /* KoPub Dotum_Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A14CAD4721AABE7C00B6F018 /* KoPub Dotum_Pro Light.otf */; };
 		A14CAD4C21AABE7C00B6F018 /* KoPub Dotum_Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A14CAD4921AABE7C00B6F018 /* KoPub Dotum_Pro Medium.otf */; };
 		A14CAD5121AAC0A500B6F018 /* KoPub Dotum_Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A14CAD4F21AAC07C00B6F018 /* KoPub Dotum_Pro Bold.otf */; };
+		A14CAD5321AAE1F600B6F018 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14CAD5221AAE1F600B6F018 /* String+.swift */; };
 		A152601A2188A54C00962D44 /* TTFirstDescriptViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15260192188A54C00962D44 /* TTFirstDescriptViewController.storyboard */; };
 		A152601C2188A72F00962D44 /* TTDescriptMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152601B2188A72F00962D44 /* TTDescriptMainViewController.swift */; };
 		A152601E2188ABAA00962D44 /* TTDescriptContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152601D2188ABAA00962D44 /* TTDescriptContentViewController.swift */; };
@@ -173,6 +174,7 @@
 		A14CAD4721AABE7C00B6F018 /* KoPub Dotum_Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPub Dotum_Pro Light.otf"; sourceTree = "<group>"; };
 		A14CAD4921AABE7C00B6F018 /* KoPub Dotum_Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPub Dotum_Pro Medium.otf"; sourceTree = "<group>"; };
 		A14CAD4F21AAC07C00B6F018 /* KoPub Dotum_Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPub Dotum_Pro Bold.otf"; sourceTree = "<group>"; };
+		A14CAD5221AAE1F600B6F018 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		A15260192188A54C00962D44 /* TTFirstDescriptViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TTFirstDescriptViewController.storyboard; sourceTree = "<group>"; };
 		A152601B2188A72F00962D44 /* TTDescriptMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDescriptMainViewController.swift; sourceTree = "<group>"; };
 		A152601D2188ABAA00962D44 /* TTDescriptContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDescriptContentViewController.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				A13FF23D2127316B00FB5642 /* UIAlertControllerExtension.swift */,
 				A13FF2532128350400FB5642 /* UIColorExtension.swift */,
 				A179E27321AAAEC100354579 /* UIFont+.swift */,
+				A14CAD5221AAE1F600B6F018 /* String+.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -926,6 +929,7 @@
 				A11F61B72123E6A90029E80A /* ViewController.swift in Sources */,
 				A13FF22F2123FF0500FB5642 /* UIPageViewControllerExtension.swift in Sources */,
 				A152601E2188ABAA00962D44 /* TTDescriptContentViewController.swift in Sources */,
+				A14CAD5321AAE1F600B6F018 /* String+.swift in Sources */,
 				A13FF2562128464800FB5642 /* TTPostMainView.swift in Sources */,
 				A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */,
 				A12211DB21579060004F931D /* TTTodayDiaryService.swift in Sources */,
