@@ -70,10 +70,7 @@
 		A1526026218D85E400962D44 /* SelectCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1526024218D85E400962D44 /* SelectCalendarViewController.xib */; };
 		A179E25921A0793500354579 /* TTCanSetupNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179E25821A0793500354579 /* TTCanSetupNavigation.swift */; };
 		A179E26D21AAAC3A00354579 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A179E26921AAAC0100354579 /* Montserrat-Regular.ttf */; };
-		A179E26E21AAAC4A00354579 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A179E26A21AAAC0100354579 /* Montserrat-Black.ttf */; };
-		A179E26F21AAAC4C00354579 /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A179E25D21AAABFF00354579 /* Montserrat-BlackItalic.ttf */; };
 		A179E27021AAAC4F00354579 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A179E26721AAAC0100354579 /* Montserrat-Bold.ttf */; };
-		A179E27121AAAC5200354579 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A179E26821AAAC0100354579 /* Montserrat-BoldItalic.ttf */; };
 		A179E27221AAAEA300354579 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A179E26321AAAC0000354579 /* Montserrat-Light.ttf */; };
 		A179E27421AAAEC100354579 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179E27321AAAEC100354579 /* UIFont+.swift */; };
 		A17ED5FB2148085F00E28462 /* TTAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ED5FA2148085F00E28462 /* TTAPIManager.swift */; };
@@ -183,24 +180,10 @@
 		A1526023218D85E400962D44 /* SelectCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCalendarViewController.swift; sourceTree = "<group>"; };
 		A1526024218D85E400962D44 /* SelectCalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCalendarViewController.xib; sourceTree = "<group>"; };
 		A179E25821A0793500354579 /* TTCanSetupNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCanSetupNavigation.swift; sourceTree = "<group>"; };
-		A179E25B21AAABFF00354579 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
-		A179E25C21AAABFF00354579 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
-		A179E25D21AAABFF00354579 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
-		A179E25E21AAABFF00354579 /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		A179E25F21AAAC0000354579 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
-		A179E26021AAAC0000354579 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
-		A179E26121AAAC0000354579 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		A179E26221AAAC0000354579 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		A179E26321AAAC0000354579 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
-		A179E26421AAAC0000354579 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		A179E26521AAAC0000354579 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
-		A179E26621AAAC0000354579 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		A179E26721AAAC0100354579 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
-		A179E26821AAAC0100354579 /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
 		A179E26921AAAC0100354579 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		A179E26A21AAAC0100354579 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
-		A179E26B21AAAC0100354579 /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		A179E26C21AAAC0100354579 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
 		A179E27321AAAEC100354579 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		A17ED5FA2148085F00E28462 /* TTAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAPIManager.swift; sourceTree = "<group>"; };
 		A17ED5FC214809C400E28462 /* TTAuthAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAuthAPIManager.swift; sourceTree = "<group>"; };
@@ -385,20 +368,6 @@
 		A13FF2282123FB9F00FB5642 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A179E26A21AAAC0100354579 /* Montserrat-Black.ttf */,
-				A179E25D21AAABFF00354579 /* Montserrat-BlackItalic.ttf */,
-				A179E26821AAAC0100354579 /* Montserrat-BoldItalic.ttf */,
-				A179E25B21AAABFF00354579 /* Montserrat-ExtraBold.ttf */,
-				A179E25E21AAABFF00354579 /* Montserrat-ExtraBoldItalic.ttf */,
-				A179E25F21AAAC0000354579 /* Montserrat-ExtraLight.ttf */,
-				A179E26B21AAAC0100354579 /* Montserrat-ExtraLightItalic.ttf */,
-				A179E26121AAAC0000354579 /* Montserrat-Italic.ttf */,
-				A179E26021AAAC0000354579 /* Montserrat-LightItalic.ttf */,
-				A179E26521AAAC0000354579 /* Montserrat-MediumItalic.ttf */,
-				A179E26621AAAC0000354579 /* Montserrat-SemiBold.ttf */,
-				A179E26421AAAC0000354579 /* Montserrat-SemiBoldItalic.ttf */,
-				A179E25C21AAABFF00354579 /* Montserrat-Thin.ttf */,
-				A179E26C21AAAC0100354579 /* Montserrat-ThinItalic.ttf */,
 				A179E25A21AAABE200354579 /* Font */,
 				A146679D21307B0700A15CF3 /* sampleImage.jpeg */,
 				A13FF22C2123FBEB00FB5642 /* mask.png */,
@@ -714,17 +683,14 @@
 				A179E27221AAAEA300354579 /* Montserrat-Light.ttf in Resources */,
 				A14CAD4621AAB80500B6F018 /* Montserrat-Medium.ttf in Resources */,
 				A179E26D21AAAC3A00354579 /* Montserrat-Regular.ttf in Resources */,
-				A179E26E21AAAC4A00354579 /* Montserrat-Black.ttf in Resources */,
 				A146679C21307A6900A15CF3 /* TTDetailDiaryCell.xib in Resources */,
 				A13FF22D2123FBEB00FB5642 /* mask.png in Resources */,
 				A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */,
 				A1466791213066AF00A15CF3 /* DetailDiary.storyboard in Resources */,
 				A11F61BC2123E6AA0029E80A /* Assets.xcassets in Resources */,
 				A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */,
-				A179E27121AAAC5200354579 /* Montserrat-BoldItalic.ttf in Resources */,
 				A1526026218D85E400962D44 /* SelectCalendarViewController.xib in Resources */,
 				A14CAD4C21AABE7C00B6F018 /* KoPub Dotum_Pro Medium.otf in Resources */,
-				A179E26F21AAAC4C00354579 /* Montserrat-BlackItalic.ttf in Resources */,
 				BAD3AB792126F09F008F417C /* MyDiary.storyboard in Resources */,
 				A11F61BA2123E6A90029E80A /* Main.storyboard in Resources */,
 				A13FF2242123F86000FB5642 /* SharedDiary.storyboard in Resources */,
