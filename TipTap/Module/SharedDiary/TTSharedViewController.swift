@@ -78,6 +78,7 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     }
     
     
+    
     func setupSharedDiaryNavigation(diaryCount count: Int){
         guard let titleLabel = titleLabel,
             let rightBarButtonItem = rightBarButtonItem else {

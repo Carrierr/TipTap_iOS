@@ -63,6 +63,7 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
     
     private func addObserver(){
         NotificationCenter.default.addObserver(self, selector: #selector(isAblePaging), name: Notification.Name.IsAblePaging.changedAblePaging, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(disablePaging), name: Notification.Name.disablePaging.changedAblePaging, object: nil)
     }
     
     
@@ -83,6 +84,12 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
     @objc private func isAblePaging(){
         self.isPagingEnabled  = true
         self.isAbleScrollPage = true
+    }
+    
+    
+    @objc private func disablePaging(){
+        self.isPagingEnabled  = false
+        self.isAbleScrollPage = false
     }
 }
 
