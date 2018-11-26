@@ -53,6 +53,7 @@ final class TTMyDiaryInteractor: TTMyDiaryInteractorInputProtocol{
                 case .errorMessage(let errorMsg):
                     self.presenter?.showMessage(message: errorMsg)
                     break
+
                 }
             }
         }

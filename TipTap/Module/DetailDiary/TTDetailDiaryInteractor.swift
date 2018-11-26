@@ -81,6 +81,7 @@ final class TTDetailDiaryInteractor: TTDetailDiaryInteractorInputProtocol{
                 case .errorMessage(let errorMsg):
                     self.presenter?.showMessage(message: errorMsg)
                     break
+
                 }
             }
             

@@ -11,7 +11,6 @@
 		34F647004371BECCAD0A25F5 /* Pods_TipTap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6376FA0B5704EE127D34759 /* Pods_TipTap.framework */; };
 		3F041A962C6129A655139026 /* Pods_TipTapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACC9DFC0C426B15FA874266 /* Pods_TipTapUITests.framework */; };
 		A0AD5DD0212CF91C00D76543 /* TTSharedCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DCF212CF91C00D76543 /* TTSharedCollectionViewListCell.swift */; };
-		A0AD5DD2212CFAB200D76543 /* TestDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DD1212CFAB200D76543 /* TestDiary.swift */; };
 		A0AD5DD4212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DD3212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift */; };
 		A0AD5DD6212FEA7A00D76543 /* TTSharedDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DD5212FEA7A00D76543 /* TTSharedDiaryView.swift */; };
 		A11F61B52123E6A90029E80A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61B42123E6A90029E80A /* AppDelegate.swift */; };
@@ -63,6 +62,7 @@
 		A14CAD4C21AABE7C00B6F018 /* KoPub Dotum_Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A14CAD4921AABE7C00B6F018 /* KoPub Dotum_Pro Medium.otf */; };
 		A14CAD5121AAC0A500B6F018 /* KoPub Dotum_Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A14CAD4F21AAC07C00B6F018 /* KoPub Dotum_Pro Bold.otf */; };
 		A14CAD5321AAE1F600B6F018 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14CAD5221AAE1F600B6F018 /* String+.swift */; };
+		A14CAD5721AC3B2700B6F018 /* TTCanReportActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14CAD5621AC3B2700B6F018 /* TTCanReportActionSheet.swift */; };
 		A152601A2188A54C00962D44 /* TTFirstDescriptViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15260192188A54C00962D44 /* TTFirstDescriptViewController.storyboard */; };
 		A152601C2188A72F00962D44 /* TTDescriptMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152601B2188A72F00962D44 /* TTDescriptMainViewController.swift */; };
 		A152601E2188ABAA00962D44 /* TTDescriptContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152601D2188ABAA00962D44 /* TTDescriptContentViewController.swift */; };
@@ -118,7 +118,6 @@
 		94155FE91CA75E45A37911BD /* Pods_TipTapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipTapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9BA63B41D47F3B40D2519F /* Pods-TipTap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipTap.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipTap/Pods-TipTap.release.xcconfig"; sourceTree = "<group>"; };
 		A0AD5DCF212CF91C00D76543 /* TTSharedCollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedCollectionViewListCell.swift; sourceTree = "<group>"; };
-		A0AD5DD1212CFAB200D76543 /* TestDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDiary.swift; sourceTree = "<group>"; };
 		A0AD5DD3212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedCollectionViewDiaryCell.swift; sourceTree = "<group>"; };
 		A0AD5DD5212FEA7A00D76543 /* TTSharedDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedDiaryView.swift; sourceTree = "<group>"; };
 		A11F61B12123E6A90029E80A /* TipTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +174,7 @@
 		A14CAD4921AABE7C00B6F018 /* KoPub Dotum_Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPub Dotum_Pro Medium.otf"; sourceTree = "<group>"; };
 		A14CAD4F21AAC07C00B6F018 /* KoPub Dotum_Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPub Dotum_Pro Bold.otf"; sourceTree = "<group>"; };
 		A14CAD5221AAE1F600B6F018 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		A14CAD5621AC3B2700B6F018 /* TTCanReportActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCanReportActionSheet.swift; sourceTree = "<group>"; };
 		A15260192188A54C00962D44 /* TTFirstDescriptViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TTFirstDescriptViewController.storyboard; sourceTree = "<group>"; };
 		A152601B2188A72F00962D44 /* TTDescriptMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDescriptMainViewController.swift; sourceTree = "<group>"; };
 		A152601D2188ABAA00962D44 /* TTDescriptContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDescriptContentViewController.swift; sourceTree = "<group>"; };
@@ -416,6 +416,7 @@
 				A13FF2512128255100FB5642 /* TTDiaryOutlineContainer.swift */,
 				A13FF25721284C3C00FB5642 /* TTPostContainer.swift */,
 				A12211D421564B59004F931D /* TTCanShowAlert.swift */,
+				A14CAD5621AC3B2700B6F018 /* TTCanReportActionSheet.swift */,
 				A179E25821A0793500354579 /* TTCanSetupNavigation.swift */,
 			);
 			path = protocol;
@@ -441,6 +442,25 @@
 				A14667A72130D11D00A15CF3 /* TTMyDiaryCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		A14CAD5421AC302700B6F018 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A13FF2232123F86000FB5642 /* SharedDiary.storyboard */,
+				A0AD5DCF212CF91C00D76543 /* TTSharedCollectionViewListCell.swift */,
+				A0AD5DD3212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift */,
+				A0AD5DD5212FEA7A00D76543 /* TTSharedDiaryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A14CAD5521AC303800B6F018 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A1C7353721981D85006EC892 /* TTSharedService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		A15260162188A4C000962D44 /* FirstDescript */ = {
@@ -513,14 +533,10 @@
 		BAD3AB25212663DB008F417C /* SharedDiary */ = {
 			isa = PBXGroup;
 			children = (
-				A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */,
+				A14CAD5521AC303800B6F018 /* Service */,
+				A14CAD5421AC302700B6F018 /* View */,
 				A13FF2212123F85100FB5642 /* TTSharedViewController.swift */,
-				A0AD5DCF212CF91C00D76543 /* TTSharedCollectionViewListCell.swift */,
-				A0AD5DD3212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift */,
-				A0AD5DD5212FEA7A00D76543 /* TTSharedDiaryView.swift */,
-				A0AD5DD1212CFAB200D76543 /* TestDiary.swift */,
-				A13FF2232123F86000FB5642 /* SharedDiary.storyboard */,
-				A1C7353721981D85006EC892 /* TTSharedService.swift */,
+				A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */,
 			);
 			path = SharedDiary;
 			sourceTree = "<group>";
@@ -908,7 +924,6 @@
 				A17ED5FB2148085F00E28462 /* TTAPIManager.swift in Sources */,
 				BAD3AB3D21268957008F417C /* TTMyDiaryWireFrame.swift in Sources */,
 				A14667A82130D11D00A15CF3 /* TTMyDiaryCell.swift in Sources */,
-				A0AD5DD2212CFAB200D76543 /* TestDiary.swift in Sources */,
 				A152601C2188A72F00962D44 /* TTDescriptMainViewController.swift in Sources */,
 				A12211D12154E258004F931D /* TTDiaryData.swift in Sources */,
 				A1C7353821981D85006EC892 /* TTSharedService.swift in Sources */,
@@ -929,6 +944,7 @@
 				A11F61B72123E6A90029E80A /* ViewController.swift in Sources */,
 				A13FF22F2123FF0500FB5642 /* UIPageViewControllerExtension.swift in Sources */,
 				A152601E2188ABAA00962D44 /* TTDescriptContentViewController.swift in Sources */,
+				A14CAD5721AC3B2700B6F018 /* TTCanReportActionSheet.swift in Sources */,
 				A14CAD5321AAE1F600B6F018 /* String+.swift in Sources */,
 				A13FF2562128464800FB5642 /* TTPostMainView.swift in Sources */,
 				A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */,

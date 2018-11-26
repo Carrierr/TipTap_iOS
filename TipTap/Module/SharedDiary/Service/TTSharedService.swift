@@ -15,10 +15,17 @@ class TTSharedService {
         TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/diary/random", method: .get) { (result) in
             print("result : \(result)")
             let resultData = TTDiaryDataSet(rawJson: result)
+            if resultData.resultCode == 9000 {
+                //빈 데이터
+                completion(.success(resultData))
+                return
+            }
+            
             guard let count = resultData.diaryDataList?.count else {
                 completion(.errorMessage(String.errorString))
                 return
             }
+            
             guard count > 0 else {
                 completion(.errorMessage(String.errorString))
                 return
