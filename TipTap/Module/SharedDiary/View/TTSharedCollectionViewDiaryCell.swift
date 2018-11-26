@@ -12,6 +12,9 @@ import SnapKit
 class TTSharedCollectionViewDiaryCell: UICollectionViewCell {
     @IBOutlet var view: UIView!
     @IBOutlet var locationLabel: UILabel!
+    @IBOutlet weak var emptyDescLabel: UILabel!
+    @IBOutlet weak var scrollImageView: UIImageView!
+    
     var dataSet : TTDiaryDataSet?{
         didSet{
             let tempView = TTSharedDiaryView(frame: self.view.bounds)
@@ -20,11 +23,14 @@ class TTSharedCollectionViewDiaryCell: UICollectionViewCell {
                  API 이슈로 공유받은 일기 스탬프는 클라에서 직접 그리기
                  */
                 dataSet.stampNameList = [String]()
-                for _ in dataSet.diaryDataList!{
-                    let randomNumber = arc4random_uniform(13) + 1
-                    dataSet.stampNameList?.append("stamp\(randomNumber)")
+                if let list = dataSet.diaryDataList {
+                    for _ in list{
+                        let randomNumber = arc4random_uniform(13) + 1
+                        dataSet.stampNameList?.append("stamp\(randomNumber)")
+                    }
+                    tempView.dataSet = dataSet
                 }
-                tempView.dataSet = dataSet
+                
             }
             self.view.addSubview(tempView)
             
@@ -37,9 +43,9 @@ class TTSharedCollectionViewDiaryCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         locationLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
-        locationLabel.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(-45)
-        }
+//        locationLabel.snp.makeConstraints { (make) in
+//            make.left.equalToSuperview().offset(-45)
+//        }
     }
 }
 

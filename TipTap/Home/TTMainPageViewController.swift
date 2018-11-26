@@ -98,6 +98,7 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
     }
     
     @objc private func refreshSharedDiary(){
+        self.isPagingEnabled = true
         self.isAbleScrollPage = false
         orderedViewControllers[2] = self.newTipTapViewController(index:2)
         setPageViewController(index: 1,direct: .reverse)
@@ -145,7 +146,21 @@ extension TTMainPageViewController : UIPageViewControllerDelegate {
         case 1:
             break
         case 2:
+            guard let firstVC = vc.childViewControllers.first else { return }
             pageViewController.isPagingEnabled = isAbleScrollPage
+            if firstVC is TTSharedViewController{
+                let sharedVC = firstVC as? TTSharedViewController
+                guard let count = sharedVC?.moduleDatas?.diaryDataList?.count else {
+                    sharedVC?.requestSharedDiary()
+                    return
+                }
+                
+                if count == 0 {
+                    sharedVC?.requestSharedDiary()
+                }
+            }
+            
+            
             break
         default:
             break

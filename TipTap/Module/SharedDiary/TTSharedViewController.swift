@@ -14,50 +14,33 @@ import SnapKit
 import SwiftyJSON
 
 
-class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNavigation {
-    
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    
-    private var scratchImageNamed : String = ""
-    private var scratchImageView : UIImageView?
-    private var isFirstShow : Bool = true
-    private let service = TTSharedService()
-    private var scratchOriginalView : UIView?
-    
-    fileprivate var moduleDatas  : TTDiaryDataSet? {
+class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNavigation,TTCanReportActionSheet {
+    var scratchView : ScratchUIView!
+    var titleLabel : UILabel? = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 100, height: 44.0))
+    var rightBarButtonItem: UIBarButtonItem? = UIBarButtonItem()
+    var moduleDatas  : TTDiaryDataSet? {
         didSet{
             collectionView.reloadData()
-            attachScratchView()
         }
     }
     
-    var scratchView : ScratchUIView!
+    private let service = TTSharedService()
+    private var scratchImageNamed : String = ""
+    private var scratchImageView : UIImageView?
+    private var isFirstShow : Bool = true
+    private var scratchOriginalView : UIView?
     
-    var titleLabel : UILabel? = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 100, height: 44.0))
-    var rightBarButtonItem: UIBarButtonItem? = UIBarButtonItem()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
-    
+    @IBOutlet fileprivate weak var collectionView: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.requestSharedDiary()
-        
         
         let randomNumber = arc4random_uniform(3) + 1
         self.scratchImageNamed = "scratch0\(randomNumber).png"
         self.scratchImageView = UIImageView(image: UIImage(named: scratchImageNamed))
         self.scratchImageView?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(scratchImageView!)
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     
@@ -71,6 +54,7 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     }
     
     
+    
     private func makeScratchOriginView(){
         self.scratchOriginalView = UIView(frame: CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height))
         let imageView = UIImageView(frame: CGRect(x:0, y:20, width:self.view.frame.width, height:self.view.frame.height))
@@ -80,12 +64,16 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     
     
     
-    func setupSharedDiaryNavigation(diaryCount count: Int){
+    func setupSharedDiaryNavigation(diaryCount count: Int,buttonHidden isHidden:Bool){
         guard let titleLabel = titleLabel,
-            let rightBarButtonItem = rightBarButtonItem else {
+            var rightBarButtonItem = rightBarButtonItem else {
                 return
         }
         titleLabel.text = "\(count)\nTIPTAP"
+        if isHidden{
+            rightBarButtonItem = UIBarButtonItem()
+            return
+        }
         rightBarButtonItem.image = UIImage(named: "more")?.withRenderingMode(.alwaysOriginal)
         rightBarButtonItem.target = self
         rightBarButtonItem.action = #selector(showMoreOption)
@@ -115,8 +103,10 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     
     
     
-    private func requestSharedDiary(){
+    
+    func requestSharedDiary(){
         service.fetchSharedDiaryList { (result) in
+            self.attachScratchView()
             switch result{
             case .success(let result):
                 print(" result : \(result)")
@@ -124,72 +114,20 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
                 break
                 
             case .error(_):
-                
                 break
                 
             case .errorMessage(let errorMsg):
-                self.showAlert(title: "오류", message: errorMsg)
+                self.showAlert(title: "오류", message: errorMsg, completion: {
+                    NotificationCenter.default.post(name: NSNotification.Name.refreshPage.sharedDiary, object: nil)
+                })
                 break
             }
         }
     }
     
     
-    
-    @objc func showMoreOption(){
-        guard let data = self.moduleDatas?.diaryDataList?[0] else { return }
-        weak var weakSelf = self
-
-        let declare = UIAlertAction(title: "신고하기", style: .destructive, handler: { (action) -> Void in
-            let reportAction : ((String)->Void)? = { reason in
-                let parameter = ["content_id":"\(data.id ?? 0)",
-                             "type":reason,
-                             "target_user_id":"\(data.user_id ?? 0)"
-                ]
-                
-                TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/blame/report", method: .post,parameters: parameter) { (result) in
-                    let json = JSON(result)
-                    if json["code"].intValue == 4000{
-                        weakSelf?.showAlert(title: "신고 접수 완료", message: "신고가 접수되었습니다.", completion: {
-                            NotificationCenter.default.post(name: NSNotification.Name.refreshPage.sharedDiary, object: nil)
-                        })
-                    }else{
-                        weakSelf?.showAlert(title: "", message: String.errorString)
-                    }
-                }
-            }
-            
-            let pornReason = UIAlertAction(title: "음란성 글", style: .destructive, handler: { (action) in
-                reportAction!("porn")
-            })
-            
-            let  addReason = UIAlertAction(title: "굉고성 글", style: .destructive, handler: { (action) in
-                    reportAction!("ad")
-            })
-            
-            let otherReason = UIAlertAction(title: "기타", style: .destructive, handler: { (action) in
-                    reportAction!("other")
-            })
-            
-            weakSelf?.showActionSheet(sheetActions: pornReason,addReason,otherReason)
-        })
-        
-        let block = UIAlertAction(title: "차단하기", style: .destructive, handler: { (action) -> Void in
-            
-            weakSelf?.showAlert(title: "차단하시겠습니까?", message: "차단 사용자가 보낸 일기는 더 이상 볼 수 없습니다.", completion: {
-                let param = ["user_id":data.user_id]
-                TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/diary/block", method: .post,parameters: param) { (result) in
-                    let json = JSON(result)
-                    if json["code"].intValue == 1000{
-                        NotificationCenter.default.post(name: NSNotification.Name.refreshPage.sharedDiary, object: nil)
-                    }else{
-                        weakSelf?.showAlert(title: "", message: String.errorString)
-                    }
-                }
-            }, cancelAction: {
-            })
-        })
-        weakSelf?.showActionSheet(sheetActions: declare,block)
+    @objc private func showMoreOption(){
+        showReportActionSheet()
     }
 }
 
@@ -208,7 +146,16 @@ extension TTSharedViewController: UICollectionViewDataSource {
         if (indexPath.row == 0) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryCell", for: indexPath) as! TTSharedCollectionViewDiaryCell
             cell.dataSet = moduleDatas
-            cell.locationLabel.text = "from. 서울시 마포구 망원동"
+            if let count = moduleDatas?.diaryDataList?.count, count > 0 {
+                cell.locationLabel.text = "from. \(moduleDatas?.diaryDataList?[0].location ?? "")"
+                cell.emptyDescLabel.isHidden = true
+                cell.scrollImageView.isHidden = false
+            }else{
+                cell.locationLabel.text = "from."
+                cell.emptyDescLabel.isHidden = false
+                cell.scrollImageView.isHidden = true
+            }
+            
     
             return cell
             

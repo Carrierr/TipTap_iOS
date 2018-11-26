@@ -15,9 +15,10 @@ protocol TTCanHasDiaryData {
 }
 
 struct TTDiaryDataSet {
-    var diaryDataList : [TTDiaryData]?
+    var diaryDataList     : [TTDiaryData]?
     var stampNameList : [String]?
-    var result        : Bool = false
+    var result                  : Bool = false
+    var resultCode          : Int   = 0
     
     init(diaryDataList : [TTDiaryData], stampNameList:[String]) {
         self.diaryDataList = diaryDataList
@@ -27,7 +28,8 @@ struct TTDiaryDataSet {
     
     init(rawJson : Any) {
         let json = JSON(rawJson)
-        guard json["code"].intValue == 1000 else { return }
+        resultCode = json["code"].intValue
+        guard resultCode == 1000 else { return }
         let dataDict = json["data"].dictionaryValue
         let dataJson = JSON(dataDict)
         

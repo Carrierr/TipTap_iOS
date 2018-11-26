@@ -21,10 +21,12 @@ extension TTCanSetupNavigation{
     func setupNavigation(){
         guard let titleLabel = titleLabel,
             let rightBarButtonItem = rightBarButtonItem else { return }
+        
         titleLabel.backgroundColor = UIColor.clear
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = NSTextAlignment.center
         titleLabel.font = UIFont.montserratRegular(fontSize: 16)
+        
         self.navigationItem.titleView = titleLabel
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
              
