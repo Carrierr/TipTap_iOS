@@ -46,7 +46,6 @@ extension TTDiaryOutlineContainer{
         yearLabel.text = "\(currentYear())`"
         yearLabel.textColor = UIColor(hexString: "6D6D6D")
         yearLabel.font = UIFont.montserratLight(fontSize: 13)
-//        yearLabel.font = UIFont.systemFont(ofSize: 13)
         yearLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(113)
             make.left.equalToSuperview().offset(21)

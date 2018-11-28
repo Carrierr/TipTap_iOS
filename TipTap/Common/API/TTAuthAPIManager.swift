@@ -16,7 +16,7 @@ enum TTAuthLoginPlatformType : String {
 
 class TTAuthAPIManager {
     static var sharedManager = TTAuthAPIManager()
-    let auth_url = "\(TTAPIManager.API_URL)/auth"
+    let auth_url = "\(TTAPIManager.API_URL)/auth/"
     
     func login(loginFlatform : TTAuthLoginPlatformType = .kakao,
                account : String,

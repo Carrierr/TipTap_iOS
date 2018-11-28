@@ -17,6 +17,7 @@ struct TTDeviceInfo {
             }
             
             get{
+                
                 if let token = UserDefaults.standard.object(forKey: "tokenID") as? String {
                     return token
                 }
