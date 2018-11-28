@@ -184,7 +184,7 @@ extension TTEditDiaryViewController: CLLocationManagerDelegate{
 extension TTEditDiaryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            travelPicture.image = image
+            travelPicture.image = image.crop(to:CGSize(width: 89.3, height: 67))
             setImageView(isHidden: false)
         }
         
