@@ -79,14 +79,13 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
     
     @objc private func isAblePaging(){
         self.isPagingEnabled  = true
-        self.isAbleScrollPage = true
     }
     
     
     @objc private func disablePaging(){
         self.isPagingEnabled  = false
-        self.isAbleScrollPage = false
     }
+    
     
     @objc private func refreshSharedDiary(){
         self.isPagingEnabled = true
