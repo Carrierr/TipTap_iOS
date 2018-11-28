@@ -33,7 +33,6 @@ extension TTCurrentTimeGettable {
         return formatter.string(from: now)
     }
     
-    
     func currentMonth()->String{
         let now = Date()
         let formatter = getDateFormat(format: "MM")
@@ -45,6 +44,9 @@ extension TTCurrentTimeGettable {
         let formatter = getDateFormat(format: "dd")
         return formatter.string(from: now)
     }
+    
+    
+    
     
     
     func convertMonthString(month:Int)->String{

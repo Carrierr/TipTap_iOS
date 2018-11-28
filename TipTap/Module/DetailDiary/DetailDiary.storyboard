@@ -127,10 +127,12 @@
                         <viewLayoutGuide key="safeArea" id="IC6-Do-ZhK"/>
                     </view>
                     <connections>
+                        <outlet property="DateLabel" destination="h0u-jS-iFa" id="D8x-Mg-Zun"/>
                         <outlet property="brandLabel" destination="sfE-rE-wvq" id="DkA-JX-ozx"/>
                         <outlet property="collectionView" destination="QU5-4M-fVS" id="XNY-TU-eQl"/>
                         <outlet property="locationLabel" destination="0Nc-k3-dsm" id="t59-Xy-eum"/>
                         <outlet property="titleLabel" destination="rjL-D3-yy8" id="5cd-Qb-efd"/>
+                        <outlet property="yearLabel" destination="ztI-Gw-dYM" id="kHB-t2-VvF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXh-Eo-tyB" userLabel="First Responder" sceneMemberID="firstResponder"/>

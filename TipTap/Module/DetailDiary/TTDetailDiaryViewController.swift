@@ -20,6 +20,8 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert{
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var brandLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var DateLabel: UILabel!
     
     
     var presenter:TTDetailDiaryPresenterProtocol?

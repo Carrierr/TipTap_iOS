@@ -10,13 +10,17 @@ import Foundation
 import UIKit
 
 protocol TTCanShowAlert {
-    func showAlert(title : String?, message:String?, completion:(()->())?)
+    func showAlert(title : String?, message:String?, confirmButtonTitle:String?, completion:(()->())?)
 }
 
 extension TTCanShowAlert{
-    func showAlert(title : String?, message:String?, completion:(()->())? = nil){
+    func showAlert(title : String?,
+                   message:String?,
+                   confirmButtonTitle:String? = nil,
+                   completion:(()->())? = nil){
+        
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let confirmAlert = UIAlertAction(title: "확인", style: .default, handler: { (result) in
+        let confirmAlert = UIAlertAction(title: confirmButtonTitle ?? "확인", style: .default, handler: { (result) in
             if (completion != nil) {
                 completion!()
             }
