@@ -78,6 +78,7 @@ class TTDescriptMainViewController: UIViewController {
     
     private func setupBinding(){
         self.pageViewController.dataSource = self
+        self.pageViewController.delegate   = self
     }
     
     
@@ -159,9 +160,6 @@ extension TTDescriptMainViewController : UIPageViewControllerDataSource{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.index(of:viewController) else { return nil }
         
-        pageIndex = viewControllerIndex
-        pageControl.currentPage = viewControllerIndex
-        
         let previousIndex = viewControllerIndex - 1
         guard previousIndex >= 0 else { return nil }
         guard orderedViewControllers.count > previousIndex else { return nil }
@@ -173,9 +171,6 @@ extension TTDescriptMainViewController : UIPageViewControllerDataSource{
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.index(of:viewController) else { return nil }
-        
-        pageIndex = viewControllerIndex
-        pageControl.currentPage = viewControllerIndex
         
         let nextIndex = viewControllerIndex + 1
         let orderedViewControllersCount = orderedViewControllers.count
@@ -195,5 +190,14 @@ extension TTDescriptMainViewController : UIPageViewControllerDataSource{
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
+    }
+}
+
+
+extension TTDescriptMainViewController : UIPageViewControllerDelegate{
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        let currentPage = orderedViewControllers.index(of:pendingViewControllers[0])
+        self.pageIndex = currentPage ?? 0
+        self.pageControl.currentPage = currentPage ?? 0
     }
 }

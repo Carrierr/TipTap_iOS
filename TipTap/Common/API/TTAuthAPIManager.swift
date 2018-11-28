@@ -29,14 +29,14 @@ class TTAuthAPIManager {
             "name":name
         ]
         
-        Alamofire.request("\(auth_url)/login", method: .post, parameters: param).responseJSON { (result) in
+        Alamofire.request("\(auth_url)login", method: .post, parameters: param).responseJSON { (result) in
             guard let resultValue = result.result.value else {
                 completion(.errorMessage(String.errorString))
                 return
             }
             
             let jsonResult = JSON(resultValue)
-            
+            print("login Result : \(resultValue)")
             switch result.result {
             case .success:
                 TTDeviceInfo.UserInfo.token    = jsonResult["data"]["token"].stringValue

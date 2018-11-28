@@ -16,7 +16,7 @@ protocol TTCanUserSetting {
 extension TTCanUserSetting{
     func goLogout(){
         let loginVC = UIStoryboard(name: "TTLogin", bundle: nil).instantiateViewController(withIdentifier: "TTLoginViewController") as UIViewController
-        appDelegate?.searchFrontViewController().present(UINavigationController(rootViewController: loginVC), animated: true, completion: nil)
+        appDelegate?.window?.rootViewController = UINavigationController(rootViewController: loginVC)
         UserDefaults.standard.removeObject(forKey: "tokenID")
     }
 }

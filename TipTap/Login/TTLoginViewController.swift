@@ -11,16 +11,21 @@ import KakaoOpenSDK
 
 class TTLoginViewController: ViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.titleLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
+        self.initNavi()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    private func initNavi(){
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
     }
+    
+    
     @IBAction func pressedLoginButton(_ sender: Any) {
         let session: KOSession = KOSession.shared();
         
