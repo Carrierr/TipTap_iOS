@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import CoreLocation
+import MapKit
 
-protocol TTCurrentLocationGettable{
+protocol TTLocationGettable{
     var locationManager : CLLocationManager? { get set }
     var location        : CLLocation?  { get set }
     
@@ -18,7 +19,7 @@ protocol TTCurrentLocationGettable{
     func setUpLocationManager()
 }
 
-extension TTCurrentLocationGettable{
+extension TTLocationGettable{
     func currentLocation(completion: @escaping (String) -> ()){
         guard let location = location else {
             completion("")
@@ -43,6 +44,20 @@ extension TTCurrentLocationGettable{
                 print("subThoroughfare : \(placemark.subThoroughfare ?? "")")
                 completion("\(placemark.administrativeArea ?? "") \(placemark.locality ?? "") \(placemark.subLocality ?? "") \(placemark.subThoroughfare ?? "")")
             }
+        }
+    }
+    
+    func getLocations(withKeyword keyword:String){
+        
+        guard let location = location else { return }
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = keyword
+        request.region               = MKCoordinateRegionMakeWithDistance(location.coordinate, 500, 500)
+        
+        let search = MKLocalSearch(request: request)
+        search.start { (response, _) in
+            guard let response = response else { return }
+            print("search List : \(response)")
         }
     }
 }

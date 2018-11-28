@@ -9,8 +9,11 @@
 import UIKit
 import CoreLocation
 import SwiftyJSON
+import MapKit
 
-class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTCurrentLocationGettable,TTCanShowAlert {
+
+
+class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTLocationGettable,TTCanShowAlert {
     var todayDiaryCount = 1
     
     var locationManager : CLLocationManager?
@@ -38,6 +41,7 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTC
         setupNavigation()
         setImageView(isHidden: true)
         dateLabel.text = currentTime()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -174,6 +178,8 @@ extension TTEditDiaryViewController: CLLocationManagerDelegate{
             }
             self.locationLabel.text = address
         }
+        
+        getLocations(withKeyword: "스타벅스")
     }
 }
 

@@ -39,7 +39,7 @@
 		A13FF2412127370C00FB5642 /* EditDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13FF2402127370C00FB5642 /* EditDiary.storyboard */; };
 		A13FF2432127371D00FB5642 /* TTEditDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2422127371D00FB5642 /* TTEditDiaryViewController.swift */; };
 		A13FF246212738C900FB5642 /* TTCurrentTimeGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF245212738C900FB5642 /* TTCurrentTimeGettable.swift */; };
-		A13FF24821273C0100FB5642 /* TTCurrentLocationGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF24721273C0100FB5642 /* TTCurrentLocationGettable.swift */; };
+		A13FF24821273C0100FB5642 /* TTLocationGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF24721273C0100FB5642 /* TTLocationGettable.swift */; };
 		A13FF2502127E73D00FB5642 /* TTTodayDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF24F2127E73D00FB5642 /* TTTodayDiaryViewController.swift */; };
 		A13FF2522128255100FB5642 /* TTDiaryOutlineContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2512128255100FB5642 /* TTDiaryOutlineContainer.swift */; };
 		A13FF2542128350400FB5642 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2532128350400FB5642 /* UIColorExtension.swift */; };
@@ -154,7 +154,7 @@
 		A13FF2402127370C00FB5642 /* EditDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditDiary.storyboard; sourceTree = "<group>"; };
 		A13FF2422127371D00FB5642 /* TTEditDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTEditDiaryViewController.swift; sourceTree = "<group>"; };
 		A13FF245212738C900FB5642 /* TTCurrentTimeGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCurrentTimeGettable.swift; sourceTree = "<group>"; };
-		A13FF24721273C0100FB5642 /* TTCurrentLocationGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCurrentLocationGettable.swift; sourceTree = "<group>"; };
+		A13FF24721273C0100FB5642 /* TTLocationGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLocationGettable.swift; sourceTree = "<group>"; };
 		A13FF24F2127E73D00FB5642 /* TTTodayDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTodayDiaryViewController.swift; sourceTree = "<group>"; };
 		A13FF2512128255100FB5642 /* TTDiaryOutlineContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDiaryOutlineContainer.swift; sourceTree = "<group>"; };
 		A13FF2532128350400FB5642 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -417,7 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				A13FF245212738C900FB5642 /* TTCurrentTimeGettable.swift */,
-				A13FF24721273C0100FB5642 /* TTCurrentLocationGettable.swift */,
+				A13FF24721273C0100FB5642 /* TTLocationGettable.swift */,
 				A13FF2512128255100FB5642 /* TTDiaryOutlineContainer.swift */,
 				A13FF25721284C3C00FB5642 /* TTPostContainer.swift */,
 				A12211D421564B59004F931D /* TTCanShowAlert.swift */,
@@ -903,7 +903,7 @@
 				A13FF2522128255100FB5642 /* TTDiaryOutlineContainer.swift in Sources */,
 				BAD3AB3221266C4E008F417C /* TTMyDiaryPresenter.swift in Sources */,
 				A179E25921A0793500354579 /* TTCanSetupNavigation.swift in Sources */,
-				A13FF24821273C0100FB5642 /* TTCurrentLocationGettable.swift in Sources */,
+				A13FF24821273C0100FB5642 /* TTLocationGettable.swift in Sources */,
 				A13FF2272123FB8600FB5642 /* UIViewExtension.swift in Sources */,
 				A1466794213068F000A15CF3 /* TTDetailDiaryViewController.swift in Sources */,
 				A14667932130677100A15CF3 /* TTDetailDiaryOutlineView.swift in Sources */,
