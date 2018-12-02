@@ -13,7 +13,7 @@ import MapKit
 
 
 
-class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTLocationGettable,TTCanShowAlert {
+class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable, TTLocationGettable, TTCanShowAlert, UIGestureRecognizerDelegate {
     var todayDiaryCount = 1
     
     var locationManager : CLLocationManager?
@@ -30,15 +30,14 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTL
     @IBOutlet private weak var locationLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var travelPicture: UIImageView!
+    @IBOutlet private weak var locationStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupImagePicker()
         setUpLocationManager()
-        setupTextView()
         registerNotification()
-        setupNavigation()
         setImageView(isHidden: true)
         dateLabel.text = currentTime()
         
@@ -55,26 +54,20 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTL
     }
     
     
-    
-    private func setupNavigation(){
+    override func setupUI() {
         navigationController?.navigationBar.tintColor = UIColor.gray;
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        
+        boardTextView.becomeFirstResponder()
+        boardTextView.delegate = self
+        numberLabel.text = "#\(todayDiaryCount)"
     }
     
-    
-    
+
     
     private func setupImagePicker(){
         imagePicker.delegate   = self
         imagePicker.sourceType = .savedPhotosAlbum
-    }
-    
-    
-    
-    private func setupTextView(){
-        boardTextView.becomeFirstResponder()
-        boardTextView.delegate = self
-        numberLabel.text = "#\(todayDiaryCount)"
     }
     
     
@@ -93,6 +86,13 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTL
     func registerNotification(){
         NotificationCenter.default.addObserver(self, selector:  #selector(onUIKeyboardWillShowNotification(noti:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onUIKeyboardWillHideNotification(noti:)), name: .UIKeyboardWillHide, object: nil)
+        
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(pressedLocation(_:)))
+        gesture.numberOfTapsRequired = 1;
+        gesture.delegate = self;
+        
+        self.locationStackView.addGestureRecognizer(gesture)
     }
     
     
@@ -152,6 +152,12 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTL
     }
     
     
+    @objc private func pressedLocation(_ gestureRecognizer: UIPanGestureRecognizer){
+        let searchVC = TTSearchViewController(nibName: "TTSearchViewController", bundle: nil)
+        searchVC.modalPresentationStyle = UIModalPresentationStyle.custom
+        self.present(searchVC, animated: true, completion: nil)
+    }
+    
     
     func setImageView(isHidden : Bool){
         if isHidden {
@@ -164,6 +170,7 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable,TTL
             travelPicture.isHidden = isHidden
         }
     }
+
 }
 
 

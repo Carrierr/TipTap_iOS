@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -187,6 +187,7 @@
                         <outlet property="imageViewHeight" destination="5K4-4w-UXm" id="W4b-g4-znD"/>
                         <outlet property="imageViewTopConst" destination="RhR-28-EeU" id="Y4D-bJ-fqm"/>
                         <outlet property="locationLabel" destination="dbk-yG-Ere" id="h7L-tN-d9e"/>
+                        <outlet property="locationStackView" destination="YZE-7e-2Sp" id="kLk-11-5Mk"/>
                         <outlet property="numberLabel" destination="Lzk-Ql-zw5" id="wZu-6A-gEM"/>
                         <outlet property="placeHolderLabel" destination="fv7-Oi-G3L" id="isW-0Q-qM5"/>
                         <outlet property="textCountLabel" destination="gQO-wc-Go9" id="gUv-YP-H8R"/>

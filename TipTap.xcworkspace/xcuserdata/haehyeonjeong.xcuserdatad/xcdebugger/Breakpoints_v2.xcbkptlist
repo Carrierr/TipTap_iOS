@@ -32,31 +32,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, Swift.Optional&lt;__C.KOUserMe&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TipTap.TTLoginViewController.pressedLoginButton(Any) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TipTap.TTLoginViewController.pressedLoginButton(Any) -&gt; ()"
                   moduleName = "TipTap"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/haehyeonjeong/Documents/dev/Tiptap_iOS/TipTap/Login/TTLoginViewController.swift"
-                  timestampString = "565021364.868511"
+                  timestampString = "565456948.411052"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
                   endingLineNumber = "50"
-                  offsetFromSymbolStart = "2292">
+                  offsetFromSymbolStart = "484">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (TipTap.TTResult&lt;Swift.Bool&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;, Swift.Optional&lt;__C.KOUserMe&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TipTap.TTLoginViewController.pressedLoginButton(Any) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, Swift.Optional&lt;__C.KOUserMe&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TipTap.TTLoginViewController.pressedLoginButton(Any) -&gt; ()"
                   moduleName = "TipTap"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/haehyeonjeong/Documents/dev/Tiptap_iOS/TipTap/Login/TTLoginViewController.swift"
-                  timestampString = "565021364.870486"
+                  timestampString = "565456948.414432"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
                   endingLineNumber = "51"
-                  offsetFromSymbolStart = "32">
+                  offsetFromSymbolStart = "36">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -148,28 +148,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TipTap/Module/SharedDiary/TTSharedViewController.swift"
-            timestampString = "565019780.992926"
+            timestampString = "565453459.37997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
             endingLineNumber = "149"
             landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TipTap/Module/DetailDiary/TTDetailDiaryWireFrame.swift"
-            timestampString = "565021363.676242"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "createModule(dateString:diaryDatas:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

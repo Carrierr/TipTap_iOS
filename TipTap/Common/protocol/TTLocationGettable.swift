@@ -48,7 +48,6 @@ extension TTLocationGettable{
     }
     
     func getLocations(withKeyword keyword:String){
-        
         guard let location = location else { return }
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = keyword
