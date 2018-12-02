@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="KoPub Dotum_Pro Medium.otf">
+            <string>KoPubDotumPM</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TTSearchViewController" customModule="TipTap" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="ota-0q-77D" id="qdY-gp-RVC"/>
+                <outlet property="searchTableView" destination="rzs-Ch-fuK" id="aPL-jf-qpT"/>
+                <outlet property="searchTextField" destination="09g-Ny-Yfp" id="eYf-XA-MZM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-wN-mDd">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ota-0q-77D">
+                    <rect key="frame" x="47" y="77" width="281" height="312"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2x-bu-Q5H">
+                            <rect key="frame" x="8" y="10" width="265" height="38"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="udY-kB-DSJ">
+                                    <rect key="frame" x="9" y="7" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="BPt-aq-veS"/>
+                                        <constraint firstAttribute="width" constant="24" id="VdO-H2-D62"/>
+                                    </constraints>
+                                </imageView>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="장소 검색" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="09g-Ny-Yfp">
+                                    <rect key="frame" x="41" y="9.5" width="224" height="19"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <fontDescription key="fontDescription" name="KoPubDotumPM" family="KoPubDotum_Pro" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="cfF-OP-I2M"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="udY-kB-DSJ" firstAttribute="centerY" secondItem="h2x-bu-Q5H" secondAttribute="centerY" id="4uM-DQ-2CR"/>
+                                <constraint firstAttribute="trailing" secondItem="09g-Ny-Yfp" secondAttribute="trailing" id="7YI-AP-mki"/>
+                                <constraint firstItem="udY-kB-DSJ" firstAttribute="leading" secondItem="h2x-bu-Q5H" secondAttribute="leading" constant="9" id="9Xd-b2-pSv"/>
+                                <constraint firstAttribute="height" constant="38" id="Z4q-Qt-qLZ"/>
+                                <constraint firstItem="09g-Ny-Yfp" firstAttribute="leading" secondItem="udY-kB-DSJ" secondAttribute="trailing" constant="8" id="fTY-QG-qwb"/>
+                                <constraint firstItem="09g-Ny-Yfp" firstAttribute="centerY" secondItem="h2x-bu-Q5H" secondAttribute="centerY" id="n5f-xm-LC7"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rzs-Ch-fuK">
+                            <rect key="frame" x="0.0" y="56" width="281" height="256"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="h2x-bu-Q5H" firstAttribute="leading" secondItem="ota-0q-77D" secondAttribute="leading" constant="8" id="46U-0Z-pUd"/>
+                        <constraint firstAttribute="bottom" secondItem="rzs-Ch-fuK" secondAttribute="bottom" id="Diu-dt-WVe"/>
+                        <constraint firstItem="rzs-Ch-fuK" firstAttribute="top" secondItem="h2x-bu-Q5H" secondAttribute="bottom" constant="8" id="aJp-dw-rIa"/>
+                        <constraint firstAttribute="height" constant="312" id="aLE-w9-Ih9"/>
+                        <constraint firstItem="rzs-Ch-fuK" firstAttribute="leading" secondItem="ota-0q-77D" secondAttribute="leading" id="eRm-6g-Et3"/>
+                        <constraint firstAttribute="trailing" secondItem="rzs-Ch-fuK" secondAttribute="trailing" id="g0O-HY-u12"/>
+                        <constraint firstAttribute="trailing" secondItem="h2x-bu-Q5H" secondAttribute="trailing" constant="8" id="pvv-ON-qc6"/>
+                        <constraint firstItem="h2x-bu-Q5H" firstAttribute="top" secondItem="ota-0q-77D" secondAttribute="top" constant="10" id="veG-2I-EI0"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="QIC-wN-mDd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8nN-kd-XoY"/>
+                <constraint firstItem="QIC-wN-mDd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Czs-ls-vFT"/>
+                <constraint firstItem="ota-0q-77D" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="57" id="KdR-Um-DcH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QIC-wN-mDd" secondAttribute="bottom" id="gIw-C2-XqP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QIC-wN-mDd" secondAttribute="trailing" id="toS-og-fXJ"/>
+                <constraint firstItem="ota-0q-77D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="47" id="wg7-im-Mha"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ota-0q-77D" secondAttribute="trailing" constant="47" id="zzm-gB-fCn"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="search" width="24" height="24"/>
+    </resources>
+</document>
