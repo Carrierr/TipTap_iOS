@@ -15,9 +15,9 @@ import MapKit
 
 class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable, TTLocationGettable, TTCanShowAlert, UIGestureRecognizerDelegate {
     var todayDiaryCount = 1
-    
     var locationManager : CLLocationManager?
     var location        : CLLocation?
+    
     private lazy var imagePicker = UIImagePickerController()
     
     @IBOutlet weak var numberLabel: UILabel!
@@ -155,6 +155,7 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable, TT
     @objc private func pressedLocation(_ gestureRecognizer: UIPanGestureRecognizer){
         let searchVC = TTSearchViewController(nibName: "TTSearchViewController", bundle: nil)
         searchVC.modalPresentationStyle = UIModalPresentationStyle.custom
+        searchVC.delegate = self
         self.present(searchVC, animated: true, completion: nil)
     }
     
@@ -175,6 +176,15 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable, TT
 
 
 
+extension TTEditDiaryViewController : TTSearchViewControllerDelegate {
+    func searchPlace(_: TTSearchViewController, keyword: String, completion: @escaping (([MKMapItem]) -> ())) {
+        getLocations(withKeyword: keyword, completion: { items in
+            completion(items)
+        })
+    }
+}
+
+
 extension TTEditDiaryViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -186,7 +196,6 @@ extension TTEditDiaryViewController: CLLocationManagerDelegate{
             self.locationLabel.text = address
         }
         
-        getLocations(withKeyword: "스타벅스")
     }
 }
 

@@ -47,7 +47,7 @@ extension TTLocationGettable{
         }
     }
     
-    func getLocations(withKeyword keyword:String){
+    func getLocations(withKeyword keyword:String, completion: @escaping (([MKMapItem]) -> ())){
         guard let location = location else { return }
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = keyword
@@ -57,6 +57,7 @@ extension TTLocationGettable{
         search.start { (response, _) in
             guard let response = response else { return }
             print("search List : \(response)")
+            completion(response.mapItems)
         }
     }
 }
