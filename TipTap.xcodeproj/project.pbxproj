@@ -38,7 +38,7 @@
 		A13FF23E2127316B00FB5642 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF23D2127316B00FB5642 /* UIAlertControllerExtension.swift */; };
 		A13FF2412127370C00FB5642 /* EditDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13FF2402127370C00FB5642 /* EditDiary.storyboard */; };
 		A13FF2432127371D00FB5642 /* TTEditDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2422127371D00FB5642 /* TTEditDiaryViewController.swift */; };
-		A13FF246212738C900FB5642 /* TTCurrentTimeGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF245212738C900FB5642 /* TTCurrentTimeGettable.swift */; };
+		A13FF246212738C900FB5642 /* TTTimeGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF245212738C900FB5642 /* TTTimeGettable.swift */; };
 		A13FF24821273C0100FB5642 /* TTLocationGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF24721273C0100FB5642 /* TTLocationGettable.swift */; };
 		A13FF2502127E73D00FB5642 /* TTTodayDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF24F2127E73D00FB5642 /* TTTodayDiaryViewController.swift */; };
 		A13FF2522128255100FB5642 /* TTDiaryOutlineContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2512128255100FB5642 /* TTDiaryOutlineContainer.swift */; };
@@ -155,7 +155,7 @@
 		A13FF23D2127316B00FB5642 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		A13FF2402127370C00FB5642 /* EditDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditDiary.storyboard; sourceTree = "<group>"; };
 		A13FF2422127371D00FB5642 /* TTEditDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTEditDiaryViewController.swift; sourceTree = "<group>"; };
-		A13FF245212738C900FB5642 /* TTCurrentTimeGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCurrentTimeGettable.swift; sourceTree = "<group>"; };
+		A13FF245212738C900FB5642 /* TTTimeGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTimeGettable.swift; sourceTree = "<group>"; };
 		A13FF24721273C0100FB5642 /* TTLocationGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLocationGettable.swift; sourceTree = "<group>"; };
 		A13FF24F2127E73D00FB5642 /* TTTodayDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTodayDiaryViewController.swift; sourceTree = "<group>"; };
 		A13FF2512128255100FB5642 /* TTDiaryOutlineContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDiaryOutlineContainer.swift; sourceTree = "<group>"; };
@@ -420,7 +420,7 @@
 		A13FF2442127389800FB5642 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
-				A13FF245212738C900FB5642 /* TTCurrentTimeGettable.swift */,
+				A13FF245212738C900FB5642 /* TTTimeGettable.swift */,
 				A13FF24721273C0100FB5642 /* TTLocationGettable.swift */,
 				A13FF2512128255100FB5642 /* TTDiaryOutlineContainer.swift */,
 				A13FF25721284C3C00FB5642 /* TTPostContainer.swift */,
@@ -950,7 +950,7 @@
 				A13FF2542128350400FB5642 /* UIColorExtension.swift in Sources */,
 				A17ED5FF214AB76B00E28462 /* TTDeviceInfo.swift in Sources */,
 				A179E27421AAAEC100354579 /* UIFont+.swift in Sources */,
-				A13FF246212738C900FB5642 /* TTCurrentTimeGettable.swift in Sources */,
+				A13FF246212738C900FB5642 /* TTTimeGettable.swift in Sources */,
 				A1A99CD821B41BCA004D1F74 /* TTSearchViewController.swift in Sources */,
 				A13FF25821284C3C00FB5642 /* TTPostContainer.swift in Sources */,
 				A13FF2372124047100FB5642 /* NotificationExtension.swift in Sources */,
@@ -1159,7 +1159,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TipTap/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1189,7 +1192,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TipTap/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1215,7 +1221,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TipTapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1232,7 +1242,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TipTapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1248,7 +1262,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TipTapUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1264,7 +1282,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TipTapUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

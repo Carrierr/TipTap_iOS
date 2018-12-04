@@ -13,7 +13,7 @@ import MapKit
 
 
 
-class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable, TTLocationGettable, TTCanShowAlert, UIGestureRecognizerDelegate {
+class TTEditDiaryViewController: TTBaseViewController, TTTimeGettable, TTLocationGettable, TTCanShowAlert, UIGestureRecognizerDelegate {
     var todayDiaryCount = 1
     var locationManager : CLLocationManager?
     var location        : CLLocation?
