@@ -15,6 +15,7 @@ import RxCocoa
 
 protocol TTSearchViewControllerDelegate {
     func searchPlace(_: TTSearchViewController, keyword: String, completion: @escaping (([MKMapItem]) -> ()))
+    func selectPlace(_: TTSearchViewController, placeString : String)
 }
 
 
@@ -83,7 +84,11 @@ extension TTSearchViewController : UITextFieldDelegate {
 
 extension TTSearchViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard let delegate = delegate,
+              let items = self.locationItems
+        else { return }
+        delegate.selectPlace(self, placeString: items[indexPath.row].name ?? "")
+        self.dismiss(animated: false, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

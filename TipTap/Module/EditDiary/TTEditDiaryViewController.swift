@@ -177,6 +177,10 @@ class TTEditDiaryViewController: TTBaseViewController, TTCurrentTimeGettable, TT
 
 
 extension TTEditDiaryViewController : TTSearchViewControllerDelegate {
+    func selectPlace(_: TTSearchViewController, placeString: String) {
+        locationLabel.text = placeString
+    }
+    
     func searchPlace(_: TTSearchViewController, keyword: String, completion: @escaping (([MKMapItem]) -> ())) {
         getLocations(withKeyword: keyword, completion: { items in
             completion(items)

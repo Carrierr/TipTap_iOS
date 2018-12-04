@@ -36,7 +36,7 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let randomNumber = arc4random_uniform(3) + 1
+        let randomNumber = arc4random_uniform(2) + 1
         self.scratchImageNamed = "scratch0\(randomNumber).png"
         self.scratchImageView = UIImageView(image: UIImage(named: scratchImageNamed))
         self.scratchImageView?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
