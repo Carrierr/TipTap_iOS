@@ -12,12 +12,12 @@ import Foundation
  http://nsdateformatter.com/
  reference data format 
  */
-protocol TTCurrentTimeGettable {
+protocol TTTimeGettable {
     func currentTime()->String
     func convertMonthString(month:Int)->String
 }
 
-extension TTCurrentTimeGettable {
+extension TTTimeGettable {
     
     func currentTime()->String {
         let now = Date()
@@ -27,25 +27,21 @@ extension TTCurrentTimeGettable {
     }
     
     
-    func currentYear()->String{
+    func currentDate(format:String)->String{
         let now = Date()
-        let formatter = getDateFormat(format: "yy")
-        return formatter.string(from: now)
-    }
-    
-    func currentMonth()->String{
-        let now = Date()
-        let formatter = getDateFormat(format: "MM")
-        return formatter.string(from: now)
-    }
-    
-    func currentDay()->String{
-        let now = Date()
-        let formatter = getDateFormat(format: "dd")
+        let formatter = getDateFormat(format: format)
         return formatter.string(from: now)
     }
     
     
+    func dateConvert(dateString:String, format : String)->String{
+        
+        let dateFormatter = getDateFormat(format: "yyyy-MM-dd")
+        let myDate = dateFormatter.date(from: dateString)
+        dateFormatter.dateFormat = format
+        
+        return dateFormatter.string(from: myDate!)
+    }
     
     
     
@@ -80,6 +76,7 @@ extension TTCurrentTimeGettable {
         }
     }
     
+  
     
     private func getDateFormat(format:String)->DateFormatter{
         let formatter = DateFormatter()

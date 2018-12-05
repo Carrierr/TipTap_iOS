@@ -50,17 +50,20 @@ struct TTDiaryDataSet {
 }
 
 struct TTDiaryData {
-    var id        : Int?
-    var user_id   : Int?
-    var content   : String?
-    var location  : String?
-    var imageUrl  : URL?
-    var latitude  : Float?
-    var longitude : Float?
-    var like      : Int?
-    var shared    : Bool?
-    var createdAt : String?
-    var updatedAt : String?
+    var id         : Int?
+    var user_id    : Int?
+    var content    : String?
+    var location   : String?
+    var imageUrl   : URL?
+    var latitude   : Float?
+    var longitude  : Float?
+    var like       : Int?
+    var shared     : Bool?
+    var createdAt  : String?
+    var updatedAt  : String?
+    var createDate : String?
+    var createTime : String?
+    
     
     init(rawJson:Any) {
         let json  = JSON(rawJson)
@@ -81,5 +84,21 @@ struct TTDiaryData {
         let nsStr2 = json["updatedAt"].stringValue as NSString
         let range2 = nsStr2.range(of: "T")
         updatedAt = nsStr.substring(to: range2.location)
+        
+        
+        
+        
+        // create dateFormatter with UTC time format
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        let myDate = dateFormatter.date(from: json["createdAt"].stringValue)
+        
+        // change to a readable time format and change to local time zone
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = NSTimeZone.local
+        createDate = dateFormatter.string(from: myDate!)
+        dateFormatter.dateFormat = "HH:mm"
+        createTime = dateFormatter.string(from: myDate!)
     }
 }

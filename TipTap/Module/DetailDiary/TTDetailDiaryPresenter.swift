@@ -25,6 +25,7 @@ protocol TTDetailDiaryPresenterProtocol: TTBasePresenterProtocol {
     
     //UIView
     func locationString(section:Int)->String
+    func dateString(section:Int)->String
 }
 
 
@@ -105,7 +106,13 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
         return moduleDatas?[section].location ?? ""
     }
     
+    func dateString(section:Int)->String{
+        return moduleDatas?[section].createDate ?? ""
+    }
     
+    func timeString(section:Int)->String{
+        return moduleDatas?[section].createTime ?? ""
+    }
     
     
     func numberOfSection() -> Int {

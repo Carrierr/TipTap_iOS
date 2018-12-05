@@ -51,7 +51,7 @@ final class TTMyDiaryPresenter {
 }
 
 
-extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol, TTCurrentTimeGettable {
+extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol, TTTimeGettable {
     func numberOfRows(in section: Int) -> Int {
         if let count = moduleDatas?.myDiaryDatas?[section].myDateDatas?.count {
             return count

@@ -14,7 +14,7 @@ protocol TTDetailDiaryViewProtocol:class{
     func dismissView()
 }
 
-class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert{
+class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert, TTTimeGettable{
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -62,7 +62,6 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert{
     
     
     
-    
     override func setupBinding() {
         
     }
@@ -73,6 +72,14 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert{
         self.collectionView?.register(UINib(nibName: "TTDetailDiaryCell", bundle: nil), forCellWithReuseIdentifier: "TTDetailDiaryCell")
     }
     
+    
+    fileprivate func setupDateLabel(){
+        guard let dateString = presenter?.dateString(section: 0) else { return }
+        let month = convertMonthString(month: Int(dateConvert(dateString: presenter?.dateString(section: 0) ?? "", format: "MM")) ?? 0 )
+        let day = dateConvert(dateString: dateString, format: "dd")
+        yearLabel.text = "\(dateConvert(dateString: dateString, format: "yy"))`"
+        DateLabel.text = "\(month)\n\(day)"
+    }
     
     
     @objc private func pressedDeleteButton(){
@@ -104,12 +111,14 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert{
 extension TTDetailDiaryViewController: TTDetailDiaryViewProtocol {
     func startNetworking() {
         self.collectionView.reloadData()
-        locationLabel.text = presenter!.locationString(section:0)
+        
     }
     
     
     func stopNetworking() {
         self.collectionView.reloadData()
+        setupDateLabel()
+        locationLabel.text = presenter!.locationString(section:0)
     }
 }
 

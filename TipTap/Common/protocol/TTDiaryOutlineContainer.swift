@@ -9,7 +9,7 @@
 import Foundation
 import SnapKit
 
-protocol TTDiaryOutlineContainer : TTCanHasDiaryData, TTCurrentTimeGettable where Self : UIView {
+protocol TTDiaryOutlineContainer : TTCanHasDiaryData, TTTimeGettable where Self : UIView {
     var yearLabel      : UILabel? { get set }
     var monthLabel     : UILabel? { get set }
     var dateLabel      : UILabel? { get set }
@@ -43,7 +43,7 @@ extension TTDiaryOutlineContainer{
         
         
         
-        yearLabel.text = "\(currentYear())`"
+        yearLabel.text = "\(currentDate(format: "yy"))`"
         yearLabel.textColor = UIColor(hexString: "6D6D6D")
         yearLabel.font = UIFont.montserratLight(fontSize: 13)
         yearLabel.snp.makeConstraints { (make) in
@@ -51,7 +51,7 @@ extension TTDiaryOutlineContainer{
             make.left.equalToSuperview().offset(21)
         }
         
-        monthLabel.text = "\(convertMonthString(month: Int(currentMonth()) ?? 0 ))"
+        monthLabel.text = "\(convertMonthString(month: Int(currentDate(format: "MM")) ?? 0 ))"
         monthLabel.textColor = UIColor(hexString: "6D6D6D")
         monthLabel.font = UIFont.montserratLight(fontSize: 13)
         monthLabel.snp.makeConstraints { (make) in
@@ -59,7 +59,7 @@ extension TTDiaryOutlineContainer{
             make.left.equalToSuperview().offset(21)
         }
         
-        dateLabel.text = "\(currentDay())"
+        dateLabel.text = "\(currentDate(format: "dd"))"
         dateLabel.textColor = UIColor(hexString: "6D6D6D")
         dateLabel.font = UIFont.montserratLight(fontSize: 13)
         dateLabel.snp.makeConstraints { (make) in
