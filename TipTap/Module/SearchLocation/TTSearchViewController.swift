@@ -26,6 +26,8 @@ class TTSearchViewController: TTBaseViewController  {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var searchTextField: UITextField!
     
+    private lazy var disposeBag : DisposeBag = DisposeBag()
+    
     fileprivate var locationItems : [MKMapItem]? {
         didSet{
             self.searchTableView.reloadData()
@@ -36,6 +38,7 @@ class TTSearchViewController: TTBaseViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     
@@ -50,16 +53,9 @@ class TTSearchViewController: TTBaseViewController  {
     
     override func setupBinding() {
         searchTableView.register(TTSearchLocationCell.self, forCellReuseIdentifier: "TTSearchLocationCell")
-//        let bag = DisposeBag()
-//        searchTextField.rx.controlEvent(.editingChanged).bind {
-//            print("editing state changed")
-//            }.disposed(by:bag)
-//
-//
-//        searchTextField.rx.text.bind{_ in
-//
-//            }.disposed(by:bag)
-
+        searchTextField.rx.text.orEmpty.subscribe({ str in
+            print("str : \(str)")
+        }).disposed(by: self.disposeBag)
     }
 }
 
