@@ -57,6 +57,12 @@ class TTSearchViewController: TTBaseViewController  {
 //            print("str : \(str)")
 //        }).disposed(by: self.disposeBag)
     }
+    
+    
+    @IBAction func pressedBackView(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
 }
 
 

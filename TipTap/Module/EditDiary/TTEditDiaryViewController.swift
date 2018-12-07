@@ -156,7 +156,7 @@ class TTEditDiaryViewController: TTBaseViewController, TTTimeGettable, TTLocatio
         let searchVC = TTSearchViewController(nibName: "TTSearchViewController", bundle: nil)
         searchVC.modalPresentationStyle = UIModalPresentationStyle.custom
         searchVC.delegate = self
-        self.present(searchVC, animated: true, completion: nil)
+        self.present(searchVC, animated: false, completion: nil)
     }
     
     
