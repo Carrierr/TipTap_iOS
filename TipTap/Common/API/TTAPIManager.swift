@@ -19,9 +19,9 @@ class TTAPIManager : TTCanShowAlert, TTCanUserSetting {
                      method: HTTPMethod = .get,
                      parameters: Parameters? = nil,
                      encoding: ParameterEncoding = URLEncoding.default,
-                     headers: HTTPHeaders? = ["tiptap-token":TTDeviceInfo.UserInfo.token],
+//                     headers: HTTPHeaders? = ["tiptap-token":TTDeviceInfo.UserInfo.token],
+        headers: HTTPHeaders? = ["tiptap-token":"5ddfcb4c-aff0-441b-9a88-e7dbecb43170"],
                      completion: @escaping (Dictionary<String, Any>) -> ()){
-        
         Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).responseJSON { (result) in
             guard let resultValue = result.result.value else {
                 print("========통신 오류========")
