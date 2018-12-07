@@ -31,6 +31,10 @@
                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-wN-mDd">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="E23-iN-L1T" appends="YES" id="UBR-8E-ifB"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ota-0q-77D">
                     <rect key="frame" x="47" y="77" width="281" height="312"/>
@@ -100,6 +104,11 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
         </view>
+        <tapGestureRecognizer id="E23-iN-L1T">
+            <connections>
+                <action selector="pressedBackView:" destination="-1" id="pJY-oa-QOf"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="search" width="24" height="24"/>

@@ -132,9 +132,12 @@ class TTDescriptMainViewController: UIViewController {
     private func showMainView(){
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TTMainPageViewController") as UIViewController
-        self.present(UINavigationController(rootViewController: viewController), animated: true, completion:{
+        self.present(viewController, animated: true) {
             TTDeviceInfo.SettingInfo.isFirstLaunch = false
-        })
+        }
+//        self.present(UINavigationController(rootViewController: viewController), animated: true, completion:{
+//            TTDeviceInfo.SettingInfo.isFirstLaunch = false
+//        })
     }
     
     

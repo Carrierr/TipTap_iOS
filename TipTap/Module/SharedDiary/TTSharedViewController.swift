@@ -20,7 +20,12 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     var rightBarButtonItem: UIBarButtonItem? = UIBarButtonItem()
     var moduleDatas  : TTDiaryDataSet? {
         didSet{
-            collectionView.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                self.collectionView.reloadData()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                self.attachScratchView()
+            }
         }
     }
     
@@ -90,7 +95,7 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
             scratchImageView.removeFromSuperview()
         }
         
-        self.view.layoutIfNeeded()
+//        self.view.layoutIfNeeded()
         makeScratchOriginView()
         scratchView  = ScratchUIView(frame: CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height),
                                      Coupon: (self.scratchOriginalView?.asImage())!,
@@ -106,7 +111,7 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     
     func requestSharedDiary(){
         service.fetchSharedDiaryList { (result) in
-            self.attachScratchView()
+            
             switch result{
             case .success(let result):
                 print(" result : \(result)")
@@ -163,7 +168,7 @@ extension TTSharedViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryListCell", for: indexPath) as! TTSharedCollectionViewListCell
             guard let diaryItem = moduleDatas?.diaryDataList?[indexPath.row-1] else { return cell }
             
-            cell.timeLabel.text = "11:30"
+            cell.timeLabel.text = diaryItem.createTime
             cell.diaryNumberLabel.text = "\(indexPath.row)"
             cell.locationLabel.text = diaryItem.location
             cell.bodyLabel.text = diaryItem.content

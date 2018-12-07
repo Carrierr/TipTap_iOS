@@ -116,7 +116,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv7-Oi-G3L">
-                                <rect key="frame" x="36" y="279" width="143.5" height="16"/>
+                                <rect key="frame" x="36" y="275" width="143.5" height="16"/>
                                 <attributedString key="attributedText">
                                     <fragment content="당신의 TIPTAP을 기록하세요.">
                                         <attributes>
@@ -155,7 +155,7 @@
                             <constraint firstItem="YZE-7e-2Sp" firstAttribute="centerX" secondItem="50A-cX-2w7" secondAttribute="centerX" id="2hw-kC-xo2"/>
                             <constraint firstItem="dhI-j2-qDw" firstAttribute="trailing" secondItem="AI1-w2-QJw" secondAttribute="trailing" constant="30" id="48A-SL-9eu"/>
                             <constraint firstItem="ERn-0g-UpP" firstAttribute="bottom" secondItem="dhI-j2-qDw" secondAttribute="bottom" id="7Oa-PL-QWX"/>
-                            <constraint firstItem="fv7-Oi-G3L" firstAttribute="top" secondItem="AI1-w2-QJw" secondAttribute="top" constant="10" id="97r-rE-FA6"/>
+                            <constraint firstItem="fv7-Oi-G3L" firstAttribute="top" secondItem="AI1-w2-QJw" secondAttribute="top" constant="6" id="97r-rE-FA6"/>
                             <constraint firstItem="cqS-3q-plH" firstAttribute="leading" secondItem="dhI-j2-qDw" secondAttribute="leading" constant="20" id="9bL-vo-vwU"/>
                             <constraint firstItem="dhI-j2-qDw" firstAttribute="trailing" secondItem="kc9-2R-L8O" secondAttribute="trailing" constant="10" id="9dt-nq-AIe"/>
                             <constraint firstItem="Lzk-Ql-zw5" firstAttribute="centerX" secondItem="50A-cX-2w7" secondAttribute="centerX" id="CV1-hZ-Yyv"/>

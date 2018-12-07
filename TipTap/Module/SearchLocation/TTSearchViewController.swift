@@ -53,10 +53,16 @@ class TTSearchViewController: TTBaseViewController  {
     
     override func setupBinding() {
         searchTableView.register(TTSearchLocationCell.self, forCellReuseIdentifier: "TTSearchLocationCell")
-        searchTextField.rx.text.orEmpty.subscribe({ str in
-            print("str : \(str)")
-        }).disposed(by: self.disposeBag)
+//        searchTextField.rx.text.orEmpty.subscribe({ str in
+//            print("str : \(str)")
+//        }).disposed(by: self.disposeBag)
     }
+    
+    
+    @IBAction func pressedBackView(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
 }
 
 
