@@ -58,8 +58,20 @@ class TTEditDiaryViewController: TTBaseViewController, TTTimeGettable, TTLocatio
         navigationController?.navigationBar.tintColor = UIColor.gray;
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         
+//            let style = NSMutableParagraphStyle()
+//            style.lineSpacing = 40
+//            let attributes = [NSAttributedStringKey.paragraphStyle : style]
+//            boardTextView.attributedText = NSAttributedString(string: "", attributes:attributes)
+
+//        NSDictionary* d = deedTextView.typingAttributes;
+//        NSMutableDictionary* md = [NSMutableDictionary dictionaryWithDictionary:d];
+//        [md setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
+//        deedTextView.typingAttributes= md;
+
+        boardTextView.layoutManager.delegate = self
         boardTextView.becomeFirstResponder()
         boardTextView.delegate = self
+        
         numberLabel.text = "#\(todayDiaryCount)"
     }
     
@@ -189,6 +201,40 @@ extension TTEditDiaryViewController : TTSearchViewControllerDelegate {
 }
 
 
+extension TTEditDiaryViewController : UITextViewDelegate{
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        return true
+    }
+    
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text?.count == 0 {
+            placeHolderLabel.isHidden = false
+        }else{
+            placeHolderLabel.isHidden = true
+        }
+        
+        textCountLabel.text = "\(textView.text.count)/800"
+    }
+    
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        if(textView.text.count == 0){
+            placeHolderLabel.isHidden = true
+        }
+        return true;
+    }
+}
+
+
+extension TTEditDiaryViewController : NSLayoutManagerDelegate{
+    func layoutManager(_ layoutManager: NSLayoutManager, lineSpacingAfterGlyphAt glyphIndex: Int, withProposedLineFragmentRect rect: CGRect) -> CGFloat {
+        return 6
+    }
+}
+
+
+
 extension TTEditDiaryViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -221,27 +267,3 @@ extension TTEditDiaryViewController: UIImagePickerControllerDelegate, UINavigati
 
 
 
-extension TTEditDiaryViewController : UITextViewDelegate{
-    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        return true
-    }
-    
-    
-    func textViewDidChange(_ textView: UITextView) {
-        if textView.text?.count == 0 {
-            placeHolderLabel.isHidden = false
-        }else{
-            placeHolderLabel.isHidden = true
-        }
-        
-        textCountLabel.text = "\(textView.text.count)/800"
-    }
-    
-    
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        if(textView.text.count == 0){
-            placeHolderLabel.isHidden = true
-        }
-        return true;
-    }
-}

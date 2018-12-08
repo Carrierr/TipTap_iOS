@@ -20,10 +20,10 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     var rightBarButtonItem: UIBarButtonItem? = UIBarButtonItem()
     var moduleDatas  : TTDiaryDataSet? {
         didSet{
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                self.collectionView.reloadData()
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
+
+            self.collectionView.reloadData()
+            self.collectionView.performBatchUpdates({
+            }) { (finished) in
                 self.attachScratchView()
             }
         }
@@ -35,7 +35,7 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     private var isFirstShow : Bool = true
     private var scratchOriginalView : UIView?
     
-    @IBOutlet fileprivate weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     
     override func viewDidLoad() {
@@ -95,7 +95,7 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
             scratchImageView.removeFromSuperview()
         }
         
-//        self.view.layoutIfNeeded()
+
         makeScratchOriginView()
         scratchView  = ScratchUIView(frame: CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height),
                                      Coupon: (self.scratchOriginalView?.asImage())!,
@@ -113,8 +113,21 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
         service.fetchSharedDiaryList { (result) in
             
             switch result{
-            case .success(let result):
+            case .success(var result):
                 print(" result : \(result)")
+                
+                /*
+                 API 이슈로 공유받은 일기 스탬프는 클라에서 직접 그리기
+                 */
+                result.stampNameList = [String]()
+                if let list = result.diaryDataList {
+                    for _ in list{
+                        let randomNumber = arc4random_uniform(13) + 1
+                        result.stampNameList?.append("stamp\(randomNumber)")
+                    }
+                }
+                
+                
                 self.moduleDatas = result
                 break
                 
@@ -167,12 +180,9 @@ extension TTSharedViewController: UICollectionViewDataSource {
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryListCell", for: indexPath) as! TTSharedCollectionViewListCell
             guard let diaryItem = moduleDatas?.diaryDataList?[indexPath.row-1] else { return cell }
-            
-            cell.timeLabel.text = diaryItem.createTime
+            cell.data = diaryItem
             cell.diaryNumberLabel.text = "\(indexPath.row)"
-            cell.locationLabel.text = diaryItem.location
-            cell.bodyLabel.text = diaryItem.content
-            
+            cell.widthConst.constant = collectionView.frame.width
             return cell
         }
     }
@@ -183,7 +193,7 @@ extension TTSharedViewController: UICollectionViewDelegateFlowLayout {
         if (indexPath.row == 0 ) {
             return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         } else {
-            return CGSize(width: 1, height: 1)
+            return CGSize(width: collectionView.frame.width, height: 1)
         }
     }
 }

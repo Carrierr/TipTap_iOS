@@ -53,6 +53,7 @@ struct TTMyDiaryMonthData {
  */
 struct TTMyDiaryDayData {
     var day : String?
+    var count : Int = 0
     var lastDiary  : TTDiaryData?
     var firstDiary : TTDiaryData?
     var id : Int?
@@ -61,7 +62,10 @@ struct TTMyDiaryDayData {
         let json = JSON(rawJson)
         day = json["day"].stringValue
         let dataDict = json["diaryDatas"].dictionaryValue
+        count = json["dataCount"].intValue
         let dataJson = JSON(dataDict)
+        
+        
         if let firstDiaryData = dataJson["firstDiary"].dictionary{
             firstDiary = TTDiaryData(rawJson: firstDiaryData)
         }

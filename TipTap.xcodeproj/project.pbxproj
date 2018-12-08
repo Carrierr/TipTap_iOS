@@ -79,6 +79,7 @@
 		A17ED5FF214AB76B00E28462 /* TTDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ED5FE214AB76B00E28462 /* TTDeviceInfo.swift */; };
 		A1A99CD821B41BCA004D1F74 /* TTSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A99CD621B41BCA004D1F74 /* TTSearchViewController.swift */; };
 		A1A99CD921B41BCA004D1F74 /* TTSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A99CD721B41BCA004D1F74 /* TTSearchViewController.xib */; };
+		A1A99CDD21BB7B77004D1F74 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A99CDC21BB7B77004D1F74 /* UILabel+.swift */; };
 		A1C7353821981D85006EC892 /* TTSharedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7353721981D85006EC892 /* TTSharedService.swift */; };
 		A1FE054E21AD88170078E692 /* TTCanUserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE054D21AD88170078E692 /* TTCanUserSetting.swift */; };
 		BAA1148221AECB5900C79DD6 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA1148121AECB5900C79DD6 /* UIImage+.swift */; };
@@ -196,6 +197,7 @@
 		A17ED5FE214AB76B00E28462 /* TTDeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDeviceInfo.swift; sourceTree = "<group>"; };
 		A1A99CD621B41BCA004D1F74 /* TTSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSearchViewController.swift; sourceTree = "<group>"; };
 		A1A99CD721B41BCA004D1F74 /* TTSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTSearchViewController.xib; sourceTree = "<group>"; };
+		A1A99CDC21BB7B77004D1F74 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		A1C7353721981D85006EC892 /* TTSharedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedService.swift; sourceTree = "<group>"; };
 		A1FE054D21AD88170078E692 /* TTCanUserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCanUserSetting.swift; sourceTree = "<group>"; };
 		BAA1148121AECB5900C79DD6 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				A13FF23D2127316B00FB5642 /* UIAlertControllerExtension.swift */,
 				A13FF2532128350400FB5642 /* UIColorExtension.swift */,
 				A179E27321AAAEC100354579 /* UIFont+.swift */,
+				A1A99CDC21BB7B77004D1F74 /* UILabel+.swift */,
 				A14CAD5221AAE1F600B6F018 /* String+.swift */,
 				BAA1148121AECB5900C79DD6 /* UIImage+.swift */,
 			);
@@ -945,6 +948,7 @@
 				BAD3AB3D21268957008F417C /* TTMyDiaryWireFrame.swift in Sources */,
 				A14667A82130D11D00A15CF3 /* TTMyDiaryCell.swift in Sources */,
 				A152601C2188A72F00962D44 /* TTDescriptMainViewController.swift in Sources */,
+				A1A99CDD21BB7B77004D1F74 /* UILabel+.swift in Sources */,
 				A12211D12154E258004F931D /* TTDiaryData.swift in Sources */,
 				A1C7353821981D85006EC892 /* TTSharedService.swift in Sources */,
 				A13FF2542128350400FB5642 /* UIColorExtension.swift in Sources */,
@@ -1176,7 +1180,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1209,7 +1213,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Tiptap.TipTap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

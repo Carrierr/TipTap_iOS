@@ -9,9 +9,26 @@
 import UIKit
 
 class TTSharedCollectionViewListCell: UICollectionViewCell {
-    @IBOutlet var timeLabel: UILabel!
+    
+    
+    @IBOutlet private var timeLabel: UILabel!
+    @IBOutlet private var locationLabel: UILabel!
+    @IBOutlet private var bodyLabel: UILabel!
+    @IBOutlet weak var widthConst: NSLayoutConstraint!
     @IBOutlet var diaryNumberLabel: UILabel!
-    @IBOutlet var locationLabel: UILabel!
-    @IBOutlet var bodyLabel: UILabel!
-
+    
+    var data : TTDiaryData?{
+        didSet{
+                setData()
+        }
+    }
+    
+    private func setData(){
+        guard let data = data else { return }
+        timeLabel.text = data.createTime
+        locationLabel.text = data.location
+        bodyLabel.text = data.content
+        bodyLabel.setLineSpacing(lineSpacing: 6)
+    }
+    
 }

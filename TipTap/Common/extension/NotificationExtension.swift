@@ -12,6 +12,7 @@ extension Notification.Name{
     struct ablePaging{
         static let changedAblePaging:Notification.Name = Notification.Name("isAblePaging")
         static let changedDisablePaging:Notification.Name = Notification.Name("disablePaging")
+        static let changedDidScratch:Notification.Name = Notification.Name("didScratch")
     }
 
     struct refreshPage {

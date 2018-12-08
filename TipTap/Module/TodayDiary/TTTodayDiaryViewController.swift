@@ -53,7 +53,7 @@ class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert, TTCanSetu
                 return
         }
         todayDiaryCount = count
-        titleLabel.text = "Today\n#\(todayDiaryCount)"
+        titleLabel.text = "TODAY\n#\(todayDiaryCount)"
         rightBarButtonItem.image = UIImage(named: "setting")?.withRenderingMode(.alwaysOriginal)
         rightBarButtonItem.target = self
         rightBarButtonItem.action = #selector(goSetting)
