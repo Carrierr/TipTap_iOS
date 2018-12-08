@@ -31,6 +31,7 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
         }
     }
     
+    private var didScratch = false
     fileprivate var isAbleScrollPage = false
     var titleLabel : UILabel? = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 100, height: 44.0))
     var rightBarButtonItem : UIBarButtonItem?  = UIBarButtonItem()
@@ -62,6 +63,7 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
         NotificationCenter.default.addObserver(self, selector: #selector(isAblePaging), name: Notification.Name.ablePaging.changedAblePaging, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(disablePaging), name: Notification.Name.ablePaging.changedDisablePaging, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshSharedDiary), name: NSNotification.Name.refreshPage.sharedDiary, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didScratching), name: NSNotification.Name.ablePaging.changedDidScratch, object: nil)
     }
 
     
@@ -86,6 +88,10 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
     @objc private func disablePaging(){
         self.isAbleScrollPage  = false
         self.isPagingEnabled = false
+    }
+    
+    @objc private func didScratching(){
+        self.didScratch = true
     }
     
     
@@ -139,7 +145,7 @@ extension TTMainPageViewController : UIPageViewControllerDelegate {
             break
         case 2:
             guard let firstVC = vc.childViewControllers.first else { return }
-            pageViewController.isPagingEnabled = isAbleScrollPage
+            pageViewController.isPagingEnabled = didScratch
             if firstVC is TTSharedViewController{
                 let sharedVC = firstVC as? TTSharedViewController
                 guard let count = sharedVC?.moduleDatas?.diaryDataList?.count else {

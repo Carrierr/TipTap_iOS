@@ -39,6 +39,7 @@ extension TTSharedViewController : ScratchUIViewDelegate {
                 }
                 
                 NotificationCenter.default.post(name: Notification.Name.ablePaging.changedAblePaging, object: nil)
+                NotificationCenter.default.post(name: Notification.Name.ablePaging.changedDidScratch, object: nil)
             }
         }
     }
