@@ -66,7 +66,7 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
         guard let contentData = moduleDatas?[indexPath.section] else {
             return UICollectionViewCell()
         }
-        
+
         let cell : TTDetailDiaryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TTDetailDiaryCell", for: indexPath) as! TTDetailDiaryCell
         
         if indexPath.row == 0 {
@@ -84,6 +84,8 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
             cell.diaryContentLabel.isHidden  = false
             cell.diaryImageView.isHidden     = true
         }
+        
+        cell.diaryContentLabel.setLineSpacing(lineSpacing: 6)
         return cell
     }
     

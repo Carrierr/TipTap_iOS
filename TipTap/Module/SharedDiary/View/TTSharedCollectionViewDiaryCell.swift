@@ -18,16 +18,8 @@ class TTSharedCollectionViewDiaryCell: UICollectionViewCell {
     var dataSet : TTDiaryDataSet?{
         didSet{
             let tempView = TTSharedDiaryView(frame: self.view.bounds)
-            if var dataSet = dataSet{
-                /*
-                 API 이슈로 공유받은 일기 스탬프는 클라에서 직접 그리기
-                 */
-                dataSet.stampNameList = [String]()
-                if let list = dataSet.diaryDataList {
-                    for _ in list{
-                        let randomNumber = arc4random_uniform(13) + 1
-                        dataSet.stampNameList?.append("stamp\(randomNumber)")
-                    }
+            if let dataSet = dataSet{
+                if let _ = dataSet.diaryDataList{
                     tempView.dataSet = dataSet
                 }
                 
@@ -43,9 +35,6 @@ class TTSharedCollectionViewDiaryCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         locationLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
-//        locationLabel.snp.makeConstraints { (make) in
-//            make.left.equalToSuperview().offset(-45)
-//        }
     }
 }
 

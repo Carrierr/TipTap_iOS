@@ -85,6 +85,7 @@ extension TTDiaryOutlineContainer{
         }
 
         firstDescLabel.text = "당신의\n첫번째 TIPTAP을\n작성해주세요."
+        firstDescLabel.setLineSpacing(lineSpacing: 6)
         firstDescLabel.numberOfLines = 0
         firstDescLabel.font = UIFont.KoPubDotumProLight(fontSize: 28)
         firstDescLabel.textColor = UIColor(hexString: "373737", alpha: 0.65)
