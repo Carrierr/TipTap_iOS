@@ -20,12 +20,16 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     var rightBarButtonItem: UIBarButtonItem? = UIBarButtonItem()
     var moduleDatas  : TTDiaryDataSet? {
         didSet{
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
+//            DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.collectionView.reloadData()
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
+//            }
+            self.collectionView.performBatchUpdates({
+                
+            }) { (finished) in
                 self.attachScratchView()
             }
+//            DispatchQueue.main.asyncAfter(deadline: .now()) {
+//            }
         }
     }
     
@@ -35,7 +39,7 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     private var isFirstShow : Bool = true
     private var scratchOriginalView : UIView?
     
-    @IBOutlet fileprivate weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     
     override func viewDidLoad() {
@@ -172,7 +176,7 @@ extension TTSharedViewController: UICollectionViewDataSource {
             cell.diaryNumberLabel.text = "\(indexPath.row)"
             cell.locationLabel.text = diaryItem.location
             cell.bodyLabel.text = diaryItem.content
-            
+            cell.widthConst.constant = collectionView.frame.width
             return cell
         }
     }
@@ -183,7 +187,7 @@ extension TTSharedViewController: UICollectionViewDelegateFlowLayout {
         if (indexPath.row == 0 ) {
             return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         } else {
-            return CGSize(width: 1, height: 1)
+            return CGSize(width: collectionView.frame.width, height: 1)
         }
     }
 }

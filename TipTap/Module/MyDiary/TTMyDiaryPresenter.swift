@@ -86,9 +86,13 @@ extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol, TTTimeGettable {
                        isDeletable : Bool,
                        isInitDelete : Bool)->UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "TTMyDiaryCell") as? TTMyDiaryCell
-        if let data = moduleDatas?.myDiaryDatas?[indexPath.section].myDateDatas?[indexPath.row] {
-            cell?.diaryData = data
+        guard let sectionData = moduleDatas?.myDiaryDatas?[indexPath.section],
+            let data = sectionData.myDateDatas?[indexPath.row]
+        else {
+            return UITableViewCell()
         }
+            
+        cell?.diaryData = data
 
         if let monthStr = moduleDatas?.myDiaryDatas?[indexPath.section].month {
             cell?.monthLabel.text  = convertMonthString(month: Int(monthStr)!)

@@ -78,13 +78,13 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introLogo" translatesAutoresizingMaskIntoConstraints="NO" id="eW8-f2-xOv">
                                         <rect key="frame" x="20" y="430" width="144" height="45"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwE-8n-DJO" customClass="KOLoginButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwE-8n-DJO" customClass="KOLoginButton">
                                         <rect key="frame" x="32" y="557" width="311" height="51"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="311" id="il8-VR-x8d"/>
                                             <constraint firstAttribute="height" constant="51" id="uCV-1B-gOL"/>
                                         </constraints>
-                                        <state key="normal" title="LoginButton"/>
+                                        <state key="normal" title="LoginButton" image="loginBtn"/>
                                         <connections>
                                             <action selector="pressedLoginButton:" destination="cMS-I7-9QV" eventType="touchUpInside" id="ijv-ug-P6m"/>
                                         </connections>
@@ -138,5 +138,6 @@
         <image name="introLogo" width="144" height="45"/>
         <image name="introSecond" width="167" height="160"/>
         <image name="introThird" width="109" height="117"/>
+        <image name="loginBtn" width="311" height="51"/>
     </resources>
 </document>
