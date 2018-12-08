@@ -70,7 +70,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AI1-w2-QJw">
-                                <rect key="frame" x="30" y="269" width="315" height="333"/>
+                                <rect key="frame" x="22" y="269" width="323" height="333"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="KoPubDotumPL" family="KoPubDotum_Pro" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -116,7 +116,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv7-Oi-G3L">
-                                <rect key="frame" x="36" y="275" width="143.5" height="16"/>
+                                <rect key="frame" x="28" y="275" width="143.5" height="16"/>
                                 <attributedString key="attributedText">
                                     <fragment content="당신의 TIPTAP을 기록하세요.">
                                         <attributes>
@@ -166,7 +166,7 @@
                             <constraint firstItem="1Ha-Hl-udO" firstAttribute="top" secondItem="cqS-3q-plH" secondAttribute="bottom" constant="27" id="RhR-28-EeU"/>
                             <constraint firstItem="kc9-2R-L8O" firstAttribute="top" secondItem="dhI-j2-qDw" secondAttribute="top" id="VJd-RG-aga"/>
                             <constraint firstItem="1Ha-Hl-udO" firstAttribute="leading" secondItem="dhI-j2-qDw" secondAttribute="leading" constant="30" id="cvb-pk-qAr"/>
-                            <constraint firstItem="AI1-w2-QJw" firstAttribute="leading" secondItem="dhI-j2-qDw" secondAttribute="leading" constant="30" id="eP1-9X-J5m"/>
+                            <constraint firstItem="AI1-w2-QJw" firstAttribute="leading" secondItem="dhI-j2-qDw" secondAttribute="leading" constant="22" id="eP1-9X-J5m"/>
                             <constraint firstItem="Zuz-z2-Jpu" firstAttribute="centerX" secondItem="50A-cX-2w7" secondAttribute="centerX" id="hkr-V5-yQi"/>
                             <constraint firstItem="YZE-7e-2Sp" firstAttribute="top" secondItem="Zuz-z2-Jpu" secondAttribute="bottom" constant="5" id="lXj-WH-nf2"/>
                             <constraint firstItem="ERn-0g-UpP" firstAttribute="top" secondItem="AI1-w2-QJw" secondAttribute="bottom" constant="20" id="mRZ-Zh-qyB"/>
