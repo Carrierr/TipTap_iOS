@@ -279,7 +279,7 @@ extension TTMyDiaryViewController: TTMyDiaryViewProtocol {
             }
             return
         }
-        
+        descriptLabel.isHidden = true
         self.tableView.reloadData()
     }
 }
