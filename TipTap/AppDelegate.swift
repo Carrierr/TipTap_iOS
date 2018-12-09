@@ -8,6 +8,8 @@
 
 import UIKit
 import KakaoOpenSDK
+import SnapKit
+
 
 let appDelegate = UIApplication.shared.delegate as? AppDelegate
 @UIApplicationMain
@@ -17,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var loginViewController         : UIViewController?
     var mainViewController          : UIViewController?
     var firstDescriptViewController : UIViewController?
+    var loadingView : UIView? 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {        
         KOSession.shared().isAutomaticPeriodicRefresh = true
@@ -117,10 +120,79 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return vc
     }
     
+    
+    
     func searchFrontViewController()->UIViewController{
         var vc = appDelegate?.window?.rootViewController
         vc = self.searchFrontViewController(vc!)
         return vc!
+    }
+    
+    
+    
+    func showLoadingVIew(){
+        let parentView = appDelegate?.searchFrontViewController().view
+        makeLoadingView(parentView: parentView!)
+        
+        guard let loadingView = self.loadingView else { return }
+        parentView?.bringSubview(toFront: loadingView)
+        loadingView.isHidden = false
+        loadingView.alpha = 0.1
+        
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        UIView.animate(withDuration: 0.3) {
+                loadingView.alpha = 1
+        }
+    }
+    
+    
+    func hideLoadingView(){
+        guard let loadingView = self.loadingView else { return }
+        UIView.animate(withDuration: 0.5, animations: {
+            loadingView.alpha = 0
+        }) { (finished) in
+            loadingView.isHidden = true
+            UIApplication.shared.endIgnoringInteractionEvents()
+            self.loadingView = nil
+        }
+    }
+    
+    
+    private func makeLoadingView(parentView : UIView){
+        self.loadingView = UIView()
+        
+        let indicatorView = UIActivityIndicatorView()
+        let backgroundView = UIView()
+        guard let loadingView = self.loadingView else { return }
+        
+        parentView.addSubview(loadingView)
+        loadingView.addSubview(backgroundView)
+        loadingView.addSubview(indicatorView)
+        
+        backgroundView.backgroundColor = UIColor.black
+        backgroundView.alpha = 0.6
+        
+        backgroundView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        loadingView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        indicatorView.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+        
+        indicatorView.activityIndicatorViewStyle = .whiteLarge
+        indicatorView.startAnimating()
     }
 }
 

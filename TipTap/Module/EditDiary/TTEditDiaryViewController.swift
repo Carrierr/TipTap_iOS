@@ -217,6 +217,13 @@ extension TTEditDiaryViewController : UITextViewDelegate{
         textCountLabel.text = "\(textView.text.count)/800"
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView.text.count >= 800{
+            return false
+        }
+        return true
+    }
+    
     
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         if(textView.text.count == 0){

@@ -54,6 +54,7 @@ class TTAPIManager : TTCanShowAlert, TTCanUserSetting {
                               headers: HTTPHeaders? = ["tiptap-token":TTDeviceInfo.UserInfo.token],
                               completion: @escaping (Dictionary<String, Any>) -> ()){
         
+        appDelegate?.showLoadingVIew()
         guard let imageData = uploadImage else {
             self.requestAPI(url, method: method, parameters: parameters, headers: headers, completion: completion)
             return
@@ -77,10 +78,12 @@ class TTAPIManager : TTCanShowAlert, TTCanUserSetting {
             to: url,
             headers:headers,
             encodingCompletion: { encodingResult in
+                
+                
                 switch encodingResult {
                 case .success(let upload, _, _):
                     upload.responseJSON { response in
-                        
+                        appDelegate?.hideLoadingView()
                         guard let resultValue = response.result.value else {
                             print("========통신 오류========")
                             self.showAlert(title: "", message: String.errorString)
@@ -99,6 +102,7 @@ class TTAPIManager : TTCanShowAlert, TTCanUserSetting {
                         print("Upload Progress: \(progress.fractionCompleted)")
                     }
                 case .failure(let encodingError):
+                    appDelegate?.hideLoadingView()
                     self.showAlert(title: "", message: String.errorString)
                     print(encodingError)
                 }
