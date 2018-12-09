@@ -93,6 +93,7 @@ class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert, TTCanSetu
     
     
     @objc private func goSetting(){
-        
+        let vc = TTSettingViewController(nibName: "TTSettingViewController", bundle: nil)
+        self.show(vc, sender: nil)
     }
 }
