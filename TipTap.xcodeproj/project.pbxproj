@@ -80,6 +80,10 @@
 		A1A99CD821B41BCA004D1F74 /* TTSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A99CD621B41BCA004D1F74 /* TTSearchViewController.swift */; };
 		A1A99CD921B41BCA004D1F74 /* TTSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A99CD721B41BCA004D1F74 /* TTSearchViewController.xib */; };
 		A1A99CDD21BB7B77004D1F74 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A99CDC21BB7B77004D1F74 /* UILabel+.swift */; };
+		A1A99CE321BD2B95004D1F74 /* TTSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A99CE121BD2B95004D1F74 /* TTSettingViewController.swift */; };
+		A1A99CE421BD2B95004D1F74 /* TTSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A99CE221BD2B95004D1F74 /* TTSettingViewController.xib */; };
+		A1A99CE721BD3423004D1F74 /* TTSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A99CE521BD3423004D1F74 /* TTSettingCell.swift */; };
+		A1A99CE821BD3423004D1F74 /* TTSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A99CE621BD3423004D1F74 /* TTSettingCell.xib */; };
 		A1C7353821981D85006EC892 /* TTSharedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7353721981D85006EC892 /* TTSharedService.swift */; };
 		A1FE054E21AD88170078E692 /* TTCanUserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE054D21AD88170078E692 /* TTCanUserSetting.swift */; };
 		BAA1148221AECB5900C79DD6 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA1148121AECB5900C79DD6 /* UIImage+.swift */; };
@@ -198,6 +202,10 @@
 		A1A99CD621B41BCA004D1F74 /* TTSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSearchViewController.swift; sourceTree = "<group>"; };
 		A1A99CD721B41BCA004D1F74 /* TTSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTSearchViewController.xib; sourceTree = "<group>"; };
 		A1A99CDC21BB7B77004D1F74 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		A1A99CE121BD2B95004D1F74 /* TTSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSettingViewController.swift; sourceTree = "<group>"; };
+		A1A99CE221BD2B95004D1F74 /* TTSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTSettingViewController.xib; sourceTree = "<group>"; };
+		A1A99CE521BD3423004D1F74 /* TTSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSettingCell.swift; sourceTree = "<group>"; };
+		A1A99CE621BD3423004D1F74 /* TTSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTSettingCell.xib; sourceTree = "<group>"; };
 		A1C7353721981D85006EC892 /* TTSharedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedService.swift; sourceTree = "<group>"; };
 		A1FE054D21AD88170078E692 /* TTCanUserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCanUserSetting.swift; sourceTree = "<group>"; };
 		BAA1148121AECB5900C79DD6 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
@@ -349,6 +357,7 @@
 		A13FF21C2123EC4C00FB5642 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A15260162188A4C000962D44 /* FirstDescript */,
 				A13FF2182123EBB600FB5642 /* TTLogin.storyboard */,
 				A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */,
 			);
@@ -358,6 +367,7 @@
 		A13FF21D2123ED3400FB5642 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A1A99CE021BD2B28004D1F74 /* Setting */,
 				A11F61B82123E6A90029E80A /* Main.storyboard */,
 				A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */,
 			);
@@ -528,12 +538,22 @@
 			path = SearchLocation;
 			sourceTree = "<group>";
 		};
+		A1A99CE021BD2B28004D1F74 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				A1A99CE121BD2B95004D1F74 /* TTSettingViewController.swift */,
+				A1A99CE221BD2B95004D1F74 /* TTSettingViewController.xib */,
+				A1A99CE521BD3423004D1F74 /* TTSettingCell.swift */,
+				A1A99CE621BD3423004D1F74 /* TTSettingCell.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		BAD3AB24212663BC008F417C /* Module */ = {
 			isa = PBXGroup;
 			children = (
 				A1A99CD521B41B90004D1F74 /* SearchLocation */,
 				A1526022218D843E00962D44 /* SelectCalendar */,
-				A15260162188A4C000962D44 /* FirstDescript */,
 				BAD3AB7A2126F3B8008F417C /* View */,
 				BAD3AB2A21266859008F417C /* Base */,
 				A146678B2130662A00A15CF3 /* DetailDiary */,
@@ -722,6 +742,7 @@
 				A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */,
 				A1466791213066AF00A15CF3 /* DetailDiary.storyboard in Resources */,
 				A11F61BC2123E6AA0029E80A /* Assets.xcassets in Resources */,
+				A1A99CE421BD2B95004D1F74 /* TTSettingViewController.xib in Resources */,
 				A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */,
 				A1526026218D85E400962D44 /* SelectCalendarViewController.xib in Resources */,
 				A14CAD4C21AABE7C00B6F018 /* KoPub Dotum_Pro Medium.otf in Resources */,
@@ -736,6 +757,7 @@
 				A14CAD4A21AABE7C00B6F018 /* KoPub Dotum_Pro Light.otf in Resources */,
 				A13FF2412127370C00FB5642 /* EditDiary.storyboard in Resources */,
 				BAD3AB822126F83F008F417C /* MyDiaryCell.xib in Resources */,
+				A1A99CE821BD3423004D1F74 /* TTSettingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -925,6 +947,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A13FF2522128255100FB5642 /* TTDiaryOutlineContainer.swift in Sources */,
+				A1A99CE321BD2B95004D1F74 /* TTSettingViewController.swift in Sources */,
 				BAD3AB3221266C4E008F417C /* TTMyDiaryPresenter.swift in Sources */,
 				A179E25921A0793500354579 /* TTCanSetupNavigation.swift in Sources */,
 				A13FF24821273C0100FB5642 /* TTLocationGettable.swift in Sources */,
@@ -944,6 +967,7 @@
 				BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */,
 				BAA1148221AECB5900C79DD6 /* UIImage+.swift in Sources */,
 				BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */,
+				A1A99CE721BD3423004D1F74 /* TTSettingCell.swift in Sources */,
 				A17ED5FB2148085F00E28462 /* TTAPIManager.swift in Sources */,
 				BAD3AB3D21268957008F417C /* TTMyDiaryWireFrame.swift in Sources */,
 				A14667A82130D11D00A15CF3 /* TTMyDiaryCell.swift in Sources */,

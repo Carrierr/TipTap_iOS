@@ -181,7 +181,7 @@ extension TTSharedViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryListCell", for: indexPath) as! TTSharedCollectionViewListCell
             guard let diaryItem = moduleDatas?.diaryDataList?[indexPath.row-1] else { return cell }
             cell.data = diaryItem
-            cell.diaryNumberLabel.text = "\(indexPath.row)"
+            cell.diaryNumberLabel.text = "#\(indexPath.row)"
             cell.widthConst.constant = collectionView.frame.width
             return cell
         }
