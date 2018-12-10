@@ -15,6 +15,7 @@ class TTSettingCell: UITableViewCell {
         }
     }
     
+    private var touchedSwitch : ((Bool)->())?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var switchButton: UISwitch!
@@ -31,20 +32,27 @@ class TTSettingCell: UITableViewCell {
     private func contentChanged(){
         guard let data = data else { return }
         switch data {
-        case .switchButton(let title):
-            titleLabel.text = title
+        case .switchButton(let title, let isOn, let pressed) :
+            titleLabel.text                = title
             switchButton.isHidden = false
+            switchButton.isOn        = isOn
+            touchedSwitch              = pressed
+            selectionStyle                = UITableViewCellSelectionStyle.none
             
         case .normalButton(let title) :
-            titleLabel.text = title
+            titleLabel.text               = title
             switchButton.isHidden = true
-            
+            selectionStyle               = UITableViewCellSelectionStyle.default
         }
     }
     
     
     @IBAction func pressedSwitch(_ sender: Any) {
         print("switch : \(switchButton.isOn)")
+        guard let touchedSwitch = touchedSwitch else {
+            return
+        }
+        touchedSwitch(switchButton.isOn)
     }
     
 }

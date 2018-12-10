@@ -18,5 +18,11 @@ extension Notification.Name{
     struct refreshPage {
         static let sharedDiary:Notification.Name = Notification.Name("refreshSharedDiary")
     }
+    
+    
+    struct userNoti {
+        static let isOnUserNoti : Notification.Name = Notification.Name("isOnUserNoti")
+        static let isOffUserNoti : Notification.Name = Notification.Name("isOffUserNoti")
+    }
 }
 

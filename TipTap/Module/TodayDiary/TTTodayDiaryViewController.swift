@@ -94,6 +94,10 @@ class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert, TTCanSetu
     
     @objc private func goSetting(){
         let vc = TTSettingViewController(nibName: "TTSettingViewController", bundle: nil)
+        if let list = self.mainView?.dataSet?.diaryDataList {
+            vc.haveTodayDiaryDatas = list.count > 0 ? true : false
+        }
+        
         self.show(vc, sender: nil)
     }
 }

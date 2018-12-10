@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import UserNotifications
+
 import KakaoOpenSDK
 import SnapKit
 
 
 let appDelegate = UIApplication.shared.delegate as? AppDelegate
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, TTTimeGettable{
 
     var window                      : UIWindow?
     var loginViewController         : UIViewController?
@@ -21,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var firstDescriptViewController : UIViewController?
     var loadingView : UIView? 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        UNUserNotificationCenter.current().delegate = self
         KOSession.shared().isAutomaticPeriodicRefresh = true
         setupEntryController()
         
@@ -111,6 +115,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
+    
+    //MARK: Local Notification
+    func registerLocalNoti(){
+        let content = UNMutableNotificationContent()
+        content.title = "제목"
+        content.subtitle = "소제목"
+        content.body = "내용"
+        
+        if #available(iOS 12.0, *) {
+            content.summaryArgument = "TIPTAP"
+            content.summaryArgumentCount = 40
+        }
+        
+//        let timeIntervalTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        
+        
+        let dateCompenents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: getMidnight())
+        let calendartrigger = UNCalendarNotificationTrigger(dateMatching: dateCompenents, repeats: false)
+        let request = UNNotificationRequest(identifier: "notiDoneTodayDiary", content: content, trigger: calendartrigger)
+        
+        print("\( getMidnight())")
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    func unregisterLocalNoti(){
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["notiDoneTodayDiary"])
+    }
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
+        print("openSettingsFor")
+    }
+    
+    
+    
+    //MARK: Login & Logout
     func logout(){
         KOSession.shared()?.logoutAndClose(completionHandler: { (success, error) in
             let loginVC = UIStoryboard(name: "TTLogin", bundle: nil).instantiateViewController(withIdentifier: "TTLoginViewController") as UIViewController
@@ -120,6 +165,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     
+    //MARK: Search Front View Controller
     func searchFrontViewController(_ viewController : UIViewController)->UIViewController{
         var vc = viewController
         if let presentVC = viewController.presentedViewController {
@@ -138,7 +184,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    
+    //MARK: Loading View
     func showLoadingVIew(){
         let parentView = appDelegate?.searchFrontViewController().view
         makeLoadingView(parentView: parentView!)

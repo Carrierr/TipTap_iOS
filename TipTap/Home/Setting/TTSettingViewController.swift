@@ -9,34 +9,49 @@
 import UIKit
 
 enum TTSettingType{
-    case switchButton(String)
+    case switchButton(title : String, isOn : Bool, pressed : ((Bool)-> ()) )
     case normalButton(String)
 }
 
+
 class TTSettingViewController: TTBaseViewController, TTCanShowAlert {
-    let settingData:[TTSettingType] = {
-        return [TTSettingType.switchButton("일기 공유하기"),
-                TTSettingType.switchButton("푸시 알림"),
+    
+    
+    
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    fileprivate let settingData:[TTSettingType] = {
+        return [
+            TTSettingType.switchButton(title: "일기 공유하기", isOn: TTDeviceInfo.SettingInfo.isSharedMyDiary, pressed: { isOn in
+                TTDeviceInfo.SettingInfo.isSharedMyDiary = isOn
+            }),
+            TTSettingType.switchButton(title: "푸시 알림", isOn: TTDeviceInfo.SettingInfo.isOnPushNotification, pressed: { isOn in
+                TTDeviceInfo.SettingInfo.isOnPushNotification = isOn
+                if isOn{
+                    NotificationCenter.default.post(name: NSNotification.Name.userNoti.isOnUserNoti, object: nil)
+                }else{
+                    NotificationCenter.default.post(name: NSNotification.Name.userNoti.isOffUserNoti, object: nil)
+                }
+                }),
                 TTSettingType.normalButton("이용약관"),
                 TTSettingType.normalButton("로그아웃")]
     }()
     
-    @IBOutlet weak var tableView: UITableView!
+    var haveTodayDiaryDatas : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func setupBinding() {
         tableView.register(UINib(nibName: "TTSettingCell", bundle: nil), forCellReuseIdentifier: "TTSettingCell")
+        NotificationCenter.default.addObserver(self, selector: #selector(notiOn), name: NSNotification.Name.userNoti.isOnUserNoti, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(nofiOff), name: NSNotification.Name.userNoti.isOffUserNoti, object: nil)
     }
     
+    
     override func setupUI() {
-        
         tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
-
-        self.navigationController?.navigationBar.tintColor = UIColor.black;
-        
+        navigationController?.navigationBar.tintColor = UIColor.black;
         navigationController?.navigationBar.backIndicatorImage = UIImage(named: "backwhite")
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backwhite")
         navigationController?.navigationBar.topItem?.title = "";
@@ -44,6 +59,16 @@ class TTSettingViewController: TTBaseViewController, TTCanShowAlert {
         self.title = "설정"
     }
     
+    
+    @objc func notiOn(){
+        if haveTodayDiaryDatas {
+            appDelegate?.registerLocalNoti()
+        }
+    }
+    
+    @objc func nofiOff(){
+        appDelegate?.unregisterLocalNoti()
+    }
     
 }
 

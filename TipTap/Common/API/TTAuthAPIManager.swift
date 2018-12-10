@@ -39,9 +39,9 @@ class TTAuthAPIManager {
             print("login Result : \(resultValue)")
             switch result.result {
             case .success:
-                TTDeviceInfo.UserInfo.token    = jsonResult["data"]["token"].stringValue
-                TTDeviceInfo.UserInfo.nickName = name
-                TTDeviceInfo.UserInfo.userID   = account
+                UserInfo.token    = jsonResult["data"]["token"].stringValue
+                UserInfo.nickName = name
+                UserInfo.userID   = account
                 completion(.success(true))
             case .failure(let error):
                 completion(.error(error))

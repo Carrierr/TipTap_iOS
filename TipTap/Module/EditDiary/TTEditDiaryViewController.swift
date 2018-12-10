@@ -18,9 +18,11 @@ class TTEditDiaryViewController: TTBaseViewController, TTTimeGettable, TTLocatio
     var locationManager : CLLocationManager?
     var location        : CLLocation?
     
+    
     private lazy var imagePicker = UIImagePickerController()
     
     @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet private weak var submitButton: UIButton!
     @IBOutlet private weak var imageViewTopConst: NSLayoutConstraint!
     @IBOutlet private weak var imageViewHeight: NSLayoutConstraint!
     @IBOutlet private weak var textCountLabel: UILabel!
@@ -57,16 +59,6 @@ class TTEditDiaryViewController: TTBaseViewController, TTTimeGettable, TTLocatio
     override func setupUI() {
         navigationController?.navigationBar.tintColor = UIColor.gray;
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
-        
-//            let style = NSMutableParagraphStyle()
-//            style.lineSpacing = 40
-//            let attributes = [NSAttributedStringKey.paragraphStyle : style]
-//            boardTextView.attributedText = NSAttributedString(string: "", attributes:attributes)
-
-//        NSDictionary* d = deedTextView.typingAttributes;
-//        NSMutableDictionary* md = [NSMutableDictionary dictionaryWithDictionary:d];
-//        [md setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
-//        deedTextView.typingAttributes= md;
 
         boardTextView.layoutManager.delegate = self
         boardTextView.becomeFirstResponder()
@@ -145,6 +137,7 @@ class TTEditDiaryViewController: TTBaseViewController, TTTimeGettable, TTLocatio
         TTAPIManager.sharedManager.requestAPIWithImage("\(TTAPIManager.API_URL)/diary/write", method: .post, parameters: param, uploadImage : travelPicture.image) { (result) in
             print(result)
             self.showAlert(title: "", message: "일기가 등록 되었습니다.") {
+                appDelegate?.registerLocalNoti()
                 self.dismiss(animated: true, completion: nil)
             }
 
@@ -212,6 +205,11 @@ extension TTEditDiaryViewController : UITextViewDelegate{
             placeHolderLabel.isHidden = false
         }else{
             placeHolderLabel.isHidden = true
+        }
+        if textView.text.count > 0 {
+            submitButton.alpha = 1
+        }else{
+            submitButton.alpha = 0.3
         }
         
         textCountLabel.text = "\(textView.text.count)/800"

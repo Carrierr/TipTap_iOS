@@ -338,6 +338,7 @@
 			children = (
 				A12211D02154E258004F931D /* TTDiaryData.swift */,
 				A12211E5215A972F004F931D /* TTMyDiarySet.swift */,
+				A17ED5FE214AB76B00E28462 /* TTDeviceInfo.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -521,7 +522,6 @@
 			children = (
 				A17ED5FA2148085F00E28462 /* TTAPIManager.swift */,
 				A17ED5FC214809C400E28462 /* TTAuthAPIManager.swift */,
-				A17ED5FE214AB76B00E28462 /* TTDeviceInfo.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
