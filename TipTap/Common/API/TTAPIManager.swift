@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class TTAPIManager : TTCanShowAlert, TTCanUserSetting {
+class TTAPIManager : TTCanShowAlert {
     static let API_URL = "http://13.209.117.190:8080"
     static var sharedManager = TTAPIManager()
     
@@ -20,9 +20,10 @@ class TTAPIManager : TTCanShowAlert, TTCanUserSetting {
                      parameters: Parameters? = nil,
                      encoding: ParameterEncoding = URLEncoding.default,
 //                     headers: HTTPHeaders? = ["tiptap-token":"5ddfcb4c-aff0-441b-9a88-e7dbecb43170"],
-                     headers: HTTPHeaders? = ["tiptap-token":TTDeviceInfo.UserInfo.token],
+                     headers: HTTPHeaders? = ["tiptap-token":UserInfo.token],
                      completion: @escaping (Dictionary<String, Any>) -> ()){
         Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).responseJSON { (result) in
+            appDelegate?.hideLoadingView()
             guard let resultValue = result.result.value else {
                 print("========통신 오류========")
                 self.showAlert(title: "", message:  String.errorString)
@@ -38,7 +39,7 @@ class TTAPIManager : TTCanShowAlert, TTCanUserSetting {
             
             if jsonDictionary["code"]?.intValue == 4000 {
                 self.showAlert(title: "알림", message: "신고 누적으로 서비스 이용이 제한되었습니다.", confirmButtonTitle: "로그아웃", completion: {
-                    self.goLogout()
+                    appDelegate?.logout()
                 })
                 return;
             }
@@ -51,7 +52,7 @@ class TTAPIManager : TTCanShowAlert, TTCanUserSetting {
                               method: HTTPMethod = .post,
                               parameters: Parameters,
                               uploadImage : UIImage? = nil,
-                              headers: HTTPHeaders? = ["tiptap-token":TTDeviceInfo.UserInfo.token],
+                              headers: HTTPHeaders? = ["tiptap-token":UserInfo.token],
                               completion: @escaping (Dictionary<String, Any>) -> ()){
         
         appDelegate?.showLoadingVIew()

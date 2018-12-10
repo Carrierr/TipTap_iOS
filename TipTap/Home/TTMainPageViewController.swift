@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
     
@@ -54,6 +55,8 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
     private func UIBinding(){
         dataSource = self
         delegate   = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert], completionHandler: { (didAllow, error) in
+        })
     }
     
     

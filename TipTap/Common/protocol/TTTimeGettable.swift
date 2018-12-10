@@ -34,6 +34,22 @@ extension TTTimeGettable {
     }
     
     
+    func getMidnight()->Date{
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = NSTimeZone.local
+        let dateAtMidnight = calendar.startOfDay(for: Date())
+        
+        //For End Date
+        var components = DateComponents()
+        components.day = 1
+        components.second = -1
+        let dateAtEnd = calendar.date(byAdding: components, to: dateAtMidnight)
+        //자정 되기 15분 전
+        return (dateAtEnd?.addingTimeInterval(-60*15))!
+    }
+    
+
+    
     func dateConvert(dateString:String, format : String)->String{
         
         let dateFormatter = getDateFormat(format: "yyyy-MM-dd")
