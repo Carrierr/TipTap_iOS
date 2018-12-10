@@ -13,7 +13,7 @@ enum TTSettingType{
     case normalButton(String)
 }
 
-class TTSettingViewController: TTBaseViewController {
+class TTSettingViewController: TTBaseViewController, TTCanShowAlert {
     let settingData:[TTSettingType] = {
         return [TTSettingType.switchButton("일기 공유하기"),
                 TTSettingType.switchButton("푸시 알림"),
@@ -32,6 +32,9 @@ class TTSettingViewController: TTBaseViewController {
     }
     
     override func setupUI() {
+        
+        tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
+
         self.navigationController?.navigationBar.tintColor = UIColor.black;
         
         navigationController?.navigationBar.backIndicatorImage = UIImage(named: "backwhite")
@@ -47,6 +50,19 @@ class TTSettingViewController: TTBaseViewController {
 extension TTSettingViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 48
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            
+        }else if indexPath.section == 1{
+            showAlert(title: "알림", message: "로그아웃하시겠습니까?", completion: {
+                appDelegate?.logout()
+            }) {
+                
+            }
+            
+        }
     }
 }
 

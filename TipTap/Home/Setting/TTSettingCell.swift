@@ -44,7 +44,7 @@ class TTSettingCell: UITableViewCell {
     
     
     @IBAction func pressedSwitch(_ sender: Any) {
-        
+        print("switch : \(switchButton.isOn)")
     }
     
 }

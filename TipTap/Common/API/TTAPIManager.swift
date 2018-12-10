@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class TTAPIManager : TTCanShowAlert, TTCanUserSetting {
+class TTAPIManager : TTCanShowAlert {
     static let API_URL = "http://13.209.117.190:8080"
     static var sharedManager = TTAPIManager()
     
@@ -38,7 +38,7 @@ class TTAPIManager : TTCanShowAlert, TTCanUserSetting {
             
             if jsonDictionary["code"]?.intValue == 4000 {
                 self.showAlert(title: "알림", message: "신고 누적으로 서비스 이용이 제한되었습니다.", confirmButtonTitle: "로그아웃", completion: {
-                    self.goLogout()
+                    appDelegate?.logout()
                 })
                 return;
             }

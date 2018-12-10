@@ -109,6 +109,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    
+    func logout(){
+        KOSession.shared()?.logoutAndClose(completionHandler: { (success, error) in
+            let loginVC = UIStoryboard(name: "TTLogin", bundle: nil).instantiateViewController(withIdentifier: "TTLoginViewController") as UIViewController
+            appDelegate?.window?.rootViewController = UINavigationController(rootViewController: loginVC)
+            UserDefaults.standard.removeObject(forKey: "tokenID")
+        })
+    }
 
     
     func searchFrontViewController(_ viewController : UIViewController)->UIViewController{
