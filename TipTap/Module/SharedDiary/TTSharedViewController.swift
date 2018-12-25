@@ -24,7 +24,13 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
             self.collectionView.reloadData()
             self.collectionView.performBatchUpdates({
             }) { (finished) in
-                self.attachScratchView()
+                if TTDeviceInfo.DeviceInfo.isIphoneX {
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        self.attachScratchView()
+                    }
+                }else{
+                    self.attachScratchView()
+                }
             }
         }
     }
@@ -104,7 +110,7 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
             scratchImageView.removeFromSuperview()
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
+        
             self.makeScratchOriginView()
             self.scratchView  = ScratchUIView(frame: CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height),
                                          Coupon: (self.scratchOriginalView?.asImage())!,
@@ -113,7 +119,7 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
             self.scratchView.delegate = self
             self.view.addSubview(self.scratchView)
             self.isFirstShow = false
-        }
+
     }
     
     
