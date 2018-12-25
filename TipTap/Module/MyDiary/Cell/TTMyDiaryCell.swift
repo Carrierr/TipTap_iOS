@@ -21,6 +21,7 @@ class TTMyDiaryCell: UITableViewCell {
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dotImageView: UIImageView!
     
     
     var diaryData : TTMyDiaryDayData?{
@@ -51,16 +52,22 @@ class TTMyDiaryCell: UITableViewCell {
         day = diaryData.day ?? ""
         if let firstData = diaryData.firstDiary {
             start = firstData.location ?? ""
+            startLocation.numberOfLines = 1
+            dotImageView.isHidden     = false
+            destinationLabel.isHidden = false
         }else{
             if let lastData = diaryData.lastDiary {
                 start       = lastData.location ?? ""
-                destination = lastData.location ?? ""
+                startLocation.numberOfLines = 0
+                dotImageView.isHidden     = true
+                destinationLabel.isHidden = true
             }
         }
         
         if let lastData = diaryData.lastDiary {
             destination = lastData.location ?? ""
         }
+        
        titleLabel.text = "\(diaryData.count) TIPTAP"
         dayLabel.text         = day
         startLocation.text    = start

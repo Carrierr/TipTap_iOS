@@ -128,6 +128,7 @@
                 <outlet property="checkBox" destination="5oc-HS-q0g" id="cua-GA-vTq"/>
                 <outlet property="dayLabel" destination="faf-T8-aAw" id="soY-vA-F6F"/>
                 <outlet property="destinationLabel" destination="uk5-5f-XJ9" id="MQz-AJ-6qP"/>
+                <outlet property="dotImageView" destination="4bn-Db-Qgf" id="wFb-p1-3T8"/>
                 <outlet property="lineView" destination="uWa-Iu-fil" id="exD-Ig-Zkq"/>
                 <outlet property="monthLabel" destination="dvX-gx-k8L" id="BCi-Pj-66k"/>
                 <outlet property="startLocation" destination="fdu-n6-Ehy" id="2M5-jn-SDQ"/>
