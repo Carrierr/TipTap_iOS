@@ -104,15 +104,16 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
             scratchImageView.removeFromSuperview()
         }
         
-
-        makeScratchOriginView()
-        scratchView  = ScratchUIView(frame: CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height),
-                                     Coupon: (self.scratchOriginalView?.asImage())!,
-                                     MaskImage: scratchImageNamed,
-                                     ScratchWidth: CGFloat(40))
-        scratchView.delegate = self
-        self.view.addSubview(scratchView)
-        self.isFirstShow = false
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.makeScratchOriginView()
+            self.scratchView  = ScratchUIView(frame: CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height),
+                                         Coupon: (self.scratchOriginalView?.asImage())!,
+                                         MaskImage: self.scratchImageNamed,
+                                         ScratchWidth: CGFloat(40))
+            self.scratchView.delegate = self
+            self.view.addSubview(self.scratchView)
+            self.isFirstShow = false
+        }
     }
     
     
