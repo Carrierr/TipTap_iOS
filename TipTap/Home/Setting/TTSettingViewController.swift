@@ -79,7 +79,10 @@ extension TTSettingViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            
+            if indexPath.row == 2 {
+                let vc = TTTermsOfServiceViewController(nibName: "TTTermsOfServiceViewController", bundle: nil)
+                self.show(vc, sender: nil)
+            }
         }else if indexPath.section == 1{
             showAlert(title: "알림", message: "로그아웃하시겠습니까?", completion: {
                 appDelegate?.logout()

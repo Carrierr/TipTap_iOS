@@ -13,6 +13,8 @@
 		A0AD5DD0212CF91C00D76543 /* TTSharedCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DCF212CF91C00D76543 /* TTSharedCollectionViewListCell.swift */; };
 		A0AD5DD4212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DD3212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift */; };
 		A0AD5DD6212FEA7A00D76543 /* TTSharedDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DD5212FEA7A00D76543 /* TTSharedDiaryView.swift */; };
+		A1026D3721D2787900340680 /* TTTermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1026D3521D2787900340680 /* TTTermsOfServiceViewController.swift */; };
+		A1026D3821D2787900340680 /* TTTermsOfServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1026D3621D2787900340680 /* TTTermsOfServiceViewController.xib */; };
 		A11F61B52123E6A90029E80A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61B42123E6A90029E80A /* AppDelegate.swift */; };
 		A11F61B72123E6A90029E80A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61B62123E6A90029E80A /* ViewController.swift */; };
 		A11F61BA2123E6A90029E80A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A11F61B82123E6A90029E80A /* Main.storyboard */; };
@@ -128,6 +130,8 @@
 		A0AD5DCF212CF91C00D76543 /* TTSharedCollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedCollectionViewListCell.swift; sourceTree = "<group>"; };
 		A0AD5DD3212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedCollectionViewDiaryCell.swift; sourceTree = "<group>"; };
 		A0AD5DD5212FEA7A00D76543 /* TTSharedDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedDiaryView.swift; sourceTree = "<group>"; };
+		A1026D3521D2787900340680 /* TTTermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTermsOfServiceViewController.swift; sourceTree = "<group>"; };
+		A1026D3621D2787900340680 /* TTTermsOfServiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTTermsOfServiceViewController.xib; sourceTree = "<group>"; };
 		A11F61B12123E6A90029E80A /* TipTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11F61B42123E6A90029E80A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A11F61B62123E6A90029E80A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -276,6 +280,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A1026D3421D2785800340680 /* TermsOfService */ = {
+			isa = PBXGroup;
+			children = (
+				A1026D3521D2787900340680 /* TTTermsOfServiceViewController.swift */,
+				A1026D3621D2787900340680 /* TTTermsOfServiceViewController.xib */,
+			);
+			path = TermsOfService;
+			sourceTree = "<group>";
+		};
 		A11F61A82123E6A90029E80A = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +379,7 @@
 		A13FF21D2123ED3400FB5642 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A1026D3421D2785800340680 /* TermsOfService */,
 				A1A99CE021BD2B28004D1F74 /* Setting */,
 				A11F61B82123E6A90029E80A /* Main.storyboard */,
 				A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */,
@@ -735,6 +749,7 @@
 				A14CAD4621AAB80500B6F018 /* Montserrat-Medium.ttf in Resources */,
 				A179E26D21AAAC3A00354579 /* Montserrat-Regular.ttf in Resources */,
 				A146679C21307A6900A15CF3 /* TTDetailDiaryCell.xib in Resources */,
+				A1026D3821D2787900340680 /* TTTermsOfServiceViewController.xib in Resources */,
 				A13FF22D2123FBEB00FB5642 /* mask.png in Resources */,
 				A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */,
 				A1466791213066AF00A15CF3 /* DetailDiary.storyboard in Resources */,
@@ -961,6 +976,7 @@
 				A0AD5DD6212FEA7A00D76543 /* TTSharedDiaryView.swift in Sources */,
 				BAD3AB3B212672F3008F417C /* TTServiceResult.swift in Sources */,
 				BAD3AB812126F83F008F417C /* MyDiaryCell.swift in Sources */,
+				A1026D3721D2787900340680 /* TTTermsOfServiceViewController.swift in Sources */,
 				BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */,
 				BAA1148221AECB5900C79DD6 /* UIImage+.swift in Sources */,
 				BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */,
