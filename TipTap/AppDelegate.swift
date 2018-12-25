@@ -119,9 +119,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     //MARK: Local Notification
     func registerLocalNoti(){
         let content = UNMutableNotificationContent()
-        content.title = "제목"
-        content.subtitle = "소제목"
-        content.body = "내용"
+//        content.title = "제목"
+//        content.subtitle = "소제목"
+        content.body = "오늘의 tiptap이 1시간 후에 마감됩니다."
         
         if #available(iOS 12.0, *) {
             content.summaryArgument = "TIPTAP"

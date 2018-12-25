@@ -55,7 +55,7 @@ extension TTDiaryOutlineContainer{
         monthLabel.textColor = UIColor(hexString: "6D6D6D")
         monthLabel.font = UIFont.montserratLight(fontSize: 13)
         monthLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(yearLabel.snp.bottom)
+            make.top.equalTo(yearLabel.snp.bottom).offset(7)
             make.left.equalToSuperview().offset(21)
         }
         
@@ -68,6 +68,7 @@ extension TTDiaryOutlineContainer{
         }
         
         horLineView.backgroundColor = UIColor(hexString: "8B8B8B")
+        horLineView.alpha = 0.5
         horLineView.snp.makeConstraints { (make) in
             make.width.equalTo(1)
             make.top.equalTo(dateLabel.snp.bottom).offset(20)
@@ -75,12 +76,12 @@ extension TTDiaryOutlineContainer{
             make.bottom.equalTo(brandLabel.snp.top).offset(-30)
         }
         
-        brandLabel.text = "TIPTAP"
+        brandLabel.text = "tiptap"
         brandLabel.textColor = UIColor(hexString: "6D6D6D")
         brandLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
         brandLabel.font = UIFont.montserratLight(fontSize: 13)
         brandLabel.snp.makeConstraints { (make) in
-            make.left.equalToSuperview()
+            make.left.equalToSuperview().offset(5)
             make.bottom.equalTo(firstDescLabel.snp.top).offset(-35)
         }
 

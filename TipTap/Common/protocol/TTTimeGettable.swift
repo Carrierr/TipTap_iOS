@@ -45,7 +45,7 @@ extension TTTimeGettable {
         components.second = -1
         let dateAtEnd = calendar.date(byAdding: components, to: dateAtMidnight)
         //자정 되기 15분 전
-        return (dateAtEnd?.addingTimeInterval(-60*15))!
+        return (dateAtEnd?.addingTimeInterval(-60*60))!
     }
     
 

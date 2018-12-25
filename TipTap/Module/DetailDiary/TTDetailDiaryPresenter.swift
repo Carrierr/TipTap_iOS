@@ -26,6 +26,7 @@ protocol TTDetailDiaryPresenterProtocol: TTBasePresenterProtocol {
     //UIView
     func locationString(section:Int)->String
     func dateString(section:Int)->String
+    func timeString(section:Int)->String
 }
 
 

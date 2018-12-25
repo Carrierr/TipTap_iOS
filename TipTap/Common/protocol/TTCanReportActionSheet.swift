@@ -29,7 +29,7 @@ extension TTCanReportActionSheet {
                 
                 TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/blame/report", method: .post,parameters: parameter) { (result) in
                     let json = JSON(result)
-                    if json["code"].intValue == 4000{
+                    if json["code"].intValue == 1000{
                         weakSelf?.showAlert(title: "신고 접수 완료", message: "신고가 접수되었습니다.", completion: {
                             NotificationCenter.default.post(name: NSNotification.Name.refreshPage.sharedDiary, object: nil)
                         })

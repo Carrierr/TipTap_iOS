@@ -45,6 +45,8 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert, TTTimeG
     
     private func setupNavigaion(){
         let rightBarButtonItem = UIBarButtonItem(title: "삭제", style: .plain, target: self, action: #selector(pressedDeleteButton))
+
+        rightBarButtonItem.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.KoPubDotumProMedium(fontSize: 14)], for: .normal)
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
         self.navigationController?.navigationBar.tintColor = UIColor.white;
         
@@ -57,6 +59,10 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert, TTTimeG
         setupNavigaion()
         registerCell()
         titleLabel.text = "MY DIARY\n#1"
+        titleLabel.setLineSpacing(lineSpacing: 8)
+        titleLabel.textAlignment = .center
+        
+        
         brandLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2));
     }
     
@@ -79,6 +85,7 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert, TTTimeG
         let day = dateConvert(dateString: dateString, format: "dd")
         yearLabel.text = "\(dateConvert(dateString: dateString, format: "yy"))`"
         DateLabel.text = "\(month)\n\(day)"
+        DateLabel.setLineSpacing(lineSpacing: 4)
     }
     
     
@@ -102,6 +109,7 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert, TTTimeG
             let indexPath = self.collectionView.indexPath(for: cell)
             locationLabel.text = presenter!.locationString(section:indexPath?.section ?? 0)
             titleLabel.text = "MY DIARY\n#\((indexPath?.section ?? 1) + 1)"
+            brandLabel.text = presenter!.timeString(section: indexPath?.section ?? 1)
         }
     }
 }
@@ -119,6 +127,7 @@ extension TTDetailDiaryViewController: TTDetailDiaryViewProtocol {
         self.collectionView.reloadData()
         setupDateLabel()
         locationLabel.text = presenter!.locationString(section:0)
+        brandLabel.text = presenter!.timeString(section: 0)
     }
 }
 

@@ -108,6 +108,8 @@ extension TTMyDiaryPresenter: TTMyDiaryPresenterProtocol, TTTimeGettable {
         
         if isDeletable {
             cell?.checkBox.isHidden = false
+            cell?.monthLabel.isHidden = true
+            cell?.lineView.isHidden   = true
         }else{
             cell?.checkBox.isHidden = true
         }

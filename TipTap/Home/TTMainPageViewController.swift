@@ -101,6 +101,7 @@ class TTMainPageViewController: UIPageViewController, TTCanSetupNavigation {
     @objc private func refreshSharedDiary(){
         self.isPagingEnabled = true
         self.isAbleScrollPage = false
+        self.didScratch = false
         orderedViewControllers[2] = self.newTipTapViewController(index:2)
         setPageViewController(index: 1,direct: .reverse)
     }
