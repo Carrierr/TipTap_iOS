@@ -15,7 +15,6 @@ class TTSharedCollectionViewListCell: UICollectionViewCell {
     @IBOutlet private var locationLabel: UILabel!
     @IBOutlet private var bodyLabel: UILabel!
     @IBOutlet weak var widthConst: NSLayoutConstraint!
-    @IBOutlet var diaryNumberLabel: UILabel!
     
     var data : TTDiaryData?{
         didSet{

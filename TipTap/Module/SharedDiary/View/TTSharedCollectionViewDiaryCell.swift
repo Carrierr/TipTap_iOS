@@ -13,28 +13,10 @@ class TTSharedCollectionViewDiaryCell: UICollectionViewCell {
     @IBOutlet var view: UIView!
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet weak var emptyDescLabel: UILabel!
-    @IBOutlet weak var scrollImageView: UIImageView!
-    
-    var dataSet : TTDiaryDataSet?{
-        didSet{
-            let tempView = TTSharedDiaryView(frame: self.view.bounds)
-            if let dataSet = dataSet{
-                if let _ = dataSet.diaryDataList{
-                    tempView.dataSet = dataSet
-                }
-                
-            }
-            self.view.addSubview(tempView)
-            
-            tempView.snp.makeConstraints { (make) in
-                make.centerX.equalToSuperview()
-                make.centerY.equalToSuperview().offset(-35)
-            }
-        }
-    }
+    @IBOutlet weak var descStackView: UIStackView!
     
     override func awakeFromNib() {
-        locationLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
+        
     }
 }
 

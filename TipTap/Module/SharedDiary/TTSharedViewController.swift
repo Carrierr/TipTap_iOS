@@ -38,9 +38,13 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     @IBOutlet weak var collectionView: UICollectionView!
     
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.addObserver()
         let randomNumber = arc4random_uniform(2) + 1
         self.scratchImageNamed = "scratch0\(randomNumber).png"
         self.scratchImageView = UIImageView(image: UIImage(named: scratchImageNamed))
@@ -59,6 +63,11 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     }
     
     
+    private func addObserver(){
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshSharedDiary), name: NSNotification.Name.refreshPage.sharedDiary, object: nil)
+    }
+    
+    
     
     private func makeScratchOriginView(){
         self.scratchOriginalView = UIView(frame: CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height))
@@ -74,7 +83,7 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
             var rightBarButtonItem = rightBarButtonItem else {
                 return
         }
-        titleLabel.text = "\(count)\nTIPTAP"
+        titleLabel.text = "POSTBOX"
         if isHidden{
             rightBarButtonItem = UIBarButtonItem()
             return
@@ -144,6 +153,10 @@ class TTSharedViewController: TTBaseViewController, TTCanShowAlert, TTCanSetupNa
     }
     
     
+    @objc private func refreshSharedDiary(){
+        isFirstShow = true
+    }
+    
     @objc private func showMoreOption(){
         showReportActionSheet()
     }
@@ -163,15 +176,13 @@ extension TTSharedViewController: UICollectionViewDataSource {
         
         if (indexPath.row == 0) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryCell", for: indexPath) as! TTSharedCollectionViewDiaryCell
-            cell.dataSet = moduleDatas
             if let count = moduleDatas?.diaryDataList?.count, count > 0 {
                 cell.locationLabel.text = "from. \(moduleDatas?.diaryDataList?[0].location ?? "")"
+                cell.descStackView.isHidden      = false
                 cell.emptyDescLabel.isHidden = true
-                cell.scrollImageView.isHidden = false
             }else{
-                cell.locationLabel.text = "from."
+                cell.descStackView.isHidden = true
                 cell.emptyDescLabel.isHidden = false
-                cell.scrollImageView.isHidden = true
             }
             
     
@@ -181,7 +192,6 @@ extension TTSharedViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryListCell", for: indexPath) as! TTSharedCollectionViewListCell
             guard let diaryItem = moduleDatas?.diaryDataList?[indexPath.row-1] else { return cell }
             cell.data = diaryItem
-            cell.diaryNumberLabel.text = "#\(indexPath.row)"
             cell.widthConst.constant = collectionView.frame.width
             return cell
         }
@@ -191,7 +201,7 @@ extension TTSharedViewController: UICollectionViewDataSource {
 extension TTSharedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if (indexPath.row == 0 ) {
-            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+            return CGSize(width: collectionView.frame.width, height: 337)
         } else {
             return CGSize(width: collectionView.frame.width, height: 1)
         }

@@ -63,8 +63,8 @@
                                             <outlet property="prefetchDataSource" destination="b6O-zg-ETS" id="Crs-rA-hI8"/>
                                         </connections>
                                     </collectionView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyDiary #01" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjL-D3-yy8">
-                                        <rect key="frame" x="139.5" y="24" width="54" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY DIARY #01" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjL-D3-yy8">
+                                        <rect key="frame" x="133.5" y="24" width="66" height="32"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -89,8 +89,8 @@
                                             <constraint firstAttribute="height" constant="97" id="gBO-9Q-g6J"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIPTAP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfE-rE-wvq">
-                                        <rect key="frame" x="0.0" y="510" width="42.5" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfE-rE-wvq">
+                                        <rect key="frame" x="5" y="510" width="28.5" height="15"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                         <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="0.40253631161971831" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -105,7 +105,7 @@
                                     <constraint firstItem="h0u-jS-iFa" firstAttribute="leading" secondItem="ztI-Gw-dYM" secondAttribute="leading" id="N9f-L5-S85"/>
                                     <constraint firstItem="0Nc-k3-dsm" firstAttribute="top" secondItem="QU5-4M-fVS" secondAttribute="bottom" constant="10" id="Ocf-mm-7BZ"/>
                                     <constraint firstItem="0Nc-k3-dsm" firstAttribute="centerX" secondItem="mDH-Q0-2Io" secondAttribute="centerX" id="T2N-Mo-JRE"/>
-                                    <constraint firstItem="sfE-rE-wvq" firstAttribute="leading" secondItem="mDH-Q0-2Io" secondAttribute="leading" id="WxV-aK-EAg"/>
+                                    <constraint firstItem="sfE-rE-wvq" firstAttribute="leading" secondItem="mDH-Q0-2Io" secondAttribute="leading" constant="5" id="WxV-aK-EAg"/>
                                     <constraint firstAttribute="bottom" secondItem="sfE-rE-wvq" secondAttribute="bottom" constant="92" id="aL7-GB-bcU"/>
                                     <constraint firstItem="Jzy-a7-yn3" firstAttribute="top" secondItem="h0u-jS-iFa" secondAttribute="bottom" constant="2" id="aix-RW-Kj7"/>
                                     <constraint firstAttribute="bottom" secondItem="0Nc-k3-dsm" secondAttribute="bottom" constant="24" id="gyv-dV-Tae"/>

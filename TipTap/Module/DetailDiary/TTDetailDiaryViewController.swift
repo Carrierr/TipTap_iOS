@@ -45,6 +45,8 @@ class TTDetailDiaryViewController: TTBaseViewController ,TTCanShowAlert, TTTimeG
     
     private func setupNavigaion(){
         let rightBarButtonItem = UIBarButtonItem(title: "삭제", style: .plain, target: self, action: #selector(pressedDeleteButton))
+
+        rightBarButtonItem.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.KoPubDotumProMedium(fontSize: 14)], for: .normal)
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
         self.navigationController?.navigationBar.tintColor = UIColor.white;
         

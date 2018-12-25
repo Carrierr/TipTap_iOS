@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H92-zS-I3V">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H92-zS-I3V">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,7 +50,7 @@
                                 <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uki-0I-6JX">
-                                <rect key="frame" x="299" y="604" width="50" height="50"/>
+                                <rect key="frame" x="304" y="593" width="50" height="50"/>
                                 <state key="normal" image="writeButton"/>
                                 <connections>
                                     <action selector="pressedWriteButton:" destination="t3w-KY-UBE" eventType="touchUpInside" id="Ryg-wu-W45"/>
@@ -61,10 +61,10 @@
                         <constraints>
                             <constraint firstItem="nhn-Sl-s0X" firstAttribute="centerX" secondItem="Icp-0g-mDd" secondAttribute="centerX" id="34M-Kv-eVs"/>
                             <constraint firstItem="g5j-a0-ZeO" firstAttribute="bottom" secondItem="mhh-At-LYw" secondAttribute="bottom" id="6fa-JU-PG0"/>
-                            <constraint firstItem="g5j-a0-ZeO" firstAttribute="bottom" secondItem="uki-0I-6JX" secondAttribute="bottom" constant="13" id="M6h-yq-99a"/>
+                            <constraint firstItem="g5j-a0-ZeO" firstAttribute="bottom" secondItem="uki-0I-6JX" secondAttribute="bottom" constant="24" id="M6h-yq-99a"/>
                             <constraint firstItem="g5j-a0-ZeO" firstAttribute="trailing" secondItem="mhh-At-LYw" secondAttribute="trailing" id="b6d-vy-cFZ"/>
                             <constraint firstItem="mhh-At-LYw" firstAttribute="top" secondItem="Icp-0g-mDd" secondAttribute="top" id="bB8-0z-HNX"/>
-                            <constraint firstItem="g5j-a0-ZeO" firstAttribute="trailing" secondItem="uki-0I-6JX" secondAttribute="trailing" constant="26" id="q6E-Ec-90y"/>
+                            <constraint firstItem="g5j-a0-ZeO" firstAttribute="trailing" secondItem="uki-0I-6JX" secondAttribute="trailing" constant="21" id="q6E-Ec-90y"/>
                             <constraint firstItem="mhh-At-LYw" firstAttribute="centerX" secondItem="Icp-0g-mDd" secondAttribute="centerX" id="saN-Ee-nPj"/>
                             <constraint firstItem="nhn-Sl-s0X" firstAttribute="centerY" secondItem="Icp-0g-mDd" secondAttribute="centerY" id="uGh-53-kNx"/>
                             <constraint firstItem="mhh-At-LYw" firstAttribute="leading" secondItem="g5j-a0-ZeO" secondAttribute="leading" id="xd7-bg-Um2"/>
@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCC-Vi-9E1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="856"/>
+            <point key="canvasLocation" x="852" y="855.9220389805098"/>
         </scene>
         <!--TTEditDiaryViewController-->
         <scene sceneID="HPX-IM-go6">
