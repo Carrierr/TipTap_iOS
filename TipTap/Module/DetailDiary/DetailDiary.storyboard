@@ -39,7 +39,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QU5-4M-fVS">
-                                        <rect key="frame" x="0.0" y="80" width="333" height="489.5"/>
+                                        <rect key="frame" x="0.0" y="100" width="333" height="421.5"/>
                                         <color key="backgroundColor" red="0.99509803919999995" green="0.99019607840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="psu-bh-cWW">
                                             <size key="itemSize" width="50" height="50"/>
@@ -76,13 +76,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aug 02" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0u-jS-iFa">
-                                        <rect key="frame" x="21" y="43" width="27" height="32"/>
+                                        <rect key="frame" x="21" y="45" width="27" height="32"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="13"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jzy-a7-yn3">
-                                        <rect key="frame" x="21" y="77" width="1" height="97"/>
+                                        <rect key="frame" x="21" y="86" width="1" height="97"/>
                                         <color key="backgroundColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="0.40253631161971831" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="SqN-pt-xwk"/>
@@ -90,30 +90,30 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfE-rE-wvq">
-                                        <rect key="frame" x="5" y="510" width="28.5" height="15"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                        <rect key="frame" x="5" y="502" width="28" height="15"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
                                         <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="0.40253631161971831" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99509803921568629" green="0.99019607843137258" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="QU5-4M-fVS" firstAttribute="top" secondItem="mDH-Q0-2Io" secondAttribute="top" constant="80" id="AMf-ox-u2I"/>
+                                    <constraint firstItem="QU5-4M-fVS" firstAttribute="top" secondItem="mDH-Q0-2Io" secondAttribute="top" constant="100" id="AMf-ox-u2I"/>
                                     <constraint firstAttribute="trailing" secondItem="QU5-4M-fVS" secondAttribute="trailing" id="Aev-ao-WiQ"/>
                                     <constraint firstItem="rjL-D3-yy8" firstAttribute="top" secondItem="mDH-Q0-2Io" secondAttribute="top" constant="24" id="Fab-8s-PeR"/>
                                     <constraint firstItem="ztI-Gw-dYM" firstAttribute="top" secondItem="rjL-D3-yy8" secondAttribute="top" id="HQB-Uk-Jyb"/>
                                     <constraint firstItem="h0u-jS-iFa" firstAttribute="leading" secondItem="ztI-Gw-dYM" secondAttribute="leading" id="N9f-L5-S85"/>
-                                    <constraint firstItem="0Nc-k3-dsm" firstAttribute="top" secondItem="QU5-4M-fVS" secondAttribute="bottom" constant="10" id="Ocf-mm-7BZ"/>
+                                    <constraint firstItem="0Nc-k3-dsm" firstAttribute="top" secondItem="QU5-4M-fVS" secondAttribute="bottom" constant="58" id="Ocf-mm-7BZ"/>
                                     <constraint firstItem="0Nc-k3-dsm" firstAttribute="centerX" secondItem="mDH-Q0-2Io" secondAttribute="centerX" id="T2N-Mo-JRE"/>
                                     <constraint firstItem="sfE-rE-wvq" firstAttribute="leading" secondItem="mDH-Q0-2Io" secondAttribute="leading" constant="5" id="WxV-aK-EAg"/>
-                                    <constraint firstAttribute="bottom" secondItem="sfE-rE-wvq" secondAttribute="bottom" constant="92" id="aL7-GB-bcU"/>
-                                    <constraint firstItem="Jzy-a7-yn3" firstAttribute="top" secondItem="h0u-jS-iFa" secondAttribute="bottom" constant="2" id="aix-RW-Kj7"/>
+                                    <constraint firstAttribute="bottom" secondItem="sfE-rE-wvq" secondAttribute="bottom" constant="100" id="aL7-GB-bcU"/>
+                                    <constraint firstItem="Jzy-a7-yn3" firstAttribute="top" secondItem="h0u-jS-iFa" secondAttribute="bottom" constant="9" id="aix-RW-Kj7"/>
                                     <constraint firstAttribute="bottom" secondItem="0Nc-k3-dsm" secondAttribute="bottom" constant="24" id="gyv-dV-Tae"/>
                                     <constraint firstItem="Jzy-a7-yn3" firstAttribute="leading" secondItem="h0u-jS-iFa" secondAttribute="leading" id="nPp-LY-Eyc"/>
                                     <constraint firstItem="ztI-Gw-dYM" firstAttribute="leading" secondItem="mDH-Q0-2Io" secondAttribute="leading" constant="21" id="qur-eY-TB8"/>
                                     <constraint firstItem="rjL-D3-yy8" firstAttribute="centerX" secondItem="mDH-Q0-2Io" secondAttribute="centerX" id="vjQ-AJ-BR5"/>
                                     <constraint firstItem="QU5-4M-fVS" firstAttribute="leading" secondItem="mDH-Q0-2Io" secondAttribute="leading" id="wFY-q7-z5z"/>
-                                    <constraint firstItem="h0u-jS-iFa" firstAttribute="top" secondItem="ztI-Gw-dYM" secondAttribute="bottom" constant="3" id="wOJ-fq-OeJ"/>
+                                    <constraint firstItem="h0u-jS-iFa" firstAttribute="top" secondItem="ztI-Gw-dYM" secondAttribute="bottom" constant="5" id="wOJ-fq-OeJ"/>
                                 </constraints>
                             </view>
                         </subviews>
