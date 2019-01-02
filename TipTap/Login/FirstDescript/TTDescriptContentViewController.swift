@@ -22,6 +22,8 @@ class TTDescriptContentViewController: UIViewController {
         super.viewDidLoad()
         descriptTitleLabel.text = descriptionTitle
         descriptContentLabel.text = descriptionContent
+        descriptContentLabel.setLineSpacing(lineSpacing: 6)
+        descriptContentLabel.textAlignment = .center
         splashImageView.image     = descriptionImage
         imageHeightConst.constant = UIScreen.main.bounds.height * 0.6
     }
