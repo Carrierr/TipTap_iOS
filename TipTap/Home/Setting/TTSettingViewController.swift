@@ -40,6 +40,11 @@ class TTSettingViewController: TTBaseViewController, TTCanShowAlert {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.post(name: Notification.Name.ablePaging.changedDisablePaging, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.post(name: Notification.Name.ablePaging.changedAblePaging, object: nil)
     }
     
     override func setupBinding() {
