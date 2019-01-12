@@ -85,7 +85,7 @@ extension TTDiaryOutlineContainer{
             make.bottom.equalTo(firstDescLabel.snp.top).offset(-35)
         }
 
-        firstDescLabel.text = "당신의\n첫번째 TIPTAP을\n작성해주세요."
+        firstDescLabel.text = "당신의\n첫번째 tiptap을\n작성해주세요."
         firstDescLabel.setLineSpacing(lineSpacing: 6)
         firstDescLabel.numberOfLines = 0
         firstDescLabel.font = UIFont.KoPubDotumProLight(fontSize: 28)
