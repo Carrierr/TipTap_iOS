@@ -4,7 +4,7 @@
 
 <br/>
 
-![screenshot](./picture/screenshot) 
+![screenshot](TipTap_iOS/picture/screenshot.png) 
 
 <br/>
 
