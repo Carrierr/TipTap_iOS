@@ -58,7 +58,7 @@ extension TTCanReportActionSheet {
             
             weakSelf?.showAlert(title: "차단하시겠습니까?", message: "차단 사용자가 보낸 일기는 더 이상 볼 수 없습니다.", completion: {
                 let param = ["user_id":data.user_id]
-                TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/diary/block", method: .post,parameters: param) { (result) in
+                TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/diary/block", method: .post,parameters: param as Parameters) { (result) in
                     let json = JSON(result)
                     if json["code"].intValue == 1000{
                         NotificationCenter.default.post(name: NSNotification.Name.refreshPage.sharedDiary, object: nil)

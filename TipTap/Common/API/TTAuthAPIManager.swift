@@ -14,7 +14,7 @@ enum TTAuthLoginPlatformType : String {
     case kakao = "kakao"
 }
 
-class TTAuthAPIManager {
+class TTAuthAPIManager : TTCanShowAlert{
     static var sharedManager = TTAuthAPIManager()
     let auth_url = "\(TTAPIManager.API_URL)/auth/"
     
@@ -46,6 +46,29 @@ class TTAuthAPIManager {
             case .failure(let error):
                 completion(.error(error))
             }
+        }
+    }
+    
+    
+    func requestAuthAPI( _ url: URLConvertible,
+                     parameters: Parameters? = nil,
+        completion: @escaping (Dictionary<String, Any>) -> ()){
+        Alamofire.request(url, method: .post, parameters: parameters).responseJSON { (result) in
+            appDelegate?.hideLoadingView()
+            guard let resultValue = result.result.value else {
+                print("========통신 오류========")
+                self.showAlert(title: "", message:  String.errorString)
+                return
+            }
+            
+            let jsonResult = JSON(resultValue)
+            guard let jsonDictionary = jsonResult.dictionary else {
+                print("========통신 오류========")
+                self.showAlert(title: "", message:  String.errorString)
+                return
+            }
+            
+            completion(jsonDictionary)
         }
     }
 }

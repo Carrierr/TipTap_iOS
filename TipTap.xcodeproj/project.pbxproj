@@ -16,7 +16,6 @@
 		A1026D3721D2787900340680 /* TTTermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1026D3521D2787900340680 /* TTTermsOfServiceViewController.swift */; };
 		A1026D3821D2787900340680 /* TTTermsOfServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1026D3621D2787900340680 /* TTTermsOfServiceViewController.xib */; };
 		A11F61B52123E6A90029E80A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61B42123E6A90029E80A /* AppDelegate.swift */; };
-		A11F61B72123E6A90029E80A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F61B62123E6A90029E80A /* ViewController.swift */; };
 		A11F61BA2123E6A90029E80A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A11F61B82123E6A90029E80A /* Main.storyboard */; };
 		A11F61BC2123E6AA0029E80A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A11F61BB2123E6AA0029E80A /* Assets.xcassets */; };
 		A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A11F61BD2123E6AA0029E80A /* LaunchScreen.storyboard */; };
@@ -26,6 +25,10 @@
 		A12211D521564B59004F931D /* TTCanShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12211D421564B59004F931D /* TTCanShowAlert.swift */; };
 		A12211DB21579060004F931D /* TTTodayDiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12211DA21579060004F931D /* TTTodayDiaryService.swift */; };
 		A12211E6215A972F004F931D /* TTMyDiarySet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12211E5215A972F004F931D /* TTMyDiarySet.swift */; };
+		A128FAEC2209C7FA008ED321 /* TTRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A128FAEB2209C7FA008ED321 /* TTRegisterViewController.swift */; };
+		A128FAEE2209D83A008ED321 /* TTRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A128FAED2209D83A008ED321 /* TTRegisterViewModel.swift */; };
+		A128FAF3220B1B6B008ED321 /* TTRegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A128FAF2220B1B6B008ED321 /* TTRegisterService.swift */; };
+		A128FAF5220B4A97008ED321 /* Observables+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A128FAF4220B4A97008ED321 /* Observables+.swift */; };
 		A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13FF2182123EBB600FB5642 /* TTLogin.storyboard */; };
 		A13FF21B2123EC4600FB5642 /* TTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */; };
 		A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */; };
@@ -134,7 +137,6 @@
 		A1026D3621D2787900340680 /* TTTermsOfServiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTTermsOfServiceViewController.xib; sourceTree = "<group>"; };
 		A11F61B12123E6A90029E80A /* TipTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11F61B42123E6A90029E80A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A11F61B62123E6A90029E80A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A11F61B92123E6A90029E80A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A11F61BB2123E6AA0029E80A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A11F61BE2123E6AA0029E80A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -149,6 +151,10 @@
 		A12211D421564B59004F931D /* TTCanShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCanShowAlert.swift; sourceTree = "<group>"; };
 		A12211DA21579060004F931D /* TTTodayDiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTodayDiaryService.swift; sourceTree = "<group>"; };
 		A12211E5215A972F004F931D /* TTMyDiarySet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiarySet.swift; sourceTree = "<group>"; };
+		A128FAEB2209C7FA008ED321 /* TTRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRegisterViewController.swift; sourceTree = "<group>"; };
+		A128FAED2209D83A008ED321 /* TTRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRegisterViewModel.swift; sourceTree = "<group>"; };
+		A128FAF2220B1B6B008ED321 /* TTRegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRegisterService.swift; sourceTree = "<group>"; };
+		A128FAF4220B4A97008ED321 /* Observables+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observables+.swift"; sourceTree = "<group>"; };
 		A13FF2182123EBB600FB5642 /* TTLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TTLogin.storyboard; sourceTree = "<group>"; };
 		A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLoginViewController.swift; sourceTree = "<group>"; };
 		A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMainPageViewController.swift; sourceTree = "<group>"; };
@@ -315,11 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				A11F61B42123E6A90029E80A /* AppDelegate.swift */,
-				A11F61B62123E6A90029E80A /* ViewController.swift */,
 				A13FF2322124040200FB5642 /* Common */,
 				BAD3AB24212663BC008F417C /* Module */,
-				A13FF21D2123ED3400FB5642 /* Home */,
-				A13FF21C2123EC4C00FB5642 /* Login */,
 				A13FF2282123FB9F00FB5642 /* Supporting Files */,
 				A11F61BB2123E6AA0029E80A /* Assets.xcassets */,
 				A11F61BD2123E6AA0029E80A /* LaunchScreen.storyboard */,
@@ -366,9 +369,44 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A128FAEA2209C7CC008ED321 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				A128FAF1220B1B5A008ED321 /* Service */,
+				A128FAF0220B1B4E008ED321 /* ViewModel */,
+				A128FAEF220B1B44008ED321 /* ViewController */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		A128FAEF220B1B44008ED321 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A128FAEB2209C7FA008ED321 /* TTRegisterViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A128FAF0220B1B4E008ED321 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A128FAED2209D83A008ED321 /* TTRegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A128FAF1220B1B5A008ED321 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A128FAF2220B1B6B008ED321 /* TTRegisterService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		A13FF21C2123EC4C00FB5642 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A128FAEA2209C7CC008ED321 /* Register */,
 				A15260162188A4C000962D44 /* FirstDescript */,
 				A13FF2182123EBB600FB5642 /* TTLogin.storyboard */,
 				A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */,
@@ -400,6 +438,7 @@
 				A1A99CDC21BB7B77004D1F74 /* UILabel+.swift */,
 				A14CAD5221AAE1F600B6F018 /* String+.swift */,
 				BAA1148121AECB5900C79DD6 /* UIImage+.swift */,
+				A128FAF4220B4A97008ED321 /* Observables+.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -563,6 +602,8 @@
 		BAD3AB24212663BC008F417C /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				A13FF21D2123ED3400FB5642 /* Home */,
+				A13FF21C2123EC4C00FB5642 /* Login */,
 				A1A99CD521B41B90004D1F74 /* SearchLocation */,
 				A1526022218D843E00962D44 /* SelectCalendar */,
 				BAD3AB7A2126F3B8008F417C /* View */,
@@ -974,12 +1015,14 @@
 				BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */,
 				A1466795213068F300A15CF3 /* TTDetailDiaryPresenter.swift in Sources */,
 				A0AD5DD6212FEA7A00D76543 /* TTSharedDiaryView.swift in Sources */,
+				A128FAF5220B4A97008ED321 /* Observables+.swift in Sources */,
 				BAD3AB3B212672F3008F417C /* TTServiceResult.swift in Sources */,
 				BAD3AB812126F83F008F417C /* MyDiaryCell.swift in Sources */,
 				A1026D3721D2787900340680 /* TTTermsOfServiceViewController.swift in Sources */,
 				BAD3AB2E212669DE008F417C /* TTBasePresenter.swift in Sources */,
 				BAA1148221AECB5900C79DD6 /* UIImage+.swift in Sources */,
 				BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */,
+				A128FAEC2209C7FA008ED321 /* TTRegisterViewController.swift in Sources */,
 				A1A99CE721BD3423004D1F74 /* TTSettingCell.swift in Sources */,
 				A17ED5FB2148085F00E28462 /* TTAPIManager.swift in Sources */,
 				BAD3AB3D21268957008F417C /* TTMyDiaryWireFrame.swift in Sources */,
@@ -998,14 +1041,15 @@
 				A1526025218D85E400962D44 /* SelectCalendarViewController.swift in Sources */,
 				A0AD5DD0212CF91C00D76543 /* TTSharedCollectionViewListCell.swift in Sources */,
 				A1526021218D69FE00962D44 /* UIPageControl+.swift in Sources */,
+				A128FAEE2209D83A008ED321 /* TTRegisterViewModel.swift in Sources */,
 				BAD3AB3421266F80008F417C /* TTMyDiaryInteractor.swift in Sources */,
 				A1466796213068F700A15CF3 /* TTDetailDiaryInteractor.swift in Sources */,
 				BAD3AB3721267165008F417C /* TTMyDiaryService.swift in Sources */,
 				A1466797213068FA00A15CF3 /* TTDetailDiaryWireFrame.swift in Sources */,
 				A13FF2502127E73D00FB5642 /* TTTodayDiaryViewController.swift in Sources */,
-				A11F61B72123E6A90029E80A /* ViewController.swift in Sources */,
 				A13FF22F2123FF0500FB5642 /* UIPageViewController+.swift in Sources */,
 				A152601E2188ABAA00962D44 /* TTDescriptContentViewController.swift in Sources */,
+				A128FAF3220B1B6B008ED321 /* TTRegisterService.swift in Sources */,
 				A14CAD5721AC3B2700B6F018 /* TTCanReportActionSheet.swift in Sources */,
 				A14CAD5321AAE1F600B6F018 /* String+.swift in Sources */,
 				A13FF2562128464800FB5642 /* TTPostMainView.swift in Sources */,
