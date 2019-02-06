@@ -107,6 +107,7 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
                 self?.emailWarnLabel.text = String.failedSendEmailAuth
         }).disposed(by: disposeBag)
         
+        
         viewModel.auth?.subscribe(onNext:{ [weak self] str in
             self?.showAlert(title: "알림", message: str)
             }, onError : { [weak self] error in
