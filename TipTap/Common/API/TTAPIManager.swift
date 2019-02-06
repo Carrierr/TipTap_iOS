@@ -38,7 +38,7 @@ class TTAPIManager : TTCanShowAlert {
             }
             
             if jsonDictionary["code"]?.intValue == 4000 {
-                self.showAlert(title: "알림", message: "신고 누적으로 서비스 이용이 제한되었습니다.", confirmButtonTitle: "로그아웃", completion: {
+                self.showAlert(title: "알림", message: String.blockUser, confirmButtonTitle: "로그아웃", completion: {
                     appDelegate?.logout()
                 })
                 return;

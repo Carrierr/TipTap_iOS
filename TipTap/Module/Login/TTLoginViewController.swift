@@ -9,13 +9,25 @@
 import UIKit
 import KakaoOpenSDK
 
-class TTLoginViewController: ViewController {
+class TTLoginViewController: TTBaseViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var registerButton: UIButton!
+    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.titleLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
         self.initNavi()
+    }
+    
+    
+    override func setupUI() {
+        self.titleLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
+        self.loginButton.layer.borderColor = UIColor.gray.cgColor
+        self.loginButton.layer.borderWidth = 1
+        
+        self.registerButton.layer.borderColor = UIColor.gray.cgColor
+        self.registerButton.layer.borderWidth = 1
     }
     
     
