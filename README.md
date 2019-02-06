@@ -19,12 +19,15 @@ Tiptap
 ## Architecture
 
 - VIPER
+- MVVM
 - MVC
 
 <br/>
 
 ## Libraries
 
+- [RxSwift](https://github.com/ReactiveX/RxSwift) 
+- [RxCocoa](https://github.com/ReactiveX/RxSwift/tree/master/RxCocoa) 
 - [Alamofire](https://github.com/Alamofire/Alamofire) 
 - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) 
 - [Kingfisher](https://github.com/onevcat/Kingfisher) 
