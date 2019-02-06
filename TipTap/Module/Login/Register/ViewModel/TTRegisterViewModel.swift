@@ -25,11 +25,13 @@ class TTRegisterViewModel {
     
     let disposeBag = DisposeBag()
     let service         = TTRegisterService()
+    
+    
     init() {
         setup()
     }
     
-    func setup(){
+    private func setup(){
         emailInputText
             .filter{ $0 != "" }
             .map(checkEmailValid)
