@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import Alamofire
 
 protocol TTCanReportActionSheet:TTCanShowAlert where Self : TTBaseViewController{
     func showReportActionSheet()

@@ -372,35 +372,11 @@
 		A128FAEA2209C7CC008ED321 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				A128FAF1220B1B5A008ED321 /* Service */,
-				A128FAF0220B1B4E008ED321 /* ViewModel */,
-				A128FAEF220B1B44008ED321 /* ViewController */,
-			);
-			path = Register;
-			sourceTree = "<group>";
-		};
-		A128FAEF220B1B44008ED321 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
+				A128FAF2220B1B6B008ED321 /* TTRegisterService.swift */,
+				A128FAED2209D83A008ED321 /* TTRegisterViewModel.swift */,
 				A128FAEB2209C7FA008ED321 /* TTRegisterViewController.swift */,
 			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		A128FAF0220B1B4E008ED321 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				A128FAED2209D83A008ED321 /* TTRegisterViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		A128FAF1220B1B5A008ED321 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				A128FAF2220B1B6B008ED321 /* TTRegisterService.swift */,
-			);
-			path = Service;
+			path = Register;
 			sourceTree = "<group>";
 		};
 		A13FF21C2123EC4C00FB5642 /* Login */ = {
