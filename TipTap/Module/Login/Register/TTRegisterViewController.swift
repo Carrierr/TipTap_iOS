@@ -66,6 +66,11 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
             .disposed(by: disposeBag)
         
         
+        authNumberTextField.rx.text.orEmpty
+            .bind(to:viewModel.authInputText)
+            .disposed(by: disposeBag)
+        
+        
         requestAuthButton.rx
             .tap
             .map{ self.emailTextField.text ?? "" }
@@ -74,9 +79,6 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
             .disposed(by: disposeBag)
         
         
-        authNumberTextField.rx.text.orEmpty
-            .bind(to:viewModel.authInputText)
-            .disposed(by: disposeBag)
         
         
         authButton.rx

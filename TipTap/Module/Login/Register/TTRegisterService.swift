@@ -39,6 +39,7 @@ class TTRegisterService {
     func rxAuthEmail(requestMail : String, authNumber : String)->Observable<String>{
         return Observable.create{ seal in
             DispatchQueue.global().async {
+                print("tap auth email")
                 TTAuthAPIManager.sharedManager.requestAuthAPI("\(TTAPIManager.API_URL)/auth/mail", parameters: ["mail":requestMail,"auth":authNumber], completion: { (result) in
                     print("result : \(result)")
                     let result = JSON(result)
