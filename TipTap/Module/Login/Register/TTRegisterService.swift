@@ -10,13 +10,10 @@ import Foundation
 import SwiftyJSON
 import RxSwift
 
-enum AuthApiError: Error {
-    case error              //Status code 403
-    case errorNumber
-}
+
 
 class TTRegisterService {
-    func rxRequestEmailAuth(requestMail : String)->Observable<String>{
+    func rxRequestEmailAuth(requestMail : String)->Observable<RegisterResult<String>>{
         return Observable.create{ seal in
             DispatchQueue.global().async {
                 TTAuthAPIManager.sharedManager.requestAuthAPI("\(TTAPIManager.API_URL)/auth/send/mail", parameters: ["mail":requestMail], completion: { (result) in
@@ -27,7 +24,7 @@ class TTRegisterService {
                             seal.onError(AuthApiError.error)
                             return
                     }
-                    seal.onNext(String.successSendEmailAuth)
+                    seal.onNext(.Success(String.successSendEmailAuth))
                     seal.onCompleted()
                 })
             }
@@ -36,7 +33,7 @@ class TTRegisterService {
     }
     
     
-    func rxAuthEmail(requestMail : String, authNumber : String)->Observable<String>{
+    func rxAuthEmail(requestMail : String, authNumber : String)->Observable<RegisterResult<String>>{
         return Observable.create{ seal in
             DispatchQueue.global().async {
                 print("tap auth email")
@@ -55,7 +52,7 @@ class TTRegisterService {
                         
                         return
                     }
-                    seal.onNext(String.successEmailAuth)
+                    seal.onNext(.Success(String.successEmailAuth))
                     seal.onCompleted()
                 })
             }

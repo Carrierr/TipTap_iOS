@@ -18,3 +18,14 @@ enum TTServiceError:Error{
     case unknwon
     case requestFailed(response:URLResponse,data:Data?)
 }
+
+
+enum AuthApiError: Error {
+    case error              //Status code 403
+    case errorNumber
+}
+
+enum RegisterResult<T>{
+    case Success(T)
+    case Failure(AuthApiError)
+}
