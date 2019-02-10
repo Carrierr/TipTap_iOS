@@ -79,8 +79,6 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
             .disposed(by: disposeBag)
         
         
-        
-        
         authButton.rx
             .tap
             .bind(to: viewModel.didTapAuth)
@@ -102,31 +100,55 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
             }).disposed(by:disposeBag)
         
         
-        viewModel.requestAuth?.subscribe(onNext: { [weak self] str in
-            self?.showAlert(title: "알림", message: str)
-            }, onError: { [weak self] (error) in
-                self?.emailWarnLabel.isHidden = false
-                self?.emailWarnLabel.text = String.failedSendEmailAuth
-        }).disposed(by: disposeBag)
         
-        
-        viewModel.auth?.subscribe(onNext:{ [weak self] str in
-            self?.showAlert(title: "알림", message: str)
-            }, onError : { [weak self] error in
+        viewModel.requestAuth?.drive(onNext: { result in
+            switch result {
                 
+            case .Success(let message):
+                self.showAlert(title: "알림", message: message)
+                break
+            case .Failure(let error):
                 var errorString = ""
-                switch error{
-                case AuthApiError.errorNumber:
-                    errorString = String.failedEmailAuthWrongNumber
-                    break
-                default:
+                switch error {
+                case .error:
                     errorString = String.failedEmailAuth
+                    break
+                case .errorNumber:
+                    errorString = String.failedEmailAuthWrongNumber
                     break
                 }
                 
-                self?.authWarnLabel.isHidden = false
-                self?.authWarnLabel.text = errorString
+                self.emailWarnLabel.isHidden = false
+                self.emailWarnLabel.text = errorString
+                break
+            }
         }).disposed(by: disposeBag)
+        
+        
+        
+        viewModel.auth?.drive(onNext: { result in
+            switch result {
+            case .Success(let string) :
+                self.showAlert(title: "알림", message: string)
+                break
+                
+            case .Failure(let error):
+                    var errorString = ""
+                    switch error {
+                    case .error:
+                        errorString = String.failedEmailAuth
+                        break
+                    case .errorNumber:
+                        errorString = String.failedEmailAuthWrongNumber
+                        break
+                    }
+                    
+                    self.authWarnLabel.isHidden = false
+                    self.authWarnLabel.text = errorString
+                    break
+                }
+        }).disposed(by: disposeBag)
+        
         
     }
     

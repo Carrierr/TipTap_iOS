@@ -18,8 +18,8 @@ class TTRegisterViewModel {
     let didTapAuth              = PublishSubject<Void>()
     
     //ouput
-    var requestAuth    : Observable<String>?
-    var auth                 : Observable<String>?
+    var requestAuth    : Driver<RegisterResult<String>>?
+    var auth                 : Driver<RegisterResult<String>>?
     let emailValid         = BehaviorSubject(value: false)
     let authNumberValid = BehaviorSubject(value: false)
     
@@ -48,21 +48,34 @@ class TTRegisterViewModel {
         
         requestAuth = didTapRequestAuth.flatMapLatest{ email in
             self.service.rxRequestEmailAuth(requestMail: email)
-            }
+            }.asDriver(onErrorRecover: { error in
+                return Driver.just(.Failure(error as! AuthApiError))
+            })
         
         
         let authValidations = Observable.combineLatest(emailValid,authNumberValid,resultSelector:{ $0 && $1 })
         let text                    = Observable.combineLatest(emailInputText, authInputText) { ($0,$1)}
-
+        
            auth = didTapAuth
+            .map{ _ in
+                print("jhh")
+            }
             .withLatestFrom(authValidations)
             .filter{ $0 }
             .withLatestFrom(text)
             .flatMapLatest{
-            self.service.rxAuthEmail(requestMail: $0, authNumber: $1)
-                
+                self.service.rxAuthEmail(requestMail: $0, authNumber: $1)
+            }.asDriver{ error in
+                return Driver.just(.Failure(error as! AuthApiError))
         }
     }
+    
+    /*
+     (onErrorRecover: { error in
+     print("error")
+     return Driver.just(.Failure(error as! AuthApiError))
+     })
+ */
     
     
     private func checkEmailValid(_ email: String) -> Bool {
