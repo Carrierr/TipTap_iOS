@@ -30,7 +30,7 @@
 		A128FAF3220B1B6B008ED321 /* TTRegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A128FAF2220B1B6B008ED321 /* TTRegisterService.swift */; };
 		A128FAF5220B4A97008ED321 /* Observables+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A128FAF4220B4A97008ED321 /* Observables+.swift */; };
 		A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13FF2182123EBB600FB5642 /* TTLogin.storyboard */; };
-		A13FF21B2123EC4600FB5642 /* TTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */; };
+		A13FF21B2123EC4600FB5642 /* TTFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF21A2123EC4600FB5642 /* TTFirstViewController.swift */; };
 		A13FF21F2123EED900FB5642 /* TTMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */; };
 		A13FF2222123F85100FB5642 /* TTSharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2212123F85100FB5642 /* TTSharedViewController.swift */; };
 		A13FF2242123F86000FB5642 /* SharedDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13FF2232123F86000FB5642 /* SharedDiary.storyboard */; };
@@ -39,7 +39,6 @@
 		A13FF22F2123FF0500FB5642 /* UIPageViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF22E2123FF0500FB5642 /* UIPageViewController+.swift */; };
 		A13FF2372124047100FB5642 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2362124047100FB5642 /* NotificationExtension.swift */; };
 		A13FF239212409B300FB5642 /* TTSharedVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */; };
-		A13FF23C21271ED400FB5642 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13FF23B21271ED400FB5642 /* KakaoOpenSDK.framework */; };
 		A13FF23E2127316B00FB5642 /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF23D2127316B00FB5642 /* UIAlertController+.swift */; };
 		A13FF2412127370C00FB5642 /* EditDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13FF2402127370C00FB5642 /* EditDiary.storyboard */; };
 		A13FF2432127371D00FB5642 /* TTEditDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2422127371D00FB5642 /* TTEditDiaryViewController.swift */; };
@@ -89,6 +88,7 @@
 		A1A99CE421BD2B95004D1F74 /* TTSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A99CE221BD2B95004D1F74 /* TTSettingViewController.xib */; };
 		A1A99CE721BD3423004D1F74 /* TTSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A99CE521BD3423004D1F74 /* TTSettingCell.swift */; };
 		A1A99CE821BD3423004D1F74 /* TTSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A99CE621BD3423004D1F74 /* TTSettingCell.xib */; };
+		A1BA618F2211CDED0086072F /* TTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BA618E2211CDED0086072F /* TTLoginViewController.swift */; };
 		A1C7353821981D85006EC892 /* TTSharedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7353721981D85006EC892 /* TTSharedService.swift */; };
 		BAA1148221AECB5900C79DD6 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA1148121AECB5900C79DD6 /* UIImage+.swift */; };
 		BAD3AB292126647C008F417C /* TTMyDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */; };
@@ -156,7 +156,7 @@
 		A128FAF2220B1B6B008ED321 /* TTRegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRegisterService.swift; sourceTree = "<group>"; };
 		A128FAF4220B4A97008ED321 /* Observables+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observables+.swift"; sourceTree = "<group>"; };
 		A13FF2182123EBB600FB5642 /* TTLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TTLogin.storyboard; sourceTree = "<group>"; };
-		A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLoginViewController.swift; sourceTree = "<group>"; };
+		A13FF21A2123EC4600FB5642 /* TTFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTFirstViewController.swift; sourceTree = "<group>"; };
 		A13FF21E2123EED900FB5642 /* TTMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMainPageViewController.swift; sourceTree = "<group>"; };
 		A13FF2212123F85100FB5642 /* TTSharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedViewController.swift; sourceTree = "<group>"; };
 		A13FF2232123F86000FB5642 /* SharedDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SharedDiary.storyboard; sourceTree = "<group>"; };
@@ -215,6 +215,7 @@
 		A1A99CE221BD2B95004D1F74 /* TTSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTSettingViewController.xib; sourceTree = "<group>"; };
 		A1A99CE521BD3423004D1F74 /* TTSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSettingCell.swift; sourceTree = "<group>"; };
 		A1A99CE621BD3423004D1F74 /* TTSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTSettingCell.xib; sourceTree = "<group>"; };
+		A1BA618E2211CDED0086072F /* TTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLoginViewController.swift; sourceTree = "<group>"; };
 		A1C7353721981D85006EC892 /* TTSharedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedService.swift; sourceTree = "<group>"; };
 		BAA1148121AECB5900C79DD6 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		BAD3AB282126647C008F417C /* TTMyDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyDiaryViewController.swift; sourceTree = "<group>"; };
@@ -239,7 +240,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				34F647004371BECCAD0A25F5 /* Pods_TipTap.framework in Frameworks */,
-				A13FF23C21271ED400FB5642 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,10 +382,11 @@
 		A13FF21C2123EC4C00FB5642 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A1BA618D2211CDD30086072F /* Login */,
 				A128FAEA2209C7CC008ED321 /* Register */,
 				A15260162188A4C000962D44 /* FirstDescript */,
 				A13FF2182123EBB600FB5642 /* TTLogin.storyboard */,
-				A13FF21A2123EC4600FB5642 /* TTLoginViewController.swift */,
+				A13FF21A2123EC4600FB5642 /* TTFirstViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -573,6 +574,14 @@
 				A1A99CE621BD3423004D1F74 /* TTSettingCell.xib */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		A1BA618D2211CDD30086072F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A1BA618E2211CDED0086072F /* TTLoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		BAD3AB24212663BC008F417C /* Module */ = {
@@ -981,11 +990,12 @@
 				A179E25921A0793500354579 /* TTCanSetupNavigation.swift in Sources */,
 				A13FF24821273C0100FB5642 /* TTLocationGettable.swift in Sources */,
 				A13FF2272123FB8600FB5642 /* UIView+.swift in Sources */,
+				A1BA618F2211CDED0086072F /* TTLoginViewController.swift in Sources */,
 				A1466794213068F000A15CF3 /* TTDetailDiaryViewController.swift in Sources */,
 				A14667932130677100A15CF3 /* TTDetailDiaryOutlineView.swift in Sources */,
 				BAD3AB3021266A9B008F417C /* TTBaseWireFrame.swift in Sources */,
 				A13FF2432127371D00FB5642 /* TTEditDiaryViewController.swift in Sources */,
-				A13FF21B2123EC4600FB5642 /* TTLoginViewController.swift in Sources */,
+				A13FF21B2123EC4600FB5642 /* TTFirstViewController.swift in Sources */,
 				A14667A421307C6E00A15CF3 /* TTDetailDiaryService.swift in Sources */,
 				A13FF23E2127316B00FB5642 /* UIAlertController+.swift in Sources */,
 				BAD3AB2C212668BF008F417C /* TTBaseViewController.swift in Sources */,
@@ -1219,6 +1229,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TipTap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1252,6 +1263,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TipTap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

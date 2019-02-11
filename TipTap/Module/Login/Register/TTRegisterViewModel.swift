@@ -12,20 +12,30 @@ import RxCocoa
 
 class TTRegisterViewModel {
     //input
-    let emailInputText  = BehaviorSubject(value: "")
-    let authInputText   = BehaviorSubject(value: "")
+    let emailInputText    = BehaviorSubject(value: "")
+    let nickNameInputText = BehaviorSubject(value: "")
+    let passWordInputText = BehaviorSubject(value: "")
+    let authInputText     = BehaviorSubject(value: "")
     let didTapRequestAuth = PublishSubject<String>()
-    let didTapAuth              = PublishSubject<Void>()
+    let didTapAuth        = PublishSubject<Void>()
+    let didTapRegister    = PublishSubject<Void>()
     
     //ouput
-    var requestAuth    : Driver<RegisterResult<String>>?
-    var auth                 : Driver<RegisterResult<String>>?
-    let emailValid         = BehaviorSubject(value: false)
-    let authNumberValid = BehaviorSubject(value: false)
+    var requestAuth      : Driver<String>?
+    var auth             : Driver<String>?
+    var register         : Driver<String>?
+    
+    let requestAuthError = PublishSubject<AuthApiError>()
+    let authError        = PublishSubject<AuthApiError>()
+    let registerError    = PublishSubject<AuthApiError>()
+    
+    let emailValid       = BehaviorSubject(value: false)
+    let authNumberValid  = BehaviorSubject(value: false)
+    
     
     
     let disposeBag = DisposeBag()
-    let service         = TTRegisterService()
+    let service    = TTRegisterService()
     
     
     init() {
@@ -33,49 +43,66 @@ class TTRegisterViewModel {
     }
     
     private func setup(){
-        emailInputText
+        self.emailInputText
             .filter{ $0 != "" }
             .map(checkEmailValid)
             .bind(to: emailValid)
             .disposed(by: disposeBag)
         
-        authInputText
+        
+        self.authInputText
             .filter{ $0 != "" }
             .map{ _ in true }
-            .bind(to: authNumberValid)
+            .bind(to: self.authNumberValid)
             .disposed(by: disposeBag)
         
         
-        requestAuth = didTapRequestAuth.flatMapLatest{ email in
-            self.service.rxRequestEmailAuth(requestMail: email)
-            }.asDriver(onErrorRecover: { error in
-                return Driver.just(.Failure(error as! AuthApiError))
-            })
+        self.requestAuth = didTapRequestAuth
+            .flatMapLatest{ email in
+                self.service.rxRequestEmailAuth(requestMail: email)
+                    .do(onError : { error in
+                        self.requestAuthError.onNext(error as! AuthApiError)
+                    })
+                    .suppressError()
+            }.asDriver(onErrorJustReturn: "")
         
         
         let authValidations = Observable.combineLatest(emailValid,authNumberValid,resultSelector:{ $0 && $1 })
-        let text                    = Observable.combineLatest(emailInputText, authInputText) { ($0,$1)}
+        let authRequiretext = Observable.combineLatest(emailInputText, authInputText) { ($0,$1) }
         
-           auth = didTapAuth
-            .map{ _ in
-                print("jhh")
-            }
+        self.auth = didTapAuth
             .withLatestFrom(authValidations)
             .filter{ $0 }
-            .withLatestFrom(text)
+            .withLatestFrom(authRequiretext)
             .flatMapLatest{
                 self.service.rxAuthEmail(requestMail: $0, authNumber: $1)
-            }.asDriver{ error in
-                return Driver.just(.Failure(error as! AuthApiError))
-        }
+                    .do(onError:{ error in
+                        self.authError.onNext(error as! AuthApiError)
+                    })
+                    .suppressError()
+                
+            }.asDriver(onErrorJustReturn: "")
+        
+        
+        
+        let registerRequireText = Observable.combineLatest(
+            emailInputText,
+            nickNameInputText,
+            passWordInputText) { ($0,$1,$2) }
+        
+        
+        
+        self.register = didTapRegister
+            .withLatestFrom(registerRequireText)
+            .flatMapLatest{
+                self.service.rxRegisterUser(account: $0, nickName: $1, password: $2)
+                    .do(onError:{
+                        self.registerError.onNext($0 as! AuthApiError)
+                    })
+                    .suppressError()
+            }.asDriver(onErrorJustReturn:"")
     }
     
-    /*
-     (onErrorRecover: { error in
-     print("error")
-     return Driver.just(.Failure(error as! AuthApiError))
-     })
- */
     
     
     private func checkEmailValid(_ email: String) -> Bool {

@@ -13,7 +13,7 @@ import RxSwift
 
 
 class TTRegisterService {
-    func rxRequestEmailAuth(requestMail : String)->Observable<RegisterResult<String>>{
+    func rxRequestEmailAuth(requestMail : String)->Observable<String>{
         return Observable.create{ seal in
             DispatchQueue.global().async {
                 TTAuthAPIManager.sharedManager.requestAuthAPI("\(TTAPIManager.API_URL)/auth/send/mail", parameters: ["mail":requestMail], completion: { (result) in
@@ -21,10 +21,11 @@ class TTRegisterService {
                     let result = JSON(result)
                     
                     guard result["code"].intValue == 1000 else {
-                            seal.onError(AuthApiError.error)
-                            return
+                        let errorMessage = result["data"]["message"].stringValue
+                        seal.onError(AuthApiError.error(errorMessage))
+                        return
                     }
-                    seal.onNext(.Success(String.successSendEmailAuth))
+                    seal.onNext(String.successSendEmailAuth)
                     seal.onCompleted()
                 })
             }
@@ -33,7 +34,7 @@ class TTRegisterService {
     }
     
     
-    func rxAuthEmail(requestMail : String, authNumber : String)->Observable<RegisterResult<String>>{
+    func rxAuthEmail(requestMail : String, authNumber : String)->Observable<String>{
         return Observable.create{ seal in
             DispatchQueue.global().async {
                 print("tap auth email")
@@ -42,17 +43,40 @@ class TTRegisterService {
                     let result = JSON(result)
                     
                     guard result["code"].intValue == 1000 else {
-                        let errorCode = result["code"].intValue
-                        
-                        if errorCode == 5000{
-                            seal.onError(AuthApiError.errorNumber)
-                        }else{
-                            seal.onError(AuthApiError.error)
-                        }
+                        let errorMessage = result["data"]["message"].stringValue
+                        seal.onError(AuthApiError.error(errorMessage))
                         
                         return
                     }
-                    seal.onNext(.Success(String.successEmailAuth))
+                    seal.onNext(String.successEmailAuth)
+                    seal.onCompleted()
+                })
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func rxRegisterUser(account : String,
+                        nickName : String,
+                        password : String
+                        )->Observable<String>{
+        return Observable.create{ seal in
+            DispatchQueue.global().async {
+                TTAuthAPIManager.sharedManager.requestAuthAPI("\(TTAPIManager.API_URL)/auth/sign/up/mail"
+                    , parameters: ["account":account,
+                                   "name":nickName,
+                                   "password":password]
+                    , completion: { (result) in
+                    print("register result : \(result)")
+                    let result = JSON(result)
+                    
+                    guard result["code"].intValue == 1000 else {
+                        let errorMessage = result["data"]["message"].stringValue
+                        
+                        seal.onError(AuthApiError.error(errorMessage))
+                        return
+                    }
+                    seal.onNext(String.successRegisterUser)
                     seal.onCompleted()
                 })
             }

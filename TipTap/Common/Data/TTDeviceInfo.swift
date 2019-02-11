@@ -85,21 +85,6 @@ struct UserInfo{
                 return token
             }
             
-            
-            TTAuthAPIManager.sharedManager.login(loginFlatform: loginPlatform ?? .kakao, account: userID ?? "", name: nickName ?? "", completion: { (result) in
-                switch result {
-                case .success( _):
-                    
-                    break
-                case .error( _):
-                    
-                    break
-                case .errorMessage(_):
-                    
-                    break
-                }
-            })
-            
             return ""
         }
     }
