@@ -21,8 +21,7 @@ enum TTServiceError:Error{
 
 
 enum AuthApiError: Error {
-    case error              //Status code 403
-    case errorNumber
+    case error(String)              //Status code 403
 }
 
 enum RegisterResult<T>{

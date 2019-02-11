@@ -292,6 +292,9 @@
                                 <state key="normal" title="가입">
                                     <color key="titleColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="disabled" title="입력란을 모두 채워주세요.">
+                                    <color key="titleColor" red="1" green="0.044980095079999997" blue="0.1399733074" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introSecond" translatesAutoresizingMaskIntoConstraints="NO" id="Iz0-Xi-kL8">
                                 <rect key="frame" x="215" y="0.0" width="160" height="167"/>

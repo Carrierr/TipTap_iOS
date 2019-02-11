@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
-
+    
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var nicknameTextField: UITextField!
@@ -29,15 +29,16 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
     var disposeBag : DisposeBag  {
         return viewModel.disposeBag
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-
+    
     override func setupUI() {
+        self.registerButton.isEnabled = false
         self.emailWarnLabel.isHidden = true
         self.authWarnLabel.isHidden  = true
         self.registerButton.layer.borderColor = UIColor.gray.cgColor
@@ -61,17 +62,27 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
     }
     
     private func bindInput(){
-        emailTextField.rx.text.orEmpty
+        self.emailTextField.rx.text.orEmpty
             .bind(to:viewModel.emailInputText)
             .disposed(by: disposeBag)
         
         
-        authNumberTextField.rx.text.orEmpty
+        self.passwordTextField.rx.text.orEmpty
+            .bind(to:viewModel.passWordInputText)
+            .disposed(by:disposeBag)
+        
+        
+        self.nicknameTextField.rx.text.orEmpty
+            .bind(to:viewModel.nickNameInputText)
+            .disposed(by:disposeBag)
+        
+        
+        self.authNumberTextField.rx.text.orEmpty
             .bind(to:viewModel.authInputText)
             .disposed(by: disposeBag)
         
         
-        requestAuthButton.rx
+        self.requestAuthButton.rx
             .tap
             .map{ self.emailTextField.text ?? "" }
             .filter{ $0 != "" }
@@ -79,15 +90,23 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
             .disposed(by: disposeBag)
         
         
-        authButton.rx
+        self.authButton.rx
             .tap
             .bind(to: viewModel.didTapAuth)
             .disposed(by:disposeBag)
+
+        
+        
+        self.registerButton.rx
+            .tap
+            .bind(to:viewModel.didTapRegister)
+            .disposed(by:disposeBag)
+
     }
     
     
     private func bindOutput(){
-        viewModel.emailValid
+        self.viewModel.emailValid
             .subscribe(onNext:{ [weak self ]result in
                 if !result{
                     self?.emailWarnLabel.text = "E-mail을 올바르게 입력해주세요."
@@ -101,55 +120,87 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
         
         
         
-        viewModel.requestAuth?.drive(onNext: { result in
-            switch result {
-                
-            case .Success(let message):
-                self.showAlert(title: "알림", message: message)
-                break
-            case .Failure(let error):
+        self.viewModel.requestAuth?.drive(onNext: { message in
+            self.showAlert(title: "알림", message: message)
+        }).disposed(by: disposeBag)
+        
+        
+        
+        self.viewModel.requestAuthError
+            .asDriver(onErrorJustReturn: AuthApiError.error(""))
+            .drive(onNext: { error in
                 var errorString = ""
                 switch error {
-                case .error:
-                    errorString = String.failedEmailAuth
-                    break
-                case .errorNumber:
-                    errorString = String.failedEmailAuthWrongNumber
+                case .error(let errorMessage):
+                    errorString = errorMessage
                     break
                 }
                 
                 self.emailWarnLabel.isHidden = false
                 self.emailWarnLabel.text = errorString
-                break
-            }
+            }).disposed(by: disposeBag)
+        
+        
+        
+        self.viewModel.auth?.drive(onNext: { string in
+            self.authWarnLabel.isHidden = true
+            self.showAlert(title: "알림", message: string)
         }).disposed(by: disposeBag)
         
         
         
-        viewModel.auth?.drive(onNext: { result in
-            switch result {
-            case .Success(let string) :
-                self.showAlert(title: "알림", message: string)
-                break
-                
-            case .Failure(let error):
-                    var errorString = ""
-                    switch error {
-                    case .error:
-                        errorString = String.failedEmailAuth
-                        break
-                    case .errorNumber:
-                        errorString = String.failedEmailAuthWrongNumber
-                        break
-                    }
-                    
-                    self.authWarnLabel.isHidden = false
-                    self.authWarnLabel.text = errorString
+        self.viewModel.authError
+            .asDriver(onErrorJustReturn: AuthApiError.error(""))
+            .drive(onNext: { error in
+                var errorString = ""
+                switch error {
+                case .error(let errorMessage):
+                    errorString = errorMessage
                     break
                 }
+                
+                self.authWarnLabel.isHidden = false
+                self.authWarnLabel.text = errorString
+            }).disposed(by: disposeBag)
+        
+        
+        
+        self.viewModel.register?.drive(onNext:{ message in
+            self.showAlert(title: "알림", message: message, confirmButtonTitle: "확인", completion: {
+                self.navigationController?.popViewController(animated: true)
+            })
+        }).disposed(by:disposeBag)
+        
+        
+        
+        self.viewModel.registerError
+            .asDriver(onErrorJustReturn: AuthApiError.error(""))
+            .drive(onNext:{ error in
+                var errorString = ""
+                switch error {
+                case .error(let errorMessage):
+                    errorString = errorMessage
+                    break
+                }
+                
+                self.showAlert(title: "알림", message: errorString)
+            }).disposed(by: disposeBag)
+        
+        
+        
+        
+        Observable.combineLatest(
+            self.viewModel.emailValid,
+            self.emailTextField.rx.text.orEmpty.map{($0.count > 0)},
+            self.passwordTextField.rx.text.orEmpty.map{($0.count > 0)},
+            self.nicknameTextField.rx.text.orEmpty.map{($0.count > 0)},
+            self.authNumberTextField.rx.text.orEmpty.map{($0.count > 0)},
+            self.authWarnLabel.rx.observe(Bool.self, "hidden").map{($0!)}
+            , resultSelector : { $0 && $1 && $2 && $3 && $4 && $5
+                
+        }).subscribe(onNext: { result in
+            self.registerButton.isEnabled = result
         }).disposed(by: disposeBag)
-        
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

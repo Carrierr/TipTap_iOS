@@ -18,3 +18,10 @@ extension Observable {
         )) { x, y in selector(x, y.0, y.1) }
     }
 }
+
+
+extension ObservableType {
+    func suppressError() -> Observable<E> {
+        return retryWhen { _ in return Observable<E>.empty()  }
+    }
+}

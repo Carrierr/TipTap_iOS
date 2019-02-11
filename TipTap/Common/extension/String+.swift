@@ -17,7 +17,9 @@ extension String{
     //auth
     static let successSendEmailAuth = "Email로 전송하였습니다. 인증번호를 확인해 주세요."
     static let successEmailAuth = "Email 인증이 완료되었습니다."
+    static let successRegisterUser = "회원 가입이 완료 되었습니다."
     static let failedEmailAuth     = "Email 인증이 실패하였습니다. 다시 시도해주세요."
     static let failedEmailAuthWrongNumber     = "Email 인증번호가 맞지 않습니다."
     static let failedSendEmailAuth     = "Email 인증번호 전송에 실패하였습니다. 다시 시도해주세요."
+    static let failedRegisterUser     = "인증되지 않은 메일입니다. Email 인증을 완료 해주시기 바랍니다."
 }
