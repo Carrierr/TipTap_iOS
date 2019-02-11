@@ -9,7 +9,7 @@
 import UIKit
 import KakaoOpenSDK
 
-class TTLoginViewController: TTBaseViewController {
+class TTFirstViewController: TTBaseViewController {
 
     @IBOutlet private weak var registerButton: UIButton!
     @IBOutlet private weak var loginButton: UIButton!

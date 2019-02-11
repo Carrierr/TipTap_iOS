@@ -12,6 +12,7 @@ import SwiftyJSON
 
 enum TTAuthLoginPlatformType : String {
     case kakao = "kakao"
+    case email = "email"
 }
 
 class TTAuthAPIManager : TTCanShowAlert{
@@ -19,15 +20,27 @@ class TTAuthAPIManager : TTCanShowAlert{
     let auth_url = "\(TTAPIManager.API_URL)/auth/"
     
     func login(loginFlatform : TTAuthLoginPlatformType = .kakao,
-               account : String,
-               name : String,
+               account  : String,
+               name     : String = "",
+               password : String? = nil,
                completion: @escaping (TTResult<Bool>) -> ())  {
         
-        let param : Parameters = [
-            "type":loginFlatform.rawValue,
-            "account":account,
-            "name":name
-        ]
+        var param : Parameters = ["":""]
+        if let password = password {
+            param = [
+                "type":loginFlatform.rawValue,
+                "account":account,
+                "password":password
+            ]
+        }else{
+            param = [
+                "type":loginFlatform.rawValue,
+                "account":account,
+                "name":name
+            ]
+        }
+        
+        
         
         Alamofire.request("\(auth_url)login", method: .post, parameters: param).responseJSON { (result) in
             guard let resultValue = result.result.value else {
@@ -37,12 +50,21 @@ class TTAuthAPIManager : TTCanShowAlert{
             
             let jsonResult = JSON(resultValue)
             print("login Result : \(resultValue)")
+            
+            
             switch result.result {
             case .success:
+                let code = jsonResult["code"].intValue
+                guard code == 1000 else {
+                    let errorMessage = jsonResult["data"]["message"].stringValue
+                    completion(.errorMessage(errorMessage))
+                    return
+                }
+                
                 UserInfo.token    = jsonResult["data"]["token"].stringValue
-                UserInfo.nickName = name
                 UserInfo.userID   = account
                 completion(.success(true))
+                
             case .failure(let error):
                 completion(.error(error))
             }

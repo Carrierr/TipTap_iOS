@@ -12,17 +12,17 @@ import RxCocoa
 
 class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
     
-    @IBOutlet private weak var emailTextField: UITextField!
-    @IBOutlet private weak var passwordTextField: UITextField!
-    @IBOutlet private weak var nicknameTextField: UITextField!
-    @IBOutlet private weak var authNumberTextField: UITextField!
+    @IBOutlet private weak var emailTextField       : UITextField!
+    @IBOutlet private weak var passwordTextField    : UITextField!
+    @IBOutlet private weak var nicknameTextField    : UITextField!
+    @IBOutlet private weak var authNumberTextField  : UITextField!
     
-    @IBOutlet private weak var emailWarnLabel: UILabel!
-    @IBOutlet private weak var authWarnLabel: UILabel!
+    @IBOutlet private weak var emailWarnLabel   : UILabel!
+    @IBOutlet private weak var authWarnLabel    : UILabel!
     
-    @IBOutlet private weak var requestAuthButton: UIButton!
-    @IBOutlet private weak var authButton: UIButton!
-    @IBOutlet private weak var registerButton: UIButton!
+    @IBOutlet private weak var requestAuthButton    : UIButton!
+    @IBOutlet private weak var authButton           : UIButton!
+    @IBOutlet private weak var registerButton       : UIButton!
     
     private let viewModel   = TTRegisterViewModel()
     
@@ -38,9 +38,10 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
     
     
     override func setupUI() {
+        self.emailWarnLabel.isHidden  = true
+        self.authWarnLabel.isHidden   = true
         self.registerButton.isEnabled = false
-        self.emailWarnLabel.isHidden = true
-        self.authWarnLabel.isHidden  = true
+        
         self.registerButton.layer.borderColor = UIColor.gray.cgColor
         self.registerButton.layer.borderWidth = 1
         
@@ -56,10 +57,14 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
         navigationController?.navigationBar.topItem?.title = "";
     }
     
+    
+    
     override func setupBinding() {
         bindInput()
         bindOutput()
     }
+    
+    
     
     private func bindInput(){
         self.emailTextField.rx.text.orEmpty
@@ -127,7 +132,7 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
         
         
         self.viewModel.requestAuthError
-            .asDriver(onErrorJustReturn: AuthApiError.error(""))
+            .asDriver(onErrorJustReturn: AuthApiError.error(String.errorString))
             .drive(onNext: { error in
                 var errorString = ""
                 switch error {
@@ -150,7 +155,7 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
         
         
         self.viewModel.authError
-            .asDriver(onErrorJustReturn: AuthApiError.error(""))
+            .asDriver(onErrorJustReturn: AuthApiError.error(String.errorString))
             .drive(onNext: { error in
                 var errorString = ""
                 switch error {
@@ -174,7 +179,7 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
         
         
         self.viewModel.registerError
-            .asDriver(onErrorJustReturn: AuthApiError.error(""))
+            .asDriver(onErrorJustReturn: AuthApiError.error(String.errorString))
             .drive(onNext:{ error in
                 var errorString = ""
                 switch error {
