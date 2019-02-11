@@ -9,7 +9,6 @@
 import UIKit
 import UserNotifications
 
-import KakaoOpenSDK
 import SnapKit
 
 
@@ -26,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
-        KOSession.shared().isAutomaticPeriodicRefresh = true
         setupEntryController()
         
         // 로그인,로그아웃 상태 변경 받기
@@ -60,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     
     fileprivate func reloadRootViewController() {
-        let isOpened = KOSession.shared().isOpen()
+        let isOpened = UserInfo.token != "" ? true : false
         var launchVC : UIViewController?
         if TTDeviceInfo.SettingInfo.isFirstLaunch {
             launchVC = firstDescriptViewController
@@ -79,36 +77,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        if KOSession.handleOpen(url) {
-            return true
-        }
-        return false
-    }
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        if KOSession.handleOpen(url) {
-            return true
-        }
-        return false
-    }
-    
     
     func applicationWillResignActive(_ application: UIApplication) {
         
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        KOSession.handleDidEnterBackground()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        KOSession.handleDidBecomeActive()
-    }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
@@ -157,11 +134,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     //MARK: Login & Logout
     func logout(){
-        KOSession.shared()?.logoutAndClose(completionHandler: { (success, error) in
-            let loginVC = UIStoryboard(name: "TTLogin", bundle: nil).instantiateViewController(withIdentifier: "TTLoginViewController") as UIViewController
-            appDelegate?.window?.rootViewController = UINavigationController(rootViewController: loginVC)
-            UserDefaults.standard.removeObject(forKey: "tokenID")
-        })
+        
+        let loginVC = UIStoryboard(name: "TTLogin", bundle: nil).instantiateViewController(withIdentifier: "TTLoginViewController") as UIViewController
+        appDelegate?.window?.rootViewController = UINavigationController(rootViewController: loginVC)
+        UserDefaults.standard.removeObject(forKey: "tokenID")
+
     }
 
     

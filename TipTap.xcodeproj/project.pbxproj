@@ -39,7 +39,6 @@
 		A13FF22F2123FF0500FB5642 /* UIPageViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF22E2123FF0500FB5642 /* UIPageViewController+.swift */; };
 		A13FF2372124047100FB5642 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2362124047100FB5642 /* NotificationExtension.swift */; };
 		A13FF239212409B300FB5642 /* TTSharedVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF238212409B300FB5642 /* TTSharedVCExtension.swift */; };
-		A13FF23C21271ED400FB5642 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13FF23B21271ED400FB5642 /* KakaoOpenSDK.framework */; };
 		A13FF23E2127316B00FB5642 /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF23D2127316B00FB5642 /* UIAlertController+.swift */; };
 		A13FF2412127370C00FB5642 /* EditDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13FF2402127370C00FB5642 /* EditDiary.storyboard */; };
 		A13FF2432127371D00FB5642 /* TTEditDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FF2422127371D00FB5642 /* TTEditDiaryViewController.swift */; };
@@ -241,7 +240,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				34F647004371BECCAD0A25F5 /* Pods_TipTap.framework in Frameworks */,
-				A13FF23C21271ED400FB5642 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1231,6 +1229,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TipTap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1264,6 +1263,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TipTap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
