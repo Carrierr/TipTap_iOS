@@ -123,15 +123,18 @@ class TTEditDiaryViewController: TTBaseViewController, TTTimeGettable, TTLocatio
             return
         }
         
-        guard let location = location,
-            let locationString = locationLabel.text else {
-            showAlert(title: "", message: "위치 정보를 받아오지 못하고 있습니다. 직접 위치를 입력해주세요.")
-            return
+        var latitude  = 0.0
+        var longitude = 0.0
+        
+        if let location = self.location{
+            latitude = location.coordinate.latitude
+            longitude = location.coordinate.longitude
         }
+        
         let param = ["content":boardTextView.text!,
-                     "location":locationString,
-                     "latitude":"\(location.coordinate.latitude)",
-                     "longitude":"\(location.coordinate.longitude)"
+                     "location":self.locationLabel.text ?? "",
+                     "latitude":"\(latitude)",
+                     "longitude":"\(longitude)"
                      ] as [String : Any]
         
         TTAPIManager.sharedManager.requestAPIWithImage("\(TTAPIManager.API_URL)/diary/write", method: .post, parameters: param, uploadImage : travelPicture.image) { (result) in
