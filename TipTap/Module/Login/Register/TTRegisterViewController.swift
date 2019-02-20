@@ -125,6 +125,13 @@ class TTRegisterViewController: TTBaseViewController, TTCanShowAlert {
         
         
         
+        self.viewModel.authRequiredValid!
+            .subscribe(onNext:{ result in
+                self.authButton.isEnabled = result
+            }).disposed(by: disposeBag)
+        
+        
+        
         self.viewModel.requestAuth?.drive(onNext: { message in
             self.showAlert(title: "알림", message: message)
         }).disposed(by: disposeBag)

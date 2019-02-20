@@ -31,7 +31,7 @@ class TTRegisterViewModel {
     
     let emailValid       = BehaviorSubject(value: false)
     let authNumberValid  = BehaviorSubject(value: false)
-    
+    var authRequiredValid  : Observable<Bool>?
     
     
     let disposeBag = DisposeBag()
@@ -57,6 +57,11 @@ class TTRegisterViewModel {
             .disposed(by: disposeBag)
         
         
+        
+        self.authRequiredValid = Observable.combineLatest(emailInputText.map{ $0.count > 0 }, authInputText.map{ $0.count > 0 }) { ($0 && $1) }
+        
+        
+        
         self.requestAuth = didTapRequestAuth
             .flatMapLatest{ email in
                 self.service.rxRequestEmailAuth(requestMail: email)
@@ -65,6 +70,7 @@ class TTRegisterViewModel {
                     })
                     .suppressError()
             }.asDriver(onErrorJustReturn: "")
+        
         
         
         let authValidations = Observable.combineLatest(emailValid,authNumberValid,resultSelector:{ $0 && $1 })

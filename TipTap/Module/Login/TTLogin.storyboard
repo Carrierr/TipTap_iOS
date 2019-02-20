@@ -89,12 +89,13 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9L-Hn-Syy">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="zXM-F6-OwI"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <state key="normal" title="로그인">
-                                                    <color key="titleColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.47843137250000001" green="0.7843137255" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="Wcd-qn-6Nn" kind="show" id="d4Y-8U-d3i"/>
@@ -102,12 +103,13 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4l-9N-KZe">
                                                 <rect key="frame" x="170" y="0.0" width="150" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="i2m-ze-BcN"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <state key="normal" title="가입">
-                                                    <color key="titleColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.47843137254901957" green="0.78431372549019607" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="VQr-T9-jva" kind="show" id="4PQ-7L-C0L"/>
@@ -203,12 +205,12 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="wsf-aG-yT6"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                         <state key="normal" title="인증요청">
-                                                            <color key="titleColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.47843137254901957" green="0.78431372549019607" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <state key="disabled">
-                                                            <color key="titleColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="0.53182768485915488" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                 </subviews>
@@ -263,9 +265,12 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="D6M-nO-otL"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                         <state key="normal" title="인증">
-                                                            <color key="titleColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.47843137250000001" green="0.7843137255" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
                                                 </subviews>
@@ -288,15 +293,16 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZq-cU-J5c">
                                 <rect key="frame" x="16" y="577" width="343" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7Ov-qo-5do"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <state key="normal" title="가입">
-                                    <color key="titleColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.47843137254901957" green="0.78431372549019607" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="disabled" title="입력란을 모두 채워주세요.">
-                                    <color key="titleColor" red="1" green="0.044980095079999997" blue="0.1399733074" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introSecond" translatesAutoresizingMaskIntoConstraints="NO" id="Iz0-Xi-kL8">
@@ -393,15 +399,16 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgp-Wl-eoi">
                                 <rect key="frame" x="16" y="366" width="343" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hXW-rj-VbD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <state key="normal" title="로그인">
-                                    <color key="titleColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.47843137254901957" green="0.78431372549019607" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="disabled">
-                                    <color key="titleColor" red="1" green="0.044980095079999997" blue="0.1399733074" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                         </subviews>
