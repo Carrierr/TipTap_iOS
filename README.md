@@ -10,7 +10,7 @@ Tiptap
 <br/>
 
 ## App store
--[App store](https://itunes.apple.com/kr/app/tiptap/id1439433799?mt=8)
+[App store](https://itunes.apple.com/kr/app/tiptap/id1439433799?mt=8)
 
 <br/>
 
