@@ -23,6 +23,15 @@ class TTSettingViewController: TTBaseViewController, TTCanShowAlert {
         return [
             TTSettingType.switchButton(title: "일기 공유하기", isOn: TTDeviceInfo.SettingInfo.isSharedMyDiary, pressed: { isOn in
                 TTDeviceInfo.SettingInfo.isSharedMyDiary = isOn
+                if isOn{
+                    TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/account/share/on", method:.post, completion: { (result) in
+                        print("result : \(result)")
+                    })
+                }else{
+                    TTAPIManager.sharedManager.requestAPI("\(TTAPIManager.API_URL)/account/share/off", method:.post, completion: { (result) in
+                        print("result : \(result)")
+                    })
+                }
             }),
             TTSettingType.switchButton(title: "푸시 알림", isOn: TTDeviceInfo.SettingInfo.isOnPushNotification, pressed: { isOn in
                 TTDeviceInfo.SettingInfo.isOnPushNotification = isOn

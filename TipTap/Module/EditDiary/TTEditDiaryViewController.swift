@@ -12,13 +12,23 @@ import SwiftyJSON
 import MapKit
 
 
+class AdressData{
+    var city : String = ""
+    var detailAddress : String = ""
+    
+    init(city : String, detailAddress : String) {
+        self.city         = city
+        self.detailAddress = detailAddress
+    }
+}
+
 
 class TTEditDiaryViewController: TTBaseViewController, TTTimeGettable, TTLocationGettable, TTCanShowAlert, UIGestureRecognizerDelegate {
     var todayDiaryCount = 1
     var locationManager : CLLocationManager?
     var location        : CLLocation?
     
-    
+    private var address : AdressData?
     private lazy var imagePicker = UIImagePickerController()
     
     @IBOutlet weak var numberLabel: UILabel!
@@ -131,13 +141,20 @@ class TTEditDiaryViewController: TTBaseViewController, TTTimeGettable, TTLocatio
             longitude = location.coordinate.longitude
         }
         
+        
         let param = ["content":boardTextView.text!,
-                     "location":self.locationLabel.text ?? "",
+                     "city" : self.address?.city ?? "",
+                     "location":self.address?.detailAddress ?? "",
                      "latitude":"\(latitude)",
                      "longitude":"\(longitude)"
                      ] as [String : Any]
         
-        TTAPIManager.sharedManager.requestAPIWithImage("\(TTAPIManager.API_URL)/diary/write", method: .post, parameters: param, uploadImage : travelPicture.image) { (result) in
+        TTAPIManager.sharedManager
+            .requestAPIWithImage("\(TTAPIManager.API_URL)/diary/write",
+                method: .post,
+                parameters: param,
+                uploadImage : travelPicture.image)
+        { (result) in
             print(result)
             self.showAlert(title: "", message: "일기가 등록 되었습니다.") {
                 appDelegate?.registerLocalNoti()
@@ -187,6 +204,7 @@ class TTEditDiaryViewController: TTBaseViewController, TTTimeGettable, TTLocatio
 extension TTEditDiaryViewController : TTSearchViewControllerDelegate {
     func selectPlace(_: TTSearchViewController, placeString: String) {
         locationLabel.text = placeString
+        self.address = AdressData(city: placeString, detailAddress: "")
     }
     
     func searchPlace(_: TTSearchViewController, keyword: String, completion: @escaping (([MKMapItem]) -> ())) {
@@ -248,10 +266,14 @@ extension TTEditDiaryViewController: CLLocationManagerDelegate{
         
         location = locations.last
         currentLocation { (address) in
-            if address != "" {
+            if let address = address {
+                self.locationLabel.text = "\(address.city) \(address.detailAddress)"
+                self.address = address
+            }else{
                 self.locationManager?.stopUpdatingLocation()
             }
-            self.locationLabel.text = address
+            
+            
         }
         
     }

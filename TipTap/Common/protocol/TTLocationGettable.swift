@@ -15,21 +15,21 @@ protocol TTLocationGettable{
     var locationManager : CLLocationManager? { get set }
     var location        : CLLocation?  { get set }
     
-    func currentLocation(completion: @escaping (String) -> ())
+    func currentLocation(completion: @escaping (AdressData?) -> ())
     func setUpLocationManager()
 }
 
 extension TTLocationGettable{
-    func currentLocation(completion: @escaping (String) -> ()){
+    func currentLocation(completion: @escaping (AdressData?) -> ()){
         guard let location = location else {
-            completion("")
+            completion(nil)
             return
         }
         let geoCorder = CLGeocoder()
         geoCorder.reverseGeocodeLocation(location) { (placeMarks, error) in
             if error != nil {
                 print("Geocode failed with error : \(error.debugDescription)")
-                completion("")
+                completion(nil)
                 return
             }
 
@@ -42,7 +42,7 @@ extension TTLocationGettable{
                 print("locality : \(placemark.locality ?? "")")
                 print("subLocality : \(placemark.subLocality ?? "")")
                 print("subThoroughfare : \(placemark.subThoroughfare ?? "")")
-                completion("\(placemark.administrativeArea ?? "") \(placemark.locality ?? "") \(placemark.subLocality ?? "") \(placemark.subThoroughfare ?? "")")
+                completion(AdressData(city : placemark.administrativeArea ?? "", detailAddress : "\(placemark.locality ?? "") \(placemark.subLocality ?? "") \(placemark.subThoroughfare ?? "")" ))
             }
         }
     }

@@ -63,6 +63,7 @@ class TTRegisterViewModel {
         
         
         self.requestAuth = didTapRequestAuth
+            .debug("requestAuth")
             .flatMapLatest{ email in
                 self.service.rxRequestEmailAuth(requestMail: email)
                     .do(onError : { error in
