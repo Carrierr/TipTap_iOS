@@ -184,7 +184,7 @@ extension TTSharedViewController: UICollectionViewDataSource {
         if (indexPath.row == 0) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryCell", for: indexPath) as! TTSharedCollectionViewDiaryCell
             if let count = moduleDatas?.diaryDataList?.count, count > 0 {
-                cell.locationLabel.text = "from. \(moduleDatas?.diaryDataList?[0].location ?? "")"
+                cell.locationLabel.text = "from. \(moduleDatas?.diaryDataList?[0].city ?? "")"
                 cell.descStackView.isHidden      = false
                 cell.emptyDescLabel.isHidden = true
             }else{

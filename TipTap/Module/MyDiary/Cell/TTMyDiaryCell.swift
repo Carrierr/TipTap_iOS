@@ -54,13 +54,13 @@ class TTMyDiaryCell: UITableViewCell {
         
         day = diaryData.day ?? ""
         if let firstData = diaryData.firstDiary {
-            start = firstData.location ?? ""
+            start = "\(firstData.city ?? "") \(firstData.location ?? "")"
             startLocation.numberOfLines = 1
             dotImageView.isHidden     = false
             destinationLabel.isHidden = false
         }else{
             if let lastData = diaryData.lastDiary {
-                start       = lastData.location ?? ""
+                start       = "\(lastData.city ?? "") \(lastData.location ?? "")"
                 startLocation.numberOfLines = 0
                 dotImageView.isHidden     = true
                 destinationLabel.isHidden = true
@@ -68,14 +68,14 @@ class TTMyDiaryCell: UITableViewCell {
         }
         
         if let lastData = diaryData.lastDiary {
-            destination = lastData.location ?? ""
+            destination = "\(lastData.city ?? "") \(lastData.location ?? "")"
         }
         
-       titleLabel.text = "\(diaryData.count) tiptap"
+        titleLabel.text       = "\(diaryData.count) tiptap"
         dayLabel.text         = day
         startLocation.text    = start
         destinationLabel.text = destination
-        self.selectionStyle        = .none
+        self.selectionStyle   = .none
     }
     
     

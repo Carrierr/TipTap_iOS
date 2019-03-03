@@ -106,7 +106,8 @@ extension TTDetailDiaryPresenter: TTDetailDiaryPresenterProtocol {
     
     
     func locationString(section:Int)->String{
-        return moduleDatas?[section].location ?? ""
+        let locationStr = "\(moduleDatas?[section].city ?? "") \(moduleDatas?[section].location ?? "")"
+        return locationStr
     }
     
     func dateString(section:Int)->String{
