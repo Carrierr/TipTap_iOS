@@ -25,7 +25,7 @@ class TTSharedCollectionViewListCell: UICollectionViewCell {
     private func setData(){
         guard let data = data else { return }
         timeLabel.text = data.createTime
-        locationLabel.text = data.location
+        locationLabel.text = data.city
         bodyLabel.text = data.content
         bodyLabel.setLineSpacing(lineSpacing: 6)
     }

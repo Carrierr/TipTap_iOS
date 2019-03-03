@@ -63,6 +63,7 @@ struct TTDiaryData {
     var updatedAt  : String?
     var createDate : String?
     var createTime : String?
+    var city       : String?
     
     
     init(rawJson:Any) {
@@ -71,6 +72,7 @@ struct TTDiaryData {
         user_id   = json["user_id"].intValue
         content   = json["content"].stringValue
         location  = json["location"].stringValue
+        city      = json["city"].stringValue
         if let url = URL(string: json["imageUrl"].stringValue){
             imageUrl = url
         }
