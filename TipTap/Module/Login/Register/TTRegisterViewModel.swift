@@ -49,18 +49,13 @@ class TTRegisterViewModel {
             .bind(to: emailValid)
             .disposed(by: disposeBag)
         
-        
         self.authInputText
             .filter{ $0 != "" }
             .map{ _ in true }
             .bind(to: self.authNumberValid)
             .disposed(by: disposeBag)
         
-        
-        
         self.authRequiredValid = Observable.combineLatest(emailInputText.map{ $0.count > 0 }, authInputText.map{ $0.count > 0 }) { ($0 && $1) }
-        
-        
         
         self.requestAuth = didTapRequestAuth
             .debug("requestAuth")
